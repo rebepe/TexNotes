@@ -1,0 +1,47 @@
+\section*{Grundlagen}
+Aufbau: Applikation -> DBMS(Datenbank-Management-System) -> Datenbanken
+
+\begin{description}
+\item[Persistenz:] nicht-flüchtig gespeichert nach Transaktionsende
+\item[Semantische Integrität:] korrekt aus Fachsicht 
+\item[Konsistenz:] Widerspruchsfrei, durch Integritätsregeln
+\item[Operationale Integrität:] konsistenz / Integrität während Systembetrieb erhalten
+\item[Redundanz:] Mehrfaches vorkommen von Daten => Normalisierung
+\item[Isolation:] Keine Beieinflussung von Nutzern untereinander
+\item[ACID:] Atomicity, Consistency,Isolation,Durability
+\item[Datenmodell:] definiert Operatoren und Objekte (relational, netzwerk,xml,...)
+\item[Schema:]
+\item[Logisches Schema:] Struktur der Daten
+\item[Physisches Schema:] Indizes etc,
+\item[Entity Integrity:] eindeutigkeit der PKs
+\item[Referentielle Integrität:] Datensätze erst löschen, wenn nicht mehr referenziert
+\item[Domänen Integrität:] Werte liegen in Definierten Wertebereichen (falls CHECK) und sind atomar
+\item[Surrogat-Schlüssel:] künstlicher Primärschlüssel (id)
+
+
+\end{description}
+
+\section*{Modellierung}
+
+3Schichten-Modell: Externe Ebene(Views) - Logische Ebene(Schema) - Interne Ebene (Indizes)\\
+=> Physische Datenunabhänigkeit: Anwendung von Änderungen auf Interner Ebene unberührt\\
+=> Logische Datenunabhängigkeit: " auf Logische Ebene "kaum" berührt
+
+Kardinalitäten: 1:1, 1:n, n:m, + optionalität
+
+Identifizierende Beziehungen: schwache Entität setzt andere Entität voraus (z.B. Bestellpositionen Bestellung)
+\input{ER.tex}
+
+Umsetzung von Vererbung:
+\begin{itemize}
+\item Single Table (eine Tabelle, die Kind-Attribute sind ggf. NULL): \\
+Vorteile: Redundanzfrei, keine JOINs, Auch Elemente speicherbar, die nur zur Eltern-Klasse gehören; \\
+Nachteile: Viel NULL, Große Tabelle, nicht über mehrere Ebenen
+\item Table-per-Class: jede Klasse eigene Tabelle \\
+Vorteile: Redundanzfrei, Auch Elemente speicherbar, die nur zur Eltern-Klasse gehören, Einfacher Zugriff auf typunabhängige Attribute der Oberklasse, keine NULL-Werte  \\
+Nachteile: JOINs nötig => schlechtere Performance, Referentielle Integrität muss geprüft werden
+\item  Table-per-Concrete-Class: nur Tabellen für Klassen mit Instanzen \\
+Vorteile: Typen leicht unterscheidbar, Objektinformation in einer Tabelle \\
+Nachteile: ggf. Redundante Informationen, Anfragen über alle Objeke durch UNION
+\end{itemize}
+

@@ -1,0 +1,68 @@
+\section*{Symmetrische Verfahren:}
+
+\subsection*{DES:}
+m = 64 Bits; 	k = 56 Bits
+Aus k werden 16 Rundenschlüssel $k_i$ generiert;
+
+\subsubsection*{Verschlüsseln:}
+Führe Anfangspermutation durch;
+
+Ablauf einer Runde i:
+\begin{enumerate}
+\item Halbiere die nachricht m in x und y: $m \to (x,y)$
+\item  Aus (x,y)berechne $(x \oplus f(k_i,y),y)$
+
+ mit $f(k_i,x) = P(S(E(x)\oplus k_i))$\\
+	S= Substitution (ersetzten des Blocks)\\
+	P= Permutation (Umsortieren der Bits)
+\end{enumerate}
+
+\subsubsection*{Entschlüsseln:}
+Führe Verschlüsseln in Umgekehrter Reihenfolge durch
+
+\subsection*{AES:}
+m= 128 Bits;	k= 128, 192 oder 256 Bits		\\
+Anzahl der Runden ($N_r$): Für k= 128: 10 k= 192: 12 k= 256: 14
+
+Zustandsmatrix:  4x4 Matrix
+
+
+ 
+\subsubsection*{Ablauf:}
+\begin{enumerate}
+\item initialisiere Zustandsmatrix mit m
+\item bilde $Zustandsmatrix \oplus k_0$
+\item for i = 1 bis i= $N_R-1$
+\begin{enumerate}
+\item 	S-Box (Substituiere)
+\item	Verschiebe die Zeilen der Matrix
+\item 	Durchmische die Spalten (siehe MixColumns)
+\item 	bilde $Zustandsmatrix \oplus k_0$
+\end{enumerate}
+\item S-Box
+\item Verschiebe die Zeilen der Matrix
+\item Durchmische die Spalten (siehe MixColumns)
+\end{enumerate}
+
+S-Box: 
+$x = x^{-1} \in F_{2^8}$
+Rechnen in $F_{2^8}$: + = - = $\oplus$
+
+
+Modes of Operation:		(r= Blocklänge)\\
+Ist |m|>r: 	Teile m in Blöcke und für jeden Block:
+\begin{itemize}
+\item ECB: Electronic Codebook Mode \\
+			$c_i = E_k(m_i)$		( Einzeln Verschlüsseln)
+\item CBC: Cipher-Block Chaining Mode	\\
+			Wähle zufälliges Kryptogramm $c_0$\\
+			$c_i = E_k(m_i \oplus c_{i-1})$
+\item CFB: Cipher Feedback Mode: \\
+			$c_i = m_i \oplus msb_r(E_k(x_i))$	(nimm die vordersten r Bits aus $E_k(x)$ und XORe)\\
+			$x_{x_i+1} = lsb_{|x|-r}(x_i) || c_i$      (shifte $c_i$ in x ein)
+\item OFB: Output Feedback Mode:\\
+			$c_i = m_i \oplus msb_r(E_k(x_i))$ 	(siehe CFB)\\
+			$x_{i+1} = E_k(x_i)		$		(x als Pseudozufallsgenerator)
+\end{itemize}
+
+

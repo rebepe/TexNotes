@@ -1,0 +1,9 @@
+[main]
+.\main.tex
+
+[texfiles]
+.\allgemeines.tex
+.\symmetrisch.tex
+.\Praeambel.tex
+.\math.tex
+

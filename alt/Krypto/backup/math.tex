@@ -1,0 +1,113 @@
+\minpurp{Fast Modular Exponentiation ($x^e$ mod n)}
+Berechne Binardarstellung des Exponenten e;  \\
+Berechne für jede Binarstelle des Exponenten ab der 2.:\\
+$( (x^2 \cdot x^{e_{k-2}})^2 \dots )^2 \cdot x^{e_0}$ mod n\\
+
+Bsp: $5^{10}$ mod 13\\
+\newcommand{\I}{\textcolor{red}{1}}
+\newcommand{\zero}{\textcolor{blue}{0}}
+10 = $(\I\zero\I\zero)_2$		\\
+$5^{10} mod 13 = (\textcolor{red}{5}^2 \cdot \textcolor{blue}{1})^2 \cdot \textcolor{red}{5})^2 \cdot \textcolor{blue}{1} = (1^2  \cdot 5)^2  = 12$
+
+
+
+
+\minisec{\Euklid}
+\newcommand{\rone}{\textcolor{blue}{r_1}}
+\newcommand{\rto}{\textcolor{violet}{r_2}}
+\newcommand{\rk}{\textcolor{red}{r_k}}
+\begin {tabular}{ll}
+$r_0 - q_1 * \rone = \rto		$	&	$	100 - 5 * 19 = 5$\\
+$\rone - q_2 * \rto = r_3		$	&	$	19 - 3 * 5 = 4	$\\
+\dots							&  	\textcolor{green!50!olive!50}{\Ovalbox{$	5 - 1*4	= 1$}} \\
+$r_{k-1} - q_k * \rk = \underline{0}\implies ggt(\rone,\rto)= \rk	$ &	  $4 - 4*1 = \underline{0} \implies ggt(100,19)=1$   \\
+\end{tabular}
+\minisec{Ausrechnen des Inversen: (wenn ggt=1)}
+\begin {tabular}{ll}
+$ggt = r_{k-2} - q_{k-1} * ~~~~~~r_{k-1}				$		&	\textcolor{green!50!olive!50}{\Ovalbox{$1= 5-1*4$}\\
+$= r_{k-2} - q_{k-1}* \overbrace{( r_{k-3} - q_{k-2} * r_{k-2})}$	&	$ = 5-1*(19 - 3 * 5)= - 19 +4 * 5$\\
+			\dots								&		$ = -19 + 4* (100 - 5 * 19) = 4*100 -21 * 19 $\\
+$	= a* r_0 +b * r_1  \rightarrow r_1^{-1} = b$ &$ 	19^{-1} = -21							$\\
+\end{tabular}
+
+
+ 
+
+\minpurp{Phi}
+Primfaktorzerlegung!\\
+Keine Doppelten Primfaktoren $p_i$: $\varphi(n) = (p_1-1)(p_2-1)\dots $ z.B:  $\varphi(15) = (3-1)(5-1)=8$\\
+Doppelte Primfaktoren: $p_i$: $\varphi(n) = n(\frac{p_1-1}{p_1})(\frac{p_2-1}{p_2})$ z.B: $\varphi(75) = 75*(\frac{2}{3})(\frac{4}{5}) = 40$\\
+$a^{\varphi(n)}\equiv 1 (mod n)$
+
+
+\minpurp{Rechnen im Polynomring}
+Bitkette $\Leftrightarrow$ Polynom, z.B. 1011 $\rightarrow$ $x^3 + x ^1 + 1$\\
+Wenn Koeffizienten \textbf{(mod 2)}: $+=-= \oplus$\\
+Berechnen: Rest $\equiv$ I mod Generatorpolynom)
+
+\texttt{ %monospace
+\newcommand{\divisor}{\underline{1011}\\}
+Bsp: I= 110100, G=$x^3 + x ^1 + 1 \widehat{=}1011$\\
+\textcolor{white}{|}\textcolor{orange}{110100}:\textcolor{blue}{1011}=1111001\\
+\textcolor{white}{|}\divisor
+\textcolor{white}{|}01100\\
+\textcolor{white}{|}~\divisor
+\textcolor{white}{|}~01110\\
+\textcolor{white}{|}~~\divisor
+\textcolor{white}{|}~~0\textcolor{red}{101}   => \textcolor{orange}{110100} $\equiv$ \textcolor{red}{101} mod \textcolor{blue}{1011}
+}
+
+
+
+\minpurp{Chinesischer Restesatz}
+Lösung eines Systems $x \equiv a_1$ mod $n_1 \dots  x \equiv a_k$ mod $ n_k$
+\begin{enumerate}
+\item Berechne M = $n_1 \cdot n_2 \dots n_k$
+\item Berechne $t_i = m / n_i$ für alle $n_i$
+\item Berechne $d_i = t_i^{-1} mod~n_i$ für alle $n_i$ \Euklid
+\item Ergebnis = $ a_1 \cdot d_1 \cdot t_1 + \dots + a_k \cdot t_k \cdot d_k  (mod M)$
+\end{enumerate}
+Bsp: \\									\newcommand{\Neins}{\textcolor{red}{13}}  \newcommand{\Nzwei}{\textcolor{blue}{19}}
+$x \equiv 6 (mod \Neins )$ $x \equiv 16 (mod \Nzwei) $
+
+M= \Neins $\cdot$ \Nzwei = 247
+
+$t_1 =\frac{247}{\Neins} =19~~~t_2 = \frac{247}{\Nzwei} =13 $
+
+$d_1 = 19^{-1} \equiv  11 (mod \Neins)~~~ d_2 = 3 ( mod \Nzwei)$ \Euklid
+
+$ 6 \cdot 19 \cdot 11 + 16 \cdot 13 \cdot 3 \equiv 149 (mod 247) $
+
+
+\minpurp{Primitive Wurzel}
+ord(x): kleinstes n mit $x^n=1$, ord(x) Produkt aus Primfaktoren von Gruppenordnung (p-1)\\
+Anzahl Primitiver Wurzeln: $\varphi(p-1)$\\
+
+Wähle Zufallszahl g und Teste für jeden Primfaktor q von p-1: \\
+$g^{\frac{p-1}{q}} \neq 1 mod p$ => Primitive Wurzel\\
+Bsp: p = 31, p-1= 2*3*5\\
+Teste g=2:  $2^6 =2 mod 31$, $2^{15} =1 mod 31$ => keine Primitive Wurzel
+
+
+
+
+\minpurp{Primzahltest (Miller-Rabin)}
+\begin{enumerate}
+\item Zerlege p-1 = $2^k \cdot t$ // t ungerade
+\item Für Zufallszahl a // Fehlerwahrscheinlichkeit: $1/4^{Anzahl Zufallszahlen}$
+\item berechne $a^t$ mod p; wenn = 1  => prim
+\item quadriere nun k-1 mal (mod p), nach jedem Quadrieren prüfen, ob =-1 => prim
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\rule{\textwidth}{1pt}
+
+\clearpage

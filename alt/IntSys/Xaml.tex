@@ -1,0 +1,115 @@
+\minisec{Namespaces}
+\texttt{
+xmlns=\dq http://schemas.microsoft.com/winfx/2006/xaml/presentation\dq \\
+xmlns:x=\dq http://schemas.microsoft.com/winfx/2006/xaml\dq
+}
+
+Einbinden eines Namespaces z.B. System.Collections:\\
+\texttt{xmlns:Collections=\dq  clr-namespace:System.Collections\dq   
+}
+
+\minisec{Data Validation}
+\texttt{%
+\{Binding Path=\dq  whatever\dq ~ ValidatesOnExceptions=\dq  True\dq   \\
+\tab ValidatesOnDataErrors=\dq  True\dq  \} // Default: Rot Umranden}
+
+\minisec{ErrorTemplate:}
+Bsp: Fehlertext neben der Box\\
+\texttt{%
+<ControlTemplate x:Key=\dq  TBErrorTemplate\dq   >\\
+\tab <DockPanel>\\
+\tab \tab <AdornedElementPlaceholder x:Name=\dq  adornedElement\dq   />\\
+\tab \tab <TextBlock Text=\dq  Hier ein Fehlertext! \dq   FontSize=\dq  12\dq   \\
+\tab \tab \tab Foreground=\dq  Red\dq ~  Margin=\dq  5 0 0 0\dq   />\\
+\tab </Dockpanel>\\
+</ControlTemplate>\\
+<TextBox Validation.ErrorTemplate=\dq  \{StaticResource TBErrorTemplate\}\dq   \\
+\tab Text=\dq  \{Binding$\dots$ ValidatesOnExceptions=\dq  True\dq   \\ 
+\tab ValidatesOnDataErrors=\dq  True\dq    \}\dq   />
+}
+
+\minisec{Eigene Validation Rules}
+\texttt{%
+public class MyValidationRule : ValidationRule\{		\\
+public int maxLength \{get; set;\}					\\
+public override ValidationResult Validate(object val, CultureInfo CI)\{ \\
+\tab if(val.ToString().Length > maxLength)   \\
+\tab \tab return new ValidationResult(false,\dq  \dq  );\\
+\tab return ValidationResult.ValidResult;
+\}		\\
+\}
+}
+
+=> XAML:
+\texttt{ %
+<TextBox Validation.ErrorTemplate=\dq  $\dots$\dq    >		\\
+\tab <TextBox.Text>		\\
+\tab \tab <Binding Path=\dq  Property\dq    >		\\
+\tab \tab \tab <Binding.ValidationRules>		\\
+\tab \tab \tab \tab <RichtigerNamespace:MyValidationRule maxLength=\dq  10\dq  />		\\
+\tab \tab \tab </Binding.ValidationRules>		\\
+\tab \tab </Binding>		\\
+\tab </TextBox.Text>		\\
+</TextBox>
+}\\
+
+\minisec{Bindings:}
+\oitem{!Nur public Propertys bindbar!\\}
+\textbf{Modes:} TwoWay, OneWay(Kein UpdateSourceTrigger), OneWayToSource(Schreibend), OneTime(InitialiseComponent)\\
+\textbf{UpdateSourceTrigger:} PropertyChanged, LostFocus(default bei Textbox)  
+
+\texttt{%
+\fbox{XAML: z.B. <Textbox Text=\dq  \{Binding ElementName=box1, Path=Text\}\dq   />		}	\\
+\fbox{
+\begin{minipage}{0.4\textwidth}
+C\#: Binding b = new Binding(\dq  Text\dq  );      // QuellProperty					\\
+b.Source = box1;       //Objekt																		\\
+box2.SetBinding(TextBox.TextProperty, b)	
+\end{minipage}
+} }
+
+
+
+Binding auf eigene Klassenobjekte mit automatischem aktualisieren: \\
+z.B. \texttt{ using System.ComponentModel;\\
+class TestData: INotifyPropertyChanged \{			\\
+\tab public event PropertyChangedEventHandler PropertyChanged;		\\
+\tab string myProperty;													\\ \\ 
+\tab public string MyProperty \{ \\
+\tab \tab  get\{return myProperty;\} \\
+\tab \tab set\{ myProperty = value; \\
+\tab \tab \tab OnPropertyChanged(\dq  MyProperty\dq  );\}\\
+\tab \} \\ \\
+\tab protected void OnPropertyChanged(string pname) \{ \\
+\tab \tab PropertyChangedEventHandler handler = PropertyChanged;\\
+\tab \tab if (handler != null)											\\
+\tab \tab \tab handler(this, new PropertyChangedEventArgs(pname));		\\
+\tab \tab \}\\
+\tab \}
+}
+
+
+
+\minisec{Datenkontext}
+\texttt{DataContext=\dq  \{Binding RelativeSource=\{x:Static \\ \tab RelativeSource.Self\}\}\dq   \tab \tab //Kontext ist Code-Behind}
+
+
+
+\minisec{Routed Events}
+Reihenfolge: zuerst Tunneling, dann Bubbling;\\
+\textbf{Direkte Events:} nicht weitergereicht (z.B. Click)\\
+\textbf{Bubbling} Weiterreichen nach Oben (zum Window) z.B. MouseLeftButtonDown \\
+\textbf{Tunneling} Weiterreichen nach Unten (zum Button) z.B. PreviewMouseLeftButtonDown
+
+\clearpage
+
+\minisec{Styles}
+\texttt{%
+<Window.Resources>		\\
+\tab <Style x:Key=\dq  MyStyle\dq ~  TargetType=\dq  \{x:Type Button\}\dq     >		\\
+\tab \tab <Setter Property=\dq  Background\dq ~   Value=\dq  Green\dq    />				\\
+\tab </Style>		\\
+</Window.Resources>		\\
+<Button Style=\dq  \{StaticResource MyStyle\}\dq   ...		
+}
+

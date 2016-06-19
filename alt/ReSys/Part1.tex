@@ -1,0 +1,109 @@
+\begin{minipage}{0.7\textwidth}
+
+KB = $2^{10}$, MB=$2^{20}$
+
+$Taktfrequenz 	= 	\frac{1}{Zyklusdauer};  	Zyklusdauer  	= 	\frac{1}{Taktfrequenz}$ z.B.2ns = 0.5GHz 
+
+\minisec{Amdahl}
+$	Dauer_{neu}  	= 	Dauer_{alt} \cdot \left( Anteil_{unbenutzt} 	+ \frac{Anteil_{benutzt}}{Beschleunigung_{benutzt}} \right)   $\\
+$	Beschleunigung  = 	\dfrac{1}{Anteil_{unbenutzt} + \dfrac{Anteil_{benutzt}}{Beschleunigung_{benutzt}}}	$
+
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\begin{tabular}{c|c|c|c}
+\hline
+ &Hz & s \\
+\hline
+$10^3$ & k & m & $10^{-3}$ \\
+\hline
+$10^6$ &M & $\mu$ & $10^{-6}$ \\
+\hline
+$10^9$ &G  & n & $10^{-9}$ \\
+\hline
+\end{tabular}
+\end{minipage}
+
+\begin{minipage}{0.7\textwidth}
+\minisec{Fehlertoleranz}
+Wahrscheinlichkeit (nicht parallel):	$A_{sytem}$ 	= Produkt aller Einzelwahrscheinlichkeiten \\ 
+Wahrscheinlichkeit TMR: $A_{sytem}	= (3p^2 - 2p^3) \cdot p_{voter}$
+
+\newcommand{\note}[2]{\textcolor{gray}{\underbrace{\textcolor{black}{#2}}_{\text{#1}}}}
+
+Allg: mind. x-1 aus x fehlerfrei: $A_{sytem}	= \note{x aus x fehlerfrei}{p^x} + \note{x-1 aus x fehlerfrei}{\left( \! \begin{array}{c} x \\ x-1 \end{array} \! \right) p^{x-1}(1-p)}$\\
+\end{minipage}
+\begin{minipage}{1pt} \rule{1pt}{5\baselineskip} \end{minipage} 
+\begin{minipage}{0.3\textwidth}
+Quadratische Gleichungen:\\
+ $ax^2+bx+c=0$\\
+\textbf{$x_{1/2} = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a} $}
+\end{minipage}
+
+\minisec{Codes:}
+gerade Parität: gerade Anzahl an 1\\
+Hamming-Abstand h: Anzahl der Bits die sich unterscheiden\\
+Hamming-Abstand bei Code: kleinster Hamming-Abstand der Codewörter\\
+Erkennung von d Bitfehlern: h=d+1; 	Korrektur von d Bitfehlern: h=2d+1\\
+
+
+
+\newcommand{\rub}[1]{\textcolor{red}{\overline{\textcolor{black}{#1}}}}
+\newcommand{\bub}[1]{\textcolor{blue}{\overline{\textcolor{black}{#1}}}}
+\newcommand{\gub}[1]{\textcolor{green}{\overline{\textcolor{black}{#1}}}}
+\newcommand{\brub}[1]{\textcolor{brown}{\overline{\textcolor{black}{#1}}}}
+
+
+\minisec{Erstellen von Hamming-Code, Einzelbitkorrektur:}
+m= Datenbits, r=Prüfbits \\
+Suche r mit  $(m+r+1) \leq 2^r$\\
+Nummeriere Bits von links mit 1 beginnend durch\\
+Bits mit 2er-Potenznummern (1,2,4,8,...) sind Paritätsbits; aufteilung nach binär (5 ist 1 + 4) \\
+\fbox{  \begin{minipage}{0.3\textwidth}
+\textbf{Bsp:} Gerade Parität mit $ m=10 $ \\
+$ 10 + r + 1 \leq 2^r \Rightarrow r=4$
+\end{minipage} } \rule{1cm}{0pt}
+\fbox{  \begin{minipage}{0.3\textwidth}
+\begin{tabbing}
+Beispielwort: \=1~\=0~1~\=1~0~1~0~\=1~0~1~0~1~0~1~0   \kill
+\> \textcolor{gray}{1} \> \textcolor{gray}{2} \> \textcolor{gray}{4} \> \textcolor{gray}{8}  \\
+Beispielwort: \rub{\textcolor{red}{  1}}~\bub{\textcolor{blue}{  0}~\rub{1}}~\gub{\textcolor{green}{  1}~\rub{0}~\bub{1~\rub{0}}}~\brub{\textcolor{brown}{0}~\rub{0}~\bub{0~\rub{0}}~\gub{0~\rub{0}~\bub{0~\rub{0}}}}
+\end{tabbing}
+\end{minipage} }
+
+\textbf{SECDED} zum Erkennen von 2-Bit Fehlern: Hamming Code mit zus. Paritätsbit (Stelle 0) über das Ganze Wort\\
+
+
+\minisec{Festplatte}
+Kapazität = $\textbf{2} \cdot Scheiben \cdot Spuren \cdot Sektoren \cdot Sektorengr$öß$e $\\
+$Geschwindigkeit_{\text{außen}} \textbf{>} Geschwindigkeit_{innen}$\\
+$mittlere Zugriffszeit = Sektoren \cdot (t_{Spurwechsel} + t_{Halbe Umdrehung})$\\
+$Verschnitt = Sektorgr$öß$e - Rest(letzter Sektor) $\\
+
+
+\minisec{SSD}
+Lebensdauer=$\frac{\text{mögliche Schreibzyklen}}{\text{Schreibvorgänge pro Zeit}}$\\
+mögliche Schreibzyklen: verfügbare Zellen * Schreibzyklen pro Zelle (= TBW)\\
+
+Bei Wear-Leveling: 
+\begin{enumerate}
+\item ohne: Lebensdauer = $\frac{\text{Schreibzyklen pro Zelle}}{\text{Schreibvorgänge pro Zeit}}$ (verfügbare Zellen = 1)
+\item dynamisch: verfügbare Zellen: Gesamtkapazität - statische Daten
+\item statisch: mögliche Schreibzyklen: gesamte SSD
+\end{enumerate}
+
+
+\minisec{Bus}
+Steuer-, Adress-, Datenpins, (+Interruptpins)
+
+Bus-Protokoll: Wer legt wann welches Signal an;	\\
+Bus-Master: kann Transfer einleiten, Bus-Slave: passiv (Rolle von Kommunikation abhängig)\\
+Bus-Breite: Anzahl der Leitungen \\
+
+Synchroner Bus: zentraler Takt $\Rightarrow$ Zeiträume aus Graph ablesen
+
+Asynchroner Bus: Buszyklen variabler Länge $\Rightarrow$ Signaländerungen lösen Reaktionen aus\\
+
+Bus-Arbitrierung: zentral: Bauteil (Arbiter) teilt Buszugriffe zu. (nach Prioritäten)\\
+dezentral: Bauteile prüfen selbst ob sie die höchste angeforderte Priorität haben
+
+Blocktransfer: holen von x Worten ab Adresse

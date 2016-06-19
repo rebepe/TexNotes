@@ -1,0 +1,43 @@
+\subsection*{Protokolle}
+\minisec{Diffie-Hellman Key Argreement}
+public Key: p (große Primzahl) g: Primitive Wurzel
+\begin{enumerate}
+\item A wählt a$\in$[1,p-2], sendet c=$g^a$ mod p
+\item B wählt b$\in$[1,p-2], sendet d=$g^b$mod p
+\item A berechnet k = $d^a$, B berechnet k = $c^b$ => Schlüssel wurde ausgetauscht
+\end{enumerate}%
+Nicht alle Bits von k sind sicher => h(k) wird als Schlüssel verwendet;\\
+Zusätzliche Authentification gegen Man-in-the-middle nötig.
+
+\minisec{Station-to-Station Protocol}
+public Key: p (große Primzahl) g: Primitive Wurzel; Signaturmechanismus nötig (Zugang zu öffentlichen Signaturschlüsseln notwendig)
+\begin{enumerate}
+\item A wählt a$\in$[1,p-2], sendet c=$g^a$ mod p
+\item B wählt b$\in$[1,p-2], berechnet k=$g^{ab}$ mod p und s=Sign($g^a||g^b$)
+\item B sendet ($g^b mod p,E_k(s)$)
+\item A berechnet k=$g^{ab}$ mod p, entschlüsselt $E_k$ und prüft Signatur
+\item Wenn gültig: A sendet $E_k(sign(g^b||g^a)$, B prüft
+\end{enumerate}
+
+%\minisec{Zertifikate}
+%Inhalt: Besitzer, dessen PublicKey, Certification Authority, Seriennummer, Gültigkeitszeitraum,...\\
+%Unterschrieben von Certification Authority, eventuell verkettet.
+
+\minisec{SSL/TLS} 
+SSL Komponenten: Handshake, Change Cipher Spec(Wechsel asymmetrisch->symmetrisch), Alert, Record Layer(Verschlüsselung)
+
+Handshake: Server (optional auch Client) wird authentifiziert, Schlüssel für MAC und Verschlüsselung ausgetauscht
+
+Header: Typ,Version,Länge; Trailer: MAC,Padding
+
+Ablauf
+\begin{enumerate}
+\item ClientHello (vorhandene Algorithmen, zufallszahl, session\_id wenn Sitzungsfortführung)
+\item ServerHello (evtl. neue Session\_id, zufallszahl, Certifikate)
+\item ClientKeyExchange (premaster\_secret vom Client berechnet und mit ServerPKey verschlüsselt => zur Berechnung aller weiteren Schlüssel)
+\item ChangeCypherSpec Client->Server, Finished (enthält MAC über alle bisherigen Nachrichten, ist verschlüsselt)
+\item ChangeCypherSpec Server->Client, Finished "
+\end{enumerate}
+Bei Sitzungsfortführung nur austausch von client\_random und server\_random, keine Authentifizierung;\\
+=> premaster\_secret wird wiederverwendet, keys mit den Zufallszahlen neu generiert
+

@@ -1,0 +1,35 @@
+% --- Schicht 7
+\Minisec{Anwendungskommunikation}
+Request-Response-Paradigma: Anfrage->Antwort\\
+Textbasierte-Protokolle: (z.B. smtp,http), Vorteile: debuggen, leicht zu Dokumentieren(RFC)
+
+\Minisec{http}
+Form: Kommandozeile, Headerzeilen, Leerzeile, [Bodyzeilen] (Bodyende: Headerfeld oder End-Tags)\\
+Kommandozeile: Methode(GET,$\dots$) Anfrage-URI Version
+
+Persistente Verbindung: Nutzen einer TCP-Verbindung für mehrere HTTP-REQUESTS (Flusskontrolle, Handshake)\\
+Pipelining: Client stellt mehrere Anfragen über eine Verbindung bevor erste Antwort kommt\\
+Long Polling: Server antwortet nicht sofort, sondern nur bei Ereignis oder Timeout (asynchronität)\\
+zustandslos => keine Sitzungen (Benutzeridentifikation) => SitzungsID in Cookie oder URL
+
+\Minisec{Web-Sockets}
+Bidirektionale Kommunikation über einen durch http etablierten Kanal => Zuordnung zu Sitzung leicht möglich\\
+Nach dem Aufbau verwendung eigenes Format (kein Http): Längenangabe einzelner Nachrichten, zufallsmaskierung gegen Proxie-Caching
+
+\Minisec{Remote Procedure Call}
+Aufruf von Funktionen/Methoden auf entferntem Rechner z.B. RPC, CORBA(Sprachenunabhängig), RMI(Java)\\
+Nötig: Stubs auf Client/Server, die die Kommunikation übernehmen, plattformunabhängige Kodierung der Daten und Serialisierung(abrollen von Objekten) 
+
+\Minisec{Webservices}
+HTTP als Quasi-Transportprotokoll (wird nicht blockiert,...) \\
+v.A. für Kommunikation zwischen verschiedenen Verantwortungsbereichen z.B. Amazon $\longleftrightarrow$ DHL
+
+\minisec{SOAP}
+Definition von Operationen (mit Parametern, Rückgabe ...)\\
+Schnittstellenbeschreibung in WSDL, wird über HTTP übertragen => Prüfen auf Aktuelle Version, Stubgenerierung möglich
+
+\minisec{REST}
+Zugriff auf Ressourcen über HTTP-Kommandos mit URIs, Argumente im Body, Rückgabe in Content-Feld\\
+z.B. GET http://abookstore/cart/12345\\
+Format z.B. in JSON / XML; Kommandos GET, PUT, POST, DELETE
+

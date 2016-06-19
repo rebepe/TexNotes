@@ -1,0 +1,71 @@
+\newcommand{\tab}{\rule{1cm}{0pt}}
+\minisec{Cache}
+Split Cache: Trennung Instruktions-/Daten-Cache (vs Unified-Cache)
+
+Inclusive Cache: Inhalt auch in niederer Stufe enthalten (L1 $\subset$ L2)\\
+Victim Cache: nimmt Zeilen auf, wenn aus höherer Stufe entfernt;\\
+Exclusive Cache: löscht Zeilen, wenn in höhere Stufe gegeben\\
+
+Cache-Schreiben (Cache-Hit): \\
+Write-Through: aktualisiere HS sofort bei schreiben im Cache\\
+Write-Back: aktualisiere HS erst bei entfernen der Cache-Zeile\\
+
+Cache-Schreiben (Cache-Miss):\\
+Write-Allocation: Hole in Cache und schreibe dann\\
+Write-Around: Schreibe nur in der unteren Ebene \\
+
+\minisec{Cache-Zugriffszeiten}
+h:= Cache-Trefferquote:\\
+\tab Wenn L2 \underline{30\%} der Misses aus L1: \tab $h_{L2} = \underline{0,3} \cdot (1 - h_{L1})$\\
+\tab Wenn L3 \underline{40\%} der Misses aus L2: \tab $h_{L3} = \underline{0,4} \cdot (1 - h_{L1} - h_{L2})$\\
+Parallele Zugriffszeit=  $ h_{L1} \cdot t_{L1} + h_{L2} \cdot t_{L2}$\\
+Sequenzielle Zugriffszeit= $h_{L1} \cdot t_{L1} + h_{L2} \cdot (t_{L1}+t_{L2})$\\
+
+\minisec{Direkt abgebildet}
+Eine Zeile = Ein Eintrag mit: Valid-Bit(s), Tag, Daten\\
+Zerlegen der Adressen in \fbox{ Line}\fbox{ Tag}\fbox{ Word/Byte}
+
+\begin{tabular}{|l|l|}
+\hline
+|Word/Byte| &  $ 2^5 \frac{Byte}{Zeile} => 5 Bit$\\
+\hline
+|Line| & $ Cache: 2^{13} Byte, 2^5 \frac{Byte}{Zeile} => 2^{13-5} = 8 Bit $\\
+\hline
+|Tag| & 32Bit Adressen, 8 Bit Line, 5 Bit Word/Byte => (32-8-5) = 19 Bit\\
+\hline
+\end{tabular}\\
+1.Byte/Wort: Word/Byte = $(0\dots0)_2$\\
+letztes Byte: Word/Byte = $(1\dots1)_2$\\
+letztes Wort: Word/Byte = $(1\dots100)_2$
+
+\textbf{Zugriff: }
+\begin{enumerate}
+\item Suche Zeile Nummer \#Line\#
+\item prüfe valid ?
+\item prüfe Tag = Tag-Eintrag
+\end{enumerate}
+
+\minisec{Teilassoziativer n-Wege Cache}
+Bis auf Line wie Direkt Abgebildet; \\
+Eine Menge(\~ Line) enthält mehrere Cache-Zeilen (jede mit Tag-Eintrag und Valid-Bit)\\
+Berechnung:  |Line| aus Cachegröße, zeilenlänge und Anzahl Wege \\
+z.B. $ \dfrac{2^{13} Byte \text{Kapazität}}{2^5 \frac{Byte}{Zeile} \cdot 4 \text{Wege}} = 2^6 => 6 Bit $ 
+
+\newcommand{\nee}{\textbf{nicht~}}
+
+\minisec{Kohärenzprotokolle}
+Lösen das Problem Verschiedener Versionen der selben Cache-Zeile
+\minisec{Zustände:}
+\textbf{I}nvalid: Zeile \nee im Cache\\
+\textbf{S}hared: Zeile in einem oder mehreren Caches (bis MESI im HS aktuell)\\
+\textbf{M}odified: im lokalen Cache aktuelle Version, alle anderen invalid (auch HS)\\
+\textbf{E}xclusive: im lokalen Cache und HS, sonst keine Kopien\\
+\textbf{O}wned: im lokalen Cache  \nee im HS, (shared) Kopien in anderen Caches\\
+\textbf{F}orward: vgl. Shared, Letzter Lesezugriff ist Forward (spart HS-lesen)
+
+\textbf{Protokolle}\\
+SI: bei Schreiben wird invalidiert (alle Caches)\\
+MSI: bei Schreiben wird Modified, die anderen Caches invalidieren\\
+MESI: wenn einzige kopie (beim lesen in den Cache), dann Exclusive sonst Shared\\
+MOESI: wenn M und read durch anderen Cache: O \\
+MESIF: der letzte lesende Zugriff (shared) ist F

@@ -1,0 +1,129 @@
+\section*{Bus}
+Steuer-, Adress-, Datenpins, (+Interruptpins)
+
+Bus-Protokoll: Wer legt wann welches Signal an;	\\
+Bus-Master: kann Transfer einleiten, Bus-Slave: passiv (Rolle von Kommunikation abhängig)\\
+Bus-Breite: Anzahl der Leitungen \\
+
+Synchroner Bus: zentraler Takt => Zeiträume aus Graph ablesen
+
+Asynchroner Bus: Buszyklen variabler Länge\\
+=> Signaländerungen lösen Reaktionen aus
+
+Bus-Arbitrierung: zentral: Bauteil (Arbiter) teilt Buszugriffe zu. (nach Prioritäten)\\
+\includegraphics{zentralArbiter}
+dezentral: Bauteile prüfen ob sie höchste angeforderte Priorität haben
+\includegraphics{dezentralArbiter}
+
+Blocktransfer: holen von x Worten ab Adresse
+
+\section*{Mikroarchitektur}
+Minimale Taktzyklusdauer: Summe aller Verzögerungen (z.B. Register,ALU,Shifter ...)\\
+\subsection*{Mic-Architekturen}
+Befehle=1 Byte, varnum=1 Byte, offset=2 Byte (2er-Komplement)
+Kürzel: rd (read) wr (write) fetch (Befehl holen)
+\subsubsection*{Register}
+\begin{tabular}{|lr|}
+\hline
+MAR & Adressregister (Speicherzugriff)\\
+\hline
+MDR & Datenregister (Speicherzugriff)\\
+\hline
+PC & Program Counter\\
+\hline
+MBR & nächster Befehl\\
+\hline
+SP & Zeiger auf oberstes Stackelement\\
+\hline
+LV & Lokaler Variablenrahmen (Variablenadressen relativ hierzu)\\
+\hline
+CPP & Zeiger auf Konstantenbereich	\\
+\hline
+TOS & Oberstes Stapelelement\\
+\hline
+OPC & alter Program Counter (für Sprungbefehle)\\
+\hline
+H& & Halteregister für Zwischenwerte
+\end{tabular}
+\includegraphics{ALU-Operationen}
+
+\subsection*{Mic-1}
+Jede Mikroinstruktion zeigt auf die folgende, am Ende der Instruktion verweis auf Main1
+\includegraphics{Befehlstabelle_Mic-1} % TODO page48 +++++ Anzahl Zyklen
+
+
+\subsection*{Mic-2}
+Einfädeln von Main1 in die Mikroinstruktionen, vollständiger A-Bus, Instruction Fetch Unit(Unabhängiges Hochzählen von PC)\\
+Prefetch: Puffern des Instruktionsstromes in Schieberegister: Endlicher Automat (Mindestgröße= Wortgröße+längste Instruktion-1) z.B. 5 bei IJVM(4+2-1)
+
+%TODO includegraphics(Automat-IFU page 92)
+\includegraphics{Befehlstabelle_Mic-2} % TODO page98 +++++ Anzahl Zyklen
+
+\subsection*{Mic-3}
+3-Pipeline: Lesen, ALU, Schreiben (RAW-Abhängigkeiten der mikroinstruktionene beachten)
+
+\subsection*{Mic-4}
+7-stufige Pipeline
+-Instruction Fetch Unit
+-Dekodiereinheit: Zerlegt Instruktionen in Opcode/Operanden
+-Queueing: Füllt Mikroinstruktionswarteschlange aus ROM-Tabelle(aufeinanderfolgende Mikroinstruktionen)
+-Lesen
+-ALU
+-Schreiben
+-Speicherzugriff
+
+\section*{Cache}
+Split Cache: Trennung Instruktions-/Daten-Cache (vs Unified-Cache)
+
+Inclusive Cache: Inhalt auch in niederer Stufe enthalten (L1 $\subset$ L2)
+Victim Cache: nimmt Zeilen auf, wenn aus höherer Stufe entfernt;
+Exclusive Cache: löscht Zeilen, wenn in höhere Stufe gegeben
+
+Cache-Schreiben (Cache-Hit): 
+Write-Through: aktualisiere HS sofort bei schreiben im Cache
+Write-Back: aktualisiere HS erst bei entfernen der Cache-Zeile
+
+Cache-Schreiben (Cache-Miss):
+Write-Allocation: Hole in Cache und schreibe dann
+Write-Around: Keine Daten in den Cache holen.
+
+\subsection*{Direkt abgebildet}
+Eine Zeile = Ein Eintrag
+Tabellen-Eintrag: Valid-Bit, Tag, Daten
+Zerlegen der Adressen in Line, Tag, Word/Byte
+\begin{tabular}{|l|l|r|}
+\hline
+Angabe & Wert &Beispiel\\
+\hline
+Zeilenlänge & |Word/Byte| &  $ 2^5 \fraction{Byte}{Zeile} => 5 Bit$\\
+\hline
+Cachegröße, zeilenlänge & |Line| & $ Cache: 2^13 Byte, 2^5 \fraction{Byte}{Zeile} => 2^13-5 = 8 Bit $\\
+\hline
+|Adresse| |Line| |Word/Byte| & |Tag| & 32Bit, 8 Bit, 5 Bit => 19 Bit\\
+\hline
+\end{tabular}
+1.Byte: Word/Byte = $(0\dots0)_2$\\
+letztes Byte: Word/Byte = $(1\dots1)_2$\\
+letztes Wort: Word/Byte = $(1\dots100)_2$
+
+Zugriff: 
+\begin{enumerate}
+\item Suche Zeile Nummer #Line#
+\item prüfe valid ?
+\item prüfe Tag = Tag-Eintrag
+\end{enumerate}
+
+\subsection*{Teilassoziativer n-Wege Cache}
+Eine Menge(Eintrag) enthält mehrere Cache-Zeilen (jede mit Tag-Eintrag und Valid-Bit)\\
+Berechnung:  |Line| aus Cachegröße, zeilenlänge und n z.B.:$ Cache: 2^13 Byte, 2^5 \fraction{Byte}{Zeile}, 4-Wege =>  2^13-5-2 = 6 Bit $$\\
+
+\section*{Sprungvorhersage}
+Behandlung falscher Sprünge: Registerschreiben mit Schattenregister (Ergebnis bzw. alter Wert)
+\begin{itemize}
+\item Einfache Methode: sprünge Rückwärts wahrnehmen, Vorwärts nicht
+\item Dynamische Methode: History-Tabelle (analog Cache): valid, Tag, Entscheidungs-Bits
+=> Entscheidungs-Bits anhand Endlichem Automaten
+\item Statische Sprungvorhersage: Compiler gibt empfehlung
+\end{itemize}
+
+\section*{Ausführung außer der Reihe}

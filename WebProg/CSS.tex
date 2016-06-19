@@ -1,0 +1,50 @@
+\section*{CSS}
+\begin{verbatim}
+Selector [, Selector2, ..., SelectorN]
+{
+Property1: Value1; /* Comment */
+...
+PropertyN: ValueN;
+}
+\end{verbatim}
+
+\subsection*{Selectors}
+\begin{itemize}
+\item *: alle elemente
+\item p: alle <p> elemente
+\item h1, p: alle <h1> und alle <p> elemente
+\item div p: alle <p> elemente in <div> elementen
+\item .example: alle elemente mit class="example"
+\item \#id: alle elemente mit id="id"
+\item div > p: alle <p> elemente mit <div> als parent
+\item div + p: <p> elemente, die direkt auf <div> elemente folgen
+\item h1 ~ p: alle <p> elemente die auf <h1> elemente folgen 
+\item [href]: elemente mit href-Attribut
+\item [href=/url.tst]: elemente mit href="/url.tst"
+\end{itemize}
+\subsection*{pseudo-tags}
+\begin{itemize}
+\item :active geklickt
+\item :hover  mausschwebend
+\item :visited besuchter link
+\end{itemize}
+
+browser-präfixe: -ms-, -moz-, -webkit-
+
+\subsection*{Media-Query}
+\begin{verbatim}
+
+@media not|only mediatype and (expressions) {
+CSS-Code;
+}
+- Example
+@media screen and (min-width: 480px) {
+body {
+background-color: lightgreen;
+}
+}
+
+\end{verbatim}
+
+\subsection*{Box-Model}
+Margin, Border, Padding, Content(height,width)

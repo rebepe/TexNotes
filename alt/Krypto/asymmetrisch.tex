@@ -1,0 +1,114 @@
+\begin{multicols}{2}
+\minpurp{RSA}
+\minisec{Schlüsselerzeugung}
+Wähle 2 große Primzahlen p und q; n= $p \cdot q$\\
+Wähle e und berechne d = $e^{-1}$ mod $\varphi(n)$\\
+Schlüssel: öffentlich (n,e), geheim (n,d)
+
+\minisec{Verschlüsselung}
+c = $m^e (mod n)$
+\minisec{Entschlüsselung}
+m = $c^d (mod n)$ Tipp: Berechne in mod p(Exponent mod p-1) und mod q(Exponent mod q-1) ,anschließend Chin. Restesatz)
+\end{multicols}
+
+\begin{multicols}{2}
+\minisec{Signatur}
+$s = m^d$ mod n; 	Signatur:(m,$s$)\\
+
+\minisec{Verifikation}
+(m,$s$): prüfe ob $m = s^e$\\
+\end{multicols}
+
+
+
+
+\minisec{RSA- Attacken}
+\begin{itemize}
+\item für $\lvert p-q \rvert$ klein: teste x>$\sqrt{n}$ bis $x^2 -n$ ein quadrat ist; p,q = $\Rightarrow x \pm \sqrt{x^2 -n}$
+\item "Common Modulus": gleiche Nachricht m an zwei Empfänger mit gleichem n und unterschiedlichen e $\rightarrow$ dritter kann m ausrechnen;\\
+\Euklid ($e_1^{-1} mod~e_2$): $ 1= a \cdot e_1 + b \cdot e_2 \rightarrow m = c_1^a \cdot c_2^b$\\
+zudem kann der eine Empfänger den geheimen Schlüssel des anderen berechnen. 
+\item "Low-Encryption-Exponent": wird gleiche Nachricht m an 3 Empfänger mit e=3 gesendet kann $m^3~(mod~n_1n_2n_3)$ berechnet werden (Chin. Restesatz);\\
+Da $m^3 < n_1n_2n_3$ ist $m = \sqrt[3]{m^3}$
+\item Small-Message-Space Attack: nur wenige, bekannte Nachrichten (z.B. j,n) können deren c's berechnet werden $\Rightarrow$ Entschlüsseln durch Vergleich 
+\item Chosen-Ciphertext: um c zu entschlüsseln: wähle beliebiges r, lasse $r^ec$ mod n entschlüsseln :m'; m= m'$r^{-1}$\\ 
+Angreifer fängt c ab und berechnet $x=r^ec$ und lässt Empfänger x signieren; \\
+(Signatur =$x^d$) => m = $r^{-1}x^d$ 
+\item Existentiell fälschbar: ($f^e$,f) mit f beliebig wird als signierte Nachricht anerkannt.
+\item Bekannte Signatur $(m,s) $ => z.B. $(m^2,s^2)$ wird als signierte Nachricht anerkannt.
+\end{itemize}
+\minisec{ElGamal-Signatur-Attacken}
+\begin{itemize}
+\item wenn k wiederverwendet: $k \equiv (s_1 - s_2)^{-1}(m_1 - m_2)$, weiter im nächsten Punkt 
+\item wenn k bekannt dann ist $x \equiv r^{-1} (m -sk) (mod p-1)$
+\item Existentiell fälschbar: wähle b,c => $r= g^by^c$, $s= -rc^{-1} (mod p-1)$, $m = -rbc^{-1}$
+\item Bleichenbacher: wenn gültige signatur (m,r,s) bekannt kann beliebiges $m_{neu}$ signiert werden: 
+$u = m_{neu}m^{-1} (mod p-1)$,$s_{neu} = su (mod p-1)  $ \\
+$r_{neu}$ aus Chin. Restesatz: $r_{neu} \equiv r mod p$ und $r_{neu} \equiv ru (mod p-1)$
+\end{itemize}
+
+%\textcolor{white}{.\\.\\.\\}
+
+\minpurp{OAEP}
+n=k+l:
+Falltürfunktion f (z.B. RSA): n-Bit $\to$ n-Bit\\
+Pseudozufallsgenerator G: k-Bit $\to$ l-Bit\\
+Hashfunktion h: l-Bit $\to$ k-Bit
+\begin{multicols}{2}
+\minisec{Verschlüsseln von m (l-Bit)}
+\begin{enumerate}
+	\item Wähle r:Zufallszahl mit k-Bit
+	\item x = (m $\oplus$ G(r)) || (r $\oplus$ h(m $\oplus$ G(r))
+	\item c = f(x)
+\end{enumerate}
+\minisec{Entschlüsseln von c (n-Bits)}
+\begin{enumerate}
+	\item Zerlege c in a b,  a=l-Bits, b=k-Bits
+	\item r= b$\oplus$h(a)
+	\item m = a $\oplus$ G(r)
+\end{enumerate}%
+\end{multicols}%
+\minpurp{ElGamal}
+\minisec{Schlüsselerzeugung}
+Wähle Primzahl p, (ideal: p-1 mit großem Primfaktor); suche primitive Wurzel g mod p\\
+wähle zufallszahl $x \in [0,p-1]$, berechne y=$g^x mod p$\\
+privat: (p,g,x) öffentlich: (p,g,y)
+
+\begin{multicols}{2}
+\minisec{Verschlüsselung}
+wähle $k \in [1,p-2]$ \\
+ c= ($c_1,c_2$) = ($g^k, y^km(modp)$)
+\minisec{Entschlüsselung}
+$\textcolor{gray}{\underbrace{-x= p-1-x}}$\\
+m= $c_1^{-x}c_2$
+\end{multicols}
+
+\begin{multicols}{2}
+\minisec{Signatur}
+wähle $\textcolor{magenta}{k \in [1,p-2]}$, gcd(k,p-1)=1\\
+berechne r = $g^k, s=k^{-1}(m-rx)$ mod (p-1) => Signatur(m,r,s)\\
+\textcolor{magenta}{Wichtig: k muss immer neu gewählt werden, k muss gute Zufallszahl sein}
+\minisec{Verifizieren}
+Prüfe $r \in [1,p-1]$;~~~Prüfe $g^m = y^rr^s$
+\end{multicols}
+
+\minpurp{DSA (Digital Signature Algorithm)}
+\minisec{Schlüsselerzeugung}
+Wähle Primzahl p, so dass p-1 mit Primfaktor q(160Bit) \\ 
+suche g mit ord(g)=q mod p, (Also: $g^{\frac{p-1}{q}} \neq 1$)\\
+wähle zufallszahl $x \in [0,q-1]$, berechne y=$g^x mod p$\\
+privat: (p,q,g,x) öffentlich: (p,q,g,y)
+
+\begin{multicols}{2}
+\minisec{Signatur}
+Wähle $k \in [1,q-1]$\\
+Berechne r=$g^k mod p mod q$, \\
+s=$k^{-1}(m+rx)mod q$ => Signatur (m,r,s)
+
+\minisec{Verifizieren}
+Prüfe $r,s \in [1,q-1]$\\
+Berechne t= $s^{-1}$mod q\\
+Prüfe ($(g^my^r)^t$mod p) mod q = r
+\end{multicols}
+
+\clearpage

@@ -1,0 +1,60 @@
+\newcommand{\IN}{\sum_{i=1}^n}
+\newcommand{\INzwei}{\sum_{i=2}^n}
+\newcommand{\mathitem}[1]{\item$ #1 $}
+
+\minpurp{O-Notation}
+$g(n) = O(f(n)) \Leftrightarrow \left(g(n)\frac{1}{f(n)}\right)$ ist beschraenkt (z.B. Konvergent)\\
+Fester Wert => g =O(f(n)) UND f = O(g(n);
+
+\minpurp{Differenzengleichungen}
+\quarterpage{\begin{enumerate}
+\mathitem{ x_1 = b,  \\
+ x_n = a_nx_{n-1} +b_n  }
+\mathitem{\pi_n = \prod_{i=2}^na_i, \pi_1=1          }
+\mathitem{ x_n =\pi_n\left(b+ \sum_{i=2}^n\frac{b_i }{\pi_i} \right)          }
+\end{enumerate}
+}
+\quarterpage{
+Einfache Sonderfalle:          
+\begin{itemize}
+\mathitem{x_n= a_n x_{n-1} \leftrightarrow b \prod_{i=2}^n a_i          }
+\mathitem{x_n= x_{n-1} + b_n \leftrightarrow b + \sum_{i=2}^n b_i     }
+\end{itemize}
+}
+\minpurp{Nützliche Zahlen}
+\halfpage{
+\begin{itemize}
+\mathitem{ \sum_{i=1}^i \frac{1}{n} = H_n~~~~Abschatzung: ln(n+1) <= H_n <= ln(n)+1          \\
+\sum_{i=1}^nH_i = (n+1) H_n -n          }
+
+\item $\IN c= nc $ \\
+\quarterpage{ $
+\IN i = \frac{n(n+1)}{2}          \\
+\IN (2i -1) = n^2$          }
+\quarterpage{$
+\IN i^2 = \frac{n(n+1)(n+2)}{6}          \\
+\IN i^3 = \left( \frac{n(n+1)}{2} \right) ^2          $}
+
+\mathitem{\IN \lfloor log_2(i) \rfloor  = (n+1) \lfloor log_2(n) \rfloor - 2\left( 2^{\lfloor log_2(n) \rfloor} -1 \right)        }
+
+\mathitem{\sum_{i=1}^n x_i^i = \frac{x^{n+1}-1}{x-1}\\
+\sum_{i=1}^n ix_{i-1}^i = \frac{(n+1)x^n(x-1)-(x^{n+1}-1)}{(x-1)^2}}
+\end{itemize}
+}
+\minpurp{rationale Summen}
+\halfpage{
+\begin{enumerate}
+\mathitem{\IN \frac{x_i}{polynom}}
+\mathitem{Partialbruchzerlegung: \frac{x_i}{polynom} = \frac{a}{1.NST} + \frac{b}{2.NST} \dots \\ }
+Bei Mehrfachen NST $(k.NST)^{Vielfachheit}$ statt k. NST 
+\item Koeffizientenvergleich;
+\end{enumerate}}
+
+\minpurp{Logarithmen}
+\halfpage{
+\begin{itemize}
+\item $log(xy) = log(x) + log(y)$
+\item $log(x^c) = clog(x)$
+\item $e^{log(x)} = x$
+\end{itemize}}
+

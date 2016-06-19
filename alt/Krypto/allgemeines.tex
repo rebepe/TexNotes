@@ -1,0 +1,38 @@
+%\begin{multicols}{2}
+\minpurp{Ziele der Kryptographie:}
+\begin{itemize}
+	\item Vertraulichkeit (kein Abhören möglich)
+	\item Integrität der Daten (keine Veränderung von außen)
+	\item Authentizität des Partners
+\end{itemize}
+
+%\minisec{Verfahren: }
+%\begin{itemize}
+%	\item Symmetrische Verschlüsselung (z.B. AES): Beide Partner kennen den geheimen Schlüssel
+%	\item Asymmetrische Verschlüsselung (z.B. RSA): Der Empfänger kennt den geheimen Schlüssel, der Verschlüsselungsschlüssel ist %allgemein bekannt
+%\end{itemize}
+
+%\minisec{Chiffren:}
+%\begin{itemize}
+%	\item Blockchiffre: Verschlüsselung von Blöcken (feste Länge) 
+%	\item Stromchiffre: Verschlüsselung von beliebigen Bit-Ketten (z.B. One-Time-Pad)
+%\end{itemize}
+
+\minisec{Attacken:}
+\begin{itemize}
+	\item Ciphertext-only
+	\item Known-plaintext
+	\item Chosen-plaintext
+	\item Adaptively-chosen-plaintext
+	\item Chosen-, Adaptively-chosen-ciphertext
+\end{itemize}
+
+\minisec{Challenge Response (User Autentification): }
+\begin{enumerate}
+	\item B wählt Challenge c  
+	\item A signiert c 
+	\item B überprüft die Signatur
+\end{enumerate}
+%\end{multicols}
+
+\clearpage

@@ -1,0 +1,66 @@
+\begin{multicols}{2}
+\minisec{DES:}
+m = 64 Bits; 	k = 56 Bits\\
+Aus k werden 16 Rundenschlüssel $k_i$ generiert;
+
+\minisec{Verschlüsseln:}
+Führe Anfangspermutation durch;\\
+Ablauf einer Runde i:
+\begin{enumerate}
+\item Halbiere die nachricht m in x und y: $m \to (x,y)$
+\item  Aus (x,y)berechne $(x \oplus f(k_i,y),y)$
+
+ mit $f(k_i,x) = P(S(E(x)\oplus k_i))$\\
+	S= Substitution (ersetzten des Blocks)\\
+	P= Permutation (Umsortieren der Bits)
+\end{enumerate}
+
+\minisec{Entschlüsseln:}
+Führe Verschlüsseln in Umgekehrter Reihenfolge durch
+\\ \\ \\
+\minisec{AES:}
+m= 128 Bits;	k= 128, 192 oder 256 Bits		\\
+Rundenanzahl ($N_r$): Für k= 128: 10 k= 192: 12 k= 256: 14
+
+Zustandsmatrix:  4x4 Matrix
+
+\minisec{Ablauf:}
+\begin{enumerate}
+\item initialisiere Zustandsmatrix mit m
+\item bilde $Zustandsmatrix \oplus k_0$
+\item for i = 1 bis i= $N_R-1$
+\begin{enumerate}
+\item 	S-Box: $x = x^{-1} \in F_{2^8}$
+\item	Verschiebe die Zeilen der Matrix
+\item 	Durchmische die Spalten (MixColumns)
+\item 	bilde $Zustandsmatrix \oplus k_0$
+\end{enumerate}
+\item S-Box
+\item Verschiebe die Zeilen der Matrix
+\item Durchmische die Spalten (MixColumns)
+\end{enumerate}
+
+
+\end{multicols}
+
+\minisec{Modes of Operation:}		
+Ist |m|>r: 	Teile m in Blöcke und für jeden Block: (r= Blocklänge)\\
+\begin{itemize}
+\item ECB: Electronic Codebook Mode \\
+			$c_i = E(m_i)$		( Blöcke einzeln Verschlüsseln)\\
+			Fehler: nur betroffener Block
+\item CBC: Cipher-Block Chaining Mode	\\
+			Wähle zufälliges Kryptogramm $c_0$		(Startwert, wird mitgeschickt)\\
+			$c_i = E(m_i \oplus c_{i-1})$			(Verschlüssle Nachricht $\oplus$ voriges Kryptogramm\\
+			Fehler: betroffener Block und folgender
+\item CFB: Cipher Feedback Mode: \\
+			$c_i = m_i \oplus msb_r(E(x_i))$	(nimm die vordersten r Bits aus $E(x)$ und XORe)\\
+			$x_{x_i+1} = lsb_{|x|-r}(x_i) || c_i$      (shifte $c_i$ in x ein)\\
+			Fehler: Fehler in den Folgenden Blocklänge/r c's; zus. bei Bitfehlern => Bitfehler an gleicher Stelle
+\item OFB: Output Feedback Mode:\\
+			$c_i = m_i \oplus msb_r(E(x_i))$ 	(siehe CFB)\\
+			$x_{i+1} = E(x_i)		$		(x als Pseudozufallsgenerator)\\
+			Fehler: verloren = alle Folgenden, Bitfehler = Bitfehler an gleicher Stelle
+\end{itemize}
+
+\rule{\textwidth}{1pt}

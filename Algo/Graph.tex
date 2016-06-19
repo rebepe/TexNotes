@@ -1,0 +1,107 @@
+\minpurp{Graphen}
+im folgenden \textbf{k = Anzahl Knoten, e = Anzahl Kanten}
+a adjazent zu b: es existiert die kante a->b, also $(a,b) \in E$\\
+Umgebung: alle zu einem knoten adjazenten knoten
+
+q $\leq \left( \begin{array}{c}p \\ 2\end{array} \right)$ (ungerichtet) bzw. $\leq p(p-1)$(gerichtet)
+
+%vollständig: alle Kanten im Graph
+
+%dicht/dünn besetzt: Anzahl der Kanten groß/klein im Vergleich zu möglichen kanten
+
+%Teilgraph: Knoten und Kanten sind Teilmenge des Originalgraphen\\
+%aufspannender Teilgraph: alle Knoten und Teilmenge der Kanten des Originalgraphen\\
+%erzeugter Teilgraph: Teilmenge der Knoten und alle Kanten zwischen diesen
+
+Pfad: Folge von Knoten $v_0,v_1,\dots,v_n$, mit Kanten von $x_i -> x_{i+1}$\\
+%einfacher Pfad: jeder Knoten nur einmal im pfad\\
+%geschlossen: Anfang = Ende des Pfads\\
+Zyklus: geschlossener Pfad mit länge $\geq$ 3 (ungerichtet) bzw. $\geq$ 2 (gerichtet)
+
+Zusammenhangskomponente: alle gegenseitig erreichbaren knoten bilden Komponente\\
+Baum: zusammenhängend, azyklisch und e = k-1\\
+Bipartiter Graph: zwei Mengen von Knoten $V_1, V_2$, alle Kanten gehen von $V_1$ nach $V_2$\\
+perfekte Zuordnung: Bipartiter Graph, bijektive Abbildung von $V_1$ nach $V_2 \Leftrightarrow$ det(Adjazenzmatrix) = 0
+
+Adjazenzmatrix: $\left(
+\begin{matrix}
+0 & 1& 0\\
+0 & 0 & 0 \\
+0 & 0 & 0 
+\end{matrix}
+ \right)$ => Graph mit 3 Knoten, kante von 0->1\\
+Adjazenzliste: Für jeden Knoten eine Liste der adjazenten  Knoten.
+
+\minpurp{Weitensuche}
+Besuche die Nachbarn des Startknotens, dann die Nachbarn des ersten Nachbarn usw.\\
+$\Leftrightarrow$ gehe den entstehenden Baum Ebenenweise durch.
+
+$V_T: besuchte Knoten$, $V_{ad}$: zum besuch Vorgemerkte Knoten als Queue, $V_R$: Rest\\
+
+Ablauf: int[k] where; <0: in der Queue, 0: $V_R$, >0: besucht (nummer gibt die Zusammenhangskomponente an);\\
+Visit(Node k): füge k in die Queue;\\
+durchlaufe die Queue, für jeden Knoten füge alle Nachbarn aus $V_R$ in die Queue
+
+Laufzeit: bei Liste: O(e+k), bei Matrix: O($k^2$)
+
+Erweiterungen: Test auf Zyklen $\Leftrightarrow$ Test ob Nachbar schon im Baum (und nicht parent)\\
+Ermittlung des Abstands von der Wurzel des erzeugten Baums
+
+\minpurp{Tiefensuche}
+Besuche den 1.Nachbarn des Startknotens, dann den 1.Nachbarn des 1.Nachbarn usw.\\
+$\Leftrightarrow$ durchlaufe die Pfade bis zum ende.
+
+Visit: durchlaufe die Adjazenzliste, für jeden nicht besuchten nachbarn rufe Visit auf\\
+Laufzeit: O(e+k)
+
+Trägt man die Start/Ende-Zeitpunkte von Visit ein, dann ist a vorfahr von b wenn [$Start_b,End_b$] in [$Start_a,End_a$] liegt. 
+
+Erweiterung: Test auf Azyklität $\Leftrightarrow$ Kanten auf einen Vorgänger\\
+Topologisches Sortieren: Array mit Länge=|Knoten|, fülle das Array von hinten in Terminierungsreihenfolge\\
+Starke Zusammenhangskomponente: 1. Nummeriere in Terminierunsreihenfolge, 2. Konstruiere den reversen Graph (Drehe alle Kanten um) 3. starte Tiefensuche bei Knoten mit höchster Terminierungsnummer, alle Erreichbaren sind starke Zusammenhangskomponente (wiederhole letzten Schritt bei bedarf)
+
+\minpurp{Priority Queue}
+Speichert Elemente mit Prioritäten, abgreifen der Elemente in aufsteigender Reihenfolge der Elemente; methoden PQUpdate, PQRemove;
+Implementierung durch Heap und Positionsarray für die Elemente;\\
+Wird durch UpHeap/DownHeap die Position verändert muss das Positionsarray angepasst werden;\\
+\minmeth{Einfügen} füge das Element am HeapEnde ein, UpHeap \\
+\minmeth{Löschen} Nimm das erste element aus dem Heap, tausche das letzte an die 1. Stelle und DownHeap
+Laufzeit: O(log(n))
+
+\minpurp{Union-Find}
+dynamische Partitionierung einer Menge: speicherung in parent array; zusätzliches Array rank für Erweiterungen;\\
+jede Partition wird ein Wurzelbaum => Elemente in einer Menge wenn gleiche Wurzel\\
+Repräsentant ist Wurzel; Wurzeln haben parent[w] =0
+
+\minmeth{Find(e)}
+liefert den Repräsentanten (Wurzel) der Partition in der e liegt zurück\\
+durchlaufe parent-Beziehung bis zur Wurzel\\
+\textbf{Pfadkomprimierung:} anschließend: setze parent aller Knoten auf dem Pfad von e -> wurzel auf die gefundene Wurzel
+
+\minmeth{Union(x,y)}
+true wenn in selber Partition, sonst false + vereinigen diese Partitionen\\
+Zusammenfassen von i = Find(i) und j = Find(j) durch; parent[i] = Find(j)\\
+\textbf{Höhen-Balancierung:}  bei Union wird die kleinere Wurzel Kind der größeren; bei gleichheit steigt der rang der neuen Wurzel
+
+worst-case Laufzeit für n-1 unions und m finds: O((m+n)$\alpha(n));~~~ \alpha(n) \leq 4$
+
+\minpurp{Dijkstra/Prim (minimaler aufspannender Baum)}
+Start: (\{Startknoten\}, $\emptyset$)\\
+Schritt: füge die kleinste vom konstruierten Baum ausgehende Kante in den baum ein;\\
+Priorität: bei Prim: Kantengewicht, bei Dijkstra Pfad zur Wurzel\\
+Implementierung durch Priority Queue bei Adjazenzliste
+
+Laufzeit: O($n^2$) bei Matrix, O((p+q)log(p)) bei liste
+
+\minpurp{Kruskal (minimaler aufspannender Baum)}
+Start T= (V,$\emptyset$) // alle Knoten, keine Kanten\\
+Schritt: füge die kleinste Kante ein, die keinen Zyklus erzeugt\\
+Implementierung: Knoten in Union-Find; Sortiere Kanten nach gewicht, durchlaufe die Kanten und führe für jede Kante Union($v_{Start},v_{End}$) aus; wenn false füge die Kante ein;\\
+Laufzeit: O(p+qlog(q))
+
+\minpurp{Boruvka (minimaler aufspannender Baum)}
+Min-Max-Ordnung: kante ist Kleiner falls gewicht kleiner bzw. kleinster Knoten kleiner bzw. größter Knoten kleiner\\
+minimale indizente Kante: kleinste Kante an einem Knoten\\
+Start: Tree(V,$\emptyset$) Graph(V,E)\\
+Schritt: füge alle Minimal indizenten Kanten im Baum ein, Kontrahiere sie im Graph; wiederholen
+Laufzeit: O((p+q)log(p))

@@ -1,0 +1,95 @@
+\begin{multicols}{2}
+\minisec{RSA}
+\minisec{Schlüsselerzeugung}
+Wähle 2 große Primzahlen p und q; n= $p \cdot q$\\
+Wähle e und berechne d = $e^{-1}$ mod $\varphi(n)$\\
+Schlüssel: öffentlich (n,e), geheim (n,d)
+
+\minisec{Verschlüsselung}
+c = $m^e (mod n)$
+\minisec{Entschlüsselung}
+m = $c^d (mod n)$ (Hier mod p und mod q rechnen, anschließend Chin. Restesatz)
+\end{multicols}
+
+\minisec{RSA-Attacken}
+\begin{itemize}
+\item Faktorisieren von n $\hat{=}$ Berechnen von $\varphi (n)$ $\hat{=}$ Berechnen von d 
+\item für $\lvert p-q \rvert$ klein: teste x>$\sqrt{n}$; wenn $x^2 -n$ ein quadrat ist: x $\pm \sqrt{x^2 -n}$ sind die Primfaktoren
+\item "Common Modulus": wird eine Nachricht m an zwei Empfänger mit gleichem n und unterschiedlichem e gesendet kann ein dritter m ausrechnen;\\
+zudem kann der eine Empfänger den geheimen Schlüssel des anderen berechnen
+\item "Low-Encryption-Exponent": wird gleiche Nachricht m an 3 Empfänger mit e=3 gesendet kann $m^3~(mod~n_1n_2n_3)$ berechnet werden (Chin. Restesatz);
+Da $m^3 < n_1n_2n_3$ ist $m = \sqrt[3]{m}$
+\item Small-Message-Space Attack: gibt es nur wenige, bekannte Nachrichten (z.B. "ja","nein") können diese berechnet werden und durch Vergleich können abgefangene Kryptogramme entschlüsselt werden.
+\item Chosen-Ciphertext: um c zu entschlüsseln: wähle beliebiges r, lasse $r^ec mod n$ entschlüsseln => m' = rm => m= m'$r^{-1}$
+\item Angreifer fängt c ab und berechnet $x=r^ec$ und lässt Empfänger x signieren; (Signatur =$x^d$) => m = $r^{-1}x^d$ 
+\item Bleichenbachers 1-Million-Chosen-Ciphertext Attack
+\end{itemize}
+
+
+\minisec{signatur}
+Signieren von m: $s = m^d$; 	signed message: (m,$s$)\\
+Überprüfen von (m,$s$): prüfe ob $m = s^e$\\
+Existentiell fälschbar: ($f^e$,f) mit f beliebig wird als signierte Nachricht anerkannt.\\
+$(m_1,\sigma_1) $ $(m_2,\sigma_2) $ => z.B. $(m_1m_2,\sigma_1\sigma_2)$ oder $(m_1^{-1},\sigma_1^{-1})$ werden als signierte Nachricht anerkannt.\\
+
+\minisec{OAEP}
+n=k+l:
+Falltürfunktion f (z.B. RSA): n-Bit $\to$ n-Bit\\
+Pseudozufallsgenerator G: k-Bit $\to$ l-Bit\\
+Hashfunktion h: l-Bit $\to$ k-Bit\\
+\begin{multicols}{2}
+\minisec{Verschlüsseln von m (l-Bit)}
+\begin{enumerate}
+	\item Wähle r:Zufallszahl mit k-Bit
+	\item x = (m $\oplus$ G(r)) || (r $\oplus$ h(m $\oplus$ G(r))
+	\item c = f(x)
+\end{enumerate}
+
+\minisec{Entschlüsseln von c (n-Bits)}
+\begin{enumerate}
+	\item Zerlege c in a b,  a=l-Bits, b=k-Bits
+	\item r= b$\oplus$h(a)
+	\item m = a $\oplus$ G(r)
+\end{enumerate}
+\end{multicols}
+
+\minisec{ElGamal}
+\minisec{Schlüsselerzeugung}
+Wähle Primzahl p, so dass p-1 mit großem Primfaktor und suche primitive Wurzel g mod p\\
+wähle zufallszahl $x \in [0,p-1]$, berechne y=$g^x mod p$\\
+privat: (p,g,x) öffentlich: (p,g,y)
+
+\begin{multicols}{2}
+\minisec{Verschlüsselung}
+wähle $k \in [1,p-2]$ => c= ($c_1,c_2$) = ($g^k, y^km(modp)$)
+\minisec{Entschlüsselung}
+-x= p-1-x\\
+m= $c_1^{-x}c_2$
+\end{multicols}
+
+\begin{multicols}{2}
+\minisec{Signatur}
+wähle $k \in [1,p-2]$, gcd(k,p-1)=1\\
+berechne r = $g^k, s=k^{-1}(m-rx)$ mod (p-1) => Signatur(m,r,s)\\
+Wichtig: k muss immer neu gewählt werden, k muss gute Zufallszahl sein
+\minisec{Verifizieren}
+Prüfe $r \in [1,p-1]$;~~~Prüfe $g^m = y^rr^s$
+\end{multicols}
+
+\minisec{DSA (Digital Signature Algorithm)}
+\minisec{Schlüsselerzeugung}
+Wähle Primzahl p, so dass p-1 mit Primfaktor q(160Bit) und suche g mit ord(g)=q mod p, (Also: $g^{\frac{p-1}{q}} \neq 1$)\\
+wähle zufallszahl $x \in [0,q-1]$, berechne y=$g^x mod p$\\
+privat: (p,q,g,x) öffentlich: (p,q,g,y)
+
+\begin{multicols}{2}
+\minisec{Signatur}
+Wähle $k \in [1,q-1]$\\
+Berechne r=$g^k mod p mod q$, \\
+s=$k^{-1}(m+rx)mod q$ => Signatur (m,r,s)
+
+\minisec{Verifizieren}
+Prüfe $r,s \in [1,q-1]$\\
+Berechne t= $s^{-1}$mod q\\
+Prüfe ($(g^my^r)^t$mod p) mod q = r
+\end{multicols}

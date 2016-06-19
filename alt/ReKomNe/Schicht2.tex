@@ -1,0 +1,43 @@
+\Minisec{TCP/IP-Prüfsumme: }
+\begin{minipage}{0.5\textwidth}
+\begin{enumerate}
+\item Aufsummieren aller 16-Bit-Blöcken in Einerkomplementdarstellung \\
+\textbf{Einerrücklauf}(Wert / 65536)\\
+Tatsächlicher Wert: mod 65536;\rule{2cm}{0pt} 65535 = 0; 
+\item invertieren aller Prüfsummenbits (Erg = $65535 - $Wert)
+\end{enumerate}
+\end{minipage}
+=> auf Empfängerseite muss $00 \dots 0 $ herauskommen\\
+ 
+
+\newcommand{\Rx}[1]{\textcolor{blue}{#1}} 
+\newcommand{\xx}[1]{\textcolor{cyan}{#1}}
+\newcommand{\Ix}[1]{\textcolor{red}{#1}}
+\newcommand{\Gx}[1]{\textcolor{brown}{#1}}
+ 
+\Minisec{CRC (Cyclic Redundancy Check)}
+\begin{minipage}{0.25\textwidth}
+Bitkette $\Leftrightarrow$ Polynom, \\z.B. 1011 $\Leftrightarrow$ $x^3 + x ^1 + 1$\\
+$+=-= $Xor\\\\
+\Ix{I(x)} = Nutzdaten  \subtil{Informationspolynom}\\
+\Gx{G(x)} = vorgegeben \subtil{Generatorpolynom }\\
+\xx{k} = grad von G(x)\\
+C(x) = Frame \subtil{Codepolynom}  \\\\
+Berechnen: \Rx{R(x)} = \Ix{I(x)} $\cdot$ $\xx{x^k}$ mod \Gx{G(x)}; \rule{1cm}{0cm} \\
+C(x) = \Ix{I(x)} $ \cdot \xx{x^k}$ +  \Rx{R(x)};\\
+=> Empfänger prüft, ob C(x)/G(x) = 0;
+\end{minipage}
+\texttt{
+\begin{minipage}{0.25\textwidth}
+\newcommand{\divisor}{\underline{1011}\\}
+\Ix{I= 100010,} \Gx{G(x)=$x^3 + x ^1 + 1 \widehat{=}1011$}\\
+\textcolor{white}{|}\Ix{100010}\xx{000}:\Gx{1011}=101100\\
+\textcolor{white}{|}\divisor
+\textcolor{white}{|}001110\\
+\textcolor{white}{|}~~\divisor
+\textcolor{white}{|}~~01010\\
+\textcolor{white}{|}~~~\divisor
+\textcolor{white}{|}~~~000\textcolor{blue}{100 <= R(x)}\\
+=> C(x) = \Ix{100010}\Rx{100}
+\end{minipage}
+}

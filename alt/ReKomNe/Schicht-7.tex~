@@ -1,0 +1,17 @@
+\section*{Anwendungskommunikation}
+Request-Response-Paradigma: Anfrage->Antwort\\
+Textbasierte-Protokolle: (z.B. smtp,http), Vorteile: debuggen, leicht zu Dokumentieren(RFC)
+
+\subsection*{http}
+Form: Kommandozeile, Headerzeilen, Leerzeile, [Bodyzeilen] (Bodylänge im Header oder mit End-Tags)
+
+Kommandozeile: Methode Anfrage-URI Version\\
+GET, PUT, POST, DELETE, ...
+
+Persistente Verbindung: Nutzen einer TCP-Verbindung für mehrere HTTP-REQUESTS (erhalt Flusskontrolle, kein Handshake)
+Pipelining: mehrere Anfragen über eine Verbindung
+Long Polling: Server antwortet nicht sofort, sondern nur bei Ereignis oder Timeout (asynchronität)
+zustandslos => keine Sitzungen (Benutzeridentifikation)
+=> Sitzungsid in Cookie oder URL
+
+\subsubsection*{Web-Sockets}

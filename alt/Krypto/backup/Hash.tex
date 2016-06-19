@@ -1,0 +1,41 @@
+\minisec{Hash}
+\{0,1\}* -> $\{0,1\}^n$ // Beliebige Bitketten -> Bitketten fester Länge
+Eigenschaften: \begin{enumerate}
+\item One-way function: Nicht umkehrbar
+\item second pre-image resistance: Nicht möglich auf gegebene Nachricht\& Hashwert andere Nachricht zu finden.
+\item collision resistance: Nicht möglich zwei Nachrichten mit gleichem Hash zu finden => stärkste Bedingung
+\end{enumerate}
+
+\minisec{Merkle-Damgard}
+Kollisionsresistente Kompressionsfunktion:${0,1}^{n+r} -> {0,1}^n$	\\
+
+Padding: hänge 10$\dots$0 an, so dass |m|= vielfaches von r;
+
+Hashen: 
+\begin{enumerate}
+\item teile m in Blöcke der Länge r
+\item füge Block der Länge r in dem die ursprüngliche Länge von m steht
+\item $v_0$= (zufälliger) Startwert
+\item $v_i$= f($v_{i-i}||m_i$)
+\item Hashwert ist letztes v
+\end{enumerate}
+
+\minisec{Birthday-Attack}
+Angriff gegen Kollisionsresitenz: Cachen von Hashwerten und testen auf Kollision
+
+\minisec{Kompression aus Blockchiffren}
+$f_1: (x||y) -> E(y,x)$ // Spalte Wert in Key und Message und Verschlüssle => Gehashter wert 
+
+\minisec{MAC}
+\minisec{HMAC}
+HMAC(k,m) = h( (k$\oplus$opad)||h((k$\oplus$ipad)||m) )\\
+h: Hash nach Merkle-Damguard mit Kompressionsrate r (in Bytes);\\
+k: Schlüssel mit Padding auf Länge r, ipad: r mal 0x36, opad: r mal 0x5C
+
+\minisec{CBC-MAC}
+Aus Blockchiffre:$c_0=IV$, $c_i= E(k,m_i\oplus c_{i-1}$\\
+=> letztes c ist MAC
+
+\minisec{Pseudozufallsgenerator PRF}
+PRF(secret,seed)= HMAC(secret,A(1)||seed) || HMAC(secret,A(2)||seed) ...\\
+A(0)= seed, A(i) = HMAC(secret,A(i-1));

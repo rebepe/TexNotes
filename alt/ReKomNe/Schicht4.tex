@@ -1,0 +1,34 @@
+\Minisec{TCP}
+Nagle: Sende wenn MTU erreicht oder alle bisher gesendeten Segmente bestätigt
+
+\newcommand{\ack}{\textcolor{green!50!black!90!}{\textbf{Acknowledge}}}
+\newcommand{\advert}{\textcolor{blue}{\textbf{Advertised Window}}}
+
+\minisec{Sliding Window}
+Empfänger antwortet mit: ( \ack ,\advert) \\
+\ack: nextByteExpected -1  \\
+\advert = maxRecieveBuffer - (lastByteRecieved - lastByteRead)
+
+Sender kann Senden:\\
+Effective Window = \advert - (LastByteSent - LastByteAcked)\\
+Bei Effective Window = 0: Sender sendet periodisch 1 Byte (bis Effective Window steigt)
+
+\minisec{Timeouts}
+$RTT_{Last}$: gemessener RTT\\
+$RTT = a \cdot RTT + (1-a) \cdot RTT_{Last}$\\
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+\item Timeout = 2* RTT
+\item Deviation = Deviation $\cdot$ a + $|RTT_{Last} -RTT| \cdot (1-a)$\\
+Timeout = RTT + 4$\cdot$Deviation
+\end{itemize}
+\end{minipage}
+
+\minisec{Überlastkontrolle}
+\minisec{Additive-Increase/Multiplicative-Decrease:}
+beginne mit Congestionwindow = 1; bei ACK ++ ; bei Timeout /2;   \\
+\minisec{Slow Start: }
+bei Start, nachdem Datenrate auf 0 gefallen: erhöhe CongestionWindow durch *2
+
+
+

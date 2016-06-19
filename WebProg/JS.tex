@@ -1,0 +1,158 @@
+\section*{JavaScript}
+[1,2,3] // Array initializer \\
+\{x:1, y:2\} // Object initializer \\
+undefined, null, infinity,NaN sind besondere Zustände
+
+vergleiche mit =~\!=~\!= oder !~\!=~\!= \\
+\underline{hoisting:} variablendeklarationen werden an Funktionsanfang gezogen
+
+" use strict"; // Aktiviert Striken Modus, z.B. für Vergleiche ohne Konvertierung \\
+es gibt nur referenz-Typen \\
+Objektvergleiche vergleichen die Referenz, Primitive Typen(z.B. Strings) werden Wertverglichen
+
+Objekte sind sammlungen von Properties (name / value pairs) [x:1, y:2]
+
+Foreach schleife: for (var p in o){ //sth. }
+
+global scope and function scope, kein Block-scope\\ 
+Zugriff auf aufrufkontext: this  \\
+innere Funktionen können auf umgebende Properties Zugreifen (außer this); \\
+closure: funktionen merken sich umgebungsvariablen in einer scope chain
+z.B. 
+\begin{verbatim}
+function outer () {
+   var x = 2;
+   return function (){ return 2*x;};
+}
+outer()() // gibt 4 zurück;
+\end{verbatim}
+
+indirekte funktionsaufrufe: apply(context, [args]) bzw. call(context, arg1, arg2, ...)
+ 
+ Objektorientierung: durch Prototypen \\
+ MyVec.prototype.addTo = function (v) \{ //sth; \}\\
+ Konstruktor: var x = new MyClass();
+ 
+\begin{verbatim}
+Vererben:
+ 	function Kind(x) {
+ 		Eltern.apply(this, x);
+ }
+ 
+Kapselung: 
+function klasse(x) {		// Constructor
+   var _x = x;
+   this.getX = function() { return _x; };
+}
+
+\end{verbatim}
+
+
+\subsection*{APIs}
+APIs: Javascript core(Object,Array...), Browser Object Model(location,XMLHttpRequest,...), DOM(document,...)
+
+\subsubsection*{BOM}
+Interaktion mit dem Browser,kein standard aber in allen Browsern ähnlich 
+
+window ist der Tab, bei browsern = globales Objekt, jeder Tab eigener Interpreter
+
+Objekte
+\begin{itemize}
+\item document Represents the HTML document as DOM object
+\item screen Contains information about the users screen 
+(width, height, ...)
+\item location Contains the current pages address (URL) and can be used to redirect the browser to a new page
+\item history Very restricted access to the browser history
+\item navigator Contains information about the browser
+\item innerWidth, innerHeight Width / height of the content area
+\item outerWidth, outerHeight Width / height including scrollbars, etc.
+
+\end{itemize}
+
+Methoden
+\begin{itemize}
+\item alert(msg): Displays alert-box with a message and an OK button
+\item atob()/btoa():Base-64 encoding / decoding of strings
+\item open(url)  Opens URL in a new window (Popup!) 
+\item close() Closes the current window
+\item setInterval(function,milliseconds,parameters) / clearInterval()
+Calls a function (or evaluates an expression) at specific time intervals 
+\item setTimeout() / clearTimeout() Calls a function (or evaluates an expression)after a specified number of milliseconds
+\end{itemize}
+
+Navigator: nicht standardisiert, weit unterstützt (appName, geolocation ...);
+
+location: Bearbeiten der URL; 
+Properties: 
+\begin{itemize}
+\item hash: teil nach \#
+\item hostname
+\item href: ganze URL
+\item pathname:
+\item port
+\end{itemize}
+
+\subsubsection*{DOM}
+Erlaubt Manipulation des Dokumentes zur laufzeit;\\
+Darstellung der Elemente durch Nodes (Inhalt in TextNode)\\
+Nodes sind in Baumstruktur gegliedert, incl. Geschwisterliste
+
+zugriff:
+getElementById (): liefert HTML-Element\\
+getElementsByClassName(), getElementsByName(): liefern liste von HTML-Elementen
+
+Attribute auf HTML-Elementen:\\
+innerHTML, setAttribute(name, value), style.property;\\
+nodeName /*Tag*/, nodeValue /*Text in TextNodes*/
+
+Events: \\
+Im HTML: <h1 onclick="this.innerHTML='Foo!'">Click me!</h1>\\
+Im JS: element.addEventListener(event, function);    (event ist ohne " on")
+
+Event-weitergabe (Defaultverhalten) stoppen:  
+event.preventDefault(); event.stopPropagation();
+
+Baum-navigation: parentNode, childNodes[idx], firstChild,lastChild,
+nextSibling, previousSibling
+
+Elemente Einfügen
+\begin{verbatim}
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+var element = document.getElementById("div1");
+element.appendChild(para); // analog dazu insertBefore(), replaceChild(), removeChild()
+\end{verbatim}
+
+
+\subsubsection*{Examples}
+Drag\& Drop
+\begin{verbatim}
+<script>
+function allowDrop(ev) {
+	ev.preventDefault();
+}
+function drag(ev) {
+	ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("text");
+	ev.target.appendChild(document.getElementById(data));
+}
+</script>
+...
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<p id="drag1" draggable="true" ondragstart="drag(event)"/>
+\end{verbatim}
+Local Storage
+\begin{verbatim}
+if (typeof(Storage) !== "undefined") {
+// Store
+localStorage.setItem("lastname", "Smith");
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+\end{verbatim}

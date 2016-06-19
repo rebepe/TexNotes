@@ -1,0 +1,42 @@
+\documentclass[parskip=never,landscape,twocolumn]{scrreprt}
+\parindent=0pt
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{xcolor}
+
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{a4paper, top=7mm, left=10mm, right=10mm, bottom=5mm, includefoot}
+
+\usepackage{fancybox}
+
+%enumnummerierung ebene2
+\renewcommand{\labelenumii}{\arabic{enumii}}
+
+%itemizeabstände
+\usepackage{xpatch}
+\xpatchcmd{\itemize}
+  {\def\makelabel}
+  {	\setlength{\itemsep}{0mm}
+ 	\setlength{\parskip}{0pt}
+  	\setlength{\parsep}{0pt}  
+  \def\makelabel}
+  {}
+  {}
+  
+  \xpatchcmd{\enumerate}
+  {\def\makelabel}
+  {	\setlength{\itemsep}{0mm}
+ 	\setlength{\parskip}{0pt}
+  	\setlength{\parsep}{0pt}  
+  \def\makelabel}
+  {}
+  {}

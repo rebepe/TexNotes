@@ -1,0 +1,86 @@
+
+
+\minisec{Eingabegeräte}
+\oitem{Natural User Interface:} Eingabegerät nuss nicht Erlernt werden\\
+\oitem{Intuitive User Interface:} Erlernen während Bedienung\\
+\oitem{Räumliche UI:} Präsentation und Interaktion in 3D => 2d u.U. problematisch\\
+\oitem{Haptic User Interface:} Bewegungen werden Erkannt, haptische Rückmeldungen (Vibration, drehung)\\
+\oitem{Brain Computer Interface:} Steuerung durch Gehirnströme
+
+\oitem{Gestenbasiert:} abstraktion eines Eingabegerätes ( Touchscreen, Kamera,...); \\
+Vorteile: Vielseitig Einsetzbar, komplexe Befehle möglich \\
+Nachteile: schlechte Erkennungsrate, Performancelastig\\
+Erkennung (Rubine): bilde Eigenschaftsvektor (aus z.B. Diagonale der Begrenzungsbox, Winkel der Diagonale, Dauer der Geste, ... ) und suche passendste Geste
+
+\oitem{Tastatur:} Eingabe von Symbolen oder Kommandos (Hotkeys), Anwendungsspezifisch oder -unabhängig, Taktil oder virtuell, evtl. konfigurierbares Layout\\ 
+\oitem{Zeigegeräte:} \\
+Direkt: kaum Lernaufwand, Verdeckte Ausgabe, Ermüdung, Präzisionsprobleme 
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+\item Touchscreen: evtl. mit Druckstärke, Multitouch
+\item Stifteingabe: handschriftgeeignet (OCR), Präziser als Finger
+\end{itemize}
+\end{minipage}
+
+
+Indirekt: Lernaufwand, Präzision, billiger, absolut\&relative Positionierung möglich 
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+\item Maus: ermüdungsarm, hohe Auflösung
+\item Trackball: keine Fläche benötigt, fest verbaut (robust im öffentichen Raum), drag\&drop schwieriger
+\item Touchpad: kleine Fläche, fest verbaut (anschluss von Peripherie schwer möglich ) %z.B. Notebook im Zug)
+\item Joystick: geeignet für Steuerung und Verfolgung von Objekten
+\item Trackpoint: ungenau, oft direkt in Tastatur (kombination, direkter zugriff)
+\item 3D-Interaktion: virtuelle Räume, CAD; Tischgebunden oder frei bewegbar (Datenhandschuh)
+\end{itemize}
+\end{minipage}
+
+\minisec{Klassifikation}
+\minisec{Mackinlay}
+T= (M,In,S,R,Out,W) \\
+M: Operation, z.B. Rotation um X, Verschieben in Y, ...\\
+In: Eingabebereich\\
+S: Status des Geräts\\
+R: Funktion von In nach Out\\
+Out: Ausgabebereich\\
+W: innere Funktionsbeschreibung (default: {})
+
+z.B. Lautstärkeregler = (Rot z,$[0^\circ,270^\circ],0^\circ,id,[0^\circ,270^\circ],\{\}$)\\
+Radioknopf = (Rot z,$[0^\circ,270^\circ],0^\circ,id,\{0^\circ,120^\circ,140^\circ\}$,\{\}) (vgl. oben, Rastet ein)
+
+\minisecno{Krauß} \begin{itemize}
+\item Nicht koordinatengebend: z.B. Taste, Geste ...
+\item Koordinatengebend
+\begin{enumerate}
+\item Dimensionalität: 1-dimensional (Schieberegler, Drehknopf), 2-dimensional (Maus), mehrdimensional (Datenhandschuh)
+\item direkt ( Touchscreen) VS indirekt(Maus)
+\end{enumerate}
+\end{itemize}
+
+
+\oitem{Absolute Positionierung:} 1:1 Umrechnung der aktuellen Position\\
+\oitem{Relative Positionierung:} Umrechnung der Veränderungen in Zeigerbewegungen 
+
+\minisecno{Control-Display-Gain:} durch Bewegung des Zeigegerätes erzeugter Effekt\\
+Gain klein: Fein-, Gain hoch: Grobpositionierung $\Rightarrow$ Lösung: Dynamische Anpassung
+
+\minisecno{Konflikte:} Genauigkeit vs Abtastrate, Verzögerung vs Abtastrate      \\
+\oitem{Abtastrate:} Erfassung des Zustandes in diskreten Zeitabständen   \\
+\oitem{Verzögerung:} Zeit zwischen Abtasten und Änderung Bildschirm      \\
+\oitem{Genauigkeit:} Abweichung zwischen gemessener und tatsächlicher Position   
+
+
+
+\minisec{Mehrere Eingabegeräte: }
+\oitem{Redundant:}  verschiedene (alternative) Eingabegeräte für gleiche Eingabe\\
+\oitem{Komplementär:} abhängige Geräte: kopplung der Geräteinputs zu einer Eingabe \\
+\tab unabhängige Geräte:  Eingaben steuern verschiedene Anwendungsteile
+
+\minisec{Ausgabegeräte}
+\oitem{stereoskopische Displays:} verschiedene Bilder für rechtes/linkes Auge;\\
+ u.U. Hilfsmittel(Brille) nötig, sonst Autostereoskopie, Nicht für alle geeignet
+
+\oitem{Holographische Displays:} echtes 3d Display, z.B. Laser
+
+\oitem{Taktile Displays:} Fühlbares Interface, z.B. Reibungsbeeinflussung bei Touch
+

@@ -1,0 +1,117 @@
+\minpurp{Fast Modular Exponentiation ($x^e$ mod n)}
+Berechne Binardarstellung des Exponenten e;  \\
+Berechne für jede Binarstelle des Exponenten ab der 2.:\\
+$( (x^2 \cdot x^{e_{k-2}})^2 \dots )^2 \cdot x^{e_0}$ mod n\\
+
+Bsp: $5^{10}$ mod 13\\
+\newcommand{\I}{\textcolor{red}{1}}
+\newcommand{\zero}{\textcolor{blue}{0}}
+10 = $(\I\zero\I\zero)_2$		\\
+$5^{10} mod 13 = (\textcolor{red}{5}^2 \cdot \textcolor{blue}{1})^2 \cdot \textcolor{red}{5})^2 \cdot \textcolor{blue}{1} = (1^2  \cdot 5)^2  = 12$
+
+
+
+
+\minisec{\Euklid}
+\newcommand{\rone}{\textcolor{blue}{r_1}}
+\newcommand{\rto}{\textcolor{violet}{r_2}}
+\newcommand{\rk}{\textcolor{red}{r_k}}
+\begin {tabular}{ll}
+$\rone^{-1} mod r_0 $ & $ 19^{-1} mod 100$ \\
+\hline
+$r_0 - q_1 * \rone = \rto		$	&	$	100 - 5 * 19 = 5$\\
+$\rone - q_2 * \rto = r_3		$	&	$	\textcolor{darkorange}{ \Ovalbox{19 - 3 * 5}} = 4	$\\
+\dots							&  	\textcolor{darkgreen}{\Ovalbox{$	5 - 1*4	= 1$}} \\
+$r_{k-1} - q_k * \rk = \underline{0}\implies ggt(\rone,\rto)= \rk	$ &	  $4 - 4*1 = \underline{0} \implies ggt(100,19)=1$   \\
+\end{tabular}
+\minisec{Ausrechnen des Inversen: (wenn ggt=1)}
+\begin {tabular}{ll}
+$ggt = r_{k-2} - q_{k-1} * ~~~~~~r_{k-1}				$		&	\textcolor{darkgreen}{\Ovalbox{$1= 5-1* \textcolor{darkorange}{ \Ovalbox{4}}$}}\\
+$= r_{k-2} - q_{k-1}* \overbrace{( r_{k-3} - q_{k-2} * r_{k-2})}$	&	$ = 5-1* \textcolor{darkorange}{ \Ovalbox{(19 - 3 * 5)}}= - 19 +4 * 5$\\
+			\dots								&		$ = -19 + 4* (100 - 5 * 19) = 4*100 -21 * 19 $\\
+$	= a* r_0 +b * r_1  \rightarrow r_1^{-1} = b$ &$ 	19^{-1} = -21							$\\
+\end{tabular}
+
+
+ 
+
+\minpurp{Phi}
+Primfaktorzerlegung!\\
+Einfache Primfaktoren $p_i$: $\varphi(n) = (p_1-1)(p_2-1)\dots $ z.B:  $\varphi(15) = (3-1)(5-1)=8$\\
+Doppelte Primfaktoren: $p_i$: $\varphi(n) = n(\frac{p_1-1}{p_1})(\frac{p_2-1}{p_2})$ z.B: $\varphi(75) = 75*(\frac{2}{3})(\frac{4}{5}) = 40$\\
+$a^{\varphi(n)}\equiv 1 (mod n)$
+
+
+
+
+\minpurp{Primitive Wurzel}
+Wähle Zufallszahl g und Teste für jeden Primfaktor q von p-1: \\
+$g^{\frac{p-1}{q}} \neq 1 mod p$ => Primitive Wurzel\\
+Bsp: p = 31, p-1= 2*3*5\\
+Teste g=2:  $2^6 =2 mod 31$, $2^{15} =1 mod 31$ => keine Primitive Wurzel
+
+\minisec{Ordnung}
+ord(x): kleinstes n mit $x^n=1$\\
+ord(x) ist immer Produkt aus Primfaktoren von Gruppenordnung (p-1)\\
+Anzahl Primitiver Wurzeln: $\varphi(p-1)$\\
+
+
+\minpurp{Primzahltest (Miller-Rabin)}
+\begin{enumerate}
+\item Zerlege p-1 = $2^k \cdot t$ // t ungerade
+\item Für Zufallszahl a // Fehlerwahrscheinlichkeit: $1/4^{Anzahl Zufallszahlen}$
+\item berechne $a^t$ mod p; wenn = $\pm$ 1  => prim (kein Zeuge)
+\item quadriere nun k-1 mal (mod p), nach jedem Quadrieren prüfen, ob =-1 => prim
+\end{enumerate}
+
+
+
+\newcommand{\Neins}{\textcolor{red}{13}}  \newcommand{\Nzwei}{\textcolor{blue}{19}}
+\newcommand{\Mod}{\textcolor{darkgreen}{247} }
+\newcommand{\colorubrace}[2]{ \textcolor{#1}{\underbrace{\textcolor{black}{#2} }}}
+\newcommand{\coloroval}[2]{ \textcolor{#1}{\Ovalbox{\textcolor{black}{#2} }}}
+
+
+\minpurp{Chinesischer Restesatz}
+$x \equiv a_1$ mod $n_1 \dots  x \equiv a_k$ mod $ n_k$
+\begin{enumerate}
+\item Berechne M = $n_1 \cdot n_2 \dots n_k$
+\item Berechne $t_i = m / n_i$ für alle $n_i$
+\item Berechne $d_i = t_i^{-1} mod~n_i$ für alle $n_i$  \rule{1cm}{0cm} \Euklid
+\item Ergebnis = $ a_1 \cdot d_1 \cdot t_1 + \dots + a_k \cdot t_k \cdot d_k  (mod M)$
+\end{enumerate}
+\begin{tabbing}
+Bsp:\= $x \equiv 6 (mod \Neins )$  \rule{1.5cm}{0cm} \=  $x \equiv 16 (mod \Nzwei) $ \rule{1.5cm}{0cm} $\implies$ M= \Neins $\cdot$ \Nzwei = \Mod \\
+ \>$t_1 =\frac{\Mod}{\Neins} =19 $ \> $ t_2 = \frac{\Mod}{\Nzwei} =13 $ \\
+\>$\colorubrace{red!50!black!50}{d_1 = 19^{-1} \equiv  11 (mod \Neins) }$ \> $\colorubrace{blue!50!black!50}{ d_2 = 13^{-1} \equiv 3 ( mod \Nzwei)}$ \rule{1cm}{0cm} \Euklid \\
+\> x =~~~~~ \coloroval{red!50!black!50}{$6 \cdot 19 \cdot 11$ }  ~~~   + \> ~~~~~~\coloroval{blue!50!black!50}{$16 \cdot 13 \cdot 3$} $\equiv 149 (mod \Mod) $  \\
+\end{tabbing}
+
+
+
+
+
+
+\minpurp{Rechnen im Polynomring}
+Bitkette $\Leftrightarrow$ Polynom, z.B. 1011 $\Leftrightarrow$ $x^3 + x ^1 + 1$\\
+$+=-= \oplus$  \textcolor{lightgray}{Wenn Koeffizienten \textbf{(mod 2)}}\\
+
+\texttt{ %monospace
+\newcommand{\divisor}{\underline{1011}\\}
+Bsp: 110100 mod $x^3 + x ^1 + 1 \widehat{=}1011$\\
+\textcolor{white}{|}\textcolor{orange}{110100}:\textcolor{blue}{1011}=1111\\
+\textcolor{white}{|}\divisor
+\textcolor{white}{|}01100\\
+\textcolor{white}{|}~\divisor
+\textcolor{white}{|}~01110\\
+\textcolor{white}{|}~~\divisor
+\textcolor{white}{|}~~0\textcolor{red}{101}   => \textcolor{orange}{110100} $\equiv$ \textcolor{red}{101} mod \textcolor{blue}{1011}
+}
+
+
+
+
+
+
+
+\clearpage

@@ -1,0 +1,46 @@
+\input{MerkzettelPraeambel(Kopie).tex}
+
+\renewcommand{\minisec}[1]{\textbf{#1}\\}
+\newcommand{\Minisec}[1]{\textcolor{purple}{\minisec{#1}}}
+\newcommand{\tabsec}[1]{\textcolor{purple}{\textbf{#1}}}
+
+
+\newcommand{\includetablegraphics}[2]{
+\begin{minipage}[t]{#1}
+\includegraphics[width=\textwidth]{#2}
+\end{minipage}
+}
+
+
+
+\newcommand{\dito}{$ \leadsto  $ ~}
+
+\newcommand{\subtil}[1]{\textcolor{white!50!black!50}{#1}}
+
+\begin{document}
+	\input{OSITabelle.tex}
+	\input{Schicht2.tex}
+	\input{Schicht1.tex}
+
+
+\clearpage	
+	
+	\input{Schicht3.tex}
+
+%\clearpage	
+	
+	\input{Schicht4.tex}
+
+\input{DNS.tex}	
+	
+
+\clearpage	
+	
+%	\input{Schicht-7.tex}
+
+	\input{P2P.tex}
+	
+	\input{Sicherheit.tex}
+	\input{Schicht7kurz.tex}
+	
+\end{document}

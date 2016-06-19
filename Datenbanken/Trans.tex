@@ -1,0 +1,148 @@
+\section*{Transaktionen}
+SQL: BEGIN, COMMIT, ROLLBACK;
+
+Transaktionsabbrüche durch integritätsverletzungen, Konsistenzbedinungen, Speicher voll, Verbindungsabbruch, Systemausfall
+
+Nebenläufigkeit:
+\begin{enumerate}
+\item Lost-Update: Überschriebene Änderungen
+\item Dirty-Read: Lesen eines nicht commiteten Wertes
+\item Unrepeatable Read: durch commit anderer Transaktion liefert die selbe anfrage nicht das gleiche Ergebnis
+\item Phantom Read: Einfügen von Datensätzen durch andere Transaktion
+\end{enumerate}
+
+Serialisierbar: Gleiches Ergebnis wie bei hintereinanderausführung der Transaktion
+$\Leftrightarrow$ kein Zyklus im Abhängigkeitsgraph
+z.B. $R_1(a), W_2(a), R_3(a), W_1(a)$
+
+\tikzset{ LabelStyle/.style = { rectangle, rounded corners, draw, minimum width = 2em, font =fseries }, VertexStyle/.append style = { inner sep=5pt, font = \Large\bfseries}, EdgeStyle/.append style = {->,bend left =20}}
+
+\begin{tikzpicture}
+\tikzset{EdgeStyle/.append style = {->,bend left =20,black}}
+\node(1){1}; \node(2)[right of=1]{2}; \node(3)[below left of=2]{3};
+\Edge(1)(2); \Edge(2)(3); \Edge (3)(1); \Edge(3)(2);
+\end{tikzpicture}
+
+Sperren: Shared-Locks (s) beim Lesen, Exklusiv-Locks (X) beim Schreiben
+
+Zwei-Phasen-Protokoll: Sperren werden erst am Transaktionsende (vor commit) wieder freigegeben
+
+\begin{tabular}{|c|c|}
+\hline
+T1 & T2 \\
+\hline
+Slock(a), read(a); & \\
+& Slock(a), read(a);\\
+Wait(Xlock(a)) & \\
+& Wait(Xlock(a))\\
+& DEADLOCK => Rollback;\\
+write(a)&\\
+unlock(a);&\\
+commit;&\\
+\hline
+\end{tabular}
+
+
+
+
+SQL-Isolationssteuerung: SET TRANSACTION ISOLATION LEVEL \{ READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE \}
+
+Multi-Version-Concurrency-Control: Snapshots: keine Lesesperren, änderungen erzeugen kopie
+
+\section*{Fehlerbehandlung}
+Lokaler Fehler in Transaktion: Rollback der Transaktion\\
+Verlust des Hauptspeichers:Durch Logging der Aktionen, nach Crash Undo nicht abgeschlossener Aktionen, Redo abgeschlossener.\\
+Verlust des externen Speichers: Backup einspielen, inkrementell log-einspielen
+
+Write-Ahead-Logging: festhalten aller änderungen vor commit, bei rollback wiederherstellung aus transaktionslog;\\
+Log beinhaltet Undo- und Redo-Informationen; (vor und nach zustand)\\
+logisches Logging: protokollierung der Befehle\\
+physisches Logging: Zustandkopien
+
+Steal-noforce:
+Steal: gepufferte seiten können von anderer Transaktion eingelagert werden, zusammen mit zugehörigem Undo-logeintrag
+NoForce: committete Seiten müssen nicht sofort auf platte geschrieben, aber im Redo-log vermerkt werden.
+
+Ablauf: Redo-lauf (durchführen der geloggten änderungen); Undo-lauf: rollback nicht committeter änderungen
+
+Recovery time objective: maximale ausfallzeit; recovery point objective: maximaler Datenverlust
+
+\section*{Anfrageverarbeitung}
+Heap-Dateiorganisation: Speichern von Datensätzen in Einfügereihenfolge => unsortiert
+Einfügen am ende, löschen suchen und setzen eines Löschbits, suchen: sequenziell oder index;
+
+sequentielle-Dateiorganisation: sortierte speicherung;
+einfügen: suchen, anhängen und dann sortieren der Seite; löschen: suchen und löschbit setzen; suchen über index
+
+Index: B-Baum-Struktur; clustered Index: Segmente selbst sind sortiert;  
+CREATE INDEX <name> ON 	<tabelle>(<spalte(n)>); DROP INDEX <name>
+
+SQL -> Query Execution Plan:
+Parsen der Anfrage -> Operatorengraph; // hierbei Standardisieren und vereinfachen  (KNF = (a and b) or (c and d); deMorgan: $\overline{a AND b} = \overline{a} OR \overline{b}$
+
+
+\newcommand{\proj}{$\pi_{k.nr,pos.nr}$}
+\newcommand{\joink}{$\bowtie_{k.knr = a.knr}$}
+\newcommand{\joina}{$\bowtie_{a.anr = pos.anr}$}
+\newcommand{\selk}{$\sigma_{k.name = 'x'}$ }
+\newcommand{\selor}{$\sigma_{a.anr > 10 OR k.knr >10 }$}
+
+SELECT k.name, pos.nr  // \proj \\
+FROM Kunde k JOIN Auftrag a ON k.knr = a.knr // \joink \\
+JOIN Position pos ON a.anr =pos.anr // \joina \\
+WHERE k.name = 'x' AND //  \selk \\
+(a.anr > 10 OR k.knr >10) // \selor
+
+ $\Leftrightarrow$
+ 
+\begin{tikzpicture}[node distance=4em]
+\node[attribute](proj){\proj};
+\node[attribute](selk)[below of=proj]{\selk}edge(proj);
+\node[attribute](selor)[below of=selk]{\selor}edge(selk);
+\node[attribute](joinor)[below of=selor]{\joina}edge(selor);
+\node[attribute](joink)[below left of=joinor]{\joink}edge(joinor);
+\node[attribute](k)[below left of=joink]{Kunde k}edge(joink);
+\node[attribute](a)[below right of=joink]{Auftrag a}edge(joink);
+\node[attribute](pos)[below right of=joinor]{Position pos}edge(joinor);
+\end{tikzpicture}
+
+$\Leftrightarrow$
+
+\begin{tikzpicture}[node distance=4em]
+\node[attribute](proj){\proj};
+\node[attribute](joink)[below of=proj]{\joink}edge(proj);
+\node[attribute](pos)[below left of=joink]{Position pos}edge(joink);
+\node[attribute](selor)[below right of=joink]{\selor}edge(joink);
+\node[attribute](joinor)[below of=selor]{\joina}edge(selor);
+\node[attribute](selk)[below right of=joinor]{\selk}edge(joinor);
+\node[attribute](a)[below of=selk]{Auftrag a}edge(selk);
+\node[attribute](k)[below left of=joinor]{Kunde k}edge(joinor);
+\end{tikzpicture}
+
+\subsection*{Kostenschätzung}
+Anhand von Statistiken, Histogrammen, etc.; evtl. Hints für Optimizer
+
+Kardinalität: |a|: Anzahl der gelieferten Datensätze \\
+Selektivität: Sel(a): \% der Datensätze im vergleich zu gesamtzahl;\\
+NumBlocks: $\dfrac{|R|\cdot Laenge_{Datensatz}}{Blocksize}$
+Levels(I(R,A)): Höhe des Index auf A
+
+Sel(P) = $\dfrac{|\sigma_P(R)|}{|R|}$
+
+Attribut = 'sth' => Sel(A) = 1/|A|
+Attribut IN $\{c_1,c_2, \dots , c_n\}$ => Sel(A) = n / |A|
+A >c => Sel(A) = $\dfrac{A_{max} -c }{A_{max} - A_{min}}$
+$P_1 AND P_2$ => $Sel(P_1)*Sel(P_2)$
+$P_1 OR P_2$ => $Sel(P_1) + Sel(P_2) + Sel(P_1 AND P_2$
+
+\section*{Plan-Operatoren}
+\begin{itemize}
+\item Full-Table-Scan: durchsuche gesamte Tabelle: Cost = NumBlocks(R)
+\item Index-Scan: Suche anhand index: Cost = Levels(Index) + Sel(P) *|R|
+\item Nested-Loop-Join: für jeden Block in einer Tabelle: durchlaufe die Gesamte andere Tabelle
+Ohne Index: Cost= NumBlocks(R) * NumBlocks(S) ; mit Index Cost= NumBlocks(R) * Cost(IndexScan)
+\item Merge-Join: Sortiere die Relationen nach Join-Attribut; wechselndes Ablaufen der sortierten Relationen;
+Cost: Cost(Sort(R)) +Cost(Sort(S)) + NumBlocks(S) + NumBlocks(R)
+\item Hash-Join: Teile kleinere Relation R in x Abschnitte, die im RAM gehalten werden können; für jeden Abschnitt: Hashen der Datensätze in R; prüfe für jeden Datensatz der größeren Relation die Join Bedinung beim entsprechenden Hasheintrag; Cost: NumBlocks(R) + x * NumBlocks(S)
+
+\end{itemize}

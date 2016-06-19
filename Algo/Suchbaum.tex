@@ -1,0 +1,148 @@
+
+
+\minpurp{Bäume}
+Preorder: \fbox{Knoten}-linkesKind-rechtesKind
+
+Inorder: linkesKind-\fbox{Knoten}-rechtesKind
+
+Postorder: linkesKind-rechtesKind-\fbox{Knoten}
+
+\minpurp{Binärer Suchbaum}
+jeder Knoten hat 2 Kinder, alle im linken Teilbaum sind Kleiner, alle im rechten größer
+
+\minmeth{Suche}
+Starte in der Wurzel, wenn item größer gehe nach rechts, kleiner links, = gefunden; wiederhole bis gefunden oder Blatt 
+ 
+\minmeth{Einfügen}
+ Suche im Baum; füge ein (achte auf links/rechts)
+ 
+\minmeth{Löschen} 
+Suche den Knoten; wenn:
+
+\halfpage{
+\begin{itemize}
+\item nicht vorhanden: nichts tun
+\item Blatt: Lösche Knoten, Referenz im Vorgänger auf null
+\item 1 Nachfolger: Referenz im Vorgänger auf nachfolger, lösche Knoten
+\item 2 Nachfolger: Tausche mit größtem Element im linken Teilbaum (symmetrischer Vorgänger), lösche Element\\
+\end{itemize}
+}
+symmetrischer Vorgänger: einmal nach links, dann rechts solange möglich;
+
+\minpurp{AVL-Baum}
+Bedingung: |Balancefaktor|= 1 \\
+Balancefaktor = $\text{Höhe}_{rechter Teilbaum} - \text{Höhe}_{linker Teilbaum} $\\
+$ \Rightarrow h < 1.45 \log_2(n+2)-1.33$ => höhe max. 45 \% schlechter als best-case
+
+\minmeth{Einfügen/Löschen} wie bei binär + Ausgleichen
+
+
+\minmeth{Ausgleich nach einfügen:}
+(Umgekehrt für +2)\\
+Suche balancefaktor -2 am weitesten unten im Pfad zum eingefügten element\\
+betrachte linken Nachfolger (b):\\
+bei -1: Rechtsrotation um linken Nachfolger (a)\\
+bei +1: Doppelrotation
+
+Genau einmal Ausgleichen benötigt
+
+
+
+
+\minmeth{Ausgleich nach Löschen:}
+(Umgekehrt für +2)\\
+Suche balancefaktor -2 am weitesten unten im Pfad zum gelöschten element;\\
+betrachte linken Nachfolger (a):\\
+bei -1,0: Rechtsrotation um linken Nachfolger (a)\\
+bei +1: Doppelrotation
+
+wenn linker Nachfolger +1 oder -1 war, dann für höhere knoten vllt. weiter ausgleichen.
+
+
+\input{RotationenTIKZ.tex}
+
+%\minpurp{probabilistische Suchbäume}
+%Zufälliges einfügen: Durchschnittshöhe = $2\frac{n+1}{n}H_n-3 \approx 2\ln(n)$ =39\% mehr als der best Case
+
+\minpurp{Treap}
+jedem element wird zusätzlich eine zufällige Priorität zugewiesen\\
+Heapbedingung: das Elternelement hat kleinere Priorität als die Kinder
+
+=> Treap ist eindeutig bestimmt
+
+Erwartungswert Pfadlänge: $2\frac{n+1}{n}H_n-3$\\
+Erwartungswert Rotationen: <2
+
+\minmeth{Suchen \& Einfügen}
+Analog zu Binärer Baum; anschließend: Rotation des neuen Knotens nach oben, bis heapbedingung erfüllt ist;
+\minmeth{Löschen}
+Rotation des zu löschenden Knoten mit dem Nachfolger kleinerer Priorität, bis der Knoten ein Blatt ist, dann löschen.
+
+
+\renewcommand{\min}{\lceil\frac{d}{2}\rceil}
+\newcommand{\mincontent}{\lfloor\frac{d-1}{2}\rfloor}
+\minpurp{B-Bäume}
+für festplatten, minimieren zugriffe in datenbanken
+
+Ordung d: Knoten haben zwischen $\min$ und d Nachfolger, $leq$ $\mincontent -1$ und d-1 Elemente,\\
+Wurzel hat mind. 2 Nachfolger oder ist Blatt \\
+alle Blätter sind immer auf einer Ebene => immer vollst. ausgeglichen 
+
+Baum mit höhe h hat mindestens $1+2\dfrac{\min^h - 1}{\min -1}$ und maximal $ \dfrac{d^{h+1}-1}{d-1}$ Knoten
+
+höhe ist $O(\log_2(n)$, genauer: zwischen $\log_d(n+1)-1$ und $\log_{\lfloor(d-1)/2\rfloor+1}\left(\dfrac{n+1}{2}\right)$
+
+Aufbau eines Knotens/Seite:
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textit{Adresse} & Element & \textit{Adresse} & $\dots$ & \textit{Adresse}\\
+\hline
+\end{tabular}
+
+Es gilt binärbaum Bedingung jedes Element + rechte/linke Adresse
+
+Bsp: d = 4
+\begin{tikzpicture}
+\tikzstyle{bplus}=[rectangle split, rectangle split horizontal,rectangle split ignore empty parts,draw]
+\tikzstyle{every node}=[bplus]
+\tikzstyle{level 1}=[sibling distance=60mm]
+\tikzstyle{level 2}=[sibling distance=20mm]
+\node {15 \nodepart{two} - \nodepart{three} - } [->]
+  child {node {3 \nodepart{two} 7 \nodepart{three} - }
+    child {node {1 \nodepart{two} 2 \nodepart{three} -}}
+    child {node {4 \nodepart{two} 6 \nodepart{three} -}}
+    child {node {8 \nodepart{two} 9 \nodepart{three} -}    }
+  } 
+  child {node {21 \nodepart{two} 28 \nodepart{three} -}
+   child {node {17 \nodepart{two} 20 \nodepart{three} -}}
+    child {node {22 \nodepart{two} 25 \nodepart{three} -}}
+    child {node {29 \nodepart{two} 30 \nodepart{three} -} }   
+    }
+;\end{tikzpicture}
+
+
+\minmeth{Einfügen:} Suche; Wenn Blatt nicht voll: füge ein (sortierung beachten) \\
+Wenn Blatt voll: (ggf. rekursiv)
+
+\halfpage{
+\begin{enumerate}
+\item  Suche das mittlere Element $M_{itte}$, die elemente rechts davon kommen in ein neues Blatt;
+\item  füge $M_{itte}$ in den Vater Knoten ein, der rechte Verweis zeigt auf das neue Blatt; 
+\item füge das neue Element ein
+\end{enumerate}   }
+
+\minmeth{Löschen} 
+
+\halfpage{
+\begin{enumerate}
+\item Element nicht in einem Blatt => tausche es mit dem Nachfolger in der Sortierreihenfolge; Anschließend löschen; 
+\item ist die Seite danach zu Klein ($<\mincontent$) versuche Ausgleich mit direkten Nachbarblatt:
+das dazwischenliegende Element x wird aus Vaterknoten in den zu kleinen Knoten verschoben, der Nachfolger/Vorgänger aus dem anderen Knoten an seine Stelle eingefügt, sein Verweis kommt an die leere Adresse vor/nach x.
+\item Ist das nicht möglich: Füge 2 benachbarte Knoten + x aus Vaterknoten zu einem Zusammen. Wiederhole ggf. rekursiv.
+\end{enumerate}}
+
+\minmeth{B*-Baum} 
+Beim Einfügen in volle Seite wird wie beim löschen zuerst versucht mit direkten Nachbarn auszugleichen => bessere Speicherausnutzung, geringere Höhe
+
+\minmeth{B+-Baum}
+Bei Datenbank-Indexen: nur die Schlüssel in B-Baum, Blätter zeigen auf die Datenblöcke, diese sind doppelt verkettet. Der Baum selbst enthält nur Schlüsselwerte

@@ -1,0 +1,22 @@
+\input{../MerkzettelPraeambel.tex}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{trees}
+
+\definecolor{darkgreen}{rgb}{0.1,0.5,0.1}
+
+\newcommand{\minpurp}[1]{\textbf{\textcolor{purple}{ #1}}~\\}
+\newcommand{\minmeth}[1]{\textcolor{darkgreen}{\textbf{#1}:~}}
+
+\newcommand{\quarterpage}[1]{\begin{minipage}{0.25\textwidth} #1 \end{minipage}}
+\newcommand{\halfpage}[1]{\begin{minipage}{0.5\textwidth} #1 \end{minipage}}
+\begin{document}
+
+\input{Math.tex}
+\input{sort.tex}
+\input{Suchbaum.tex}
+\input{Hash.tex}
+\input{Graph.tex}
+
+\end{document}

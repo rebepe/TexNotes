@@ -1,0 +1,56 @@
+\section*{Asymmetrische Verfahren:}
+\subsection*{RSA}
+\subsubsection*{Schlüsselerzeugung}
+Wähle 2 große Primzahlen p und q; n= $p \cdot q$\\
+Wähle e und berechne d = $e^{-1}$ mod $\varphi(n)$\\
+Schlüssel: öffentlich (n,e), geheim (n,d)
+
+\subsubsection*{Verschlüsselung}
+c = $m^e (mod n)$
+\subsubsection*{Entschlüsselung}
+m = $c^d (mod n)$ (Hier mod p und mod q rechnen, anschließend Chin. Restesatz)
+
+\subsection*{Attacken}
+\begin{itemize}
+\item Faktorisieren von n $\hat{=}$ Berechnen von $\varphi (n)$ $\hat{=}$ Berechnen von d 
+\item für $\lvert p-q \rvert$ klein: teste x>$\sqrt{n}$; wenn $x^2 -n$ ein quadrat ist: x $\pm \sqrt{x^2 -n}$ sind die Primfaktoren
+\item "Common Modulus": wird eine Nachricht m an zwei Empfänger mit gleichem n und unterschiedlichem e gesendet kann ein dritter m ausrechnen;\\
+zudem kann der eine Empfänger den geheimen Schlüssel des anderen berechnen
+\item "Low-Encryption-Exponent": wird gleiche Nachricht m an 3 Empfänger mit e=3 gesendet kann $m^3 mod n_1n_2n_3$ berechnet werden (Chin. Restesatz)\\
+Da $m^3 < n_1n_2n_3$ ist $m = \sqrt[3]{m}$
+\item Small-Message-Space Attack: gibt es nur wenige, bekannte Nachrichten (z.B. "ja","nein") können diese berechnet werden und durch Vergleich können abgefangene Kryptogramme entschlüsselt werden.
+\item Chosen-Ciphertext: um c zu entschlüsseln: wähle zufallszahl r, lasse $r^ec mod n$ entschlüsseln => m' = rm => m= m'$r^{-1}$
+\item Angreifer fängt c ab und berechnet $x=r^ec$ und lässt Empfänger x signieren; (Signatur =$x^d$) => m = $r^{-1}x^d$ 
+\item Bleichenbachers 1-Million-Chosen-Ciphertext Attack
+\end{itemize}
+
+\subsection*{Digitale Unterschriften}
+Signieren von m: $\sigma = m^d$; 	signed message: (m,$\sigma$)\\
+Überprüfen von (m,$\sigma$): prüfe ob $m = \sigma^e$
+
+Existentiell fälschbar: ($f^e$,f) mit f beliebig wird als signierte Nachricht anerkannt.\\
+$(m_1,\sigma_1) $ $(m_2,\sigma_2) $ => z.B. $(m_1m_2,\sigma_1\sigma_2)$ oder $(m_1^{-1},\sigma_1^{-1})$ werden als signierte Nachricht anerkannt.\\
+
+
+
+\section*{OAEP}
+n=k+l:
+Falltürfunktion f (z.B. RSA): n-Bit $\to$ n-Bit\\
+Pseudozufallsgenerator G: k-Bit $\to$ l-Bit\\
+Hashfunktion h: l-Bit $\to$ k-Bit\\
+
+\subsection*{Verschlüsseln von m (l-Bit)}
+\begin{enumerate}
+	\item Wähle r:Zufallszahl mit k-Bit
+	\item x = (m $\oplus$ G(r)) || (r $\oplus$ h(m $\oplus$ G(r))
+	\item c = f(x)
+\end{enumerate}
+
+\subsection*{Entschlüsseln von c (n-Bits)}
+\begin{enumerate}
+	\item Zerlege c in a b,  a=l-Bits, b=k-Bits
+	\item r= b$\oplus$h(a)
+	\item m = a $\oplus$ G(r)
+\end{enumerate}
+
+l

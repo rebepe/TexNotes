@@ -1,0 +1,135 @@
+\section*{Synchronisation}
+Race Conditions: gemeinsam genutzte Betriebsmittel, ergebnis abhänging von ausführungsreihenfolge
+
+Kritische Abschnitte: logisch ununterbrechbare Code-bereiche; synchronisation zum gegenseitigen Ausschluss
+
+Kriterien von Dijkstra: 
+-Keine zwei Prozesse dürfen gleichzeitig in einem kritischen Abschnitt sein (mutual exclusion)
+- Keine Annahmen über die Abarbeitungsgeschwindigkeit und die Anzahl der Prozesse bzw. Prozessoren
+- Kein Prozess außerhalb eines kritischen Abschnitts darf einen anderen Prozess blockieren 
+- kein ewiges Warten (fairness condition)
+
+Methoden:
+\begin{itemize}
+\item busy waiting/spinlock: testen einer Variablen bis zutritt erlaubt
+\item interrupts maskieren: nur bei Monoprozessoren, sehr ungünstig
+\item Hardwareunterstützung durch atomare Befehle
+\item Semaphore/Mutex
+\begin{verbatim}
+Semaphore x = new Semaphore();
+x.Down(); // kritischer Abschnitt besetzt?
+c=counter.read(); // kritischer Abschnitt
+c++;
+counter.write(c);
+x.Up();  // Verlassen des kritischen Abschnittes
+\end{verbatim}
+
+\end{itemize}
+
+Erzeuger-Verbraucher
+\begin{multicols}{2}
+\begin{verbatim}
+Erzeuger
+While (true) {
+produce(item);
+Down(frei);
+Down(mutex);
+putInBuffer(item);
+Up(mutex);
+Up(belegt);
+}
+Verbraucher
+While (true) {
+Down(belegt);
+Down(mutex);
+getFromBuffer(item);
+Up(mutex);
+Up(frei);
+}
+\end{verbatim}
+\end{multicols}
+
+Monitor:
+eine Menge von Prozeduren und Datenstrukturen, die als
+Betriebsmittel betrachtet werden
+und mehreren Prozessen zugänglich sind,
+aber nur von einem Prozess/Thread zu einer Zeit benutzt
+werden können
+
+\section*{Deadlock}
+Darstellung: Belegungsgraph; Prozess -> Ressource
+
+Bedingungen: 
+Mutual exclusion: Ressourcensharing nicht möglich (DVD-Brenner)
+Hold-and-wait: Prozesse belegen Ressourcen und wollen weitere
+No preemption: Entzug nicht möglich
+Circular waiting: gegenseitiges Warten
+
+Strategien: 
+Ignorieren (wenn selten)
+
+Erkennen und beheben (Erkennen anhand Belegungsgraph) :
+Unterbrechung, Rollback Prozessabbruch Transaktionsabbruch
+
+Dynamisches Verhindern: notwendig Vorwissen über Bedarf
+z.B. Bankiers-Algorithmus: prüfen, ob es eine Zuteilungsreihefolge gibt, bei der der Bedarf erfüllt werden kann
+
+Vermeiden:
+Mutual exclusion: z.B. virtualisieren mit Spooling
+Hold-and-wait: anfordern aller benötigten Ressourcen auf einen Schlag, oder freigabe alter Ressourcen bevor weitere Angefordert werden
+No preemption: Entzug nicht möglich
+Circular waiting: nummerieren der Ressourcen, anforderung nur in aufsteigender Reihenfolge
+
+Echtzeitsysteme: Priority Ceiling Protocol
+Ressource hat Ceiling Priorität = maximale Priorität der Tasks, die sie verwenden werden. Der sie nutzende Task hat während der Nutzung diese Priorität
+
+\section*{Kommunikation}
+Nachrichten: verbindungsorientiert vs verbindungslos
+
+Speicher: gemeinsamer Adressraum (Threads), Shared Memory, Datei (Prozess)
+
+Synchron(Blockierend) vs Asynchron
+
+\subsection*{Interprozesskommunikation}
+- Pipes und FIFOs (Named Pipes) als Nachrichtenkanal
+- Nachrichtenwarteschlangen (Message Queues)
+- Gemeinsam genutzter Speicher (Shared Memory)
+- Sockets (Ip-Loopback)
+\subsubsection*{Pipes}
+Unidirektional, bidirektional über mehrere Pipes; Standardausgabe zu Standardeingabe
+
+\begin{verbatim}
+int fds[2] / Filedescriptoren für Pipe
+pipe(fds);
+if (fork() == 0) {
+// 1. Kindprozess, Standardausgabe auf Pipe-Schreibseite (Pipe-Eingang) legen und Pipe-Leseseite (Pipe-Ausgang) schließen (wird nicht benötigt)
+dup2(fds[1], 1); // 1 = Standardausgabe
+close(fds[0]);
+write (1, text, strlen(text)+1);
+}
+else{
+if (fork() == 0) {
+// 2. Kindprozess, Pipe-Leseseite (Pipe-Ausgang) auf
+// Standardeingabe umlenken und Pipe-Schreibseite
+// (Pipe-Eingang) schließen
+dup2(fds[0], 0); // 0 = standardeingabe
+close(fds[1]);
+while (count = read(0, buffer, 4))
+{
+// Pipe in einer Schleife auslesen
+prozess Pipe
+buffer[count] = 0; // String terminieren
+printf(“%s“, buffer) // und ausgeben
+}
+else {
+// Im Vaterprozess: Pipe an beiden Seiten schließen und
+// auf das Beenden der Kindprozesse warten
+close(fds[0]);
+close[fds[1]);
+wait(&status);
+wait(&status);
+}
+exit(0);
+}
+}
+\end{verbatim}

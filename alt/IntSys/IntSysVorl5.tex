@@ -1,0 +1,60 @@
+\minisec{Webbasierte Systeme:}
+http zustandslos, v.a. Transaktionsbasiert; \\
+Mehrnutzerszenarien, Benutzer/Anwendung evtl. Anonym\\
+Architektur: Thickclient(kann lokal laufen) vs Thinclient(nur View)\\
+
+\minisec{Böswillige Benutzer: (Menschen/Bots)}
+Vandalismus, Trolling, Spam, Fehlinformation,\\ 
+DoS, SQL-Injection, Session-Hijacking  \\ 
+vs  Moderation, Automatische Prüfung, Turing Test(Captcha)\\
+
+\minisec{Böswillige UIs}
+tut mehr/anders als vom Benutzer gewollt
+\begin{multicols}{2}
+Zwang\\ Verwirrung\\ Ablenkung \\ Ausnutzen von Fehlern des Benutzers\\ Zusätzlicher Interaktionsaufwand\\ Unterbrechung\\ Navigation manipulieren\\ Verschleierung\\ Einschränken der Funktion\\ Erschrecken\\ Irreführen
+\end{multicols}
+
+
+\minisec{Frameworks:}
+Struktur zur Unterstützung (z.B. Erstellung von Code-Skeletten)\\
+Vorteile: Wiederverwendung von Expertenwissen, Langfristige Zeitersparnis, Systematisch Testbar, Standardisierung, Fehlervermeidung\\
+Nachteile:Entwicklung zeitaufwändig, Einarbeitungsaufwand, Dokumentation und Wartung aufwändig, Fehlersuche wird erschwert, kombinierung von Frameworks schwierig\\
+
+\textbf{Kategorien:} \\
+\oitem{Blackbox} (Komponenten schon definiert, werden vom Programmierer zusammengefügt) \\
+\oitem{Whitebox} (Ableitung eigener Komponenten von Basiselementen) \\
+\oitem{Graybox} (Mischung aus Black- und Whitebox)\\
+
+\oitem{Support:} Systemdienste(DirectX,OpenGL)\\
+\oitem{Domain:} Funktionalität für Speziellen Bereich (z.B. Semantic Web)\\
+\oitem{Application framework:} Funktionalität für komplette Anwendung (WPF)\\
+\\ \\
+
+
+
+
+\minisec{Entwicklung interaktive Systeme im Software-Entwicklungsprozess}
+Hinzufügen von Elementen der Benutzerschnittstellen\\
+Detaillieren von Dialoginhalten, -verhalten und -kontext sowie das Verknüpfen mit ihren Anforderungen\\
+Anpassung an Änderungswünsche des Benutzers\\
+Vervollständigen von Benutzerschnittstellen\\
+Klassifizieren der Bestandteile der Benutzerschnittstelle\\
+Protokollierung der Benutzerschnittstellenstruktur und der Benutzerinteraktionen\\
+Kommunikation zwischen den Stakeholdern, d.h. Entwickler, Benutzer und Anwender\\
+Evaluation der bisherigen Benutzerschnittstelle
+
+\minisec{Probleme:}
+\oitem{Abstraktheit} (Modelle für Benutzer schwer deutbar), \\
+\oitem{Mehrdeutigkeit} (Kommunikation Benutzer $\rightarrow$ Entwickler),\\
+\oitem{Fehlende Erlebbarkeit}(Konsequenzen der Änderungen Benutzer nicht klar), \\
+\oitem{Benutzerziele} (unterschiedliche Benutzergruppen, Interaktionsstrategien),\\
+\oitem{Komplexität interaktiver Systeme} (viele mögliche Wechselwirkungen)
+
+\minisec{Entwicklungsprinzipien: }
+\textbf{ISO 9241} Grundsätze: Aufgabenangemessenheit Selbstbeschreibungsfähigkeit Erwartungskonformität Fehlertoleranz Steuerbarkeit Individualisierbarkeit Lernförderlichkeit\\
+\textbf{Prinzipien nach Gould:}\\
+\oitem{Konzentration auf Benutzer }(Beobachtung, Befragung von Repräsentativen Benutzern) \\
+\oitem{Randbedingungen prüfen} (Umfeldanalyse; Tätigkeitsanalyse,  willig/unwillig) \\
+\oitem{Frühes und Kontinuierliches Testen}\\
+\oitem{Iteratives Design:} in jeder iteration Ziele Identifizieren, Gestaltungsvorschlag, Testen; Mehrere Iterationen einplanen, änderungsfreundliche Systemarchitektur, Mockups und Papier-Prototypen\\
+\oitem{Integriertes Design}( Ganzheitliche Betrachtung des Systems schon in der Entwicklungsphase)

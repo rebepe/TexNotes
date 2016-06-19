@@ -1,0 +1,31 @@
+\minisec{ISA}
+\minisec{Instruktionsformate:}
+Opcode +[Operand/en], evtl. gleiche Länge
+
+\minisecclose{Addressiermodi}
+\begin{itemize}
+\item Umittelbar: Konstanter Wert (z.B. 4)
+\item Direkt: Speicherstelle (z.B. 0x4568AF)
+\item Indirekt: Adresse der Speicheradresse (Zeiger)
+\item Register: Registerinhalt
+\item Indirekte Register: Adresse steht im Register (z.B: Stackpointer)
+\item Indiziert: Offset von fester Adresse (z.B. Arrays)
+\item Basis-Indiziert: Offset von Registerinhalt
+\item Stapel: vgl. Postfix-Notation
+\end{itemize}
+
+Für Sprünge:
+\begin{itemize}
+\item Direkt
+\item Indirekte Register
+\item Indiziert 
+\item PC-relative: Offset zum Program Counter
+\end{itemize}
+
+
+
+\minisec{Postfix-Notation:} Operator hinter Operanden \\
+z.B. A+BxC => ABCx+\\
+(A+B)/(C-D) => AB+CD-/
+
+

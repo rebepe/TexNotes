@@ -1,0 +1,18 @@
+Ziele der Kryptographie:
+\begin{itemize}
+	\item Vertraulichkeit (kein Abhören möglich)
+	\item Integrität der Daten (keine Veränderung durch dritte)
+	\item Authentizität des Partners
+\end{itemize}
+
+Verfahren: 
+\begin{itemize}
+	\item Symmetrische Verschlüsselung (z.B. AES): Beide Partner kennen den geheimen Schlüssel
+	\item Asymmetrische Verschlüsselung (z.B. RSA): Der Empfänger kennt den geheimen Schlüssel, der Verschlüsselungsschlüssel ist allgemein bekannt
+\end{itemize}
+
+Chiffren:
+\begin{itemize}
+	\item Blockchiffre: 
+	\item Asymmetrische Verschlüsselung (z.B. RSA): Der Empfänger kennt den geheimen Schlüssel, der Verschlüsselungsschlüssel ist allgemein bekannt
+\end{itemize}
