@@ -1,0 +1,107 @@
+\section*{Speicherverwaltung}
+Lokalitätsprinzip: örtlich: nah beieinanderliegende Daten werden oft zusammen benötigt, zeitlich: Daten werden oft sofort wieder benutzt
+
+Adressraum: benutzbare Adressen (z.B. $2^{32}$); Anordung durch Compiler ( Code,Konstanten, Heap, Stack)
+
+\subsection*{Cache}
+write through (sofort) vs write back (bei auslagern) vs write on demand (erst durch expliziten Befehl)
+
+\subsubsection*{Ersetzungsstrategien}
+\begin{itemize}
+\item LRU (Least Recently Used) zähler pro Datensatz, setze 0 bei zugriff, hochzählen aller anderen; auslagern des Höchsten zählers
+\item LFU (Least Frequently Used) Zähler, hochzählen pro zugriff, setzen auf 0 nach intervall, niedrigster wird zuerst ausgelagert;
+\item LRL (Least Recently Loaded) analog zu FIFO, Zeitstempel pro datensatz, ältester wird ausgelagert
+\item Zufällig; billig umzusetzen
+\end{itemize}
+
+
+\subsection*{Speicherverwaltung}
+\begin{itemize}
+\item Monoprogramming: Programm hat gesamten RAM (bis auf BS)
+\item feste Partitionierung: Aufteilen des RAM in feste Bereiche, Prozesse bekommen eine dieser Partitionen
+\item Swapping: Prozesse werden im Ganzen ein/ausgelagert
+\item Virtueller Speicher: Aufteilung des Adressraums in Seiten, diese werden ein/ausgelagert. Adressraum kann größer sein als RAM. ist nur teilweise darin
+\end{itemize}
+
+Virtueller Adressraum:
+
+Realer Adressraum aus Seitenrahmen (Frames)\\
+Virtueller Adressraum aus Seiten (Pages)\\
+Ein/Auslagern in Paging Area auf Festplatte;
+
+Umrechnung durch MMU: \\
+Virtuelle Adresse = Seitennummer + Offset;\\
+Reale Adresse = Rahmennummer + Offset;\\
+Seite $\leftrightarrow$ Rahmen über Seitentabelle des Prozesses; ggf. Caching durch TLB (Translation Lookaside Buffer); falls nicht vorhanden wird Page Fault ausgelöst;
+TLB-Einträge beinhalten PID
+
+Mehrstufige Adresstabellen bei großen Adressräumen; d.h die ersten x bits geben den index in der Top-Level-Tabelle an, dieser gibt die Second-Level-Tabelle an
+
+invertierte Seitentabelle: eine Tabelle mit Zuordnung Rahmen->Seiten; aufwändigere Suche, weniger Speicherbedarf (Lookup über Hashtabelle)
+
+\subsection*{Ersetzungsstrategien}
+Demand Paging: nach Page-Fault
+\begin{itemize}
+\item Belady (optimal): ersetzung der Seiten die am spätesten in der Zukunft wieder verwendet wird
+\item FIFO: älteste Seite wird ersetzt, einfach zu implementieren (Verkettete Liste)
+\item Second Chance: ähnlich FIFO; ist R-Bit gesetzt hänge hinten an und setze R=0, sonst auslagern
+\item NRU (Not Recently Used): \textbf{R}ead-Bit \textbf{M}odified-Bit; Auslagerungsreihenfolge: R=0,M=0;~~~R=0,M=1;~~~R=1,M=0;~~~R=1,M=1
+\item LRU (Least Recently Used) Am längsten nicht genutzt wird ausgelagert
+\item NFU (Not Frequently Used) Zähler für Zugriffe, auslagerung des Eintrags mit kleinstem Zähler\\
+Aging:
+\begin{itemize}
+	\item als Matrix: setze Bei Zugriff alle in Zeile auf 1, alle in spalte auf 0
+	Bsp: $\left( \begin{matrix}
+	0 &1 &0 \\
+	0 & 0& 0\\
+	1 & 1 & 0
+	\end{matrix} \right), Zugriff auf 2 => \left( \begin{matrix}
+	0 &0 &0 \\
+	1 & 0& 1\\
+	1 & 0 & 0	
+	\end{matrix} \right)$
+	\item als Register: shifte die R-Bits von links ein
+	Bsp: $R \begin{matrix}
+	1\\0\\1\\1\\0
+	\end{matrix} Register: \begin{matrix}
+	1001\\1010\\0011\\0001\\1101
+	\end{matrix}   =>  \begin{matrix}
+	1100\\0101\\1001\\1000\\0110
+	\end{matrix}$
+\end{itemize}
+\end{itemize}
+
+Prepaging: Working Set: aktuell Bearbeitete Seiten, versuch daraus die benötigten Seiten zu ermitteln; $\tau$ = Zeitraum für ein Workingset
+Bsp: Working Set Clock: 
+wenn R == 1
+\{ R=0, nächste Seite; \}
+sonst
+\{ wenn Alter > $\tau$ und M == 0 überschreiben 
+   wenn Alter > $\tau $ und M == 1 sichere die geänderte Seite, betrachte nächste seite
+\}
+
+
+Ist der Zeiger wieder am Anfang: wenn seite ausgelagert wurde laufe weiter bis zur nächsten sauberen Seite.
+Wurde keine Seite ausgelagert: wähle Zufällige Seite (denn alle gehören zum Working Set)
+
+\subsection*{Speicherbelegung}
+Suche nach freien Speicherbereichen; 
+\begin{itemize}
+\item sequentielle Suche: erster Passender Bereich wird vergeben
+\item optimale Suche: möglichst genau passender Bereich wird vergeben um Fragmentierung zu vermeiden
+\item Buddy-Technik: schrittweises halbieren des Speichers => externe Fragmentierung sinkt, interne Steigt;
+\end{itemize}
+
+\subsection*{Cleaning}
+\begin{itemize}
+\item Demand-Cleaning: Bei Bedarf
+\item Precleaning: Präventives Zurückschreiben, wenn Zeit ist
+\item Page-Buffering: Verwaltung in Listen (Modified List, Unmodified List)
+\end{itemize}
+
+\section*{Dateiverwaltung}
+Dateien: abstrahiert perisistente Speicherung
+
+Dateien, Pseudodateien (Freiliste), Verzeichnisse, Gerätedateien ( abstraktion von geräten, z.B. /dev/sda)
+
+Sequentieller vs Wahlfreier Zugriff

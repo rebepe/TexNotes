@@ -25,17 +25,17 @@ Kovarianz: $s_{xy} = \frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})(y_i-\overline{y
 
 Korrelationskoeffizient: $r_xy = \frac{s_{xy}}{s_x\cdot s_y}$
 
+\section*{Bedingte Wahrscheinlichkeiten}
+
 prob(A) = $\frac{\text{|günstige Fälle|}}{\text{| alle Fälle|}}$
 
-$prob(B|A) = \frac{prob(B \cap A}{prob(A)}$
+$prob(B|A) = \frac{prob(B \cap A)}{prob(A)}$
 
 Unabhängig $\Leftrightarrow prob(A \cap B)=prob(A)\cdot prob(B)$
 
 Satz von Bayes: $prob(B|A) = prob(A|B)\frac{prob(B)}{prob(A)}$
 
 $prob(B|A) = prob(A|B)\dfrac{prob(B)}{prob(B)\cdot prob(A|B) + prob(\overline{B} \cdot prob(A|\overline{B}) }$
-
-Laplace: Alle Fälle sind gleich wahrscheinlich
 
 
 \section*{Erwartungswert}
@@ -46,6 +46,9 @@ E(X+Y) = E(X) + E(Y); E(aX) = aE(X) \\
 wenn f symmetrisch um c dann E(X) = c\\
 wenn X,Y unabhängig: E(XY) = E(X) $\cdot$ E(Y)
 
+\section*{Kovarianz}
+$Cov(X,Y) = E((X-E(X))\cdot(Y-E(Y)) = E(X \cdot Y) -E(X)E(Y)$
+
 \section*{varianz}
 diskret: $ \sigma^2 = \sum_i prob(X=x_i)\cdot (x_i -E(X))^2$\\
 stetig: $ \sigma^2 = \int_{-\infty}^{\infty} (x_i -E(X))^2 f(x) dx$ \\
@@ -53,8 +56,7 @@ $\sigma^2 = E(X^2) - E(X)^2$
 
 Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)\\
 Var(aX+b) = $a^2$Var(X)
-\section*{Kovarianz}
-$Cov(X,Y) = E((X-E(X))\cdot(Y-E(Y)) = E(X \cdot Y) -E(X)E(Y)$
+
 
 \section*{Standardisierung}
 standartisierte Zufallsvariable $Z:=\dfrac{X-\mu}{\sigma}$ => E(X)=0, Var(X)=1
@@ -81,7 +83,7 @@ $F(x) = 1 - e^{-\lambda x};  \\ f(x) = \lambda e^{-\lambda x}$ für x > 0 \\
 E(X)=$1/\lambda$:= Durchschnittliche Lebensdauer\\
 Var(X) = $1/\lambda^2$
 \subsubsection*{Weibull-Verteilung}
-$F(x) = 1 - e^{\lambda x^\beta};  f(x) = \lambda \beta x^{\beta -1} e^{-\lambda x^\beta}$ für x > 0 
+$F(x) = 1 - e^{\lambda x^\beta};  \\f(x) = \lambda \beta x^{\beta -1} e^{-\lambda x^\beta}$ für x > 0 
 
 
 \subsection*{Hypergeometrische Verteilung}
@@ -246,9 +248,9 @@ Test auf Verteilung = vermutete Verteilung, Vorraussetzung: große Stichprobe ($
 
 Teile Werte in Intervalle $I_i$ auf  pi: prob($X \in I_i$) und $h_i:$ Anzahl der Werte in $I_i$
 
+$p_i = prob(A_i)$ : Wahrscheinlichkeit von $A_i$ gemäß vermuteter Verteilung
+
 $y = \sum_{i=1}^k \dfrac{(h_i -np_i)^2}{n p_i} = 1/n \left( \sum_{i_1}^k \dfrac{h_i^2}{p_i} \right) -n $
 ist asymptotisch  $\chi^2 (k-1)$ verteilt 
-
-$p_i = prob(A_i)$ : Wahrscheinlichkeit von $A_i$ gemäß vermuteter Verteilung
 
 Ablehnungsbereich: y > $\chi^2_{k-1;1-\alpha}$

@@ -32,11 +32,15 @@ $h_a( x_1, x_2, \dots ,x_r ) = \Sigma_{i_1}^r a_i x_i ~mod ~p$
 \minpurp{Verkettung mit Überlaufbereich}
 Hashfunktionen liefern Adressen im Primärbereich, Tabelleneinträge enthalten Nachfolgeradresse im Überlaufbereich; Freie überlaufzellen bilden zusätzliche verkettung
 
-\textbf{Kollisionswahrscheinlichkeit Verkettung:} $\left( \begin{array}{c}n \\ i\end{array} \right) \left( \dfrac{1}{m} \right)^i \left( 1- \dfrac{1}{m} \right)^{n-i} $
 
-=> im Mittel$n-m(1-p_0)$ Kollisionen (m= größe Primärbereich, n=Anzahl Elemente) => Abhängig von Belegungsfaktor
+Zugriffe bei erfolgreicher Suche: $<1+1/2B$, Zugriffe bei nicht erfolgreicher suche: $\leq 1+ B$
 
-Vergleiche Erfolg Suche: $<1+1/2B$ Vergleiche Misserfolg suche: $\leq 1+ B$
+\textbf{Kollisionswahrscheinlichkeit Verkettung:} $p_i = \left( \begin{array}{c}n \\ i\end{array} \right) \left( \dfrac{1}{m} \right)^i \left( 1- \dfrac{1}{m} \right)^{n-i} $
+
+=> Überlaufbereich = $n-m(1-p_0)$  =  Kollisionen (m= größe Primärbereich, n=Anzahl Elemente) 
+
+Freie Plätze im Mittel:$ -(n - m - \text{Überlauf})   $
+
 
 \minpurp{Offene Adressierung}
 Bei Kollision wird ein anderer Platz in der Tabelle gesucht, anhand einer Sondierfolge (alle Plätze müssen in Folge $i(s)_j$ enthalten sein).

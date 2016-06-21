@@ -1,0 +1,42 @@
+\input{../MerkzettelPraeambel.tex}
+\usepackage{tikz}
+	\usepackage{tkz-graph}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shadows}
+\usetikzlibrary{calc}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{trees}
+
+\usepackage{pdfpages}
+
+
+\begin{document}
+
+
+
+\newcommand{\proj}{$\pi_{k.nr,pos.nr}$}
+\newcommand{\joink}{$\bowtie_{k.knr = a.knr}$}
+\newcommand{\joina}{$\bowtie_{a.anr = pos.anr}$}
+\newcommand{\selk}{$\sigma_{k.name = 'x'}$ }
+\newcommand{\selor}{$\sigma_{a.anr > 10 OR k.knr >10 }$}
+
+
+\begin{tikzpicture}[level distance=3em,sibling distance=5em]
+\node{\proj} 
+child{ node{\selk}
+child{ node{\selor}
+child{ node{\joina}
+child{ node{\joink}
+child{ node{Kunde k}}
+child{ node{Auftrag a}}
+}
+child{ node{Position pos}
+}}}}
+;
+\end{tikzpicture}
+
+ \end{document}

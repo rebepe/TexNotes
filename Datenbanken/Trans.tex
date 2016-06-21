@@ -80,12 +80,13 @@ CREATE INDEX <name> ON 	<tabelle>(<spalte(n)>); DROP INDEX <name>
 SQL -> Query Execution Plan:
 Parsen der Anfrage -> Operatorengraph; // hierbei Standardisieren und vereinfachen  (KNF = (a and b) or (c and d); deMorgan: $\overline{a AND b} = \overline{a} OR \overline{b}$
 
-
-\newcommand{\proj}{$\pi_{k.nr,pos.nr}$}
-\newcommand{\joink}{$\bowtie_{k.knr = a.knr}$}
-\newcommand{\joina}{$\bowtie_{a.anr = pos.anr}$}
-\newcommand{\selk}{$\sigma_{k.name = 'x'}$ }
-\newcommand{\selor}{$\sigma_{a.anr > 10 OR k.knr >10 }$}
+\definecolor{darkgreen}{rgb}{0.2,0.8,0.2}
+\newcommand{\proj}{\textcolor{red}{$\pi_{k.nr,pos.nr}$}}
+\newcommand{\joink}{\textcolor{darkgreen}{$\bowtie_{k.knr = a.knr}$}}
+\newcommand{\joina}{\textcolor{darkgreen}{$\bowtie_{a.anr = pos.anr}$}}
+\newcommand{\selk}{\textcolor{blue}{$\sigma_{k.name = 'x'}$ }}
+\newcommand{\selor}{\textcolor{blue}{$\sigma_{a.anr > 10 OR k.knr >10 }$}}
+\newcommand{\grpi}[1]{\textcolor{gray}{ $\pi_{ #1 }$ }}
 
 SELECT k.name, pos.nr  // \proj \\
 FROM Kunde k JOIN Auftrag a ON k.knr = a.knr // \joink \\
@@ -95,28 +96,36 @@ WHERE k.name = 'x' AND //  \selk \\
 
  $\Leftrightarrow$
  
-\begin{tikzpicture}[node distance=4em]
-\node[attribute](proj){\proj};
-\node[attribute](selk)[below of=proj]{\selk}edge(proj);
-\node[attribute](selor)[below of=selk]{\selor}edge(selk);
-\node[attribute](joinor)[below of=selor]{\joina}edge(selor);
-\node[attribute](joink)[below left of=joinor]{\joink}edge(joinor);
-\node[attribute](k)[below left of=joink]{Kunde k}edge(joink);
-\node[attribute](a)[below right of=joink]{Auftrag a}edge(joink);
-\node[attribute](pos)[below right of=joinor]{Position pos}edge(joinor);
+\begin{tikzpicture}[level distance=3em,sibling distance=7em]
+\node{\proj} 
+child{ node{\selk}
+child{ node{\selor}
+child{ node{\joina}
+child{ node{\joink}
+child{ node{Kunde k}}
+child{ node{Auftrag a}}
+}
+child{ node{Position pos}
+}}}}
+;
 \end{tikzpicture}
-
 $\Leftrightarrow$
-
-\begin{tikzpicture}[node distance=4em]
-\node[attribute](proj){\proj};
-\node[attribute](joink)[below of=proj]{\joink}edge(proj);
-\node[attribute](pos)[below left of=joink]{Position pos}edge(joink);
-\node[attribute](selor)[below right of=joink]{\selor}edge(joink);
-\node[attribute](joinor)[below of=selor]{\joina}edge(selor);
-\node[attribute](selk)[below right of=joinor]{\selk}edge(joinor);
-\node[attribute](a)[below of=selk]{Auftrag a}edge(selk);
-\node[attribute](k)[below left of=joinor]{Kunde k}edge(joinor);
+\begin{tikzpicture}[level distance=3em,sibling distance=5.5em ,level 2/.style={sibling distance=7em} ]
+\node{\proj} 
+child{ node{\joina}
+child{ node{\grpi{a.nr,k.nr}}
+child{ node{\selor}
+child{ node{\joink}
+child{ node{\grpi{k.nr}}
+child{ node{\selk}
+child{ node{Kunde k}}}}
+child{ node{\grpi{a.knr,a.anr}}
+child{ node{Auftrag a}}}
+}}}
+child{ node{\grpi{pos.anr}}
+child{ node{Position pos}
+}}}
+;
 \end{tikzpicture}
 
 \subsection*{Kostenschätzung}

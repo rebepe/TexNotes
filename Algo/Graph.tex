@@ -105,3 +105,20 @@ minimale indizente Kante: kleinste Kante an einem Knoten\\
 Start: Tree(V,$\emptyset$) Graph(V,E)\\
 Schritt: füge alle Minimal indizenten Kanten im Baum ein, Kontrahiere sie im Graph; wiederholen
 Laufzeit: O((p+q)log(p))
+
+\minpurp{Warshall (transitiver Abschluss)}
+Transitiver Abschluss von G: Graph, bei dem Kante (a,b), wenn Pfad von a nach b in G
+(bei ungerichteten: Zusammenhangskomponente)
+
+
+Start: $a_0$ = Adjazenzmatrix;
+für k=1 bis p: Schritt: $a_k[i,j] = a_{k-1} or( a_{k-1}[i,k] and a_{k-1}[k,j] )$
+für implementierung: es wird nur speicher für eine Matrix benötigt, diese wird angepasst. 3 forschleifen (k,i,j)
+\textbf{O($p^3$)}
+
+\minpurp{Floyd}
+Adjazenzmatrix gewichteter Graph, gewicht= $\infty$ wenn keine Kante, 0 in Hauptdiagonale;
+Start: $a_0$ = Adjazenzmatrix;
+für k=1 bis p: Schritt: Schritt: $a_k[i,j] = min{a_{k-1} , a_{k-1}[i,k] + a_{k-1}[k,j] }$
+funktioniert auch mit negativen gewichten, wenn keine negativen Zyklen
+implementierung analog zu Warshall
