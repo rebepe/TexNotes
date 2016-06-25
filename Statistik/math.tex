@@ -87,8 +87,6 @@ Var(X) = $1/\lambda^2$
 
 
 \subsection*{Hypergeometrische Verteilung}
-\Naeherung ei $ 20 n \leq N $  durch Binomialverteilung
-
 N Elemente, M Treffermöglichkeiten, Stichprobe mit n (kein Zurücklegen)
 
 prob(X=x)=$ \dfrac{\left( \! \begin{array}{c}M \\ x \end{array} \! \right) \cdot \left( \begin{array}{c}N-M \\ n-x \end{array}  \right) }{\left( \begin{array}{c}N \\ n \end{array}  \right) }$
@@ -96,6 +94,8 @@ prob(X=x)=$ \dfrac{\left( \! \begin{array}{c}M \\ x \end{array} \! \right) \cdot
 $E(X)=n\dfrac{M}{N}~~~
 Var(X) = n\dfrac{M}{N} \left( 1- \dfrac{M}{N} \right) \dfrac{N-n}{N-1}
 $
+
+\Naeherung bei $ 20 n \leq N $  durch Binomialverteilung
 
 \subsection*{binomialverteilung}
 Stichprobe mit n, wahrscheinlichkeit pro Teil: p 
@@ -257,7 +257,8 @@ Vorraussetzung: große Stichprobe: ($np_i \geq 5$) für alle i
 \begin{enumerate}
 \item Teile Werte in Intervalle $I_i$ auf; \gray{// Aus angabe entnehmen}
 \item $h_i:$ Anzahl der Werte in $I_i$ \gray{// Aus angabe entnehmen} 
-\item $p_i$ : Wahrscheinlichkeit von $I_i$ laut vermuteter Verteilung \gray{// Berechne aus Verteilungsfunktion \textcolor{lightgray}{obere Grenze -untere Grenze}}\\
+\item $p_i$ : Wahrscheinlichkeit von $I_i$ laut vermuteter Verteilung \\
+\gray{// Berechne aus Verteilungsfunktion \textcolor{lightgray}{obere Grenze -untere Grenze}}\\
 
 \item $y = \gray{ \sum_{i=1}^k \dfrac{(h_i -np_i)^2}{n p_i} }= 1/n \left( \sum_{i_1}^k \dfrac{h_i^2}{p_i} \right) -n $
 \gray{ist asymptotisch  $\chi^2 (k-1)$ verteilt }\\
