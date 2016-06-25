@@ -20,7 +20,7 @@ z.B. $R_1(a), W_2(a), R_3(a), W_1(a)$
 \begin{tikzpicture}
 \tikzset{EdgeStyle/.append style = {->,bend left =20,black}}
 \node(1){1}; \node(2)[right of=1]{2}; \node(3)[below left of=2]{3};
-\Edge(1)(2); \Edge(2)(3); \Edge (3)(1); \Edge(3)(2);
+\Edge(1)(2); \Edge(2)(3); \Edge (3)(1); \Edge(2)(1);
 \end{tikzpicture}
 
 Sperren: Shared-Locks (s) beim Lesen, Exklusiv-Locks (X) beim Schreiben

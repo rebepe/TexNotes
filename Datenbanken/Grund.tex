@@ -1,21 +1,20 @@
 \section*{Grundlagen}
-Aufbau: Applikation -> DBMS(Datenbank-Management-System) -> Datenbanken
+Aufbau: \fbox{Applikation} -> \fbox{DBMS(Datenbank-Management-System)} -> \fbox{Datenbanken}
 
 \begin{description}
 \item[Persistenz:] nicht-flüchtig gespeichert nach Transaktionsende
 \item[Semantische Integrität:] korrekt aus Fachsicht 
 \item[Konsistenz:] Widerspruchsfrei, durch Integritätsregeln
 \item[Operationale Integrität:] konsistenz / Integrität während Systembetrieb erhalten
-\item[Redundanz:] Mehrfaches vorkommen von Daten => Normalisierung
+\item[Redundanz:] Mehrfaches vorkommen von Daten => Lösen durch Normalisierung
 \item[Isolation:] Keine Beieinflussung von Nutzern untereinander
 \item[ACID:] Atomicity, Consistency,Isolation,Durability; Gegenpart bei Verteilten: BASE
 \item[Datenmodell:] definiert Operatoren und Objekte (relational, netzwerk,xml,...)
-\item[Schema:]
 \item[Logisches Schema:] Struktur der Daten
 \item[Physisches Schema:] Indizes etc,
 \item[Entity Integrity:] eindeutigkeit der PKs
 \item[Referentielle Integrität:] Datensätze erst löschen, wenn nicht mehr referenziert
-\item[Domänen Integrität:] Werte liegen in Definierten Wertebereichen (falls CHECK) und sind atomar
+\item[Domänen Integrität:] Werte atomar, liegen in Definierten Wertebereichen (CHECK)
 \item[Surrogat-Schlüssel:] künstlicher Primärschlüssel (id)
 \item[ CAP-Theorem:] Konsistenz, Verfügbarkeit, Toleranz gegen Netzausfall: nur 2 von 3 möglich
 
@@ -23,9 +22,10 @@ Aufbau: Applikation -> DBMS(Datenbank-Management-System) -> Datenbanken
 
 \section*{Modellierung}
 
-3Schichten-Modell: Externe Ebene(Views) - Logische Ebene(Schema) - Interne Ebene (Indizes)\\
-=> Physische Datenunabhänigkeit: Anwendung von Änderungen auf Interner Ebene unberührt\\
-=> Logische Datenunabhängigkeit: " auf Logische Ebene "kaum" berührt
+3Schichten-Modell: \\
+\fbox{Externe Ebene(Views)} \\\fbox{Logische Ebene(Schema)} \\\fbox{Interne Ebene (Indizes)}\\
+Physische Datenunabhänigkeit: Anwendung von Änderungen auf Interner Ebene unberührt\\
+Logische Datenunabhängigkeit: " auf Logische Ebene "kaum" berührt
 
 Kardinalitäten: 1:1, 1:n, n:m, + optionalität
 

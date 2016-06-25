@@ -1,52 +1,12 @@
-\section*{Unterbrechungen}
-\subsection*{Polling}
-Busy waiting abfrage des Zustandes
-\subsection*{Interrupts}
-Unterbrechen der Aktuellen Routine, ausführen der Interrupt Service routine, Auslöser Hardware oder Software(Trap)
+\section*{Interrupts}
+\textbf{Polling:} Busy waiting abfrage des Zustandes (Schleife)
 
-Interrupt-Service-Routine: Kernel-Code der auf interrupt reagiert, wird durch Index in Interrupt-Vector-Table aufgerufen
+\textbf{Interrupt:} 
+\begin{enumerate}
+\item Unterbrechen des aktuellen Prozesses \item Ausführung der Interrupt Service routine \item Fortsetzen des Prozesses
+\end{enumerate}
 
-\subsection*{Systemcall/Trap}
-Software-Interrupt zur Kommunikation mit BS, z.B. fork(), open(), close()...
+\textbf{Interrupt-Service-Routine:} Kernel-Code der auf interrupt reagiert, aufruf durch index in Interrupt-Vector-Table
 
+\textbf{Systemcall/Trap: } Software-Interrupt zur Kommunikation mit BS, z.B. fork()
 
-\section*{Prozess}
-Prozesskontext: Zustandsinformation zum Prozess (Stack, Register,...)
-=> Process-Control-Block: Programmzähler, Prozesszustand, Priorität ,Verbrauchte Prozessorzeit seit dem Start des Prozesses, Prozessnummer (PID), Elternprozess (PID), Zugeordnete Betriebsmittel z.B. Dateien
-
-zustände:
-bereit, aktiv, beendet, blockiert 
-
-fork() klont Prozess, return 0 für kind, return kind-PID für Eltern
-
-\section*{Scheduling}
-Zeitscheibe: zuteilung von zeit-Quanten an Prozesse, wechseln nach ablauf/Blockieren
-
-Ziele: Fairness, Effizienz, Antwortzeit, Verweilzeit (Durchlaufzeit), Durchsatz
-
-Non-Preemptive Scheduling vs Preemptive Scheduling (Prozess kann unterbrochen werden)
-
-\subsection*{Strategien}
-\begin{itemize}
-\item First Come First Served (FCFS): Der Reihe nach
-\item Shortest Job First (SJF); Theoretisch Optimal, kürzester Gewinnt
-\item Shortest Remaining Time Next (SRTN): kürzeste Restlaufzeit gewinnt, nicht preemtiv
-
-\item Round-Robin-Scheduling (RR) = Rundlauf-Verfahren: Der Reihe nach
-\item Priority Scheduling (PS) statisch/dynamisch: höchste Priorität gewinnt
-
-\item Shortest Remaining Time First (SRTF): SRTN preemtiv
-\item Lottery Scheduling: Zufällige Vergabe von CPU-Zeit
-
-\end{itemize}
-
-Echtzeit-Betriebssystem: garantierte zeiten; Tasks in endlosschleife
-
-Parameter: Computation time C $\leq$ Deadline D $\leq$ Period T
-
-=> Wiederholung nach kleinstem gemeinsamen Vielfachen der Perioden => Major Cycle / Hyperperiode
-
-
-Rate Monotonic Scheduling (RMS): kürzeste Periode gewinnt
-
-Earliest-Deadline First (EDF): nächste Deadline zuerst

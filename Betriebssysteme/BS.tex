@@ -1,9 +1,49 @@
 \input{../MerkzettelPraeambel.tex}
 
-\begin{document}
+\xpatchcmd{\tabbing}
+  {\def\makelabel}
+  {	\setlength{\itemsep}{0mm}
+ 	\setlength{\parskip}{0pt}
+  	\setlength{\parsep}{0pt}  
+  \def\makelabel}
+  {}
+  {}
+\definecolor{darkgreen}{rgb}{0.1,0.7,0.1}
+\newcommand{\com}[1]{  \textcolor{darkgreen}{ \# #1   } }
 
+\usepackage{tikz}
+	\usepackage{tkz-graph}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shadows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes,snakes}
+
+\begin{document}
 \input{bash.tex}
+\section*{Allgemein}
+\textbf{Kernel:} wesentliche Dienste des Betriebssystems, möglichst immer im RAM
+
+\textbf{Usermodus:} Ablaufmodus für Anwendungsprogramme, kein Zugriff auf Kernel
+
+\textbf{Kernelmodus:} Privilegiert für Kernelausführung, Wechsel über Syscall/Trap
+
+\textbf{Monolithisch:} alle Module des Kernels in einem Adressraum (ein Prozess)\\
+Schichtenmodell: Monolithischer Kern, Module durch Schichten strukturiert\\
+\underline{Pro:} effizient \underline{Contra:} Modul kann zu Absturz führen (Blue-Screen)
+
+
+\textbf{Mikrokern:} Module (z.B. Speicherverwaltung) als eigener Serverprozess, Kernel sorgt nur für Kommunikation zwischen Anwendung und Serverprozess; \\
+\underline{Pro:} läuft stabiler Contra: Häufiger Wechsel zwischen User/Kernelmodus
+
+\textbf{Teilhaberbetrieb:} Viele User nutzen ein Programm
+
+\textbf{Teilnehmerbetrieb:} Viele User nutzen eigene Programme
+
 \input{interrupt.tex}
+\input{Prozessverwaltung.tex}
 \input{Sync.tex}
 \input{Speicher.tex}
+\input{Virt.tex}
 \end{document}

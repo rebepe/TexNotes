@@ -1,110 +1,101 @@
- \section*{bash-Kommandos}
-exit/<Strg>D: beenden der Shell
+\begin{tabbing} \kill ~~~~~ \= \rule{0.10\textwidth}{0em} \= \\
+\textbf{Kommandos}\\
 
-expr : Arithmetische Ausdrücke, bei Vergleichen 0 = false
+\> exit /<Strg> D 		\> \com{beenden der Shell}\\
 
-ls: Verzeichnis ausgeben
+\> expr  		 \> \com{Arithmetische Ausdrücke, bei Vergleichen 0 = false}\\
 
-wc: worte zählen
+\> ls		\> \com{Verzeichnis ausgeben}\\
 
-echo: ausgabe
+\> wc  	\> \com{ worte zählen}\\
 
-cd
+\> echo 	\> \com{ ausgabe}\\
 
-cat
+\> cd	\\
 
-man /--help
+\> cat	\\
 
-read var1 var2 ...:  lesen von eingabe in variable
+\> man / --help\\
 
--gt größer als
--lt kleiner 
+\> read \textcolor{gray}{var1 var2 ...}  \> \com{ lesen von eingabe in variable}\\
 
-\subsection*{Ströme}
-stdin: 0\\
-stdout: 1\\
-stderr: 2\\
-\subsubsection*{Umleitung}
-> Datei überschreiben
+\> -gt \> \com{größer als}\\
 
->> an Datei anhängen
-
-< aus Datei lesen (in stdin)
-
-| Pipe
-
-\& Prozess im Hintergrund starten
-
-cd; ls  Sequenz
-\subsection*{Variablen}
-Defintion:  var=12
-
-Ausgabe:    echo \$var
-
-alle Ausgeben:  set
-\subsubsection*{Parameter}
-\$\# Anzahl der Parameter
-
-\$* Alle Parameter (zusammengefasst)
-
-\$- übergebene Schalter (z.B. -a)
-
-\$@ Alle Parameter (einzeln)
-
-\$? Wert des letzten ausgeführten Kommandos
-
-\$\_ letztes Argument des letzten Kommandos
-
-\$\$ PID dieser Shell
-
-\$\! PID des letzten Hintergrundkommandos
+\> -lt \> \com{kleiner }\\
 
 
-\subsection*{Kontrollstrukturen}
-\subsubsection*{if}
-if Bedingung     \# if [ "\$v1" = "\$v2" ]
+\textbf{Ströme}\\
+\> stdin: 0\\
+\> stdout: 1\\
+\> stderr: 2\\
+\textbf{Umleitung}\\
+\> > \> \com{Datei überschreiben}\\
+\> > > \> \com{an Datei anhängen}\\
+\> < \> \com{aus Datei lesen (in stdin)}\\
+\> | \> \com{Pipe}\\
+\> \& \> \com{Prozess im Hintergrund starten $\Leftrightarrow$ Parallele Verarbeitung}\\
+\> ;   \> \com{Sequenz}\\
+\textbf{Variablen}\\
+\> var=12   \> \com{definition}\\
+\> echo \$var  \> \com{ausgabe}\\
+\> set \> \com{ausgabe aller Umgebungsvariablen}\\
+\textbf{Parameter}\\
+\> \$\#   \> \com{Anzahl der Parameter}\\
 
-then
+\> \$- \> \com{übergebene Schalter (z.B. -a)}\\
+\> \$@ \> \com{Alle Parameter (einzeln)}\\
+\> \$*  \> \com{Alle Parameter (zusammengefasst)}\\
+\> \$? \> \com{Wert des letzten ausgeführten Kommandos}\\
 
-[elif Bedingung
+\> \$\_ \> \com{letztes Argument des letzten Kommandos}\\
 
-then]
+\> \$\$ \> \com{PID dieser Shell}\\
 
-[else] 
+\> \$! \> \com{PID des letzten Hintergrundkommandos}\\
 
-fi
- 
-wahr: 0, falsch !=0
-\subsubsection*{Mehrfachauswahl}
-case \$var in
+\\
+\textbf{Kontrollstrukturen}\\
+\textbf{if}\\
+\> \com{wahr: 0, falsch !=0}\\
+\> if Bedingung     \> \com{z.B. if [ "\$v1\" = "\$v2" ]}\\
 
-  1) echo wert = 1
+\> ~~~then\\
 
-  c) echo wert = c
+\> \textcolor{gray}{~~~elif Bedingung}\\
+\> \textcolor{gray}{~~~then}\\
 
-  *) echo Ungueltig
+\> \textcolor{gray}{~~~else } \\
 
-esac 
+\> fi\\
 
-\subsection*{for}
-for x in \$Liste \# for F in `find -name bla*`
+\textbf{Mehrfachauswahl}\\
+\> case \$var in\\
+\> ~~~1) echo wert = 1\\
+\> ~~~c) echo wert = c\\
+\> ~~~*) echo Ungueltig\\
+\> esac \\
 
-do 
+\textbf{for}\\
+\> for x in \$Liste \> \com{ for F in `find -name bla*`}\\
+
+\> ~~~do \\\\
    
-done 
+\> done \\
 
-\subsection*{Zählschleife}
-for (( i = 1; i <= \$max; i++ ))
+Variante: Zählschleife\\
+\> for (( i = 1; i <= \$max; i++ ))\\
 
-\subsection*{while}
-while 
+\textbf{while}\\
+\> while  Bedingung\\
 
-do 
+\> ~~~do \\
   
-done
-\subsection*{until}
-until 
+\> done\\
+\textbf{until}\\
+\> until Bedingung\\
 
-do 
+\> ~~~do \\
 
-done
+\> done
+
+\end{tabbing}

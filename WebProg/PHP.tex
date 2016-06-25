@@ -1,0 +1,194 @@
+\section*{http}
+generisch, plain text, zustandslos
+
+Anfrageformat:
+\begin{verbatim}
+message = request-line | status-line
+*(message-header CRLF)
+CRLF
+[message-body]
+
+
+request-line : METHOD URL HTTP/1.1
+response line : HTTP/1.1 STATUS-CODE STATUS-MESSAGE
+\end{verbatim}
+
+Status-code:
+\begin{itemize}
+\item 1XX - Informational (request received, continues processing)
+\item 2XX - Success
+\item 3XX - Redirection (further action required in order to fulfill the request)
+\item 4XX - Client error (request contains bad syntax or cannot be fulfilled)
+\item 5XX - Server error (server failed to fulfill an otherwise valid request)
+\end{itemize}
+
+\subsection*{Sessions}
+Http ist zustandslos, Sitzungen durch austausch von Session-Identifiern bei Login. SessionID muss eindeutig sein. Client schickt SessionID bei jeder Anfrage, z.B. per Cookie, URL
+
+Cookie: key-value-paare als string, JavaScript-zugriff möglich
+
+\subsection*{https}
+TLS = Transport Layer Security zwischen TCP und http => schutz vor Man-in-the-middle, authentifikation der Website; Verschlüsselung der Verbindung
+
+Attacken: wenn URI erraten: Known-plaintext,  Traffic-analysen
+\section*{AJAX}
+Serverkommunikation ohne neuladen der Seite
+\begin{verbatim}
+var req = new XMLHttpRequest();
+var response = null;
+req.open("GET", URL, true);
+req.onreadystatechange = function () {
+	if (req.readyState == 4) {
+		response = req.responseText; // responseXML when transferring XML
+		// do something with the response
+	}
+};
+req.send(null)
+\end{verbatim}
+
+\section*{CGI}
+Aufruf von Kommandozeilenbefehlen durch Web-Server: 
+
+server setzt umgebungsvariablen (z.B. QUERY\_ STRING, REQUEST\_ URI, REQUEST\_ METHOD, HTTP\_ ACCEPT, ...) und ruft Skript auf( mit PUT/POST -> stdin), stdausgabe wird versendet
+
+Nachteile: Nach Angriff u.U. beliebiger Code direkt auf Betriebssystem einschleusbar, Erzeugt Prozess für jeden Aufruf
+
+\subsection*{Verbesserungen}
+Compilierte Anwendungen statt Skripte
+
+FastCGI: Länger Laufender Interpreter führt mehrere Anfragen nacheinenader aus => weniger Prozesse
+
+HTTP-Server modules: Interpreter als Modul des Webservers
+
+\subsection*{PHP}
+Wird auf Server ausgeführt, ausgabe wird versendet
+
+Einbetten in HTML: <?php ... ?>
+
+Variablen:
+
+\$myInt = 10;
+
+isset(\$myInt); //True wenn definiert
+
+unset(\$myInt); //Löschen
+
+\subsubsection*{Strings}
+Kein Unicode
+
+\$helloStr = 'Hello Nr. \$myInt';  // Nr. \$myInt
+\$helloStr2 = "Hello Nr. \$myInt";  // Nr. 10
+\$helloStr3 = "Hello Nr. \{\$myInt\}eger // Nr. 10eger 
+
+\subsubsection*{Arrays}
+key-value!
+
+erstellen
+\begin{verbatim}
+$a1 = array("a", "b", "c");
+$a2 = array( "name" => "hans",
+"alter" => 5,
+10 => 25,
+100 => 78)
+\end{verbatim}
+
+
+ansprechen
+\begin{verbatim}
+echo $a2["foo"];
+echo $a2[100];
+\end{verbatim}
+
+count(\$a2); // höchster int arraykey (in diesem Fall 100)
+
+\subsubsection*{objekte}
+\begin{verbatim}
+class Foo {
+  public $var = 'default value';
+  protected $bar;
+  public function __construct() { // Konstruktor
+    $this->bar = 42;
+  }
+  public function displayVar() {
+    echo $this->var;
+  }
+}
+$f = new Foo();
+$f->displayVar();  // methodenaufruf
+
+//vererbung
+class Bar extends Foo {
+  public function __construct() {
+    parent::__construct();    // Konstruktor vaterklasse
+    $this->bar = 24;
+  }
+}
+
+$b = new Bar();
+$b->displayVar();  //Memberaufruf
+\end{verbatim}
+
+\subsubsection*{Kontroll}
+while, do-while,for analog zu C
+\begin{verbatim}
+foreach ($a as $value) {
+	echo $value;
+}
+foreach ($a as $key => $value) {
+	echo $key . PHP_EOL;
+	echo $value . " == " . $a[$key] . PHP_EOL;
+}
+\end{verbatim}
+
+if, elseif, else
+
+include, require, include_once, require_once
+
+\subsubsection*{funktionen}
+\begin{verbatim}
+$gvar = 'sth';
+function foo($arg1, $arg2, ..., $argN) {
+	echo "Example function.\n";
+	global $gvar; // aufruf globale Variable
+	return $gvar;
+}
+
+$bar = 'foo';
+$bar();
+
+$bar = function () { ... };
+$bar();
+\end{verbatim}
+
+\subsubsection*{Referenzen}
+\begin{verbatim}
+$a =& $b; // $a and $b zeigen auf gleiches objekt
+
+function foo(&$var) {  //übergabe einer Referenz
+	$var++;
+}
+
+class Foo {
+	public $value = 42;
+	public function &getValue() {
+		return $this->value;
+	}
+}
+\end{verbatim}
+
+Superglobal variables
+- These are available everywhere in a PHP script (no need to use global)
+• $GLOBALS - References all variables in global scope
+• $_SERVER - Server and execution environment information
+• $_GET
+- HTTP GET variables
+• $_POST
+- HTTP POST variables
+• $_FILES
+- HTTP file upload variables
+• $_COOKIE - HTTP cookies
+• $_SESSION - Session variables
+• $_REQUEST - HTTP request variables
+• $_ENV
+- Environment variables
+
