@@ -4,18 +4,23 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{trees}
 
-\definecolor{darkgreen}{rgb}{0.1,0.5,0.1}
+\definecolor{darkgreen}{rgb}{0.1,0.65,0.1}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.8}
 
 \newcommand{\minpurp}[1]{\textbf{\textcolor{purple}{ #1}}~\\}
 \newcommand{\minmeth}[1]{\textcolor{darkgreen}{\textbf{#1}:~}}
+\newcommand{\submeth}[1]{\textcolor{darkblue}{\textit{#1}:~}}
 
 \newcommand{\quarterpage}[1]{\begin{minipage}{0.25\textwidth} #1 \end{minipage}}
-\newcommand{\halfpage}[1]{\begin{minipage}{0.5\textwidth} #1 \end{minipage}}
+\newcommand{\halfpage}[1]{\begin{minipage}{0.49\textwidth} #1 \end{minipage}}
 \begin{document}
 
 \input{Math.tex}
 \input{sort.tex}
 \input{Suchbaum.tex}
+
+\newpage
+
 \input{Hash.tex}
 \input{Graph.tex}
 

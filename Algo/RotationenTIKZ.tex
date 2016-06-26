@@ -2,6 +2,7 @@
 \newcommand{\blue}{\textcolor{blue}{T4}}
 \newcommand{\bluedrei}{\textcolor{blue}{T3}}
 \newcommand{\tg}[1]{\textcolor{green}{#1}}
+\newcommand{\tdg}[1]{\textcolor{darkgreen}{#1}}
 \newcommand{\cen}{\textcolor{orange}{\textbf{c}}}
 \newcommand{\reda}{\textcolor{red}{a}}
 \newcommand{\blueb}{\textcolor{blue}{b}}
@@ -17,6 +18,12 @@ child{ node{\bluedrei}
 }
 ;
 \end{tikzpicture}
+\begin{minipage}[b]{0.1\textwidth} \centering 
+Rechts um \textcolor{red}{a} \\
+$\Longrightarrow$ \\
+Links um \textcolor{blue}{b} \\
+$\Longleftarrow$
+\end{minipage}
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
 \node{\reda} 
 child{ node{\red}}
@@ -26,10 +33,6 @@ child{node{\bluedrei}}
 };
 \end{tikzpicture}
 
-\quarterpage{ \centering
-=> Rechtsrotation um a \\
-<= Linksrotation um b
-}
 
 
 
@@ -41,7 +44,7 @@ child{ node{\red}
 }
 child{ node{\cen}
 child{ node{\tg{T2}}}
-child{ node{\tg{T3}}}
+child{ node{\tdg{T3}}}
 }
 }
 child{ node{\blue}}
@@ -54,7 +57,7 @@ child{ node{\blue}}
     child{ node{\tg{T2}}}
   }}
   child{ node{\blueb}
-    child{ node{\tg{T3}}}
+    child{ node{\tdg{T3}}}
     child{ node{\blue}}
   }
 ;
@@ -66,7 +69,7 @@ child{ node{\red}}
 child{ node{\blueb}
 child{ node{\cen}
 child{ node{\tg{T2}}}
-child{ node{\tg{T3}}}}
+child{ node{\tdg{T3}}}}
 child{ node{\blue}
 }
 }

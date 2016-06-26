@@ -1,20 +1,20 @@
 
 
 \minpurp{Bäume}
-Preorder: \fbox{Knoten}-linkesKind-rechtesKind
+\minmeth{Preorder:} \fbox{Knoten}-linkerBaum-rechterBaum \textcolor{lightgray}{// Wurzeln sind links}
 
-Inorder: linkesKind-\fbox{Knoten}-rechtesKind
+\minmeth{Inorder:} linkerBaum-\fbox{Knoten}-rechterBaum
 
-Postorder: linkesKind-rechtesKind-\fbox{Knoten}
+\minmeth{Postorder:} linkerBaum-rechterBaum-\fbox{Knoten}\textcolor{lightgray}{// Wurzeln sind rechts}
 
 \minpurp{Binärer Suchbaum}
-jeder Knoten hat 2 Kinder, alle im linken Teilbaum sind Kleiner, alle im rechten größer
+Knoten haben 2 Kinder, kleiner im Linken, größer im rechten Teilbaum
 
 \minmeth{Suche}
-Starte in der Wurzel, wenn item größer gehe nach rechts, kleiner links, = gefunden; wiederhole bis gefunden oder Blatt 
+Starte bei Wurzel, wenn gesucht größer: rechts, wenn kleiner links, wiederhole bis gefunden oder Blatt 
  
 \minmeth{Einfügen}
- Suche im Baum; füge ein (achte auf links/rechts)
+Suche im Baum; füge ein (achte auf links/rechts)
  
 \minmeth{Löschen} 
 Suche den Knoten; wenn:
@@ -24,32 +24,32 @@ Suche den Knoten; wenn:
 \item nicht vorhanden: nichts tun
 \item Blatt: Lösche Knoten, Referenz im Vorgänger auf null
 \item 1 Nachfolger: Referenz im Vorgänger auf nachfolger, lösche Knoten
-\item 2 Nachfolger: Tausche mit größtem Element im linken Teilbaum (symmetrischer Vorgänger), lösche Element\\
+\item 2 Nachfolger: Tausche mit größtem Element im linken Teilbaum (symmetrischer Vorgänger), lösche Element
 \end{itemize}
 }
+
 symmetrischer Vorgänger: einmal nach links, dann rechts solange möglich;
 
 \minpurp{AVL-Baum}
-Bedingung: |Balancefaktor|= 1 \\
+Bedingung: |Balancefaktor| < 1 \\
 Balancefaktor = $\text{Höhe}_{rechter Teilbaum} - \text{Höhe}_{linker Teilbaum} $\\
-$ \Rightarrow h < 1.45 \log_2(n+2)-1.33$ => höhe max. 45 \% schlechter als best-case
+\textcolor{lightgray}{$ h < 1.45 \log_2(n+2)-1.33$ }=> höhe max. 45 \% schlechter als best-case
 
-\minmeth{Einfügen/Löschen} wie bei binär + Ausgleichen
+\minmeth{Einfügen/Löschen} wie bei binär, anschließend Ausgleichen
 
-
-\minmeth{Ausgleich nach einfügen:}
+\submeth{Ausgleich nach einfügen}
 (Umgekehrt für +2)\\
 Suche balancefaktor -2 am weitesten unten im Pfad zum eingefügten element\\
 betrachte linken Nachfolger (b):\\
 bei -1: Rechtsrotation um linken Nachfolger (a)\\
 bei +1: Doppelrotation
 
-Genau einmal Ausgleichen benötigt
+Maximal einmal ausgleichen nötig
 
 
 
 
-\minmeth{Ausgleich nach Löschen:}
+\submeth{Ausgleich nach Löschen:}
 (Umgekehrt für +2)\\
 Suche balancefaktor -2 am weitesten unten im Pfad zum gelöschten element;\\
 betrachte linken Nachfolger (a):\\
@@ -66,31 +66,31 @@ wenn linker Nachfolger +1 oder -1 war, dann für höhere knoten vllt. weiter aus
 
 \minpurp{Treap}
 jedem element wird zusätzlich eine zufällige Priorität zugewiesen\\
-Heapbedingung: das Elternelement hat kleinere Priorität als die Kinder
+Heapbedingung: $Prio_{Vater} < Prio_{Kind}$
 
 => Treap ist eindeutig bestimmt
 
-Erwartungswert Pfadlänge: $2\frac{n+1}{n}H_n-3$\\
-Erwartungswert Rotationen: <2
+Erwartungswert Pfadlänge: $2\frac{n+1}{n}H_n-3$; ~~~Erwartungswert Rotationen: <2 
 
-\minmeth{Suchen \& Einfügen}
-Analog zu Binärer Baum; anschließend: Rotation des neuen Knotens nach oben, bis heapbedingung erfüllt ist;
+\minmeth{Einfügen}
+Analog Binärer Baum; danach: Rotation(nach oben) bis heapbedingung erfüllt
+
 \minmeth{Löschen}
-Rotation des zu löschenden Knoten mit dem Nachfolger kleinerer Priorität, bis der Knoten ein Blatt ist, dann löschen.
+Suche knoten, rotiere mit kleinerem Nachfolger (Priorität) bis Blatt; lösche
 
 
 \renewcommand{\min}{\lceil\frac{d}{2}\rceil}
 \newcommand{\mincontent}{\lfloor\frac{d-1}{2}\rfloor}
 \minpurp{B-Bäume}
-für festplatten, minimieren zugriffe in datenbanken
+Entwickelt für Festplatten, minimieren zugriffe in datenbanken
 
-Ordung d: Knoten haben zwischen $\min$ und d Nachfolger, zwischen $\mincontent -1$ und d-1 Elemente,\\
+Ordung d => Knoten hat $\min$ bis d Nachfolger, zwischen $\mincontent$ und d-1 Elemente,\\
 Wurzel hat mind. 2 Nachfolger oder ist Blatt \\
 alle Blätter sind immer auf einer Ebene => immer vollst. ausgeglichen 
 
 Baum mit höhe h hat mindestens $1+2\dfrac{\min^h - 1}{\min -1}$ und maximal $ \dfrac{d^{h+1}-1}{d-1}$ Knoten
 
-höhe ist $O(\log_2(n)$, genauer: zwischen $\log_d(n+1)-1$ und $\log_{\lfloor(d-1)/2\rfloor+1}\left(\dfrac{n+1}{2}\right)$
+höhe ist $O(\log_2(n))$, \textcolor{gray}{genauer: zwischen $\log_d(n+1)-1$ und $\log_{\lfloor(d-1)/2\rfloor+1}\left(\dfrac{n+1}{2}\right)$}
 
 Aufbau eines Knotens/Seite:
 \begin{tabular}{|c|c|c|c|c|}
@@ -99,14 +99,15 @@ Aufbau eines Knotens/Seite:
 \hline
 \end{tabular}
 
-Es gilt binärbaum Bedingung jedes Element + rechte/linke Adresse
+Es gilt binärbaum Bedingung für jedes Element mit seiner rechte/linke Adresse
 
 Bsp: d = 4
 \begin{tikzpicture}
 \tikzstyle{bplus}=[rectangle split, rectangle split horizontal,rectangle split ignore empty parts,draw]
 \tikzstyle{every node}=[bplus]
-\tikzstyle{level 1}=[sibling distance=60mm]
-\tikzstyle{level 2}=[sibling distance=20mm]
+\tikzstyle{level 0}=[sibling distance=60mm,level distance=2em]
+\tikzstyle{level 1}=[sibling distance=60mm,level distance=3em]
+\tikzstyle{level 2}=[sibling distance=20mm,level distance=3em]
 \node {15 \nodepart{two} - \nodepart{three} - } [->]
   child {node {3 \nodepart{two} 7 \nodepart{three} - }
     child {node {1 \nodepart{two} 2 \nodepart{three} -}}
@@ -121,13 +122,13 @@ Bsp: d = 4
 ;\end{tikzpicture}
 
 
-\minmeth{Einfügen:} Suche; Wenn Blatt nicht voll: füge ein (sortierung beachten) \\
-Wenn Blatt voll: (ggf. rekursiv)
+\minmeth{Einfügen} Suche; Wenn Blatt nicht voll: füge ein (sortierung beachten) \\
+Wenn  das Blatt voll ist: (ggf. rekursiv)
 
 \halfpage{
 \begin{enumerate}
-\item  Suche das mittlere Element $M_{itte}$, die elemente rechts davon kommen in ein neues Blatt;
-\item  füge $M_{itte}$ in den Vater Knoten ein, der rechte Verweis zeigt auf das neue Blatt; 
+\item  Suche das mittlere Element $M_{itte}$, die elemente rechts davon werden neues Blatt;
+\item  füge $M_{itte}$ in den Vaterknoten ein, der rechte Verweis zeigt auf das neue Blatt; 
 \item füge das neue Element ein
 \end{enumerate}   }
 
@@ -135,14 +136,14 @@ Wenn Blatt voll: (ggf. rekursiv)
 
 \halfpage{
 \begin{enumerate}
-\item Element nicht in einem Blatt => tausche es mit dem Nachfolger in der Sortierreihenfolge; Anschließend löschen; 
-\item ist die Seite danach zu Klein ($<\mincontent$) versuche Ausgleich mit direkten Nachbarblatt:
-das dazwischenliegende Element x wird aus Vaterknoten in den zu kleinen Knoten verschoben, der Nachfolger/Vorgänger aus dem anderen Knoten an seine Stelle eingefügt, sein Verweis kommt an die leere Adresse vor/nach x.
-\item Ist das nicht möglich: Füge 2 benachbarte Knoten + x aus Vaterknoten zu einem Zusammen. Wiederhole ggf. rekursiv.
+\item Element nicht in einem Blatt => tausche es mit dem Nachfolger in Sortierreihenfolge (ist in einem Blatt);  lösche;
+\item ist Seite danach zu Klein ($<\mincontent$) versuche Ausgleich mit direkten Nachbarblatt:
+dazwischenliegendes Element ($M_{itte})$ kommt vom Vaterknoten in den zu kleinen Knoten, der Nachfolger/Vorgänger aus dem anderen in den Vaterknoten
+\item Ausgleich nicht möglich: Füge 2 benachbarte Knoten + $M_{itte}$ aus Vaterknoten zu einem Zusammen. Wiederhole ggf. rekursiv.
 \end{enumerate}}
 
 \minmeth{B*-Baum} 
-Beim Einfügen in volle Seite wird wie beim löschen zuerst versucht mit direkten Nachbarn auszugleichen => bessere Speicherausnutzung, geringere Höhe
+Beim Einfügen in volle Seite versuche ausgleich mit direkten Nachbarn => bessere Speicherausnutzung
 
 \minmeth{B+-Baum}
-Bei Datenbank-Indexen: nur die Schlüssel in B-Baum, Blätter zeigen auf die Datenblöcke, diese sind doppelt verkettet. Der Baum selbst enthält nur Schlüsselwerte
+Bei Datenbank-Indexen: nur die Suchschlüssel im B-Baum, Blätter zeigen auf die Datenblöcke, diese sind doppelt verkettet. Der Baum selbst enthält nur Schlüsselwerte
