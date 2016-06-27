@@ -1,18 +1,21 @@
-\section*{Synchronisation}
+\section{Synchronisation}
 \textbf{Race Conditions:} geteilte Ressource, Ergebnis abhänging von Ausführungsreihenfolge
 
 \textbf{Kritische Abschnitte:} logisch ununterbrechbare Code-bereiche;
 
 \textbf{Kriterien von Dijkstra: }
+
+\halfpage{
 \begin{itemize}
-\item  Keine zwei Prozesse gleichzeitig im gleichen kritischen Abschnitt (mutual exclusion)
+\item  Nur ein Prozess gleichzeitig in kritischem Abschnitt (mutual exclusion)
 \item  Keine Annahmen über die Geschwindigkeit, Anzahl der Prozesse bzw. Prozessoren
 \item  Kein Blockieren durch Prozesse außerhalb eines kritischen Abschnittes
 \item kein ewiges Warten (fairness condition)
 \end{itemize}
+}
 
 
-Methoden:
+\textbf{Methoden:}
 \begin{itemize}
 \item busy waiting/spinlock: testen einer Variablen bis zutritt erlaubt
 \item interrupts maskieren: nur bei Einkernern, sehr ungünstig
@@ -20,13 +23,12 @@ Methoden:
 \item Semaphore/Mutex
 \begin{verbatim}
 Semaphore x = new Semaphore();
-x.Down(); // kritischer Abschnitt besetzt?
+x.Down();            // kritischer Abschnitt besetzt?
    c=counter.read(); // kritischer Abschnitt
    c++;
    counter.write(c);
-x.Up();  // Verlassen des kritischen Abschnittes
+x.Up();              // Verlassen des kritischen Abschnittes
 \end{verbatim}
-
 \item Erzeuger-Verbraucher
 \begin{multicols}{2}
 \begin{verbatim}
@@ -53,90 +55,98 @@ While (true) {
 \item Monitor: Ein Betriebsmittel aus Prozeduren und Daten, geshared zwischen Prozessen, aber nur von einem gleichzeitig nutzbar (bsp. synchronized in Java)
 
 Methoden: Enter, Leave, Wait, Pulse
-
 \end{itemize}
-\section*{Deadlock}
-Darstellung: Belegungsgraph; Prozess -> \fbox{Ressource}
 
 
-\begin{tikzpicture}
-%\node[ellipse](1){Prozess1} -- \node[rectangle](2){Ressource} -- \node[circle](3){Prozess2};
-%\Edge(1)(2); \Edge(2)(3);
+\section{Deadlock}
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           draw=black,
+           text width=5em,
+           minimum height=1em,
+           text centered},
+    circ/.style={
+           ellipse,
+           draw=black,
+           text width=4em,
+           minimum height=1em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+\textbf{Bedingungen: }
 
-\end{tikzpicture}
-
-Bedingungen: 
+\halfpage{
 \begin{itemize}
 \item Mutual exclusion: Ressourcensharing nicht möglich (DVD-Brenner)
 \item Hold-and-wait: Prozesse belegen Ressourcen und wollen weitere
 \item No preemption: Entzug nicht möglich
 \item Circular waiting: gegenseitiges Warten
 \end{itemize}
+}
 
-Strategien: 
+\textbf{Strategien: }
+
+\halfpage{
 \begin{itemize}
 \item Ignorieren (wenn selten)
 \item Erkennen und beheben (Erkennen: Zyklus im Belegungsgraph) :\\
-Unterbrechung, Rollback Prozessabbruch Transaktionsabbruch
+Unterbrechung, Rollback Prozessabbruch Transaktionsabbruch\\
+\begin{minipage}{0.2\textwidth}
+\textcolor{green}{belegt von}
+
+\textcolor{red}{wartet auf}
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}[node distance=1.5cm, auto,]
+ \node (dummy) {};
+ \node[punkt, below=0.5em of dummy] (Re) {Ressource 1};
+ \node[punkt, above=0.5em of dummy] (Rz) {Ressource 2};
+ \node[circ,right=of dummy] (pz) {Prozess 2}
+   edge[pil,red] (Re.east)
+   edge[pil,<-,green] (Rz.east);
+ \node[circ,left=of dummy] (pe) {Prozess 1}
+   edge[pil,red] (Rz.west)
+   edge[pil,<-,green] (Re.west);
+\end{tikzpicture}
+\end{minipage}
+
 \item Dynamisches Verhindern: notwendig Vorwissen über Bedarf \\
 z.B. Bankiers-Algorithmus: prüfen, ob es eine Zuteilungsreihefolge gibt, bei der der Bedarf erfüllt werden kann
-
 \item Vermeiden: vermeiden einer der Deadlock-Bedingungen
+
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item Mutual exclusion: z.B. virtualisieren mit Spooling
-\item Hold-and-wait: anfordern aller benötigten Ressourcen auf einen Schlag, oder freigabe alter Ressourcen bevor weitere Angefordert werden
-\item Circular waiting: nummerieren der Ressourcen, anforderung nur in aufsteigender Reihenfolge\\
+\item Hold-and-wait: anfordern aller benötigten Ressourcen auf einen Schlag, \\
+oder freigabe alter Ressourcen bevor weitere Angefordert werden
+\item Circular waiting: nummerieren der Ressourcen, nur in aufsteigender Reihenfolge anfordern\\
 z.B. in Echtzeitsysteme: Priority Ceiling Protocol\\
 Ressource hat Ceiling Priorität = maximale Priorität der Tasks, die sie verwenden werden. Der sie nutzende Task hat während der Nutzung diese Priorität
 \end{itemize}
+\end{minipage}
 \end{itemize}
-\section*{Kommunikation}
+}
+
+\section{Kommunikation}
 \textbf{Nachrichten:} verbindungsorientiert vs verbindungslos, Synchron(Blockierend) vs Asynchron
 
 \textbf{Speicher:} gemeinsamer Adressraum (Threads), Shared Memory, Datei (Prozess)
 
-\subsection*{Interprozesskommunikation}
+\subsection{Interprozesskommunikation}
+\halfpage{
 \begin{itemize}
-\item Pipes und FIFOs (Named Pipes) als Nachrichtenkanal
+\item Pipes und FIFOs (Named Pipes) als Nachrichtenkanal\\
+Standardausgabe zu Standardeingabe; Unidirektional, bidirektional über mehrere Pipes; 
 \item Nachrichtenwarteschlangen (Message Queues)
 \item Gemeinsam genutzter Speicher (Shared Memory)
 \item Sockets (Ip-Loopback)
-\end{itemize}
-
-\subsubsection*{Pipes}
-Unidirektional, bidirektional über mehrere Pipes; Standardausgabe zu Standardeingabe
-
-\begin{verbatim}
-int fds[2] / Filedescriptoren für Pipe
-pipe(fds);
-if (fork() == 0) {
-   // 1. Kindprozess, Standardausgabe auf Pipe-Schreibseite (Pipe-Eingang) legen und Pipe-Leseseite (Pipe-   Ausgang) schließen (wird nicht benötigt)
-   dup2(fds[1], 1); // 1 = Standardausgabe
-   close(fds[0]);
-   write (1, text, strlen(text)+1);
-}
-else{
-   if (fork() == 0) {
-      // 2. Kindprozess, Pipe-Leseseite (Pipe-Ausgang) auf
-      // Standardeingabe umlenken und Pipe-Schreibseite
-      // (Pipe-Eingang) schließen
-      dup2(fds[0], 0); // 0 = standardeingabe
-      close(fds[1]);
-      while (count = read(0, buffer, 4))
-      {
-         // Pipe in einer Schleife auslesen
-         prozess Pipe
-         buffer[count] = 0; // String terminieren
-         printf(“%s“, buffer) // und ausgeben
-      }
-   else {
-      // Im Vaterprozess: Pipe an beiden Seiten schließen und
-      // auf das Beenden der Kindprozesse warten
-      close(fds[0]);
-      close[fds[1]);
-      wait(&status);
-      wait(&status);
-   }
-   exit(0);
-}
-\end{verbatim}
+\end{itemize}}

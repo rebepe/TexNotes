@@ -1,7 +1,7 @@
 \section*{Grundlagen}
-Aufbau: \fbox{Applikation} -> \fbox{DBMS(Datenbank-Management-System)} -> \fbox{Datenbanken}
 
 \begin{description}
+\item[Aufbau] \fbox{Applikation} -> \fbox{DBMS(Datenbank-Management-System)} -> \fbox{Datenbanken}
 \item[Persistenz:] nicht-flüchtig gespeichert nach Transaktionsende
 \item[Semantische Integrität:] korrekt aus Fachsicht 
 \item[Konsistenz:] Widerspruchsfrei, durch Integritätsregeln
@@ -16,32 +16,34 @@ Aufbau: \fbox{Applikation} -> \fbox{DBMS(Datenbank-Management-System)} -> \fbox{
 \item[Referentielle Integrität:] Datensätze erst löschen, wenn nicht mehr referenziert
 \item[Domänen Integrität:] Werte atomar, liegen in Definierten Wertebereichen (CHECK)
 \item[Surrogat-Schlüssel:] künstlicher Primärschlüssel (id)
-\item[ CAP-Theorem:] Konsistenz, Verfügbarkeit, Toleranz gegen Netzausfall: nur 2 von 3 möglich
-
+\item[CAP-Theorem:] Konsistenz, Verfügbarkeit, Toleranz gegen Netzausfall: nur 2 von 3 möglich
+\item[3Schichten-Modell:] \begin{minipage}{0.3\textwidth}
+\begin{tabular}{|c|}
+\hline
+Externe Ebene(Views) \\\hline Logische Ebene(Schema) \\\hline Interne Ebene (Indizes)\\\hline
+\end{tabular}\end{minipage}
+\item[Physische Datenunabhänigkeit:] Anwendung unabhängig von Interner Ebene 
+\item[Logische Datenunabhängigkeit:] Anwendung fast unabhängig von Logischer Ebene 
 \end{description}
 
-\section*{Modellierung}
 
-3Schichten-Modell: \\
-\fbox{Externe Ebene(Views)} \\\fbox{Logische Ebene(Schema)} \\\fbox{Interne Ebene (Indizes)}\\
-Physische Datenunabhänigkeit: Anwendung von Änderungen auf Interner Ebene unberührt\\
-Logische Datenunabhängigkeit: " auf Logische Ebene "kaum" berührt
+\section*{Umsetzung von Vererbung}
+\begin{itemize}
+\item Single Table (eine Tabelle, die Kind-Attribute sind ggf. NULL): \\
+Vorteile: Redundanzfrei, keine JOINs \\
+Nachteile: Viel NULL, Große Tabelle, nicht über mehrere Ebenen
+\item Table-per-Class: jede Klasse eigene Tabelle \\
+Vorteile: Redundanzfrei, Einfacher Zugriff auf typunabhängige Attribute der Oberklasse, keine NULL-Werte  \\
+Nachteile: JOINs nötig => schlechtere Performance, Referentielle Integrität muss geprüft werden
+\item  Table-per-Concrete-Class: nur Tabellen für Klassen mit Instanzen \\
+Vorteile: Typen leicht unterscheidbar, Objektinformation in einer Tabelle \\
+Nachteile: ggf. Redundante Informationen, Anfragen über alle Objeke durch UNION
+\end{itemize}
+
 
 Kardinalitäten: 1:1, 1:n, n:m, + optionalität
 
 Identifizierende Beziehungen: schwache Entität setzt andere Entität voraus (z.B. Bestellpositionen Bestellung)
 \input{ER.tex}
 
-Umsetzung von Vererbung:
-\begin{itemize}
-\item Single Table (eine Tabelle, die Kind-Attribute sind ggf. NULL): \\
-Vorteile: Redundanzfrei, keine JOINs, Auch Elemente speicherbar, die nur zur Eltern-Klasse gehören; \\
-Nachteile: Viel NULL, Große Tabelle, nicht über mehrere Ebenen
-\item Table-per-Class: jede Klasse eigene Tabelle \\
-Vorteile: Redundanzfrei, Auch Elemente speicherbar, die nur zur Eltern-Klasse gehören, Einfacher Zugriff auf typunabhängige Attribute der Oberklasse, keine NULL-Werte  \\
-Nachteile: JOINs nötig => schlechtere Performance, Referentielle Integrität muss geprüft werden
-\item  Table-per-Concrete-Class: nur Tabellen für Klassen mit Instanzen \\
-Vorteile: Typen leicht unterscheidbar, Objektinformation in einer Tabelle \\
-Nachteile: ggf. Redundante Informationen, Anfragen über alle Objeke durch UNION
-\end{itemize}
 

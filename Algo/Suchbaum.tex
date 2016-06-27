@@ -122,14 +122,13 @@ Bsp: d = 4
 ;\end{tikzpicture}
 
 
-\minmeth{Einfügen} Suche; Wenn Blatt nicht voll: füge ein (sortierung beachten) \\
-Wenn  das Blatt voll ist: (ggf. rekursiv)
+\minmeth{Einfügen} Suche; füge ein (sortierung beachten) \\
+Wenn  das Blatt übervoll ist: (ggf. rekursiv)
 
 \halfpage{
 \begin{enumerate}
-\item  Suche das mittlere Element $M_{itte}$, die elemente rechts davon werden neues Blatt;
-\item  füge $M_{itte}$ in den Vaterknoten ein, der rechte Verweis zeigt auf das neue Blatt; 
-\item füge das neue Element ein
+\item  Suche das mittlere Element $M_{itte}$ des übervollen Blattes, die elemente rechts davon werden neues Blatt;
+\item  verschiebe die $M_{itte}$ in den Vaterknoten, der rechte Verweis zeigt auf das neue Blatt; 
 \end{enumerate}   }
 
 \minmeth{Löschen} 

@@ -18,11 +18,14 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{shadows}
 \usetikzlibrary{calc}
-\usetikzlibrary{shapes,snakes}
-
+\usetikzlibrary{shapes}
+\newcommand{\halfpage}[1]{\begin{minipage}{0.49\textwidth} #1 \end{minipage}}
+\renewcommand{\section}[1]{~\\\textbf{\huge{#1}}\\}
+\renewcommand{\subsection}[1]{~\\\textbf{\Large{#1}}\\}
+\renewcommand{\subsubsection}[1]{~\\\textbf{\Large{#1}}\\}
 \begin{document}
-\input{bash.tex}
-\section*{Allgemein}
+\input{bash.tex} \newpage
+\section{Allgemein}
 \textbf{Kernel:} wesentliche Dienste des Betriebssystems, möglichst immer im RAM
 
 \textbf{Usermodus:} Ablaufmodus für Anwendungsprogramme, kein Zugriff auf Kernel
@@ -35,15 +38,17 @@ Schichtenmodell: Monolithischer Kern, Module durch Schichten strukturiert\\
 
 
 \textbf{Mikrokern:} Module (z.B. Speicherverwaltung) als eigener Serverprozess, Kernel sorgt nur für Kommunikation zwischen Anwendung und Serverprozess; \\
-\underline{Pro:} läuft stabiler Contra: Häufiger Wechsel zwischen User/Kernelmodus
+\underline{Pro:} läuft stabiler \underline{Contra:} Häufiger Wechsel zwischen User/Kernelmodus
 
 \textbf{Teilhaberbetrieb:} Viele User nutzen ein Programm
 
 \textbf{Teilnehmerbetrieb:} Viele User nutzen eigene Programme
 
 \input{interrupt.tex}
-\input{Prozessverwaltung.tex}
+\input{Virt.tex}
+
 \input{Sync.tex}
 \input{Speicher.tex}
-\input{Virt.tex}
+\newpage
+\input{Prozessverwaltung.tex}
 \end{document}

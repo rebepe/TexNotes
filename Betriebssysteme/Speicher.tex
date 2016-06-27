@@ -1,166 +1,165 @@
-\section*{Speicherverwaltung}
-\textbf{Lokalitätsprinzip:} örtlich: nah beieinanderliegende Daten werden oft zusammen benötigt, zeitlich: Daten werden oft sofort wieder benutzt
+\section{Speicherverwaltung}
+\textbf{Lokalitätsprinzip:} \underline{örtlich}: nah beieinanderliegende Daten werden oft zusammen benötigt, \underline{zeitlich}: Daten werden oft gleich wieder benutzt
 
-\textbf{Adressraum:} benutzbare Adressen (z.B. $2^{32}$); Anordung durch Compiler (z.B.  
-\fbox{Code}\fbox{Konstanten}\fbox{ Heap}\fbox{Stack)}
+\textbf{Adressraum:} benutzbare Adressen (z.B. $2^{32}$);\\
+ Anordung durch Compiler (z.B.  \fbox{Code}\fbox{Konstanten}\fbox{ Heap}\fbox{Stack)}
 
-\subsection*{Cache}
-write through (sofort) vs write back (bei auslagern) vs write on demand (erst durch expliziten Befehl)
+\textbf{externe Fragmentierung:} Speicher zerfällt in kleine Bereiche \\ 
+\textbf{interne Fragmentierung:} Prozesse mehr speicher als nötig => Leere Bereiche
 
-\subsubsection*{Ersetzungsstrategien}
+\subsection{Cacheersetzungsstrategien}
+\halfpage{
 \begin{itemize}
 \item LRU (Least Recently Used) ältester Zugriffszeitstempel
 \item LFU (Least Frequently Used) Zähler, hochzählen pro zugriff, niedrigster wird zuerst ausgelagert;\\
 mit altern: setzen auf 0 nach intervall
 \item LRL (Least Recently Loaded) analog zu FIFO, ältester Einlagerunszeitstempel wird ausgelagert
 \item Zufällige Seite wird ausgelagert; billig umzusetzen
-\end{itemize}
+\end{itemize}}
 
 
-\subsection*{Speicherverwaltung}
+\subsection{Speicherverwaltung}
+\halfpage{
 \begin{itemize}
 \item Monoprogramming: Ein Programm hat gesamten RAM (bis auf BS)
-\item feste Partitionierung: Aufteilen des RAM in feste Bereiche, Prozesse bekommt einen zugeteilt
+\item feste Partitionierung: Aufteilen des RAM in \textbf{feste} Bereiche
 \item Swapping: Prozesse werden im Ganzen ein/ausgelagert (Fragmentierung!)
-\item Virtueller Speicher: Aufteilung des Adressraums in Seiten, diese werden ein/ausgelagert. => Adressraum kann größer sein als RAM.
-\end{itemize}
+\item Virtueller Speicher: Aufteilung des Adressraums in Seiten, diese werden ein/ausgelagert. \textbf{(Paging Area)} => Adressraum kann größer sein als RAM. 
+\end{itemize}}
 
 \begin{tabular}[width=\textwidth]{|l|}
 \hline
 \textbf{Umrechnung durch MMU: }\\
-$Adresse_{Virtuell}$ = Seite + \underline{Offset};\\
-$Adresse_{Real}$ = Rahmen + \underline{Offset};\\
+$Seiten = \dfrac{Adresse_{virtuell}}{\textit{Seitengröße}}, Frame = \dfrac{Adresse_{real}}{\textit{Seitengröße}} $\\
+Offset = Adresse mod Seitengröße\\
+$Adresse_{Virtuell}$ = Seite $\cdot$ Seitengröße + \underline{Offset};\\
+$Adresse_{Real}$ = Rahmen $\cdot$ Seitengröße + \underline{Offset};\\
 Seite $\Leftrightarrow$ Rahmen: Lookup in Seitentabelle \rule{0.25\textwidth}{0em} \\
 \hline
 \end{tabular}
 
-Ein/Auslagern in \textbf{Paging Area} auf Festplatte;
 
-Ggf. Caching durch \textbf{TLB} (Translation Lookaside Buffer); \\
-TLB-Einträge beinhalten PID
+\textbf{TLB} (Translation Lookaside Buffer):MMU-Cache für Seiten->Frame zuordnung (ggf. mit PID)
 
 \textbf{Page Fault:} Seite nicht im RAM -> Einlagern nötig
 
-\textbf{Mehrstufige Adresstabellen:} die bitgruppen gibt den index in der entsprechenden Tabelle an, diese enthält die Nummer der nächsten Seitentabelle 
+\textbf{Mehrstufige Adresstabellen:} die bitgruppen gibt den index in der entsprechenden Tabelle an, diese enthält die Nummer der nächsten Seitentabelle/des Frames
 
-Bsp:$ \underbrace{001100}_{1.Level}\underbrace{110101}_{2.Level}\underbrace{1001010001}_{offset}$
+Bsp:$ \underbrace{01\dots00}_{1.Level}\underbrace{11\dots01}_{2.Level}\underbrace{1001\dots0001}_{offset}$
 
-\textbf{invertierte Seitentabelle:} eine Tabelle mit Zuordnung Rahmen->Seiten; aufwändigere Suche, weniger Speicherbedarf (Lookup über Hashtabelle)
+\textbf{invertierte Seitentabelle:} eine Tabelle mit Zuordnung Rahmen->Seiten;\\ aufwändigere Suche, weniger Speicherbedarf (Lookup über Hashtabelle)
+\subsection{Ersetzungsstrategien}
+\textbf{Demand Paging}: nach Page-Fault
 
-\stopwashere
-
-\subsection*{Ersetzungsstrategien}
-Demand Paging: nach Page-Fault
+\halfpage{
 \begin{itemize}
-\item Belady (optimal): ersetzung der Seiten die am spätesten in der Zukunft wieder verwendet wird
+\item Belady (optimal): ersetze am spätesten wieder verwendete Seite (Zukunft)
 \item FIFO: älteste Seite wird ersetzt, einfach zu implementieren (Verkettete Liste)
-\item Second Chance: ähnlich FIFO; ist R-Bit gesetzt hänge hinten an und setze R=0, sonst auslagern
-\item NRU (Not Recently Used): \textbf{R}ead-Bit \textbf{M}odified-Bit; Auslagerungsreihenfolge: R=0,M=0;~~~R=0,M=1;~~~R=1,M=0;~~~R=1,M=1
+\item Second Chance: ähnlich FIFO, aber: ist R-Bit gesetzt stelle hinten an und setze R=0
+\item NRU (Not Recently Used): \textbf{R}ead-Bit \textbf{M}odified-Bit; Auslagerungsreihenfolge: R=0,M=0;~~vor~~R=0,M=1;~~vor~~R=1,M=0;~~vor~~R=1,M=1
 \item LRU (Least Recently Used) Am längsten nicht genutzt wird ausgelagert
-\item NFU (Not Frequently Used) Zähler für Zugriffe, auslagerung des Eintrags mit kleinstem Zähler\\
-Aging:
+\item NFU (Not Frequently Used) Zugriffszähler, auslagern des kleinsten Zählers\\
+\textbf{Aging:}   \newcommand{\cc}[1]{\textcolor{purple}{#1}}  \newcommand{\reg}[1]{\textcolor{blue}{#1}}
+\begin{minipage}[t]{\textwidth}
 \begin{itemize}
-	\item als Matrix: setze Bei Zugriff alle in Zeile auf 1, alle in spalte auf 0
-	Bsp: $\left( \begin{matrix}
+	\item Zähler als Matrix: Bei Zugriff: Zeile auf 1, spalte auf 0
+\\$ \begin{matrix}
+	1: \\ 2: \\ 3:\end{matrix}	    \left( \begin{matrix}
 	0 &1 &0 \\
 	0 & 0& 0\\
 	1 & 1 & 0
 	\end{matrix} \right), Zugriff auf 2 => \left( \begin{matrix}
-	0 &0 &0 \\
-	1 & 0& 1\\
-	1 & 0 & 0	
+	0 &\textcolor{red}{0} &0 \\
+	\textcolor{green}{1} & \textcolor{red}{0}& \textcolor{green}{1}\\
+	1 & \textcolor{red}{0} & 0	
 	\end{matrix} \right)$
-	\item als Register: shifte die R-Bits von links ein
-	Bsp: $R \begin{matrix}
-	1\\0\\1\\1\\0
-	\end{matrix} Register: \begin{matrix}
-	1001\\1010\\0011\\0001\\1101
-	\end{matrix}   =>  \begin{matrix}
-	1100\\0101\\1001\\1000\\0110
+	\item als Register: shifte die R-Bits von links ein\\
+	Bsp: $\begin{matrix}
+	R:\\\cc{1}\\\cc{0}\\\cc{1}\\\cc{1}
+	\end{matrix} ~~~~ \begin{matrix}
+	Register:\\	\reg{100}1\\\reg{101}0\\\reg{001}1\\\reg{000}1
+	\end{matrix}   =>  \begin{matrix}Register:\\
+	\cc{1}\reg{100}\\\cc{0}\reg{101}\\\cc{1}\reg{001}\\\cc{1}\reg{000}\\
 	\end{matrix}$
+\end{itemize}\end{minipage}
 \end{itemize}
-\end{itemize}
+}
 
-Prepaging: Working Set: aktuell Bearbeitete Seiten, versuch daraus die benötigten Seiten zu ermitteln; $\tau$ = Zeitraum für ein Workingset
-Bsp: Working Set Clock: 
-wenn R == 1
-\{ R=0, nächste Seite; \}
-sonst
-\{ wenn Alter > $\tau$ und M == 0 überschreiben 
-   wenn Alter > $\tau $ und M == 1 sichere die geänderte Seite, betrachte nächste seite
-\}
+\textbf{Prepaging}: Working Set: gerade bearbeitete Seiten, $\tau$ = Zeitraum für ein Workingset\\
+Working Set Clock: Seiten bilden Ring, lasse Zeiger laufen:\\
+if R == 1:\\
+\rule{2em}{0em}R=0, betrachte nächste Seite; \\
+else\\
+\rule{2em}{0em}if Alter > $\tau$ und M == 0 ersetzen und stop \\
+\rule{2em}{0em}if Alter > $\tau $ und M == 1 sichere die geänderte Seite, betrachte nächste seite
 
+Wurde jede Seite betrachtet: wenn seite ausgelagert wurde laufe bis zu sauberer Seite.\\
+Wurde keine Seite ausgelagert: wähle Zufällige Seite (denn alle sind im Working Set)
 
-Ist der Zeiger wieder am Anfang: wenn seite ausgelagert wurde laufe weiter bis zur nächsten sauberen Seite.
-Wurde keine Seite ausgelagert: wähle Zufällige Seite (denn alle gehören zum Working Set)
-
-\subsection*{Speicherbelegung}
+\subsection{Speicherbelegung}
 Suche nach freien Speicherbereichen; 
+
+\halfpage{
 \begin{itemize}
 \item sequentielle Suche: erster Passender Bereich wird vergeben
-\item optimale Suche: möglichst genau passender Bereich wird vergeben um Fragmentierung zu vermeiden
-\item Buddy-Technik: schrittweises halbieren des Speichers => externe Fragmentierung sinkt, interne Steigt;
-\end{itemize}
+\item optimale Suche: möglichst genau passender Bereich wird vergeben
+\item Buddy-Technik: halbieren des Speichers zu passender größe =>  mehr externe, weniger interne Fragmentierung
+\end{itemize}}
 
-\subsection*{Cleaning}
-\begin{itemize}
-\item Demand-Cleaning: Bei Bedarf
-\item Precleaning: Präventives Zurückschreiben, wenn Zeit ist
-\item Page-Buffering: Verwaltung in Listen (Modified List, Unmodified List)
-\end{itemize}
+\subsection{Cleaning}
+Demand-Cleaning vs Precleaning\\(z.B. Page-Buffering: Abarbeiten in Listen (Modified List, Unmodified List))
+\section{Dateiverwaltung}
+Dateien: abstrahierung der perisistenten Datenhaltung
 
-\section*{Dateiverwaltung}
-Dateien: abstrahiert perisistente Speicherung
-
-Dateien, Pseudodateien (Freiliste), Verzeichnisse, Gerätedateien ( abstraktion von geräten, z.B. /dev/sda)
+Dateien, Pseudodateien (z.B. Paging Area), Verzeichnisse, Gerätedateien ( abstraktion von geräten, z.B. /dev/sda)
 
 Sequentieller vs Wahlfreier Zugriff
 
-Metadaten: informtionen über die Datei (Zugriffsrechte, Erstelldatum, zugriffsdatum...)
+\textbf{Metadaten:} informtionen über die Datei (Zugriffsrechte, Erstelldatum, zugriffsdatum...)
 
-Operationen:
-create
-• delete
-• open
-• close
-• read
-• write
-• append
-• seek
-• get attributes
-• set attributes
-• rename
+\textbf{Operationen:}
+create, delete, open, close, read, write, append, seek, get attributes, set attributes, rename
 
-Memory-Mapping: einblenden der Datei in den Adressraum eines Prozesses
+\textbf{Memory-Mapping:} einblenden der Datei in den Adressraum eines Prozesses
 
+\subsection{Struktur (Unix)}Master Boot Record auf Sektor 0,\\ Partition Table,\\ Bootblock, \\Superblock (enthält Verwaltungsinformationen zum Dateisystem (Anzahl der Blöcke,...)\\Free Blocks (als Bitmap oder Liste) \\ Rootverzeichnis
 
-Master Boot Record auf Sektor 0, Partition Table, Bootblock, Superblock enthält Verwaltungsinformationen zum
-Dateisystem (Anzahl der Blöcke,...), Free Blocks (z.B. Bitmap) gibt die freien Blöcke des
-Dateisystems an, Rootverzeichnis enthält den Inhalt des Dateisystems, I-nodes;
+\subsection{Dateiimplementierung:}
 
-Dateiimplementierung:
+\halfpage{
 \begin{itemize}
 \item Zusammenhängend => Fragmentierung
-\item Verkettung der Blöcke => Langsam
+\item Verkettung von Blöcken => Langsam
 \item Verkettet durch FAT im Arbeitsspeicher, hoher Platzbedarf
-\item I-Node: enthält: Metadaten, direkte Blockverweise, verweise auf ein-, zwei und dreifach-Indirekte Blöcke
+\item I-Node: 
+\begin{tabular}{|c|}
+\hline Metadaten, Attribute\\
+\hline Direkte Verweise (siehe aufgabenstellung) \\
+\hline Adresse einfach Indirekter Block \\
+\hline Adresse doppelt Indirekter Block \\
+\hline 
+Adresse 3fach Indirekter Block\\
+\hline 
+\end{tabular}
+
+dreifach Indirekte -> doppelt Indirekte -> einfach Indirekte -> Blöcke\\
+Anzahl der Verweise pro Indirektem Block: $\dfrac{Blockgr"osse}{Adressgr"osse}$
+\item NTFS: Alles steht in MFT (Master-File-Table), Dateien als Listen von Serien (StartBlock \& anzahlBlöcke)
 \end{itemize}
+}
 
-Finden einer Datei: suche Verzeichnis anhand Pfad, Verzeichnis enthält I-Node-nummer, bzw. Nummer des 1. Blocks
+\textbf{Hard-Link:} Verzeichnisse zeigen auf den selben I-Node;
+\textbf{Symbolic Link:} Datei vom Typ LINK enthält Pfad
 
-Hard-Link: Verzeichnisse zeigen auf den selben I-Node;
-Symbolic Link: Datei vom Typ LINK enthält Pfad
-
-Virtuelles Filesystem: abstraktionsschicht zwischen Systemaufrufen und Dateisystemen (Windows: Laufwerksbuchstabe, Linux: mounten im Verzeichnisbaum
+\textbf{Virtuelles Filesystem:} abstraktionsschicht zwischen Systemaufrufen und Dateisystemen \\
+(Windows: Laufwerksbuchstabe, Linux: mounten im Verzeichnisbaum
 
 Blockgröße: je größer desto bessere Datenrate, je kleiner desto Speichereffizienter
 
-Freiblockverwaltung: Liste vs Bitmap
+Freiblockverwaltung: Liste(schrumpft) vs Bitmap(feste größe)
 
-\subsection*{Konsistenzsicherung}
-Blockebene:
-
-Zähler vorkommen eines blocks in dateien vs Zähler Block in Freiliste
+\subsection{Konsistenzsicherung}
+\textbf{Blockebene}: Zähle vorkommen eines blocks in dateien, und vorkommen Block in Freiliste
 \begin{itemize}
 \item Fehlender Block => einfügen in Freibereichsliste
 \item Doppelt in Freibereich => Freibereich anpassen
@@ -168,35 +167,34 @@ Zähler vorkommen eines blocks in dateien vs Zähler Block in Freiliste
 \item Belegt in 2 Dateien => Kopiere Block, ordne ihn einer der Dateien zu; ausgabe für den Benutzer
 \end{itemize}
 
-Dateiebene: Prüfe den Linkzähler aller Dateien und passe ihn an
+\textbf{Dateiebene}: Prüfe den Linkzähler aller Dateien und passe ihn an
 
 sonstiges, z.B. unsinnige Zugriffsrechte, Dateien größe 0, etc.
 
-\subsubsection*{Journaling}
-Vor ausführen einer Aktion: Eintrag in Log; => Aktion kann nach absturz wiederholt werden.
+\textbf{Journaling:} Vor ausführen einer Aktion: Eintrag in Logdatei; => Aktion kann nach absturz wiederholt werden.
 
-\subsection*{Cache}
+\textbf{Logging Dateisysteme: }
+ähnlich Journaling, aber es werden nur die Änderungen geschrieben + Checkpoints; Garbage Collection\\
+Vorteil: schnelleres Schreiben, passt zu Flash\\
+Nachteil: (Fragmentierung), Garbage Collecting
+\subsection{Dateicache}
 Puffern der Blöcke, zugriff über hash, auslagerungsstrategie meist LRU, angepasst nach heuristik;
 
 Konsistenzrelevante Änderungen sofort rausschreiben, Write-Through oder regelmäßiges Rausschreiben von Änderungen sinnvoll
 
-\subsection*{Flash}
+\subsection{Flash}
 wichtig: gleichmäßige Abnutzung => zurückschreiben nicht an selber stelle (Copy-on-write) => "wandering Trees"
 
 Flash Translation Layer: Abbildung Dateisystemadresse auf Sektor
 
-Virtual Block Map:  zuordnungstabelle im RAM, mehrstufig; 
-Invertierte: jeder Sektor speichert seine Adresse, oder reservierter sektor pro bank enthält tabelle => scannen beim Mounten
+Virtual Block Map:  zuordnungstabelle im RAM, ggf. mehrstufig; 
+
+Invertierte Block Map: jeder Sektor speichert seine Adresse, oder reservierter sektor pro bank enthält tabelle => scannen beim Mounten
 
 Superblock: reservierte Bänke + Zeittempel, oder durchsuche gesamten Datenträger
 
 löschen: informieren des Controllers mit TRIM-Kommando über gelöschte Blöcke, damit sie wiederverwendet werden können
 
-Logging Dateisysteme: 
-ähnlich Journaling, aber es werden nur die Änderungen geschrieben + Checkpoints; Garbage Collection\\
-Vorteil: schnelleres Schreiben, passt zu Flash
-Nachteil: (Fragmentierung), Garbage Collecting
 
 
-\section*{NTFS}
-Alles steht in MFT (Master-File-Table), Blöcke in Serien angegeben (von-anzahlBlöcke)
+

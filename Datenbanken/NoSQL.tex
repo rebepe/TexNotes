@@ -9,6 +9,7 @@
 
 \section*{NoSQL}
 Vorteile: kompakt, änderungen betreffen nur eine Tabelle
+
 Nachteile: Konsistenzsicherung, eingeschränkte Abfragemöglichkeiten
 \subsection*{key-value stores}
 reine zuordung von key-value-paaren => einfaches Datenmodell, keine Integritätsbedingungen/Joins, schnell, gut aufteilbar, Abfragen ohne Key schwierig
@@ -16,16 +17,17 @@ reine zuordung von key-value-paaren => einfaches Datenmodell, keine Integritäts
 \subsection*{Document stores}
 abspeichern von JSON/XML zu keys; => flexibles Datenmodell, ähnlich Key-Value
 
+
 \subsection*{Column Family}
-Feste Column Familys (z.B. meta, posts,$\dots$) 
+Feste Column Familys (z.B. meta, posts,$\dots$) \\
 Row Key -> Column Familys -> liste von Key-Values
 
-gute Kompresson, flexibles Schema, schnelles Schreiben
+gute Kompression, flexibles Schema, schnelles Schreiben
 
 \subsection*{Graph DB}
 Knoten und Kanten, beide mit Eingenschaften
 
-Graphalgorithmen (Tiefen/Weitensuche) anwendbar
+Vorteil: Graphalgorithmen (Tiefen/Weitensuche) anwendbar
 
 \section*{Verteilte Architekturen}
 \begin{itemize}
@@ -34,10 +36,8 @@ Graphalgorithmen (Tiefen/Weitensuche) anwendbar
 \item shared nothing: kein gemeinsamer speicher
 \end{itemize}
 
-Sharding: aufteilung der Datensätze; 
-Typisch: Kombination aus Replikation/Sharding
+Sharding: aufteilung der Datensätze; \\
+Typisch: Kombination aus Replikation/Sharding\\
 z.B. Tabelle(A,B,C,D) -> Server1(A,B), Server2(B,C), Server3(C,D), Server4(D,A)
 
-Replikation: synchron vs asynchron.
-
-
+Replikation: synchron (warten auf bestätigung) vs asynchron(zwischenzeitlich inkonsistent)

@@ -1,4 +1,4 @@
-\section*{Prozess}
+\section{Prozess}
 \textbf{Prozesskontext:} Zustandsinformation zum Prozess, \\
 Speicherung in \underline{Process-Control-Block:} Programmzähler, Prozesszustand, Priorität ,Verbrauchte Prozessorzeit seit dem Start des Prozesses, Prozessnummer (PID), Elternprozess (PID), Zugeordnete Betriebsmittel z.B. Dateien, $\dots$
 
@@ -6,30 +6,29 @@ Speicherung in \underline{Process-Control-Block:} Programmzähler, Prozesszustan
 
 \textbf{fork()} klont Prozess, return 0 für kind, return kind-PID für Eltern
 
-\section*{Scheduling}
+\section{Scheduling}
 \textbf{Ziele:} Fairness, Effizienz, Antwortzeit, Verweilzeit (Durchlaufzeit), Durchsatz
 
-\textbf{Non-Preemptive Scheduling} vs \textbf{Preemptive Scheduling} (Prozess kann unterbrochen werden)
+\textbf{Non-Preemptive Scheduling} vs \textbf{Preemptive Scheduling} (Prozesse unterbrechbar)
 
 
 
 \textbf{Zeitscheibe/Quantum:} zuteilung von Zeit, z.B. 3ms, an Prozesse, wechseln nach ablauf der Zeit/Blockieren;
 
 
-\subsection*{Strategien}
+\subsection{Strategien}
+\halfpage{
 \begin{itemize}
 \item First Come First Served (FCFS): In Ankunftsreihenfolge, Non-Preemptive
 \item Shortest Job First (SJF); Theoretisch Optimal, kürzester Gewinnt, Non-Preemptive
-\item Shortest Remaining Time Next (SRTN): kürzeste Restlaufzeit gewinnt, nicht preemtiv
-
-\item Round-Robin-Scheduling (RR) = Rundlauf-Verfahren: Der Reihe nach, Preemptiv
+\item Shortest Remaining Time Next (SRTN): kürzeste Restlaufzeit gewinnt, Non-Preemptive
+\item Round-Robin-Scheduling (RR): vgl. Zeitscheibe, Preemptiv
 \item Priority Scheduling (PS) statisch/dynamisch: höchste Priorität gewinnt, preemptiv
 \item Shortest Remaining Time First (SRTF): wie SRTN aber preemptiv
 \item Lottery Scheduling: Zufällige Vergabe von CPU-Zeit nicht preemptiv
+\end{itemize}}
 
-\end{itemize}
-
-\subsection*{Echtzeit-Betriebssystem:} 
+\subsection{Echtzeit-Betriebssystem:} 
 garantierte zeiten; Tasks in endlosschleife
 
 Parameter: Computation time C $\leq$ Deadline D $\leq$ Period T

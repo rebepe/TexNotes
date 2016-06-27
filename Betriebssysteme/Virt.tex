@@ -1,61 +1,67 @@
-\section*{Virtualisierung}
-Abstraktion der Ressourcen durch Softwareschicht
+\section{Virtualisierung}
+Abstraktion von Ressourcen durch Softwareschicht
 
 BS-Virtualisierung: Softwareschicht: Hypervisor oder VMM
 
-Vorteile von VMs: unterschiedliche Betriebssysteme gleichzeitig auf einem Rechner, Hardwareauslatung, Test nicht vertrauenswürdiger Programme, Einfaches Sichern / Wiederaufsetzen /Klonen (Snapshot)
+\textbf{Vorteile} von VMs: unterschiedliche Betriebssysteme gleichzeitig auf einem Rechner, Hardwareauslatung, Test nicht vertrauenswürdiger Programme, Einfaches Sichern / Wiederaufsetzen /Klonen (Snapshot)
 
-Nachteile: VMs müssen sich reale Ressourcen teilen, Rechnerausfall =>  Ausfall aller VMs, probleme mit spezialhardware, ca. 10\% Leistungsminderung
+\textbf{Nachteile}: VMs müssen sich reale Ressourcen teilen, Rechnerausfall =>  Ausfall aller VMs, probleme mit spezialhardware, ca. 10\% Leistungsminderung
 
 
-Emulation: interpretation der Maschinenbefehle, mögliche Optimierung: Just-In-Time Compilation
+\textbf{Emulation}: Interpreter der Maschinenbefehle, Optimierung: JiT-Compilation
 
-Virtualisierung: native Ausführung von Nichtprivilegierten Befehlen
+\textbf{Virtualisierung}: native Ausführung von Nichtprivilegierten Befehlen
 Voraussetzung: Ausreichend ähnliche Prozessoren
 
-Technik: Hypervisor fängt bestimmte Befehle ab, und ersetzt sie durch geeignete Befehle 
+Technik: Hypervisor fängt kritische Befehle ab, und ersetzt sie durch geeignete Systemaufrufe 
 (Implementiert durch Interrupt-Service-Routinen, Hypervisor im Kernelmodus, Gast-BS im Usermodus)
 
 
-Mindestvorraussetzungen: Unterscheidung zwischen Kernel- und Anwendungsmodus durch 
+\textbf{Mindestvorraussetzungen}: Unterscheidung zwischen Kernel- und Anwendungsmodus durch 
 Prozessor, MMU ,Kriterien nach Popek und Goldberg:
 
-Popek und Goldberg: Es gibt privilegierte Befehle, diese Lösen Trap aus wenn nicht im Kernelmodus. alle sensitiven Befehle: (zustandsverändernd z.B. Zugriff auf I/O oder die MMU,etc.) müssen privilegiert sein.
+\textbf{Popek und Goldberg: }
 
-Lösung falls nicht alle sensitiven Befehle priviligiert sind: Ersetzung zur Laufzeit/JiT-Compilation
+\halfpage{
+\begin{itemize}
+\item  Es gibt privilegierte Befehle, \item diese Lösen Trap aus wenn nicht im Kernelmodus. \item alle sensitiven Befehle: (zustandsverändernd z.B. Zugriff auf I/O oder die MMU,etc.) müssen privilegiert sein.
+\end{itemize}
+}
 
-\subsection*{Typen}
-Typ-1: Hypervisor als mini-Betriebssystem, ohne Wirt, Treiber ggf. problematisch
+Lösung falls nicht alle sensitiven Befehle priviligiert sind: Ersetzung zur Laufzeit oder JiT-Compilation
 
-Typ-2: Hypervisor als Prozess des Wirtsbetriebssystem, nutzt Wirtstreiber mit
+\subsection{Typen}
+\textbf{Typ-1:} Hypervisor als mini-Betriebssystem, ohne Wirt, Treiber ggf. problematisch
 
-Paravirtualisierung: ersetzung kritischer Befehle im Gast Betriebssystem durch Hypercalls 
-=> schneller, vorraussetzung: Quellcode Gast-BS
+\textbf{Typ-2:} Hypervisor als Prozess des Wirtsbetriebssystem, nutzt Wirtstreiber mit
 
-\subsubsection*{Speicher}
+\textbf{Paravirtualisierung}: ersetzung kritischer Befehle im Gast Betriebssystem durch Hypercalls 
+=> schneller, vorraussetzung: Quellcode des Gast-BS offen
+
+\subsubsection{Speicher}
 Virtuelle Adresse Gast -> Virtuelle Adresse Host -> Reale Adresse Host
 
 Schattentabelle: tabelle für umsetzung $Virt_{Host} -> Real_{Host}$
 
 alternativ Hardwarelösung EPT (Extended Page Table) in MMU
 
-\subsubsection*{Treiber}
-Geräte-Emulation: Nutzen des Treibers des Hypervisors oder Host-BS, Standardgerät für den Gast; 
+\subsubsection{Treiber}
+\textbf{Geräte-Emulation}: Nutzen des Treibers des Hypervisors oder Host-BS, Standardgerät für den Gast; 
 
 schlechter Durchsatz
 
-Direktzuweisung eines Geräts: Gast nutzt Gerät exklusiv mit eigenem Treiber
+\textbf{Direktzuweisung eines Geräts}: Gast nutzt Gerät exklusiv mit eigenem Treiber
 
 Effizienteste Möglichkeit, Erfordert spezielle Hardware
 
 
-Verschieben einer VM: kopieren von Dateisystem + RAM von Quelle zum Ziel;
+\subsubsection{Verschieben einer VM:} kopieren von Dateisystem + RAM von Quelle zum Ziel;
 Wiederholt die geänderten Teile umkopieren; anhalten Quelle, kopieren des Rests, Umleiten Netzwerk, Ziel-VM starten, Quell-VM löschen
 
-\section*{Cloud}
+\section{Cloud}
 IaaS = Infrastructure as a Service: Cloud-Provider bietet Zugang zu virtualisierten Rechnern (inkl. BS)
 und Speichersystemen
 
-PaaS = Platform as a Service: Cloud-Provider bietet Zugang zu Programmierungsumgebungen
+PaaS = Platform aaS: Cloud-Provider bietet Zugang zu Programmierungsumgebungen
 
-SaaS = Software as a Service: Cloud-Provider bietet Zugang zu Anwendungsprogrammen
+SaaS = Software aaS: Cloud-Provider bietet Zugang zu Anwendungsprogrammen
