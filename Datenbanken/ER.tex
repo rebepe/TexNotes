@@ -1,4 +1,4 @@
-\subsection*{Chen-Notation}
+\subsection{Chen-Notation}
 \usetikzlibrary{er}
 \tikzset{multi attribute/.style={attribute,double distance=1.5pt}}
 \tikzset{derived attribute/.style={attribute,dashed}}
@@ -9,13 +9,13 @@
 \begin{tikzpicture}[node distance=7em]
 \node[entity](person){Person};
 \node[attribute](pid)[left of=person]{\key{ID}}edge(person);
-\node[attribute](address)[above of=person]{Address}edge(person);
-\node[attribute](street)[above right of=address]{Street}edge(address);
+\node[attribute](address)[above=1.5em of person]{Address}edge(person);
+\node[attribute](street)[above right=1.5em of address]{Street}edge(address);
 \node[attribute](city)[right of=address]{City}edge(address);
-\node[derived attribute](age)[above left of=person]{Abgeleitet}edge(person);
-\node[relationship](uses)[right of=person]{Beziehung}edge(person);
+\node[derived attribute](age)[above left=1em of person]{Abgeleitet}edge(person);
+\node[relationship](uses)[right of=person]{\begin{minipage}{2em}Bezie hung\end{minipage}}edge(person);
 \node[entity](tool)[right of=uses]{Tool}edge(uses);
-\node[attribute](tid)[above of=tool]{\key{prim. Key}}edge(tool);
+\node[attribute](tid)[above=1.5em of tool]{\key{prim. Key}}edge(tool);
 \node[multi attribute](phone)[right of=tool]{Mehrfach}edge(tool);
 \draw(tool) -- (uses) node[pos=0.2,above] {1};
 \draw(uses) -- (person) node[pos=0.8,above] {n};
@@ -25,6 +25,6 @@
 \def\fk#1{\node[name=\entityname-#1, every property/.try]{#1};\node[name=\entityname-#1, every property/.try, red, text width=1in, align=right]{(FK)};\\}
 
 
-\subsection*{Krähenfuß}
+\subsection{Krähenfuß}
 \includegraphics[width=0.2\textwidth]{crow}
 \includegraphics[width=0.2\textwidth]{m-n}

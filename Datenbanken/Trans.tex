@@ -1,9 +1,9 @@
-\section*{Transaktionen}
+\section{Transaktionen}
 SQL: BEGIN, COMMIT, ROLLBACK;
 
 Transaktionsabbrüche durch integritätsverletzungen, Konsistenzbedinungen, Speicher voll, Verbindungsabbruch, Systemausfall ...
 
-\subsection*{Anomalien}
+\subsection{Anomalien}
 \begin{enumerate}
 \item Lost-Update: Überschriebene Änderungen
 \item Dirty-Read: Lesen eines nicht committeten Wertes
@@ -25,7 +25,7 @@ z.B. $R_1(a), W_2(a), R_3(a), W_1(a)$
 
 Sperren: Shared-Locks (s) beim Lesen, Exklusiv-Locks (X) beim Schreiben
 
-\subsection*{Zwei-Phasen-Protokoll:} Sperren werden erst am Transaktionsende (vor commit) wieder freigegeben
+\subsection{Zwei-Phasen-Protokoll:} Sperren werden erst am Transaktionsende (vor commit) wieder freigegeben
 
 \begin{tabular}{|c|c|}
 \hline
@@ -49,7 +49,7 @@ SQL-Isolationssteuerung: SET TRANSACTION ISOLATION LEVEL \{ READ UNCOMMITTED | R
 
 Multi-Version-Concurrency-Control: Snapshots: keine Lesesperren, änderungen erzeugen kopie
 
-\section*{Fehlerbehandlung}
+\section{Fehlerbehandlung}
 Lokaler Fehler in Transaktion: Rollback der Transaktion\\
 
 Verlust des Hauptspeichers:Durch Logging der Aktionen, nach Crash Undo nicht abgeschlossener Aktionen, Redo abgeschlossener.\\
@@ -69,7 +69,7 @@ Ablauf: Redo-lauf (durchführen der geloggten änderungen); Undo-lauf: rollback 
 
 Recovery time objective: max. ausfallzeit; recovery point objective: max. Datenverlust
 
-\section*{Dateiorganisation}
+\section{Dateiorganisation}
 Heap-Dateiorganisation: Speichern von Datensätzen in Einfügereihenfolge => unsortiert
 Einfügen am ende, löschen suchen und setzen eines Löschbits, suchen: sequenziell oder index;
 
@@ -79,11 +79,13 @@ einfügen: suchen, anhängen und dann sortieren der Seite; löschen: suchen und 
 Index: B-Baum-Struktur; clustered Index: Segmente selbst sind sortiert;  
 CREATE INDEX <name> ON 	<tabelle>(<spalte(n)>); DROP INDEX <name>
 
-\section*{Anfrageverarbeitung}
+\section{Anfrageverarbeitung}
 
 SQL -> Query Execution Plan:\\
 Parsen der Anfrage -> Operatorengraph; // hierbei Standardisieren und vereinfachen  \\
-\textbf{KNF} : (a and b) or (c and d); // deMorgan: $\overline{a AND b} = \overline{a} OR \overline{b}$
+\textbf{KNF} : (a and b) or (c and d); \\
+\rule{2em}{0em}deMorgan: $\overline{a AND b} = \overline{a} OR \overline{b}$\\
+\rule{2em}{0em}\textcolor{white}{deMorgan :} $\overline{a OR b} = \overline{a} AND \overline{b}$\\
 
 \definecolor{darkgreen}{rgb}{0.2,0.8,0.2}
 \newcommand{\proj}{\textcolor{red}{\ensuremath{\pi_{k.nr,p.nr}}}}
@@ -138,7 +140,7 @@ child{ node{Auftrpos p}
 
 \textbf{\textcolor{red}{HINWEIS:}} konstruiere von unten nach oben.
 
-\subsection*{Kostenschätzung}
+\subsection{Kostenschätzung}
 Anhand von Statistiken, Histogrammen, etc.; evtl. Hints für Optimizer
 
 \textbf{Kardinalität}: |a|: Anzahl der gelieferten Datensätze \\
@@ -155,11 +157,11 @@ Attribut IN $\{c_1,c_2, \dots , c_n\}$ => Sel(A) = n / |A|
 
 A >c => Sel(A) = $\dfrac{A_{max} -c }{A_{max} - A_{min}}$
 
-$P_1 AND P_2$ => $Sel(P_1)*Sel(P_2)$
+$P_1 AND P_2$ => $Sel(P_1) \cdot Sel(P_2)$
 
 $P_1 OR P_2$ => $Sel(P_1) + Sel(P_2) + Sel(P_1 AND P_2$
 
-\section*{Plan-Operatoren}
+\section{Plan-Operatoren}
 \begin{itemize}
 \item Full-Table-Scan: durchsuche gesamte Tabelle: Cost = NumBlocks(R)
 \item Index-Scan: Suche anhand index: Cost = Levels(Index) + Sel(P) $\cdot$|R|

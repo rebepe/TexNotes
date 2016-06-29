@@ -1,4 +1,4 @@
-\section*{Grundlagen}
+\section{Grundlagen}
 
 \begin{description}
 \item[Aufbau] \fbox{Applikation} -> \fbox{DBMS(Datenbank-Management-System)} -> \fbox{Datenbanken}
@@ -27,7 +27,8 @@ Externe Ebene(Views) \\\hline Logische Ebene(Schema) \\\hline Interne Ebene (Ind
 \end{description}
 
 
-\section*{Umsetzung von Vererbung}
+\section{Umsetzung von Vererbung}
+\halfpage{
 \begin{itemize}
 \item Single Table (eine Tabelle, die Kind-Attribute sind ggf. NULL): \\
 Vorteile: Redundanzfrei, keine JOINs \\
@@ -37,9 +38,9 @@ Vorteile: Redundanzfrei, Einfacher Zugriff auf typunabhängige Attribute der Obe
 Nachteile: JOINs nötig => schlechtere Performance, Referentielle Integrität muss geprüft werden
 \item  Table-per-Concrete-Class: nur Tabellen für Klassen mit Instanzen \\
 Vorteile: Typen leicht unterscheidbar, Objektinformation in einer Tabelle \\
-Nachteile: ggf. Redundante Informationen, Anfragen über alle Objeke durch UNION
+Nachteile: ggf. Redundante Informationen, Anfragen über alle Objeke: UNION
 \end{itemize}
-
+}
 
 Kardinalitäten: 1:1, 1:n, n:m, + optionalität
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  26 JUN 2016 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  28 JUN 2016 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3070,8 +3070,29 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no / in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no : in font nullfont!
+! Undefined control sequence.
+l.88 \rule{2em}{0em}\textcolor
+                              {white}{deMorgan :} $\overline{a OR b} = \over...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no M in font nullfont!
@@ -3082,27 +3103,37 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 84--87
+Overfull \hbox (20.0pt too wide) in paragraph at lines 84--89
 []
  []
 
 
-Overfull \hbox (25.24986pt too wide) in paragraph at lines 84--87
+Overfull \hbox (25.24986pt too wide) in paragraph at lines 84--89
 \OT1/cmr/bx/n/10 KNF
  []
 
 
-Overfull \hbox (45.31499pt too wide) in paragraph at lines 84--87
+Overfull \hbox (45.31499pt too wide) in paragraph at lines 84--89
 [] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (25.15324pt too wide) in paragraph at lines 84--87
+Overfull \hbox (25.15324pt too wide) in paragraph at lines 84--89
 []\OML/cmm/m/it/10 OR[]$ 
  []
 
+
+Overfull \hbox (35.70876pt too wide) in paragraph at lines 84--89
+[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.75948pt too wide) in paragraph at lines 84--89
+[]\OML/cmm/m/it/10 AND[]$ 
+ []
+
 ! Undefined control sequence.
-l.88 \definecolor
+l.90 \definecolor
                  {darkgreen}{rgb}{0.2,0.8,0.2}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3134,278 +3165,103 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 2 in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 88--95
+Overfull \hbox (20.0pt too wide) in paragraph at lines 90--97
 []
  []
 
+Missing character: There is no S in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no T in font nullfont!
 ! Undefined control sequence.
 \proj ->\textcolor 
-                   {red}{$\pi _{k.nr,pos.nr}$}
-l.96 $SELECT \underbrace{k.name, pos.nr}_{\proj
-                                               } \\
+                   {red}{\ensuremath {\pi _{k.nr,p.nr}}}
+l.99 SELECT $\underbrace{k.name, p.nr}_{ \proj
+                                               }$ \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.96 $SELECT \underbrace{k.name, pos.nr}_{\proj
-                                               } \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.96 $SELECT \underbrace{k.name, pos.nr}_{\proj
-                                               } \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.96 $SELECT \underbrace{k.name, pos.nr}_{\proj
-                                               } \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Too many }'s.
-\proj ->\textcolor {red}{$\pi _{k.nr,pos.nr}$}
-                                              
-l.96 $SELECT \underbrace{k.name, pos.nr}_{\proj
-                                               } \\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Too many }'s.
-l.96 $SELECT \underbrace{k.name, pos.nr}_{\proj}
-                                                 \\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
 
 Missing character: There is no F in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no M in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.97 ...e{Kunde k JOIN Auftrag a ON k.knr = a.knr}
-                                                  _{\joink} \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+Missing character: There is no K in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no J in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
 ! Undefined control sequence.
 \joink ->\textcolor 
-                    {darkgreen}{$\bowtie _{k.knr = a.knr}$}
-l.97 ...k JOIN Auftrag a ON k.knr = a.knr}_{\joink
-                                                  } \\
+                    {darkgreen}{\ensuremath {\bowtie _{k.knr = a.knr}}}
+l.100 ...a $\underbrace{ ON k.knr = a.knr}_{\joink
+                                                  }$ \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.97 ...k JOIN Auftrag a ON k.knr = a.knr}_{\joink
-                                                  } \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.97 ...k JOIN Auftrag a ON k.knr = a.knr}_{\joink
-                                                  } \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.97 ...k JOIN Auftrag a ON k.knr = a.knr}_{\joink
-                                                  } \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Too many }'s.
-\joink ... {darkgreen}{$\bowtie _{k.knr = a.knr}$}
-                                                  
-l.97 ...k JOIN Auftrag a ON k.knr = a.knr}_{\joink
-                                                  } \\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Too many }'s.
-l.97 ... JOIN Auftrag a ON k.knr = a.knr}_{\joink}
-                                                   \\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.98 ...brace{JOIN Position pos ON a.anr =pos.anr}
-                                                  _{\joina} \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+Missing character: There is no J in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
 ! Undefined control sequence.
 \joina ->\textcolor 
-                    {darkgreen}{$\bowtie _{a.anr = pos.anr}$}
-l.98 ...IN Position pos ON a.anr =pos.anr}_{\joina
-                                                  } \\
+                    {darkgreen}{\ensuremath {\bowtie _{a.anr = p.anr}}}
+l.101 ... p $\underbrace{ ON a.anr =p.anr}_{\joina
+                                                  } $\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.98 ...IN Position pos ON a.anr =pos.anr}_{\joina
-                                                  } \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.98 ...IN Position pos ON a.anr =pos.anr}_{\joina
-                                                  } \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.98 ...IN Position pos ON a.anr =pos.anr}_{\joina
-                                                  } \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Too many }'s.
-\joina ...darkgreen}{$\bowtie _{a.anr = pos.anr}$}
-                                                  
-l.98 ...IN Position pos ON a.anr =pos.anr}_{\joina
-                                                  } \\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Too many }'s.
-l.98 ...N Position pos ON a.anr =pos.anr}_{\joina}
-                                                   \\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
 
 Missing character: There is no W in font nullfont!
 Missing character: There is no H in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no E in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.99 WHERE \underbrace{k.name = 'x'}
-                                    _{\selk} AND\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 ! Undefined control sequence.
 \selk ->\textcolor 
-                   {blue}{$\sigma _{k.name = 'x'}$ }
-l.99 WHERE \underbrace{k.name = 'x'}_{\selk
-                                           } AND\\
+                   {blue}{\ensuremath {\sigma _{k.name = 'x'}} }
+l.102 WHERE $\underbrace{k.name = 'x'}_{\selk
+                                             }$ AND\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.99 WHERE \underbrace{k.name = 'x'}_{\selk
-                                           } AND\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.99 WHERE \underbrace{k.name = 'x'}_{\selk
-                                           } AND\\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.99 WHERE \underbrace{k.name = 'x'}_{\selk
-                                           } AND\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Too many }'s.
-\selk ...xtcolor {blue}{$\sigma _{k.name = 'x'}$ }
-                                                  
-l.99 WHERE \underbrace{k.name = 'x'}_{\selk
-                                           } AND\\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-! Too many }'s.
-l.99 WHERE \underbrace{k.name = 'x'}_{\selk}
-                                             AND\\
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
 
 Missing character: There is no A in font nullfont!
 Missing character: There is no N in font nullfont!
 Missing character: There is no D in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.100 \underbrace{(a.anr > 10 OR k.knr >10)}
-                                            {\selor}$
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 ! Undefined control sequence.
 \selor ->\textcolor 
-                    {blue}{$\sigma _{a.anr > 10 OR k.knr >10 }$}
-l.100 ...erbrace{(a.anr > 10 OR k.knr >10)}{\selor
+                    {blue}{\ensuremath {\sigma _{a.anr > 10 OR k.knr >10 }}}
+l.103 ...rbrace{(a.anr > 10 OR k.knr >10)}_{\selor
                                                   }$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3413,87 +3269,394 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.100 ...erbrace{(a.anr > 10 OR k.knr >10)}{\selor
-                                                  }$
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.100 ...erbrace{(a.anr > 10 OR k.knr >10)}{\selor
-                                                  }$
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+! LaTeX Error: Environment tikzpicture undefined.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.100 ...erbrace{(a.anr > 10 OR k.knr >10)}{\selor
-                                                  }$
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Too many }'s.
-\selor ...e}{$\sigma _{a.anr > 10 OR k.knr >10 }$}
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
-l.100 ...erbrace{(a.anr > 10 OR k.knr >10)}{\selor
-                                                  }$
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
+l.122 \begin{tikzpicture}
+                         [level distance=3em,sibling distance=5.5em ,level 2...
 
-! Too many }'s.
-l.100 ...rbrace{(a.anr > 10 OR k.knr >10)}{\selor}
-                                                  $
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.134 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Missing character: There is no [ in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 7 in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.123 \node
+           {\proj}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\proj ->\textcolor 
+                   {red}{\ensuremath {\pi _{k.nr,p.nr}}}
+l.123 \node{\proj
+                 }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\joina ->\textcolor 
+                    {darkgreen}{\ensuremath {\bowtie _{a.anr = p.anr}}}
+l.124 child{ node{\joina
+                        }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\grpi #1->\textcolor 
+                     {gray}{ \ensuremath {\pi _{ #1 }} }
+l.125 child{ node{\grpi{a.nr,k.nr}
+                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\selor ->\textcolor 
+                    {blue}{\ensuremath {\sigma _{a.anr > 10 OR k.knr >10 }}}
+l.126 child{ node{\selor
+                        }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\joink ->\textcolor 
+                    {darkgreen}{\ensuremath {\bowtie _{k.knr = a.knr}}}
+l.127 child{ node{\joink
+                        }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\grpi #1->\textcolor 
+                     {gray}{ \ensuremath {\pi _{ #1 }} }
+l.128 child{ node{\grpi{k.nr}
+                             }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\selk ->\textcolor 
+                   {blue}{\ensuremath {\sigma _{k.name = 'x'}} }
+l.129 child{ node{\selk
+                       }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\grpi #1->\textcolor 
+                     {gray}{ \ensuremath {\pi _{ #1 }} }
+l.131 child{ node{\grpi{a.knr,a.anr}
+                                    }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+! Undefined control sequence.
+\grpi #1->\textcolor 
+                     {gray}{ \ensuremath {\pi _{ #1 }} }
+l.134 child{ node{\grpi{p.anr}
+                              }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+! LaTeX Error: \begin{minipage} on input line 121 ended by \end{tikzpicture}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 \end{tikzpicture}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-Overfull \hbox (178.69737pt too wide) in paragraph at lines 96--134
-[]$\OML/cmm/m/it/10 SELECT []$$^^Y[]$ 
+Overfull \hbox (2067.99998pt too wide) in paragraph at lines 98--140
+[]$[]$
  []
 
 
-Overfull \hbox (242.7476pt too wide) in paragraph at lines 96--134
-[]$$\OML/cmm/m/it/10 .[]/[]$ 
- []
-
-
-Overfull \hbox (232.2274pt too wide) in paragraph at lines 96--134
-[]$$\OML/cmm/m/it/10 .[]/[]$ 
- []
-
-
-Overfull \hbox (106.94678pt too wide) in paragraph at lines 96--134
-[]$$\OML/cmm/m/it/10 ^^[[]$
- []
-
-
-Overfull \hbox (225.31749pt too wide) in paragraph at lines 96--134
-[] []$$\OML/cmm/m/it/10 ^^[[]$$$ 
+Overfull \hbox (2047.99998pt too wide) in paragraph at lines 98--140
+[]$ 
  []
 
 ! Undefined control sequence.
 <recently read> \textcolor 
                            
-l.135 \textbf{\textcolor{red}{HINWEIS:}}
+l.141 \textbf{\textcolor{red}{HINWEIS:}}
                                          konstruiere von unten nach oben.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3530,12 +3693,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (92.14546pt too wide) in paragraph at lines 135--136
+Overfull \hbox (92.14546pt too wide) in paragraph at lines 141--142
 []\OT1/cmr/bx/n/10 redHINWEIS:
  []
 
 ! Undefined control sequence.
-l.137 \subsection
+l.143 \subsection
                  *{Kostensch√§tzung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3623,7 +3786,7 @@ Missing character: There is no z in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 137--139
+Overfull \hbox (20.0pt too wide) in paragraph at lines 143--145
 []
  []
 
@@ -3727,7 +3890,7 @@ Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.142 NumBlocks: $\dfrac
+l.148 NumBlocks: $\dfrac
                         {|R|\cdot Laenge_{Datensatz}}{Blocksize}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3736,17 +3899,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (76.23578pt too wide) in paragraph at lines 140--143
+Overfull \hbox (76.23578pt too wide) in paragraph at lines 146--149
 []\OT1/cmr/bx/n/10 Kardinalitt
  []
 
 
-Overfull \hbox (52.06918pt too wide) in paragraph at lines 140--143
+Overfull \hbox (52.06918pt too wide) in paragraph at lines 146--149
 \OT1/cmr/bx/n/10 Selektivitt
  []
 
 
-Overfull \hbox (135.41505pt too wide) in paragraph at lines 140--143
+Overfull \hbox (135.41505pt too wide) in paragraph at lines 146--149
 [][]$ 
  []
 
@@ -3783,7 +3946,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no A in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 144--145
+Overfull \hbox (20.0pt too wide) in paragraph at lines 150--151
 []
  []
 
@@ -3797,7 +3960,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.146 Sel(P) = $\dfrac
+l.152 Sel(P) = $\dfrac
                       {\text{zur√ºckgegebene DS}}{gesamt DS}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3806,7 +3969,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.146 Sel(P) = $\dfrac{\text
+l.152 Sel(P) = $\dfrac{\text
                             {zur√ºckgegebene DS}}{gesamt DS}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3817,12 +3980,12 @@ and I'll forget about whatever was undefined.
 Missing character: There is no √ in font cmr10!
 Missing character: There is no º in font cmr10!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 146--147
+Overfull \hbox (20.0pt too wide) in paragraph at lines 152--153
 []
  []
 
 
-Overfull \hbox (127.30853pt too wide) in paragraph at lines 146--147
+Overfull \hbox (127.30853pt too wide) in paragraph at lines 152--153
 [][]$ 
  []
 
@@ -3855,7 +4018,7 @@ Missing character: There is no | in font nullfont!
 Missing character: There is no A in font nullfont!
 Missing character: There is no | in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 148--149
+Overfull \hbox (20.0pt too wide) in paragraph at lines 154--155
 []
  []
 
@@ -3884,12 +4047,12 @@ Missing character: There is no | in font nullfont!
 Missing character: There is no A in font nullfont!
 Missing character: There is no | in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 150--151
+Overfull \hbox (20.0pt too wide) in paragraph at lines 156--157
 []
  []
 
 
-Overfull \hbox (64.06477pt too wide) in paragraph at lines 150--151
+Overfull \hbox (64.06477pt too wide) in paragraph at lines 156--157
 \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 c[]; c[]; [] ; c[]\OMS/cmsy/m/n/10 g$
  []
 
@@ -3908,7 +4071,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.152 A >c => Sel(A) = $\dfrac
+l.158 A >c => Sel(A) = $\dfrac
                               {A_{max} -c }{A_{max} - A_{min}}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3917,57 +4080,57 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 152--153
+Overfull \hbox (20.0pt too wide) in paragraph at lines 158--159
 []
  []
 
 
-Overfull \hbox (99.57759pt too wide) in paragraph at lines 152--153
+Overfull \hbox (99.57759pt too wide) in paragraph at lines 158--159
 [][]$ 
  []
 
 Missing character: There is no = in font nullfont!
 Missing character: There is no > in font nullfont!
 
-Overfull \hbox (66.99446pt too wide) in paragraph at lines 154--155
+Overfull \hbox (66.99446pt too wide) in paragraph at lines 160--161
 []$\OML/cmm/m/it/10 P[]ANDP[]$
  []
 
 
-Overfull \hbox (38.22923pt too wide) in paragraph at lines 154--155
+Overfull \hbox (38.22923pt too wide) in paragraph at lines 160--161
 \OML/cmm/m/it/10 Sel\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 ) \OMS
 /cmsy/m/n/10 ^^C
  []
 
 
-Overfull \hbox (33.22922pt too wide) in paragraph at lines 154--155
+Overfull \hbox (33.22922pt too wide) in paragraph at lines 160--161
 \OML/cmm/m/it/10 Sel\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 )$ 
  []
 
 Missing character: There is no = in font nullfont!
 Missing character: There is no > in font nullfont!
 
-Overfull \hbox (57.38823pt too wide) in paragraph at lines 156--157
+Overfull \hbox (57.38823pt too wide) in paragraph at lines 162--163
 []$\OML/cmm/m/it/10 P[]ORP[]$
  []
 
 
-Overfull \hbox (41.00702pt too wide) in paragraph at lines 156--157
+Overfull \hbox (41.00702pt too wide) in paragraph at lines 162--163
 \OML/cmm/m/it/10 Sel\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 ) +
  []
 
 
-Overfull \hbox (41.00702pt too wide) in paragraph at lines 156--157
+Overfull \hbox (41.00702pt too wide) in paragraph at lines 162--163
 \OML/cmm/m/it/10 Sel\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 ) +
  []
 
 
-Overfull \hbox (65.42851pt too wide) in paragraph at lines 156--157
+Overfull \hbox (65.42851pt too wide) in paragraph at lines 162--163
 \OML/cmm/m/it/10 Sel\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[]ANDP[]$ 
  []
 
 ! Undefined control sequence.
-l.158 \section
+l.164 \section
               *{Plan-Operatoren}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3992,7 +4155,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 158--159
+Overfull \hbox (20.0pt too wide) in paragraph at lines 164--165
 [] 
  []
 
@@ -4111,7 +4274,7 @@ Missing character: There is no | in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no | in font nullfont!
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 161--162
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 167--168
 \OMS/cmsy/m/n/10 ^^A$ 
  []
 
@@ -4644,9 +4807,9 @@ Missing character: There is no ) in font nullfont!
 Here is how much of TeX's memory you used:
  41 strings out of 493029
  578 string characters out of 6136235
- 61035 words of memory out of 5000000
+ 62035 words of memory out of 5000000
  3673 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 18i,9n,15p,247b,90s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,11n,15p,247b,107s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

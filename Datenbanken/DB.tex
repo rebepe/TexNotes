@@ -6,6 +6,9 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{shadows}
 \usetikzlibrary{calc}
+\renewcommand{\section}[1]{~\\\textbf{\huge{#1}}\\}
+\renewcommand{\subsection}[1]{~\\\textbf{\Large{#1}}\\}
+\renewcommand{\subsubsection}[1]{~\\\textbf{\Large{#1}}\\}
 
 
 \usepackage{pdfpages}
@@ -14,6 +17,7 @@
 \begin{document}
 
 \input{Grund.tex}
+\newpage
 
 \input{Trans.tex}
 \input{Handouts.tex}
