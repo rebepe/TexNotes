@@ -1,0 +1,21 @@
+\section{SQL}
+\subsection{Tabellen}
+CREATE TABLE <name>  \\
+( <spaltenname> <typ> [PRIMARY KEY|NOT NULL| UNIQUE],    \\
+... \\
+<tabellenconstraints>   // z.B. PRIMARY KEY ( Name, Ort) \\
+\rule{10em}{0em}// CONSTRAINT <constraintname> FOREIGN KEY (<fk>) REFERENCES <tabelle>(<spalte>)
+\rule{10em}{0em}// CONSTRAINT <constraintname> CHECK(<bedingung>)
+)
+
+ALTER TABLE <tabellenname> <änderung>
+\begin{itemize}
+\item ALTER COLUMN <spaltenname> <typ>
+\item ADD COLUMN <spaltenname> <typ> 
+\item ADD CONSTRAINT <constraint> // z.B UNIQUE, FOREIGN KEY ...
+\end{itemize}
+
+DROP TABLE <name>;
+
+\subsection*{Fremdschlüssel}
+CONSTRAINT <name> FOREIGN KEY (<spalte>) REFERENCES <tabelle>(<spalte>)
