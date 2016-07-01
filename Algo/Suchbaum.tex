@@ -1,4 +1,4 @@
-
+\input{RotationenTIKZ.tex}
 
 \minpurp{Bäume}
 \minmeth{Preorder:} \fbox{Knoten}-linkerBaum-rechterBaum \textcolor{lightgray}{// Wurzeln sind links}
@@ -11,7 +11,7 @@
 Knoten haben 2 Kinder, kleiner im Linken, größer im rechten Teilbaum
 
 \minmeth{Suche}
-Starte bei Wurzel, wenn gesucht größer: rechts, wenn kleiner links, wiederhole bis gefunden oder Blatt 
+Starte bei Wurzel,rekursiv:  wenn gesucht größer: rechts, wenn kleiner links
  
 \minmeth{Einfügen}
 Suche im Baum; füge ein (achte auf links/rechts)
@@ -21,8 +21,7 @@ Suche den Knoten; wenn:
 
 \halfpage{
 \begin{itemize}
-\item nicht vorhanden: nichts tun
-\item Blatt: Lösche Knoten, Referenz im Vorgänger auf null
+%\item Blatt: Lösche Knoten, Referenz im Vorgänger auf null
 \item 1 Nachfolger: Referenz im Vorgänger auf nachfolger, lösche Knoten
 \item 2 Nachfolger: Tausche mit größtem Element im linken Teilbaum (symmetrischer Vorgänger), lösche Element
 \end{itemize}
@@ -56,18 +55,17 @@ betrachte linken Nachfolger (a):\\
 bei -1,0: Rechtsrotation um linken Nachfolger (a)\\
 bei +1: Doppelrotation
 
-wenn linker Nachfolger +1 oder -1 war, dann für höhere knoten vllt. weiter ausgleichen.
+wenn linker Nachfolger +1 oder -1 war, dann für höhere knoten vllt. weiter ausgleichen.\\
 
 
-\input{RotationenTIKZ.tex}
+
 
 %\minpurp{probabilistische Suchbäume}
 %Zufälliges einfügen: Durchschnittshöhe = $2\frac{n+1}{n}H_n-3 \approx 2\ln(n)$ =39\% mehr als der best Case
 
 \minpurp{Treap}
 jedem element wird zusätzlich eine zufällige Priorität zugewiesen\\
-Heapbedingung: $Prio_{Vater} < Prio_{Kind}$
-
+Heapbedingung: $Prio_{Vater} < Prio_{Kind}$~~~~
 => Treap ist eindeutig bestimmt
 
 Erwartungswert Pfadlänge: $2\frac{n+1}{n}H_n-3$; ~~~Erwartungswert Rotationen: <2 
@@ -90,7 +88,7 @@ alle Blätter sind immer auf einer Ebene => immer vollst. ausgeglichen
 
 Baum mit höhe h hat mindestens $1+2\dfrac{\min^h - 1}{\min -1}$ und maximal $ \dfrac{d^{h+1}-1}{d-1}$ Knoten
 
-höhe ist $O(\log_2(n))$, \textcolor{gray}{genauer: zwischen $\log_d(n+1)-1$ und $\log_{\lfloor(d-1)/2\rfloor+1}\left(\dfrac{n+1}{2}\right)$}
+höhe ist $\mathbf{O(\log_2(n))}$, \textcolor{gray}{genauer: zwischen $\log_d(n+1)-1$ und $\log_{\lfloor(d-1)/2\rfloor+1}\left(\dfrac{n+1}{2}\right)$}
 
 Aufbau eines Knotens/Seite:
 \begin{tabular}{|c|c|c|c|c|}
@@ -144,5 +142,5 @@ dazwischenliegendes Element ($M_{itte})$ kommt vom Vaterknoten in den zu kleinen
 \minmeth{B*-Baum} 
 Beim Einfügen in volle Seite versuche ausgleich mit direkten Nachbarn => bessere Speicherausnutzung
 
-\minmeth{B+-Baum}
-Bei Datenbank-Indexen: nur die Suchschlüssel im B-Baum, Blätter zeigen auf die Datenblöcke, diese sind doppelt verkettet. Der Baum selbst enthält nur Schlüsselwerte
+%\minmeth{B+-Baum}
+%Bei Datenbank-Indexen: nur die Suchschlüssel im B-Baum, Blätter zeigen auf die Datenblöcke, diese sind doppelt verkettet. Der Baum selbst enthält nur Schlüsselwerte

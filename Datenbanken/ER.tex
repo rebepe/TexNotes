@@ -9,7 +9,7 @@
 \begin{tikzpicture}[node distance=7em]
 \node[entity](person){Person};
 \node[attribute](pid)[left of=person]{\key{ID}}edge(person);
-\node[attribute](address)[above=1.5em of person]{Address}edge(person);
+\node[attribute](address)[above=2em of person]{Address}edge(person);
 \node[attribute](street)[above right=1.5em of address]{Street}edge(address);
 \node[attribute](city)[right of=address]{City}edge(address);
 \node[derived attribute](age)[above left=1em of person]{Abgeleitet}edge(person);

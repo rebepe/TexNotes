@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  27 JUN 2016 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  1 JUL 2016 20:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1347,36 +1347,44 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
-) (./alg.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen273
+)) (./alg.aux)
 \openout1 = `alg.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 16.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 17.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count164
-\scratchdimen=\dimen273
+\scratchdimen=\dimen274
 \scratchbox=\box103
 \nofMPsegments=\count165
 \nofMParguments=\count166
 \everyMPshowfont=\toks39
 \MPscratchCnt=\count167
-\MPscratchDim=\dimen274
+\MPscratchDim=\dimen275
 \MPnumerator=\count168
 \makeMPintoPDFobject=\count169
 \everyMPtoPDFconversion=\toks40
@@ -1499,94 +1507,131 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 26.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
 
-Overfull \hbox (7.0805pt too wide) in paragraph at lines 12--47
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Overfull \hbox (7.0805pt too wide) in paragraph at lines 21--56
 []$ $[]$
  []
 
-) (./sort.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (23.52316pt too wide) in paragraph at lines 19--28
-[]$ \T1/ptm/m/n/10.95 Lauf-
+) (./Hash.tex
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 13--14
+[][] 
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 29--51
-[][]\T1/ptm/m/it/10.95 probabilistisch:\T1/ptm/m/n/10.95 : [] start: wäh-le zu-
-fäl-li-ges Ele-ment als Pi-vot und tau-sche ans en-de
+Overfull \hbox (11.41711pt too wide) in paragraph at lines 58--60
+[]\T1/ptm/m/n/10.95 mittlere Län-ge Son-dier-fol-ge beim Su-chen : $[] []$ beim
+ Ein-fü-gen: $[] []$ 
  []
 
-
-Overfull \hbox (7.0805pt too wide) in paragraph at lines 29--51
-[]$ $[]$ 
- []
-
-) (./Suchbaum.tex
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./RotationenTIKZ.tex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-) [2]
-(./Hash.tex
-Overfull \hbox (3.9229pt too wide) in paragraph at lines 14--15
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Suchbaum.tex
+(./RotationenTIKZ.tex
+Overfull \hbox (12.90813pt too wide) in paragraph at lines 38--38
 [][] 
  []
 
 
-Overfull \hbox (11.41711pt too wide) in paragraph at lines 60--62
-[]\T1/ptm/m/n/10.95 mittlere Län-ge Son-dier-fol-ge beim Su-chen : $[] []$ beim
- Ein-fü-gen: $[] []$ 
+Overfull \hbox (12.90813pt too wide) in paragraph at lines 38--38
+[][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (3.05576pt too wide) in paragraph at lines 83--83
+[][] 
+ []
+
+
+Overfull \hbox (3.05576pt too wide) in paragraph at lines 83--83
+[][] 
+ []
 
 )
-(./Graph.tex
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+) [2]
+(./sort.tex
+Underfull \hbox (badness 1142) in paragraph at lines 30--52
+[][]\T1/ptm/m/it/10.95 probabilistisch:\T1/ptm/m/n/10.95 : [] start: wäh-le zu-
+fäl-li-ges Ele-ment als Pi-vot und tau-sche ans en-de
+ []
 
-) [4]
-(./alg.aux) ) 
+
+Overfull \hbox (7.0805pt too wide) in paragraph at lines 30--52
+[]$ $[]$ 
+ []
+
+) (./Netz.tex
+Overfull \hbox (4.04466pt too wide) in paragraph at lines 21--22
+[][] 
+ []
+
+
+Overfull \hbox (2.2643pt too wide) in paragraph at lines 12--35
+[]$[]$$\OMS/ztmcm/m/n/10.95 )$ $[]$ 
+ []
+
+) (./datentypen.tex
+Underfull \hbox (badness 10000) in paragraph at lines 39--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--3
+
+ []
+
+) [3] (./Graph.tex
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+) [4] (./alg.aux) ) 
 Here is how much of TeX's memory you used:
- 26618 strings out of 493029
- 529394 string characters out of 6136235
- 651089 words of memory out of 5000000
- 29716 multiletter control sequences out of 15000+600000
+ 27172 strings out of 493029
+ 544361 string characters out of 6136235
+ 662203 words of memory out of 5000000
+ 30258 multiletter control sequences out of 15000+600000
  40047 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,13n,73p,10434b,1082s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
-mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on alg.pdf (4 pages, 117495 bytes).
+ 64i,17n,73p,10434b,1210s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on alg.pdf (4 pages, 118980 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream

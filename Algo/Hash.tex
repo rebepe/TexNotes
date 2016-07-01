@@ -1,4 +1,3 @@
-\minpurp{Hashtabellen}
 \textbf{m = Tabellenplätze, ~~~ n=Anzahl der Datensätze, ~~~B=$\frac{n}{m}$} 
 
 \minpurp{Hashfunktionen} %(Geburtstagsparadoxon) = $\prod_{i=1}^{k-1}\left(1-\dfrac{i}{m}\right) = e^{-k(k-1)/2m}$
@@ -13,9 +12,8 @@ Implementieren mit Shift-Operationen für $\mathbf{m = 2^p}$, p$\leq$ wortbreite
 Bsp: w=8, ~~p=6,~~ c=0.618=0.10011110,~~ s = 4 = 100\\
 $h(s) : 10011110*100 = 10\underline{011110}00 => h(4)= 30$}}
 
-\minmeth{Universelle Familien}\\
-\textcolor{lightgray}{Zufallsfunktion= Zufällig Wert->Hash Kombination,
-Kollisionswahrscheinlichkeit: 1/m}
+\minmeth{Universelle Familien}
+%\textcolor{lightgray}{Zufallsfunktion= Zufällig Wert->Hash Kombination, Kollisionswahrscheinlichkeit: 1/m}
 
 Funktionsfamilie ist universelle Familie, wenn Kollisionswahrscheinlichkeit = $\frac{1}{m}$
 
@@ -39,8 +37,8 @@ Freie Plätze im Mittel:$ |(n - m - \text{Überlauf}) |$
 
 
 \minpurp{Offene Adressierung}
-Bei Kollision wird ein anderer Platz in der Tabelle gesucht, anhand der Sondierfolge \\
-alle Plätze müssen in Folge $i(s)_j$ enthalten sein).
+Bei Kollision wird anhand der Sondierfolge ein anderer Platz in der Tabelle gesucht
+%alle Plätze müssen in Folge $i(s)_j$ enthalten sein).
 
 \minmeth{Einfügen}
 Suche erste freie/gelöschte Zelle in Sondierfolge, füge ein;

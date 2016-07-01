@@ -1,21 +1,104 @@
 \section{SQL}
-\subsection{Tabellen}
-CREATE TABLE <name>  \\
-( <spaltenname> <typ> [PRIMARY KEY|NOT NULL| UNIQUE],    \\
+\subsection{Anlegen}
+CREATE TABLE <tabelle>  \\
+( <spalte> <typ> [PRIMARY KEY|NOT NULL| UNIQUE],    \\
 ... \\
 <tabellenconstraints>   // z.B. PRIMARY KEY ( Name, Ort) \\
-\rule{10em}{0em}// CONSTRAINT <constraintname> FOREIGN KEY (<fk>) REFERENCES <tabelle>(<spalte>)
+\rule{10em}{0em}// CONSTRAINT <constraintname> FOREIGN KEY (<fk>) REFERENCES <tabelle>(<spalte>)\\
+
 \rule{10em}{0em}// CONSTRAINT <constraintname> CHECK(<bedingung>)
 )
 
-ALTER TABLE <tabellenname> <änderung>
+ALTER TABLE <tabelle> <änderung>
 \begin{itemize}
-\item ALTER COLUMN <spaltenname> <typ>
-\item ADD COLUMN <spaltenname> <typ> 
+\item ALTER COLUMN <spalte> <typ>
+\item ADD COLUMN <spalte> <typ> 
 \item ADD CONSTRAINT <constraint> // z.B UNIQUE, FOREIGN KEY ...
 \end{itemize}
 
-DROP TABLE <name>;
+DROP TABLE <tabelle>;
 
-\subsection*{Fremdschlüssel}
+\subsection{Fremdschlüssel}
 CONSTRAINT <name> FOREIGN KEY (<spalte>) REFERENCES <tabelle>(<spalte>)
+
+\subsection{Einfügen}
+INSERT INTO <tabelle> (<spalte1>, <spalte2> ...) VALUES (<wert1>, <wert2>,...)
+
+\subsection{Verändern}
+UPDATE <tabelle> SET Ort = 'Berlin', Bafoeg = 0 
+
+WHERE <bedingung>
+
+\subsection{Löschen}
+DELETE FROM <tabelle> WHERE <bedingung>
+
+
+
+\subsection{Anfrage}
+SELECT [DISTINCT] <spalte/Aggregation>      
+
+FROM <tabelle> JOIN <tabelle> ON <bedingung> // Varianten NATURAL, LEFT, RIGHT
+
+WHERE <bedingung>
+
+GROUP BY <spalte>   // Alle spalten im SELECT auch im GROUP BY
+
+HAVING <bedingung>
+
+ORDER BY ASC/DESC
+
+
+
+
+SELECT \textcolor{orange}{sg.Name, sg.Fak}, SUM(s.Bafoeg), COUNT(DISTINCT s.Ort)\\
+FROM Studenten s JOIN Studiengang sg ON s.SgNr = sg.SgNr\\
+GROUP BY \textcolor{orange}{sg.Name, sg.Fak}\\
+HAVING COUNT(*) >= 2
+
+
+
+
+
+
+\subsection{Funktionen}
+COALESCE(<spalte>,<ersetzung>): Null-behandlung z.B. COALESCE(preis,0)
+
+SUM, AVG, COUNT, ...
+\subsection{Bedingungen}
+WHERE <spalte> BETWEEN <a> AND <b>    //Intervall [a,b]
+
+WHERE <spalte> IN $(x_1, x_2,\dots , x_n)$
+
+WHERE <spalte> LIKE <regex>
+
+WHERE <spalte> IS NULL;
+
+\subsection{Subquery}
+FROM <subquery> 
+...
+
+WHERE <spalte> [NOT] IN (<subquery>)
+
+WHERE EXISTS (<subquery>)\\
+
+z.B. SELECT * FROM Studiengang sg\\
+WHERE EXISTS (SELECT * FROM Studenten s WHERE s.SgNr = sg.SgNr)
+
+
+\subsection{Mengenoperationen}
+Spalten müssen gleiche Typen haben
+ 
+Vereinigung: <abfrage1> UNION <abfrage2>  
+
+Schnitt: <abfrage1> INTERSECT <abfrage2> 
+
+Differenz: <abfrage1> EXCEPT <abfrage2>
+
+\subsection{Transaktionen}
+BEGIN, COMMIT, ROLLBACK;
+
+SQL-Isolationssteuerung: \\
+SET TRANSACTION ISOLATION LEVEL \{ READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE \}
+
+\subsection{Index anlegen}
+CREATE INDEX <name> ON 	<tabelle>(<spalte(n)>); DROP INDEX <name>

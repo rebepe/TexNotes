@@ -1,0 +1,26 @@
+\minpurp{Priority Queue}
+Speichert Elemente mit Prioritäten, entnahme des Elements mit kleinster Priorität;
+ 
+Implementierung durch Heap und Positionsarray für die Elemente;
+
+Wird durch UpHeap/DownHeap die Position verändert: anpassen des Positionsarrays
+
+\minmeth{Einfügen} füge das Element am HeapEnde ein, Umgekehrtes DownHeap (UpHeap) \\
+\minmeth{Löschen} Entnahme der Heapwurzel, ersetzen durch letztes Element; DownHeap
+
+\minpurp{Union-Find}
+dynamische Partitionierung; parent array; Für Erweiterungen: array rank\\
+Partition als Wurzelbaum => Elemente in einer Menge wenn gleiche Wurzel\\
+Repräsentant ist Wurzel; Wurzeln haben parent[w] =0
+
+\minmeth{Find(e)}
+return Wurzel der Partition von e : durchlaufe parent-Beziehung bis Wurzel\\
+\submeth{Pfadkomprimierung:} setze gefundene Wurzel als parent aller Knoten auf diesem Pfad 
+
+\minmeth{Union(x,y)}
+return true wenn in selber Partition, sonst false + vereinige diese Partitionen\\
+i = Find(i); j = Find(j) if(i!=j) \{ parent[i] = Find(j)\}\\
+\submeth{Höhen-Balancierung} rank[i] speichert rang von i; hänge bei Union die Kleinere Wurzel unter die größere, bei gleichheit steigt der rang der neuen Wurzel
+
+worst-case Laufzeit für n-1 unions und m finds: \textbf{O((m+n)$\alpha(n));~~~ \alpha(n) \leq 4$}
+

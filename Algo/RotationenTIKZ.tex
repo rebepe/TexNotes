@@ -7,8 +7,10 @@
 \newcommand{\reda}{\textcolor{red}{a}}
 \newcommand{\blueb}{\textcolor{blue}{b}}
 
-
+\fbox{
+\begin{minipage}{0.2\textwidth}
 \minpurp{Rotationen}
+\quarterpage{
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
 \node{ \blueb }
 child{ node{\reda}
@@ -17,13 +19,14 @@ child{ node{\tg{T2}}}}
 child{ node{\bluedrei}
 }
 ;
-\end{tikzpicture}
-\begin{minipage}[b]{0.1\textwidth} \centering 
+\end{tikzpicture}}
+\quarterpage{ \centering 
 Rechts um \textcolor{red}{a} \\
 $\Longrightarrow$ \\
 Links um \textcolor{blue}{b} \\
 $\Longleftarrow$
-\end{minipage}
+}
+\quarterpage{
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
 \node{\reda} 
 child{ node{\red}}
@@ -31,12 +34,12 @@ child{node{\blueb}
 child{ node{\tg{T2}}}
 child{node{\bluedrei}}
 };
-\end{tikzpicture}
-
-
-
-
+\end{tikzpicture}}
+\end{minipage}}\!
+\fbox{
+\begin{minipage}{0.25\textwidth}{
 \minpurp{Doppelrotation}
+\begin{minipage}[t]{0.25\textwidth}
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
 \node{\blueb} 
 child{ node{\reda}
@@ -49,8 +52,9 @@ child{ node{\tdg{T3}}}
 }
 child{ node{\blue}}
 ;
-\end{tikzpicture} =>
-\begin{tikzpicture}[sibling distance=6em, level distance=2em ,level 2/.style={sibling distance=3em} ]
+\end{tikzpicture}\end{minipage}
+\begin{minipage}[t]{0.35\textwidth}
+\begin{tikzpicture}[sibling distance=3em, level distance=1.5em ,level 2/.style={sibling distance=1.5em} ]
 \node{\cen}
   child{ node{\reda}{
     child{ node{\red}}
@@ -59,10 +63,10 @@ child{ node{\blue}}
   child{ node{\blueb}
     child{ node{\tdg{T3}}}
     child{ node{\blue}}
-  }
-;
-
-\end{tikzpicture} <=
+  };
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
 \node{\reda} 
 child{ node{\red}}
@@ -76,3 +80,4 @@ child{ node{\blue}
 
 ;
 \end{tikzpicture} 
+\end{minipage}}\end{minipage}}

@@ -5,7 +5,7 @@ gehe der reihe nach alle elemente durch bis das element gefunden \textbf{O(n)}
 
 \minmeth{Binär}
 Sortiertes Array; betrachte mittleres Element; \\
-<: Wiederhole im linken Teilarray, >: im rechten; worst-Case: \textbf{ $O(\log_2n)$}
+<: Wiederhole im linken Teilarray, >: im rechten; worst-Case: $\mathbf{ O(\log_2n)}$
 
 \minmeth{Quick-Select}
 Suche k. kleinstes element: Analog zu probab. Quicksort, betrachte nur das Teilarray, in dem der Index k liegt;  durchschnitt \textbf{O(n)}
@@ -24,7 +24,8 @@ durchlaufe elemente, tausche mit nachfolger wenn dieser größer; wiederhole \te
 \item Wiederhole Quicksort im Rechten und linken Teilarray.
 \end{enumerate}
 }
-Laufzeit: best Case:$O(n\log_2n)$, worst-Case $O(n^2)$
+
+Laufzeit: best Case:$\mathbf{O(n\log_2n)}$, worst-Case $\mathbf{O(n^2)}$
 
 \submeth{probabilistisch:} start: wähle zufälliges Element als Pivot und tausche ans ende
 \quarterpage{
@@ -52,7 +53,7 @@ child{ node{99}}
 \minmeth{Heapsort}
 Erzeuge Heap; 
 Tausche letztes Element mit Wurzel, DownHeap in [1...n-1] , wiederhole bis array leer; 
-worst-case: $O(n\log_2n)$
+worst-case: $\mathbf{O(n\log_2n)}$
 
 \minmeth{Erzeuge Heap}
 Führe Einsichern für alle knoten durch (ebenenweise von unten rechts zur wurzel); \textbf{O(n)}
