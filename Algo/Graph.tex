@@ -107,12 +107,11 @@ Implementierung: Knoten in Union-Find; Sortiere Kanten nach gewicht, durchlaufe 
 Laufzeit: \textbf{O(p+qlog(q))}
 
 \minpurp{Boruvka (minimaler aufspannender Baum)}
-Min-Max-Ordnung: kante ist Kleiner falls gewicht kleiner bzw. kleinerer Knoten kleiner bzw. größerer Knoten kleiner\\
 minimale indizente Kante: kleinste Kante an einem Knoten\\
 \submeth{Start:} Tree(V,$\emptyset$) Graph(V,E)\\
 \submeth{Schritt:} füge alle Minimal indizenten Kanten im Baum ein, Kontrahiere sie im Graph; wiederholen
 Laufzeit: \textbf{O((p+q)log(p))}
-
+Gewicht nicht eindeutig => Min-Max-Ordnung: kante ist Kleiner falls gewicht kleiner bzw. kleinerer Knoten kleiner bzw. größerer Knoten kleiner
 \minpurp{Warshall (transitiver Abschluss)}
 Erzeugt Graph, bei dem jede Kante einem Pfad in der Eingabe darstellt
 
@@ -121,7 +120,7 @@ Erzeugt Graph, bei dem jede Kante einem Pfad in der Eingabe darstellt
 
 für k=1 bis p: 
 
-\submeth{Schritt:} $a_k[i,j] = a_{k-1} or( a_{k-1}[i,k] and a_{k-1}[k,j] )$
+\submeth{Schritt:} $a_k[i,j] = a_{k-1}[i,j] or( a_{k-1}[i,k] and a_{k-1}[k,j] )$
 für implementierung: es wird nur speicher für eine Matrix benötigt, diese wird angepasst. 3 forschleifen (k,i,j) => 
 $\mathbf{O(p^3)}$
 
@@ -132,6 +131,6 @@ Adjazenzmatrix gewichteter Graph, gewicht= $\infty$ wenn keine Kante, 0 in Haupt
 
 für k=1 bis p: 
 
-\submeth{Schritt:} Schritt: $a_k[i,j] = min{a_{k-1} , a_{k-1}[i,k] + a_{k-1}[k,j] }$
+\submeth{Schritt:} Schritt: $a_k[i,j] = min(a_{k-1} , a_{k-1}[i,k] + a_{k-1}[k,j] )$
 
 funktioniert auch mit negativen gewichten, wenn keine negativen Zyklen, implementierung analog zu Warshall

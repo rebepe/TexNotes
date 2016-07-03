@@ -54,12 +54,11 @@ write(a)&\\
 unlock(a);&\\
 commit;&\\
 \hline
-\end{tabular}\\ \\ \\
+\end{tabular}\newpage
 
 
 
 \section{Anfrageverarbeitung}
-
 SQL -> Query Execution Plan:\\
 Parsen der Anfrage -> Operatorengraph; // hierbei Standardisieren und vereinfachen  \\
 \textbf{KNF} : (a and b) or (c and d); \\
@@ -74,9 +73,8 @@ Parsen der Anfrage -> Operatorengraph; // hierbei Standardisieren und vereinfach
 \newcommand{\selor}{\textcolor{blue}{\ensuremath{\sigma_{a.anr > 10~OR~k.knr >10 }}}}
 \newcommand{\grpi}[1]{\textcolor{gray}{ \ensuremath{\pi_{ #1 }} }}
 \newcommand{\colobr}[3]{\textcolor{#1}{$\underbrace{\textcolor{black}{#2}}_{#3}$}}
-
+\textbf{\textcolor{red}{HINWEIS:}}von unten nach oben konstruieren.\\
 \begin{minipage}{0.25\textwidth}
-\textbf{\textcolor{red}{HINWEIS:}}von unten nach oben konstruieren.\\\\
 SELECT \colobr{red}{k.name, p.nr}{ \proj } \\
 FROM Knd k JOIN Auftr a \colobr{darkgreen}{ ON k.knr = a.knr}{\joink} \\
 JOIN Auftrpos p \colobr{darkgreen}{ ON a.anr =p.anr}{\joina} \\
@@ -118,9 +116,11 @@ Levels(I(R,A)): Höhe des Index auf A
 
 Attribut = 'sth' => Sel(A) = $\dfrac{1}{|A|}$
 
-Attribut IN $\{c_1,c_2, \dots , c_n\}$ => Sel(A) = n / |A|
+Attribut IN $\{c_1,c_2, \dots , c_n\}$ => Sel(A) = $\dfrac{n} { |A|}$
 
 A >c => Sel(A) = $\dfrac{A_{max} -c }{A_{max} - A_{min}}$
+
+A <c => Sel(A) = $\dfrac{c- A_{min} }{A_{max} - A_{min}}$
 
 $P_1~AND~P_2$ => $Sel(P_1) \cdot Sel(P_2)$
 
@@ -171,7 +171,7 @@ Ohne Index: Cost= NumBlocks(R) * NumBlocks(S) ; \\
 mit Index Cost= NumBlocks(R) * Cost(IndexScan)
 \item \textbf{Merge-Join:} Sortiere die Relationen nach Join-Attribut; \\paralleles Durchlaufen der Paare in den sortierten Relationen;\\
 Cost: Cost(Sort(R)) +Cost(Sort(S)) + NumBlocks(S) + NumBlocks(R)
-\item \textbf{Hash-Join:} Teile kleinere Relation K in h Abschnitte, wird im RAM gehalten;\\
-durchlaufe die Abschnitte: Erstelle Hashtabelle, prüfe für jeden Datensatz der 2. Relation JOIN-Bedingung mit den Zugehörigen Werten; Cost: NumBlocks(R) + x * NumBlocks(S)
+\item \textbf{Hash-Join:} Teile kleinere Relation K in h Abschnitte, (Abschnitt < RAM);\\
+durchlaufe die Abschnitte: Erstelle Hashtabelle, prüfe für jeden Datensatz der 2. Relation JOIN-Bedingung mit den Zugehörigen Werten; \\Cost: NumBlocks(R) + x * NumBlocks(S)
 
 \end{itemize}}

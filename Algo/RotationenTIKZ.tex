@@ -35,11 +35,13 @@ child{ node{\tg{T2}}}
 child{node{\bluedrei}}
 };
 \end{tikzpicture}}
-\end{minipage}}\!
-\fbox{
+\end{minipage}   \begin{minipage}{0.1pt}
+\rule{0.5pt}{10em}
+\end{minipage}\!     
 \begin{minipage}{0.25\textwidth}{
 \minpurp{Doppelrotation}
-\begin{minipage}[t]{0.25\textwidth}
+-2 \rule{10em}{0pt}  +2\\
+\begin{minipage}[t]{0.25\textwidth} 
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
 \node{\blueb} 
 child{ node{\reda}
@@ -65,10 +67,10 @@ child{ node{\blue}}
     child{ node{\blue}}
   };
 \end{tikzpicture}
-\end{minipage}
-\begin{minipage}[t]{0.25\textwidth}
+\end{minipage} \rule{0.05pt}{7em}
+\begin{minipage}[t]{0.22\textwidth}
 \begin{tikzpicture}[level distance=1.75em, sibling distance = 2em]
-\node{\reda} 
+\node(a){\reda} 
 child{ node{\red}}
 child{ node{\blueb}
 child{ node{\cen}
@@ -77,7 +79,6 @@ child{ node{\tdg{T3}}}}
 child{ node{\blue}
 }
 }
-
 ;
 \end{tikzpicture} 
 \end{minipage}}\end{minipage}}
