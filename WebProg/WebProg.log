@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  24 JUN 2016 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  5 JUL 2016 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1206,26 +1206,37 @@ Overfull \hbox (176.76642pt too wide) in paragraph at lines 160--160
  browser does not support Web Storage...";[] 
  []
 
-) (./PHP.tex [3]) [4] (./WebProg.aux) ) 
+) (./PHP.tex [3]
+Underfull \hbox (badness 1184) in paragraph at lines 52--53
+[]\T1/ptm/m/n/10.95 server setzt um-ge-bungs-va-ria-blen (z.B. QUE-RY_ STRING, 
+RE-QUEST_ URI, RE-
+ []
+
+[4] [5]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 198.
+) [6
+
+] (./WebProg.aux) ) 
 Here is how much of TeX's memory you used:
- 14570 strings out of 493029
- 255385 string characters out of 6136235
- 372267 words of memory out of 5000000
- 17943 multiletter control sequences out of 15000+600000
- 19223 words of font info for 42 fonts, out of 8000000 for 9000
+ 14576 strings out of 493029
+ 255453 string characters out of 6136235
+ 372302 words of memory out of 5000000
+ 17947 multiletter control sequences out of 15000+600000
+ 22026 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,7n,66p,10438b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/peter/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecsx1095.600pk> </home/peter/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecsx1200.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </
-home/peter/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/peter/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1440.600pk></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/times/utmr8a.pfb>
-Output written on WebProg.pdf (4 pages, 77425 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} 
+</home/peter/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk> </home/pete
+r/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/peter/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/peter/.texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecsx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on WebProg.pdf (6 pages, 94787 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 217 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

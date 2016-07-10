@@ -142,7 +142,7 @@ foreach ($a as $key => $value) {
 
 if, elseif, else
 
-include, require, include_once, require_once
+include, require, include\_once, require\_once
 
 \subsubsection*{funktionen}
 \begin{verbatim}
@@ -178,17 +178,37 @@ class Foo {
 
 Superglobal variables
 - These are available everywhere in a PHP script (no need to use global)
-• $GLOBALS - References all variables in global scope
-• $_SERVER - Server and execution environment information
-• $_GET
+• \$GLOBALS - References all variables in global scope
+• \$\_SERVER - Server and execution environment information
+• \$\_GET
 - HTTP GET variables
-• $_POST
+• \$\_POST
 - HTTP POST variables
-• $_FILES
+• \$\_FILES
 - HTTP file upload variables
-• $_COOKIE - HTTP cookies
-• $_SESSION - Session variables
-• $_REQUEST - HTTP request variables
-• $_ENV
+• \$\_COOKIE - HTTP cookies
+• \$\_SESSION - Session variables
+• \$\_REQUEST - HTTP request variables
+• \$\_ENV
 - Environment variables
 
+\section*{Web-Service}
+Interaktion von Rechnern über das Netzwerk per Remote Procedure Call
+
+\textbf{RESTful:} Verwendet Standart-Http Methoden(GET, PUT, POST, DELETE, ...) \& URI
+
+\section*{Sicherheit}
+Attacken:
+\begin{itemize}
+\item Injection: interpretation von Daten durch Compiler => Einschleusen von Befehlen
+\item Session Management: Abgreifen der Session ID => Session Hijacking
+\item Cross Site Scripting: Ausführen von Angriffscode durch Browser, z.B. aus Datenbank, reflexion aus Input\\
+(Cross Site: Angriff zwischen 2 Aufrufen der Seite)
+\item insecure direct object references/missing function level access control: privilegierte Objekte/Funktionen werden nur verborgen, nicht über authentifizierung geprüft
+\item (server) misconfiguration 
+\item Sensitive Data Exposure: Leak z.B. in Logs
+\item Cross Site Request Forgery: Angreifer bringt Browser dazu, Anfrage an Funktion zu stellen, wenn eingeloggt wird Session ID übertragen => Profit\\
+Gegenmaßnahme: Mitschicken von starken Tokens bei kritischen anfragen
+\item Vulnerable Components 
+\item Unvalidated Redirects: z.B auf Phising-Sites oder um Überprüfungen herum
+\end{itemize}
