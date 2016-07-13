@@ -1,107 +1,77 @@
-\section*{http}
-generisch, plain text, zustandslos
-
-Anfrageformat:
-\begin{verbatim}
-message = request-line | status-line
-*(message-header CRLF)
-CRLF
-[message-body]
-
-
-request-line : METHOD URL HTTP/1.1
-response line : HTTP/1.1 STATUS-CODE STATUS-MESSAGE
-\end{verbatim}
-
-Status-code:
-\begin{itemize}
-\item 1XX - Informational (request received, continues processing)
-\item 2XX - Success
-\item 3XX - Redirection (further action required in order to fulfill the request)
-\item 4XX - Client error (request contains bad syntax or cannot be fulfilled)
-\item 5XX - Server error (server failed to fulfill an otherwise valid request)
-\end{itemize}
-
-\subsection*{Sessions}
-Http ist zustandslos, Sitzungen durch austausch von Session-Identifiern bei Login. SessionID muss eindeutig sein. Client schickt SessionID bei jeder Anfrage, z.B. per Cookie, URL
-
-Cookie: key-value-paare als string, JavaScript-zugriff möglich
-
-\subsection*{https}
-TLS = Transport Layer Security zwischen TCP und http => schutz vor Man-in-the-middle, authentifikation der Website; Verschlüsselung der Verbindung
-
-Attacken: wenn URI erraten: Known-plaintext,  Traffic-analysen
-\section*{AJAX}
-Serverkommunikation ohne neuladen der Seite
-\begin{verbatim}
-var req = new XMLHttpRequest();
-var response = null;
-req.open("GET", URL, true);
-req.onreadystatechange = function () {
-	if (req.readyState == 4) {
-		response = req.responseText; // responseXML when transferring XML
-		// do something with the response
-	}
-};
-req.send(null)
-\end{verbatim}
-
-\section*{CGI}
+\section{CGI}
 Aufruf von Kommandozeilenbefehlen durch Web-Server: 
 
-server setzt umgebungsvariablen (z.B. QUERY\_ STRING, REQUEST\_ URI, REQUEST\_ METHOD, HTTP\_ ACCEPT, ...) und ruft Skript auf( mit PUT/POST -> stdin), stdausgabe wird versendet
+server setzt umgebungsvariablen (z.B. QUERY\_ STRING, REQUEST\_ URI, REQUEST\_ METHOD, HTTP\_ ACCEPT, ...) \\ und ruft ein Skript auf( mit PUT/POST als stdin), stdout wird als antwort versendet
 
-Nachteile: Nach Angriff u.U. beliebiger Code direkt auf Betriebssystem einschleusbar, Erzeugt Prozess für jeden Aufruf
-
-\subsection*{Verbesserungen}
+\textbf{Nachteile: }Nach Angriff u.U. beliebiger Code direkt auf Betriebssystem einschleusbar, Erzeugt Prozess für jeden Aufruf
+\subsection{Verbesserungen}
 Compilierte Anwendungen statt Skripte
 
-FastCGI: Länger Laufender Interpreter führt mehrere Anfragen nacheinenader aus => weniger Prozesse
+FastCGI: Länger Laufender Interpreter führt mehrere Anfragen nacheinenader aus \\=> weniger Prozesse
 
 HTTP-Server modules: Interpreter als Modul des Webservers
-
-\subsection*{PHP}
-Wird auf Server ausgeführt, ausgabe wird versendet
+\subsection{PHP}
+Wird auf Server ausgeführt, ausgabe wird versendet => Browser weiss davon nichts.
 
 Einbetten in HTML: <?php ... ?>
-
-Variablen:
-
+\subsubsection{Variablen:}
 \$myInt = 10;
 
 isset(\$myInt); //True wenn definiert
 
 unset(\$myInt); //Löschen
 
-\subsubsection*{Strings}
-Kein Unicode
+\textbf{Superglobale variablen}
+Immer direkt aufrufbar 
 
-\$helloStr = 'Hello Nr. \$myInt';  // Nr. \$myInt
-\$helloStr2 = "Hello Nr. \$myInt";  // Nr. 10
+\halfpage{ \begin{itemize}
+\item \$GLOBALS - alle Variablen im Globalen scope
+\item \$\_SERVER - Informationen über Server und ausführungsumgebung
+\item \$\_GET - HTTP GET variablen
+\item \$\_POST - HTTP POST variablen
+\item \$\_FILES - HTTP datei upload variablen
+\item \$\_COOKIE - HTTP cookies
+\item \$\_SESSION - Session variablen
+\item \$\_REQUEST - HTTP request variablen
+\item \$\_ENV - Umgebungs variablen
+\end{itemize}} \subsubsection{Referenzen}
+\begin{verbatim}
+$a =& $b; // $a and $b zeigen auf gleiches objekt
+
+function foo(&$var) {  //übergabe einer Referenz
+   $var++;
+}
+
+class Foo {
+   public $value = 42;
+   public function &getValue() {
+      return $this->value;
+   }
+}
+\end{verbatim}
+\subsubsection{Strings}
+Kein Unicode!
+
+\$helloStr = 'Hello Nr. \$myInt';  // Nr. \$myInt\\
+\$helloStr2 = "Hello Nr. \$myInt";  // Nr. 10\\
 \$helloStr3 = "Hello Nr. \{\$myInt\}eger // Nr. 10eger 
-
-\subsubsection*{Arrays}
+\subsubsection{Arrays}
 key-value!
-
-erstellen
 \begin{verbatim}
 $a1 = array("a", "b", "c");
 $a2 = array( "name" => "hans",
-"alter" => 5,
-10 => 25,
-100 => 78)
-\end{verbatim}
+   "alter" => 5,
+   10 => 25,
+   100 => 78)
 
-
-ansprechen
-\begin{verbatim}
+echo $a1[1];
 echo $a2["foo"];
 echo $a2[100];
 \end{verbatim}
 
-count(\$a2); // höchster int arraykey (in diesem Fall 100)
+count(\$a2); // höchster integer arraykey (in diesem Fall 100)
 
-\subsubsection*{objekte}
+\subsubsection{objekte}
 \begin{verbatim}
 class Foo {
   public $var = 'default value';
@@ -109,48 +79,41 @@ class Foo {
   public function __construct() { // Konstruktor
     $this->bar = 42;
   }
-  public function displayVar() {
-    echo $this->var;
-  }
+  public function displayVar() {  echo $this->var;  }
 }
 $f = new Foo();
 $f->displayVar();  // methodenaufruf
-
-//vererbung
+//----vererbung
 class Bar extends Foo {
   public function __construct() {
     parent::__construct();    // Konstruktor vaterklasse
     $this->bar = 24;
   }
 }
-
 $b = new Bar();
 $b->displayVar();  //Memberaufruf
 \end{verbatim}
 
-\subsubsection*{Kontroll}
+\subsubsection{Kontrollstrukturen}
+Einbinden: include, require, include\_once, require\_once\\
+if, elseif, else\\
 while, do-while,for analog zu C
 \begin{verbatim}
 foreach ($a as $value) {
-	echo $value;
+   echo $value;
 }
 foreach ($a as $key => $value) {
-	echo $key . PHP_EOL;
-	echo $value . " == " . $a[$key] . PHP_EOL;
+   echo $key . PHP_EOL;
+   echo $value . " == " . $a[$key] . PHP_EOL;
 }
 \end{verbatim}
-
-if, elseif, else
-
-include, require, include\_once, require\_once
-
-\subsubsection*{funktionen}
+\subsubsection{funktionen}
 \begin{verbatim}
 $gvar = 'sth';
 function foo($arg1, $arg2, ..., $argN) {
-	echo "Example function.\n";
-	global $gvar; // aufruf globale Variable
-	return $gvar;
+   echo "Example function.\n";
+   global $gvar; // aufruf globale Variable
+   return $gvar;
 }
 
 $bar = 'foo';
@@ -160,55 +123,62 @@ $bar = function () { ... };
 $bar();
 \end{verbatim}
 
-\subsubsection*{Referenzen}
+
+
+
+
+
+
+\section{http}
+generisch, plain text, zustandslos
+
+Anfrageformat:
 \begin{verbatim}
-$a =& $b; // $a and $b zeigen auf gleiches objekt
+message = request-line | status-line
+*(message-header + Leerzeile)
+CRLF (Leerzeile)
+[message-body]
 
-function foo(&$var) {  //übergabe einer Referenz
-	$var++;
-}
-
-class Foo {
-	public $value = 42;
-	public function &getValue() {
-		return $this->value;
-	}
-}
+request-line : METHOD URL HTTP/1.1
+response line : HTTP/1.1 STATUS-CODE STATUS-MESSAGE
 \end{verbatim}
+Status-code:
 
-Superglobal variables
-- These are available everywhere in a PHP script (no need to use global)
-• \$GLOBALS - References all variables in global scope
-• \$\_SERVER - Server and execution environment information
-• \$\_GET
-- HTTP GET variables
-• \$\_POST
-- HTTP POST variables
-• \$\_FILES
-- HTTP file upload variables
-• \$\_COOKIE - HTTP cookies
-• \$\_SESSION - Session variables
-• \$\_REQUEST - HTTP request variables
-• \$\_ENV
-- Environment variables
+\halfpage{
+\begin{itemize}
+\item 1XX - Informational (request received, continues processing)
+\item 2XX - Success
+\item 3XX - Redirection (further action required in order to fulfill the request)
+\item 4XX - Client error (request contains bad syntax or cannot be fulfilled)
+\item 5XX - Server error (server failed to fulfill an otherwise valid request)
+\end{itemize}}
+\subsection{Sessions}
+Http ist zustandslos, Sitzungen durch austausch von Session-Identifiern bei Login. \\
+SessionID muss eindeutig sein. \\
+Client schickt SessionID bei jeder Anfrage, z.B. per Cookie, URL
 
-\section*{Web-Service}
+Cookie: key-value-paare als string, JavaScript-zugriff möglich
+\subsection{https}
+TLS = Transport Layer Security zwischen TCP und http => schutz vor Man-in-the-middle, authentifikation des Servers und Verschlüsselung der Verbindung
+
+Attacken: wenn URI erratbar: Known-plaintext attacken,  Traffic-analysen
+\section{Web-Service}
 Interaktion von Rechnern über das Netzwerk per Remote Procedure Call
 
 \textbf{RESTful:} Verwendet Standart-Http Methoden(GET, PUT, POST, DELETE, ...) \& URI
-
-\section*{Sicherheit}
+\section{Sicherheit}
 Attacken:
 \begin{itemize}
 \item Injection: interpretation von Daten durch Compiler => Einschleusen von Befehlen
 \item Session Management: Abgreifen der Session ID => Session Hijacking
-\item Cross Site Scripting: Ausführen von Angriffscode durch Browser, z.B. aus Datenbank, reflexion aus Input\\
+\item Cross Site Scripting: Ausführen von Angriffscode durch Browser, \\
+z.B. aus Datenbank, reflexion aus Input\\
 (Cross Site: Angriff zwischen 2 Aufrufen der Seite)
-\item insecure direct object references/missing function level access control: privilegierte Objekte/Funktionen werden nur verborgen, nicht über authentifizierung geprüft
+\item insecure direct object references/missing function level access control: privilegierte Objekte/Funktionen werden nur verborgen (presentation layer access control), nicht über authentifizierung geprüft
 \item (server) misconfiguration 
 \item Sensitive Data Exposure: Leak z.B. in Logs
-\item Cross Site Request Forgery: Angreifer bringt Browser dazu, Anfrage an Funktion zu stellen, wenn eingeloggt wird Session ID übertragen => Profit\\
-Gegenmaßnahme: Mitschicken von starken Tokens bei kritischen anfragen
-\item Vulnerable Components 
+\item Cross Site Request Forgery: Angreifer bringt Browser dazu, Anfrage an Funktion zu stellen (z.B. Bank);\\ wenn User eingeloggt wird Session ID mit übertragen => Profit\\
+Gegenmaßnahme: Erzeugen und mitschicken von starken Tokens bei kritischen anfragen
+\item Vulnerable Components: fehler in libraries/modulen
 \item Unvalidated Redirects: z.B auf Phising-Sites oder um Überprüfungen herum
 \end{itemize}
