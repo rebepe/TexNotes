@@ -1,15 +1,3 @@
-\section{CGI}
-Aufruf von Kommandozeilenbefehlen durch Web-Server: 
-
-server setzt umgebungsvariablen (z.B. QUERY\_ STRING, REQUEST\_ URI, REQUEST\_ METHOD, HTTP\_ ACCEPT, ...) \\ und ruft ein Skript auf( mit PUT/POST als stdin), stdout wird als antwort versendet
-
-\textbf{Nachteile: }Nach Angriff u.U. beliebiger Code direkt auf Betriebssystem einschleusbar, Erzeugt Prozess für jeden Aufruf
-\subsection{Verbesserungen}
-Compilierte Anwendungen statt Skripte
-
-FastCGI: Länger Laufender Interpreter führt mehrere Anfragen nacheinenader aus \\=> weniger Prozesse
-
-HTTP-Server modules: Interpreter als Modul des Webservers
 \subsection{PHP}
 Wird auf Server ausgeführt, ausgabe wird versendet => Browser weiss davon nichts.
 
@@ -34,14 +22,12 @@ Immer direkt aufrufbar
 \item \$\_SESSION - Session variablen
 \item \$\_REQUEST - HTTP request variablen
 \item \$\_ENV - Umgebungs variablen
-\end{itemize}} \subsubsection{Referenzen}
+\end{itemize}} \subsubsectionnb{Referenzen}
 \begin{verbatim}
 $a =& $b; // $a and $b zeigen auf gleiches objekt
-
 function foo(&$var) {  //übergabe einer Referenz
    $var++;
 }
-
 class Foo {
    public $value = 42;
    public function &getValue() {
@@ -50,14 +36,13 @@ class Foo {
 }
 \end{verbatim}
 \subsubsection{Strings}
-Kein Unicode!
+Kein Unicode! verketten mit .
 
 \$helloStr = 'Hello Nr. \$myInt';  // Nr. \$myInt\\
 \$helloStr2 = "Hello Nr. \$myInt";  // Nr. 10\\
-\$helloStr3 = "Hello Nr. \{\$myInt\}eger // Nr. 10eger 
+\$helloStr3 = "Hello Nr. \{\$myInt\}eger // Nr. 10eger \newpage
 \subsubsection{Arrays}
-key-value!
-\begin{verbatim}
+key-value!\begin{verbatim}
 $a1 = array("a", "b", "c");
 $a2 = array( "name" => "hans",
    "alter" => 5,
@@ -70,8 +55,7 @@ echo $a2[100];
 \end{verbatim}
 
 count(\$a2); // höchster integer arraykey (in diesem Fall 100)
-
-\subsubsection{objekte}
+\subsubsectionnb{objekte}
 \begin{verbatim}
 class Foo {
   public $var = 'default value';
@@ -93,56 +77,59 @@ class Bar extends Foo {
 $b = new Bar();
 $b->displayVar();  //Memberaufruf
 \end{verbatim}
-
+\newpage
 \subsubsection{Kontrollstrukturen}
-Einbinden: include, require, include\_once, require\_once\\
+Einbinden: include, require, include\_once, require\_once (require löst fehler aus)\\
 if, elseif, else\\
 while, do-while,for analog zu C
 \begin{verbatim}
 foreach ($a as $value) {
-   echo $value;
-}
+	//bzw.
 foreach ($a as $key => $value) {
-   echo $key . PHP_EOL;
+   echo $key . PHP_EOL;   
    echo $value . " == " . $a[$key] . PHP_EOL;
-}
 \end{verbatim}
-\subsubsection{funktionen}
+\subsubsectionnb{funktionen}
 \begin{verbatim}
-$gvar = 'sth';
+$gvar = 'sth';      // globale variable
 function foo($arg1, $arg2, ..., $argN) {
-   echo "Example function.\n";
-   global $gvar; // aufruf globale Variable
+   global $gvar;    // aufruf globale Variable
    return $gvar;
 }
-
-$bar = 'foo';
+foo();           // aufruf
+$bar = 'foo';    // dynamischer aufruf
 $bar();
-
-$bar = function () { ... };
-$bar();
+$bar = function () { ... }; // anonyme funktion
 \end{verbatim}
+\section{CGI}
+Aufruf von Kommandozeilenbefehlen durch Web-Server: 
 
+server setzt umgebungsvariablen (z.B. QUERY\_ STRING, REQUEST\_ URI, REQUEST\_ METHOD, HTTP\_ ACCEPT, ...) \\ und ruft ein Skript auf( mit PUT/POST als stdin), stdout wird als antwort versendet
 
+\textbf{Nachteile: }Nach Angriff u.U. beliebiger Code direkt auf Betriebssystem einschleusbar, Erzeugt Prozess für jeden Aufruf
+\subsection{Verbesserungen}
+Compilierte Anwendungen statt Skripte
 
+FastCGI: Länger Laufender Interpreter führt mehrere Anfragen nacheinenader aus \\=> weniger Prozesse
 
-
-
-
+HTTP-Server modules: Interpreter als Modul des Webservers
 \section{http}
 generisch, plain text, zustandslos
 
-Anfrageformat:
-\begin{verbatim}
-message = request-line | status-line
-*(message-header + Leerzeile)
-CRLF (Leerzeile)
-[message-body]
+\textbf{Anfrageformat:}
+
+request-line oder status-line
+
+*(message-header + Leerzeile) //optional
+
+Leerzeile (CRLF)
+
+Nachrichtenteil
 
 request-line : METHOD URL HTTP/1.1
 response line : HTTP/1.1 STATUS-CODE STATUS-MESSAGE
-\end{verbatim}
-Status-code:
+
+\textbf{Status-code:}
 
 \halfpage{
 \begin{itemize}
@@ -167,7 +154,7 @@ Interaktion von Rechnern über das Netzwerk per Remote Procedure Call
 
 \textbf{RESTful:} Verwendet Standart-Http Methoden(GET, PUT, POST, DELETE, ...) \& URI
 \section{Sicherheit}
-Attacken:
+\halfpage{
 \begin{itemize}
 \item Injection: interpretation von Daten durch Compiler => Einschleusen von Befehlen
 \item Session Management: Abgreifen der Session ID => Session Hijacking
@@ -181,4 +168,4 @@ z.B. aus Datenbank, reflexion aus Input\\
 Gegenmaßnahme: Erzeugen und mitschicken von starken Tokens bei kritischen anfragen
 \item Vulnerable Components: fehler in libraries/modulen
 \item Unvalidated Redirects: z.B auf Phising-Sites oder um Überprüfungen herum
-\end{itemize}
+\end{itemize}}
