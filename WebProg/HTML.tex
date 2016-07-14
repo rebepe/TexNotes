@@ -1,39 +1,38 @@
 \sectionnb{HTML}
-\begin{verbatim}
-<!doctype html>
-<html>
- <head>
-  <meta charset=“utf-8">
-  <link rel="stylesheet" href=“style.css” type=“text/css”>
+\begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{orange}{<!doctype html>       <!-- minimalbsp-->}
+\textcolor{orange}{<html>}
+\textcolor{orange}{ <head>}
+  <meta charset=“utf-8"/>
+  <link rel="stylesheet" href=“style.css” type=“text/css”/>
   <script src="myscript.js"></script>
-  <title>A first HTML-Example</title>
- </head>
- <body onload="someFunctionFromMyScriptJS()">
+\textcolor{orange}{  <title>A first HTML-Example</title>}
+\textcolor{orange}{ </head>}
+\textcolor{orange}{ <body} onload="someFunctionFromMyScriptJS()">
    <article>
       <p>Hello <span id="type">class</span>!</p>
       <a href="http://example.com">A link!</a>
       <form action="tables.html" method="get">
-         Fach:<br>
-         <input type="text" name="fach" value="Web-Prog">
-         <br><br>
-         <input type="submit" value="Submit">
+         Fach:<br/>
+         <input type="text" name="fach" value="Web-Prog"/>
+         <br/><br/>
+         <input type="submit" value="Submit"7>
       </form>
     </article>
- </body>
-</html>
-\end{verbatim}
+\textcolor{orange}{ </body>}
+\textcolor{orange}{</html>}
+\end{Verbatim}
 
 \begin{itemize}
-\item ul: unordered list (mit .)
-\item ol: ordered list (nummeriert)
+\item Listen: ul,ol Listenelemente: li
 \item sematisch: main, article, aside, header, footer,section
-\item <!-- --> Kommentar
-\item div, span
-\item img, audio, video
+\item <!-~-~~~ -~ -> Kommentar
+\item div, span  (span ist inline)
+\item img, audio, video (Quell-Url: src)
 \item form: (action, method, target, autocomplete, novalidate)\\
-   input: text, password, submit, radio, checkbox, button, color
+   input type: text, password, submit, radio, checkbox, button, color
   \item <script src=URL/> laden von Javascript-Files, interpretation beim Einlesen
 \end{itemize}
 
-
+\textbf{Sonderzeichen:} <:\&lt; ~~~~>: \&gt;  ~~~~\& : \&amp;
 

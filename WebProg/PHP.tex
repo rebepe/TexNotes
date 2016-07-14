@@ -37,7 +37,7 @@ class Foo {
 }
 \end{verbatim}
 \subsubsection{Strings}
-Kein Unicode! verketten mit .
+Kein Unicode! verketten mit .~~~ JSON mit json_encode( ) und json_decode()
 
 \$helloStr = 'Hello Nr. \$myInt';  // Nr. \$myInt\\
 \$helloStr2 = "Hello Nr. \$myInt";  // Nr. 10\\
@@ -117,7 +117,7 @@ FastCGI: Länger Laufender Interpreter führt mehrere Anfragen nacheinenader aus
 
 HTTP-Server modules: Interpreter als Modul des Webservers
 \section{http}
-generisch, plain text, zustandslos
+generisch, plain text, zustandslos;
 
 \fbox{
 \halfpage{
@@ -130,6 +130,7 @@ Leerzeile (CRLF)
 Nachrichtenteil
 
 request-line : METHOD URL HTTP/1.1\\
+Methoden: GET, PUT, POST, DELETE...\\
 response line : HTTP/1.1 STATUS-CODE STATUS-MESSAGE
 }}
 \textbf{Status-code:}
@@ -172,3 +173,6 @@ Gegenmaßnahme: Erzeugen und mitschicken von starken Tokens bei kritischen anfra
 \item Vulnerable Components: fehler in libraries/modulen
 \item Unvalidated Redirects: z.B auf Phising-Sites oder um Überprüfungen herum
 \end{itemize}}
+
+\section{URL}
+$\underbrace{http:}_{schema}//\textcolor{lightgray}{\underbrace{user:password@}_{credentials}}\underbrace{example.org}_{host}\underbrace{/demo/example.cgi}_{path}\underbrace{?a=foo\&b=bar}_{query}\underbrace{\#foobar}_{fragment}$

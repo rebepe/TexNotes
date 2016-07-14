@@ -92,7 +92,7 @@ var req = new XMLHttpRequest();
 var response = null;
 req.open("GET", URL, true);
 req.onreadystatechange = function () {
-  if (req.readyState == 4) {
+  if (req.readyState === 4) {
     response = req.responseText; // responseXML when transferring XML
     // do something with the response
   }
@@ -166,3 +166,6 @@ function drop(ev) {
 <p id="drag1" draggable="true" ondragstart="drag(event)"/>
 \end{verbatim}
 
+\subsubsection{JSON}
+JSON.stringify( object) liefert JSON zu object; \\
+JSON.parse(string) liefert Objekt zu JSON
