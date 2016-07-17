@@ -37,7 +37,7 @@ class Foo {
 }
 \end{verbatim}
 \subsubsection{Strings}
-Kein Unicode! verketten mit .~~~ JSON mit json_encode( ) und json_decode()
+Kein Unicode! verketten mit .~~~ JSON mit json\_encode( ) und json\_decode()
 
 \$helloStr = 'Hello Nr. \$myInt';  // Nr. \$myInt\\
 \$helloStr2 = "Hello Nr. \$myInt";  // Nr. 10\\
@@ -102,7 +102,23 @@ $bar = 'foo';    // dynamischer aufruf
 $bar();
 $bar = function () { ... }; // anonyme funktion
 \end{verbatim} \newpage 
-.
+
+\section{Bsp}
+\begin{verbatim}
+//verzweigung:
+if($_REQUEST == null) {
+    echo json_encode($a->getAllExercises());
+}else {
+    if((isset($_GET["id"]) || isset($_POST["id"])){
+        $a->getExerciseById($_GET["id"]);
+    )}
+}
+//DB abfrage:
+$sql = "Select * from Tabelle";
+ $s = $this->pdo->query($sql);
+$s= $this->pdo->fetchall();
+return $s;
+\end{verbatim}
 \newpage
 \section{CGI}
 Aufruf von Kommandozeilenbefehlen durch Web-Server: 
@@ -176,3 +192,5 @@ Gegenmaßnahme: Erzeugen und mitschicken von starken Tokens bei kritischen anfra
 
 \section{URL}
 $\underbrace{http:}_{schema}//\textcolor{lightgray}{\underbrace{user:password@}_{credentials}}\underbrace{example.org}_{host}\underbrace{/demo/example.cgi}_{path}\underbrace{?a=foo\&b=bar}_{query}\underbrace{\#foobar}_{fragment}$
+
+
