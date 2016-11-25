@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  29 JUN 2016 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  25 NOV 2016 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,8 +1263,8 @@ Overfull \hbox (21.11455pt too wide) in paragraph at lines 52--56
  []
 
 
-Overfull \hbox (40.15575pt too wide) in paragraph at lines 52--56
-[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 ^^@
+Overfull \hbox (36.82646pt too wide) in paragraph at lines 52--56
+[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@
  []
 
 
@@ -1480,7 +1480,7 @@ Overfull \hbox (33.38995pt too wide) in paragraph at lines 61--63
 
 ! Undefined control sequence.
 l.65 \section
-             *{Verteilunsfunktionen}
+             *{Verteilungsfunktionen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1495,7 +1495,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.65 \section*
-              {Verteilunsfunktionen}
+              {Verteilungsfunktionen}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1509,6 +1509,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no u in font nullfont!
@@ -1642,13 +1643,343 @@ Overfull \hbox (31.86804pt too wide) in paragraph at lines 71--73
  []
 
 
-Overfull \hbox (47.28827pt too wide) in paragraph at lines 71--73
-[][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML
-/cmm/m/it/10 dt$ 
+Overfull \hbox (51.49658pt too wide) in paragraph at lines 71--73
+[][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML
+/cmm/m/it/10 dx$ 
  []
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 B
+      sp:
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no B in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no : in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 74--75
+[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76 $
+      f(x) = \begin{cases}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 ! Undefined control sequence.
-l.74 \subsection
+<argument> \textcolor 
+                      
+l.77 \textcolor
+               {red}{ax}   &  -2 < x \leq 1 \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.77 \textcolor{red}{ax}   &
+                              -2 < x \leq 1 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.78 ax^2 &
+            1<x\leq 5\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.79 0  &
+          sonst
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (50.02084pt too wide) in paragraph at lines 76--81
+[]$\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (42.96272pt too wide) in paragraph at lines 76--81
+[] [][] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (15.55553pt too wide) in paragraph at lines 76--81
+\OT1/cmr/m/n/10 2 \OML/cmm/m/it/10 <
+ []
+
+
+Overfull \hbox (16.27078pt too wide) in paragraph at lines 76--81
+\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--81
+\OT1/cmr/m/n/10 1[] 
+ []
+
+
+Overfull \hbox (31.04282pt too wide) in paragraph at lines 76--81
+\OML/cmm/m/it/10 ax[]\OT1/cmr/m/n/10 1 \OML/cmm/m/it/10 <
+ []
+
+
+Overfull \hbox (16.27078pt too wide) in paragraph at lines 76--81
+\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--81
+\OT1/cmr/m/n/10 5[] 
+ []
+
+
+Overfull \hbox (28.83571pt too wide) in paragraph at lines 76--81
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 sonst$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82 $
+      \int_{-\infty}^x 0 dx & = 0;  => F(-2) = 0
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Misplaced alignment tab character &.
+l.82 $\int_{-\infty}^x 0 dx &
+                              = 0;  => F(-2) = 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.84 0 + \int_{-2}^x \textcolor
+                               {red}{ax} dx & = \frac{1}{2}ax^2 |_{-2}^x = \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.84 0 + \int_{-2}^x \textcolor{red}{ax} dx &
+                                              = \frac{1}{2}ax^2 |_{-2}^x = \...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.86 2,5a + \int_{1}^x ax^2 dx &
+                                = \frac{1}{3}ax^3 |_{1}^x +2,5a =  \frac{1}{...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.88 44,5 a + \int_5^x 0 dx &
+                             = 44,5a$
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (67.58678pt too wide) in paragraph at lines 82--90
+[]$[][] \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 0; =\OML/cmm/m/it/10 >
+ []
+
+
+Overfull \hbox (38.93059pt too wide) in paragraph at lines 82--90
+\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2) =
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 0[] 
+ []
+
+
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 0 +
+ []
+
+
+Overfull \hbox (64.2523pt too wide) in paragraph at lines 82--90
+[][] [][]\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (45.94286pt too wide) in paragraph at lines 82--90
+[]\OML/cmm/m/it/10 ax[]\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (29.65121pt too wide) in paragraph at lines 82--90
+[]\OML/cmm/m/it/10 ax[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (28.61922pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 =\OML/cmm/m/it/10 >
+ []
+
+
+Overfull \hbox (31.15279pt too wide) in paragraph at lines 82--90
+\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (1) =
+ []
+
+
+Overfull \hbox (19.73033pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a[] 
+ []
+
+
+Overfull \hbox (27.50813pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a \OT1/cm
+r/m/n/10 +
+ []
+
+
+Overfull \hbox (50.33096pt too wide) in paragraph at lines 82--90
+[][] \OML/cmm/m/it/10 ax[]dx \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (37.46373pt too wide) in paragraph at lines 82--90
+[]\OML/cmm/m/it/10 ax[]\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (30.28584pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a \OT1/cm
+r/m/n/10 =
+ []
+
+
+Overfull \hbox (29.65121pt too wide) in paragraph at lines 82--90
+[]\OML/cmm/m/it/10 ax[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (19.44981pt too wide) in paragraph at lines 82--90
+[]\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (38.06364pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a \OT1/cm
+r/m/n/10 =\OML/cmm/m/it/10 >
+ []
+
+
+Overfull \hbox (31.15279pt too wide) in paragraph at lines 82--90
+\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (5) =
+ []
+
+
+Overfull \hbox (24.73035pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 44\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a[] 
+ []
+
+
+Overfull \hbox (32.50815pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 44\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a \OT1/c
+mr/m/n/10 +
+ []
+
+
+Overfull \hbox (39.84369pt too wide) in paragraph at lines 82--90
+[][] \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (24.73035pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 44\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a$
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 82--90
+\OMS/cmsy/m/n/10 )
+ []
+
+
+Overfull \hbox (35.28586pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 44\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 a \OT1/c
+mr/m/n/10 =
+ []
+
+
+Overfull \hbox (18.33325pt too wide) in paragraph at lines 82--90
+\OT1/cmr/m/n/10 1 []$ 
+ []
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 
+     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! Undefined control sequence.
+l.91 \subsection
                 *{Gleichverteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1663,7 +1994,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.74 \subsection*
+l.91 \subsection*
                  {Gleichverteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1686,27 +2017,27 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 74--76
+Overfull \hbox (20.0pt too wide) in paragraph at lines 91--93
 []
  []
 
 
-Overfull \hbox (30.02084pt too wide) in paragraph at lines 74--76
+Overfull \hbox (30.02084pt too wide) in paragraph at lines 91--93
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (54.65251pt too wide) in paragraph at lines 74--76
+Overfull \hbox (54.65251pt too wide) in paragraph at lines 91--93
 []\OML/cmm/m/it/10 fallsa <
  []
 
 
-Overfull \hbox (16.27078pt too wide) in paragraph at lines 74--76
+Overfull \hbox (16.27078pt too wide) in paragraph at lines 91--93
 \OML/cmm/m/it/10 x <
  []
 
 
-Overfull \hbox (37.57178pt too wide) in paragraph at lines 74--76
+Overfull \hbox (37.57178pt too wide) in paragraph at lines 91--93
 \OML/cmm/m/it/10 b; sonst\OT1/cmr/m/n/10 0$ 
  []
 
@@ -1717,28 +2048,28 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 $
+l.94 $
       F(x)  = \frac{x-a}{b-a} falls a < x < b, sonst 0 bzw. 1$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (51.86804pt too wide) in paragraph at lines 77--78
+Overfull \hbox (51.86804pt too wide) in paragraph at lines 94--95
 []$\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (55.67058pt too wide) in paragraph at lines 77--78
+Overfull \hbox (55.67058pt too wide) in paragraph at lines 94--95
 []\OML/cmm/m/it/10 fallsa <
  []
 
 
-Overfull \hbox (16.27078pt too wide) in paragraph at lines 77--78
+Overfull \hbox (16.27078pt too wide) in paragraph at lines 94--95
 \OML/cmm/m/it/10 x <
  []
 
 
-Overfull \hbox (62.15979pt too wide) in paragraph at lines 77--78
+Overfull \hbox (62.15979pt too wide) in paragraph at lines 94--95
 \OML/cmm/m/it/10 b; sonst\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 bzw:\OT1/cmr/m/n/10 
 1$ 
  []
@@ -1750,7 +2081,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.79 E
+l.96 E
       (X) = (b+a)/2
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1768,12 +2099,12 @@ Missing character: There is no ) in font nullfont!
 Missing character: There is no / in font nullfont!
 Missing character: There is no 2 in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 79--80
+Overfull \hbox (20.0pt too wide) in paragraph at lines 96--97
 []
  []
 
 ! Undefined control sequence.
-l.81 \subsection
+l.98 \subsection
                 *{Exponentialverteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1788,7 +2119,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 \subsection*
+l.98 \subsection*
                  {Exponentialverteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1828,8 +2159,8 @@ Missing character: There is no X in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
-l.83 E(X) = $1/\lambda$ \gray
-                             {= Durchschnittliche Lebensdauer}\\
+l.100 E(X) = $1/\lambda$ \gray
+                              {= Durchschnittliche Lebensdauer}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1873,8 +2204,8 @@ Missing character: There is no X in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
-l.85 \subsubsection
-                   *{\gray{Weibull-Verteilung}}
+l.102 \subsubsection
+                    *{\gray{Weibull-Verteilung}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1883,8 +2214,8 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no * in font nullfont!
 ! Undefined control sequence.
-l.85 \subsubsection*{\gray
-                          {Weibull-Verteilung}}
+l.102 \subsubsection*{\gray
+                           {Weibull-Verteilung}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1910,8 +2241,8 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.86 \gray
-          {$F(x) = 1 - e^{\lambda x^\beta};  \\f(x) = \lambda \beta x^{\beta...
+l.103 \gray
+           {$F(x) = 1 - e^{\lambda x^\beta};  \\f(x) = \lambda \beta x^{\bet...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1926,73 +2257,73 @@ Missing character: There is no x in font nullfont!
 Missing character: There is no > in font nullfont!
 Missing character: There is no 0 in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 81--87
+Overfull \hbox (20.0pt too wide) in paragraph at lines 98--104
 []
  []
 
 
-Overfull \hbox (31.86804pt too wide) in paragraph at lines 81--87
+Overfull \hbox (31.86804pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 81--87
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 98--104
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (25.1285pt too wide) in paragraph at lines 81--87
+Overfull \hbox (25.1285pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ; [] 
  []
 
 
-Overfull \hbox (30.02084pt too wide) in paragraph at lines 81--87
+Overfull \hbox (30.02084pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (26.51744pt too wide) in paragraph at lines 81--87
+Overfull \hbox (26.51744pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 ^^Ue[]$
  []
 
 
-Overfull \hbox (15.83339pt too wide) in paragraph at lines 81--87
+Overfull \hbox (15.83339pt too wide) in paragraph at lines 98--104
 \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =^^U$
  []
 
 
-Overfull \hbox (20.31952pt too wide) in paragraph at lines 81--87
+Overfull \hbox (20.31952pt too wide) in paragraph at lines 98--104
 \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =^^U[]$
  []
 
 
-Overfull \hbox (31.86804pt too wide) in paragraph at lines 81--87
+Overfull \hbox (31.86804pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 81--87
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 98--104
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (23.5886pt too wide) in paragraph at lines 81--87
+Overfull \hbox (23.5886pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ; [] 
  []
 
 
-Overfull \hbox (30.02084pt too wide) in paragraph at lines 81--87
+Overfull \hbox (30.02084pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (58.75713pt too wide) in paragraph at lines 81--87
+Overfull \hbox (58.75713pt too wide) in paragraph at lines 98--104
 \OML/cmm/m/it/10 ^^U^^Lx[]e[]$
  []
 
 ! Undefined control sequence.
-l.89 \subsection
-                *{Hypergeometrische Verteilung}
+l.106 \subsection
+                 *{Hypergeometrische Verteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2006,8 +2337,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.89 \subsection*
-                 {Hypergeometrische Verteilung}
+l.106 \subsection*
+                  {Hypergeometrische Verteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2105,7 +2436,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no ) in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 89--91
+Overfull \hbox (20.0pt too wide) in paragraph at lines 106--108
 []
  []
 
@@ -2116,8 +2447,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.92 p
-      rob(X=x)=$ \dfrac{\left( \! \begin{array}{c}M \\ x \end{array} \! \rig...
+l.109 p
+       rob(X=x)=$ \dfrac{\left( \! \begin{array}{c}M \\ x \end{array} \! \ri...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2133,8 +2464,8 @@ Missing character: There is no x in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
-l.92 prob(X=x)=$ \dfrac
-                       {\left( \! \begin{array}{c}M \\ x \end{array} \! \rig...
+l.109 prob(X=x)=$ \dfrac
+                        {\left( \! \begin{array}{c}M \\ x \end{array} \! \ri...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2142,7 +2473,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (106.22215pt too wide) in paragraph at lines 92--93
+Overfull \hbox (106.22215pt too wide) in paragraph at lines 109--110
 []$[][]$ 
  []
 
@@ -2153,14 +2484,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.94 $
-      E(X)=n\dfrac{M}{N}~~~
+l.111 $
+       E(X)=n\dfrac{M}{N}~~~
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.94 $E(X)=n\dfrac
-                  {M}{N}~~~
+l.111 $E(X)=n\dfrac
+                   {M}{N}~~~
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2168,8 +2499,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.95 Var(X) = n\dfrac
-                     {M}{N} \left( 1- \dfrac{M}{N} \right) \dfrac{N-n}{N-1}
+l.112 Var(X) = n\dfrac
+                      {M}{N} \left( 1- \dfrac{M}{N} \right) \dfrac{N-n}{N-1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2177,8 +2508,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.95 Var(X) = n\dfrac{M}{N} \left( 1- \dfrac
-                                            {M}{N} \right) \dfrac{N-n}{N-1}
+l.112 Var(X) = n\dfrac{M}{N} \left( 1- \dfrac
+                                             {M}{N} \right) \dfrac{N-n}{N-1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2186,7 +2517,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.95 ...}{N} \left( 1- \dfrac{M}{N} \right) \dfrac
+l.112 ...{N} \left( 1- \dfrac{M}{N} \right) \dfrac
                                                   {N-n}{N-1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2195,24 +2526,24 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (55.36105pt too wide) in paragraph at lines 94--97
+Overfull \hbox (55.36105pt too wide) in paragraph at lines 111--114
 []$\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (71.45253pt too wide) in paragraph at lines 94--97
+Overfull \hbox (71.45253pt too wide) in paragraph at lines 111--114
 \OML/cmm/m/it/10 nMN [] [] []Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n
 /10 ) =
  []
 
 
-Overfull \hbox (127.86539pt too wide) in paragraph at lines 94--97
+Overfull \hbox (127.86539pt too wide) in paragraph at lines 111--114
 \OML/cmm/m/it/10 nMN [] [][]$ 
  []
 
 ! Undefined control sequence.
-l.98 \Naeherung
-                bei $ 20 n \leq N $  durch Binomialverteilung
+l.115 \Naeherung
+                 bei $ 20 n \leq N $  durch Binomialverteilung
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2226,8 +2557,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98 \Naeherung b
-                 ei $ 20 n \leq N $  durch Binomialverteilung
+l.115 \Naeherung b
+                  ei $ 20 n \leq N $  durch Binomialverteilung
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2258,22 +2589,22 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 98--99
+Overfull \hbox (20.0pt too wide) in paragraph at lines 115--116
 []
  []
 
 
-Overfull \hbox (26.55789pt too wide) in paragraph at lines 98--99
+Overfull \hbox (26.55789pt too wide) in paragraph at lines 115--116
 \OT1/cmr/m/n/10 20\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^T
  []
 
 
-Overfull \hbox (9.12497pt too wide) in paragraph at lines 98--99
+Overfull \hbox (9.12497pt too wide) in paragraph at lines 115--116
 \OML/cmm/m/it/10 N$
  []
 
 ! Undefined control sequence.
-l.100 \subsection
+l.117 \subsection
                  *{binomialverteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2288,7 +2619,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.100 \subsection*
+l.117 \subsection*
                   {binomialverteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2355,7 +2686,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no : in font nullfont!
 Missing character: There is no p in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 100--102
+Overfull \hbox (20.0pt too wide) in paragraph at lines 117--119
 []
  []
 
@@ -2366,47 +2697,32 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 $
+l.120 $
        prob(X=x) = \left( \begin{array}{c} n \\ x \end{array} \right) p^x (1...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (62.47334pt too wide) in paragraph at lines 103--104
+Overfull \hbox (62.47334pt too wide) in paragraph at lines 120--121
 []$\OML/cmm/m/it/10 prob\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (20.15968pt too wide) in paragraph at lines 103--104
+Overfull \hbox (20.15968pt too wide) in paragraph at lines 120--121
 \OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (42.17947pt too wide) in paragraph at lines 103--104
+Overfull \hbox (42.17947pt too wide) in paragraph at lines 120--121
 [] \OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (25.14822pt too wide) in paragraph at lines 103--104
+Overfull \hbox (25.14822pt too wide) in paragraph at lines 120--121
 \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 )[]$ 
  []
 
-
-! LaTeX Error: The font size command \normalsize is not defined:
-               there is probably something wrong with the class file.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.105 E
-       (X) = np; ~~~ Var(X) = np(1-p)
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -2414,7 +2730,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 E
+l.122 E
        (X) = np; ~~~ Var(X) = np(1-p)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2442,12 +2758,12 @@ Missing character: There is no - in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no ) in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 105--106
+Overfull \hbox (20.0pt too wide) in paragraph at lines 122--123
 []
  []
 
 ! Undefined control sequence.
-l.107 \gray
+l.124 \gray
            {Wenn X = Bi(n;p) und Y = Bi(m;p) unabhängig, dann X + Y = Bi(m+...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2462,7 +2778,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.107 \gray{W
+l.124 \gray{W
              enn X = Bi(n;p) und Y = Bi(m;p) unabhängig, dann X + Y = Bi(m+...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2523,12 +2839,12 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no ) in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 107--108
+Overfull \hbox (20.0pt too wide) in paragraph at lines 124--125
 []
  []
 
 ! Undefined control sequence.
-l.109 \Naeherung
+l.126 \Naeherung
                   Bei $n \geq 50, p \leq 0.1 $ durch Poisson-Verteilung mit ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2543,7 +2859,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.109 \Naeherung  B
+l.126 \Naeherung  B
                    ei $n \geq 50, p \leq 0.1 $ durch Poisson-Verteilung mit ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2579,37 +2895,37 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 109--110
+Overfull \hbox (20.0pt too wide) in paragraph at lines 126--127
 []
  []
 
 
-Overfull \hbox (16.55786pt too wide) in paragraph at lines 109--110
+Overfull \hbox (16.55786pt too wide) in paragraph at lines 126--127
 \OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^U
  []
 
 
-Overfull \hbox (30.0312pt too wide) in paragraph at lines 109--110
+Overfull \hbox (30.0312pt too wide) in paragraph at lines 126--127
 \OT1/cmr/m/n/10 50\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10 ^^T
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 109--110
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 126--127
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (16.38887pt too wide) in paragraph at lines 109--110
+Overfull \hbox (16.38887pt too wide) in paragraph at lines 126--127
 \OML/cmm/m/it/10 ^^U \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (11.0336pt too wide) in paragraph at lines 109--110
+Overfull \hbox (11.0336pt too wide) in paragraph at lines 126--127
 \OML/cmm/m/it/10 np$ 
  []
 
 ! Undefined control sequence.
-l.111 \Naeherung
+l.128 \Naeherung
                  Bei $np(1-p)\geq 9$: $F_B(x) \approx F_N(x+0.5) = \Phi \lef...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2624,7 +2940,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 \Naeherung B
+l.128 \Naeherung B
                   ei $np(1-p)\geq 9$: $F_B(x) \approx F_N(x+0.5) = \Phi \lef...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2635,7 +2951,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
-l.111 ...) \approx F_N(x+0.5) = \Phi \left( \dfrac
+l.128 ...) \approx F_N(x+0.5) = \Phi \left( \dfrac
                                                   {x+0.5 -np}{\sqrt{np(1-p)}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2644,48 +2960,48 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 111--112
+Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
 []
  []
 
 
-Overfull \hbox (27.70032pt too wide) in paragraph at lines 111--112
+Overfull \hbox (27.70032pt too wide) in paragraph at lines 128--129
 \OML/cmm/m/it/10 np\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (19.47566pt too wide) in paragraph at lines 111--112
+Overfull \hbox (19.47566pt too wide) in paragraph at lines 128--129
 \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^U
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 111--112
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 9$
  []
 
 
-Overfull \hbox (37.36214pt too wide) in paragraph at lines 111--112
+Overfull \hbox (37.36214pt too wide) in paragraph at lines 128--129
 \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/c
 msy/m/n/10 ^^Y
  []
 
 
-Overfull \hbox (31.39726pt too wide) in paragraph at lines 111--112
+Overfull \hbox (31.39726pt too wide) in paragraph at lines 128--129
 \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (27.22223pt too wide) in paragraph at lines 111--112
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5) =
  []
 
 
-Overfull \hbox (125.8691pt too wide) in paragraph at lines 111--112
+Overfull \hbox (125.8691pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 ^^H []$ 
  []
 
 ! Undefined control sequence.
-l.114 \subsection
+l.131 \subsection
                  *{Poisson-Verteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2700,7 +3016,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.114 \subsection*
+l.131 \subsection*
                   {Poisson-Verteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2725,7 +3041,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.115 \gray
+l.132 \gray
            {Auftreten von Ereignis in Zeitinterval:}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2769,7 +3085,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 114--116
+Overfull \hbox (20.0pt too wide) in paragraph at lines 131--133
 []
  []
 
@@ -2780,13 +3096,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.117 $
+l.134 $
        prob(X=x) = \dfrac{\lambda^x}{x!}e^{-\lambda}$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.117 $prob(X=x) = \dfrac
+l.134 $prob(X=x) = \dfrac
                          {\lambda^x}{x!}e^{-\lambda}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2795,17 +3111,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (62.47334pt too wide) in paragraph at lines 117--118
+Overfull \hbox (62.47334pt too wide) in paragraph at lines 134--135
 []$\OML/cmm/m/it/10 prob\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (20.15968pt too wide) in paragraph at lines 117--118
+Overfull \hbox (20.15968pt too wide) in paragraph at lines 134--135
 \OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (35.5105pt too wide) in paragraph at lines 117--118
+Overfull \hbox (35.5105pt too wide) in paragraph at lines 134--135
 [][]\OML/cmm/m/it/10 e[]$ 
  []
 
@@ -2816,28 +3132,28 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.119 $
+l.136 $
        E(X) = Var(X) = \lambda$
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (55.36105pt too wide) in paragraph at lines 119--120
+Overfull \hbox (55.36105pt too wide) in paragraph at lines 136--137
 []$\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (45.53355pt too wide) in paragraph at lines 119--120
+Overfull \hbox (45.53355pt too wide) in paragraph at lines 136--137
 \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (5.83336pt too wide) in paragraph at lines 119--120
+Overfull \hbox (5.83336pt too wide) in paragraph at lines 136--137
 \OML/cmm/m/it/10 ^^U$ 
  []
 
 ! Undefined control sequence.
-l.121 \Naeherung
+l.138 \Naeherung
                  Bei $\lambda \geq 9$ $F_P(x) \approx F_N(x+0.5)=\Phi \left(...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2852,7 +3168,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.121 \Naeherung B
+l.138 \Naeherung B
                   ei $\lambda \geq 9$ $F_P(x) \approx F_N(x+0.5)=\Phi \left(...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2862,7 +3178,7 @@ Missing character: There is no B in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 ! Undefined control sequence.
-l.121 ...(x) \approx F_N(x+0.5)=\Phi \left( \dfrac
+l.138 ...(x) \approx F_N(x+0.5)=\Phi \left( \dfrac
                                                   {x+0.5-\lambda}{\sqrt{\lam...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2871,43 +3187,43 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 121--122
+Overfull \hbox (20.0pt too wide) in paragraph at lines 138--139
 []
  []
 
 
-Overfull \hbox (16.38887pt too wide) in paragraph at lines 121--122
+Overfull \hbox (16.38887pt too wide) in paragraph at lines 138--139
 \OML/cmm/m/it/10 ^^U \OMS/cmsy/m/n/10 ^^U
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 121--122
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 138--139
 \OT1/cmr/m/n/10 9$
  []
 
 
-Overfull \hbox (37.14685pt too wide) in paragraph at lines 121--122
+Overfull \hbox (37.14685pt too wide) in paragraph at lines 138--139
 \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/c
 msy/m/n/10 ^^Y
  []
 
 
-Overfull \hbox (31.39726pt too wide) in paragraph at lines 121--122
+Overfull \hbox (31.39726pt too wide) in paragraph at lines 138--139
 \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (27.22223pt too wide) in paragraph at lines 121--122
+Overfull \hbox (27.22223pt too wide) in paragraph at lines 138--139
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5) =
  []
 
 
-Overfull \hbox (83.77075pt too wide) in paragraph at lines 121--122
+Overfull \hbox (83.77075pt too wide) in paragraph at lines 138--139
 \OT1/cmr/m/n/10 ^^H []$ 
  []
 
 ! Undefined control sequence.
-l.124 \subsection
+l.141 \subsection
                  *{Normalverteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2922,7 +3238,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 \subsection*
+l.141 \subsection*
                   {Normalverteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2945,7 +3261,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.125 \gray
+l.142 \gray
            {$f(x) = \frac{1}{\sqrt{2\pi}\sigma} \cdot e^{-0,5\left(\frac{x-\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2954,79 +3270,79 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 124--128
+Overfull \hbox (20.0pt too wide) in paragraph at lines 141--145
 []
  []
 
 
-Overfull \hbox (30.02084pt too wide) in paragraph at lines 124--128
+Overfull \hbox (30.02084pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (25.54596pt too wide) in paragraph at lines 124--128
+Overfull \hbox (25.54596pt too wide) in paragraph at lines 141--145
 [] \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (49.45815pt too wide) in paragraph at lines 124--128
+Overfull \hbox (49.45815pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 e[]$ 
  []
 
 
-Overfull \hbox (16.581pt too wide) in paragraph at lines 124--128
+Overfull \hbox (16.581pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (98.14711pt too wide) in paragraph at lines 124--128
+Overfull \hbox (98.14711pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 erwartungswert; ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (37.95448pt too wide) in paragraph at lines 124--128
+Overfull \hbox (37.95448pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 Varianz$ 
  []
 
 
-Overfull \hbox (19.62494pt too wide) in paragraph at lines 124--128
+Overfull \hbox (19.62494pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 X \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (60.95941pt too wide) in paragraph at lines 124--128
+Overfull \hbox (60.95941pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 ; \OML/c
 mm/m/it/10 ^^[[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; Y \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (22.13312pt too wide) in paragraph at lines 124--128
+Overfull \hbox (22.13312pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 aX \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (17.06938pt too wide) in paragraph at lines 124--128
+Overfull \hbox (17.06938pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 b \OMS/cmsy/m/n/10 )
  []
 
 
-Overfull \hbox (18.5833pt too wide) in paragraph at lines 124--128
+Overfull \hbox (18.5833pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 Y \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (32.10304pt too wide) in paragraph at lines 124--128
+Overfull \hbox (32.10304pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a^^V \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (32.95602pt too wide) in paragraph at lines 124--128
+Overfull \hbox (32.95602pt too wide) in paragraph at lines 141--145
 \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 a[]^^[[]\OT1/cmr/m/n/10 )$
  
  []
 
 ! Undefined control sequence.
-l.129 \subsubsection
+l.146 \subsubsection
                     *{Standard-Normalverteilung $z_p$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3041,7 +3357,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.129 \subsubsection*
+l.146 \subsubsection*
                      {Standard-Normalverteilung $z_p$}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3073,7 +3389,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.130 \gray
+l.147 \gray
            {Dichte: $\phi(x) = \frac{1}{\sqrt{2\pi}} \cdot e^{- 0,5 x^2}$\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3116,47 +3432,47 @@ Missing character: There is no = in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 129--134
+Overfull \hbox (20.0pt too wide) in paragraph at lines 146--151
 []
  []
 
 
-Overfull \hbox (9.27284pt too wide) in paragraph at lines 129--134
+Overfull \hbox (9.27284pt too wide) in paragraph at lines 146--151
 \OML/cmm/m/it/10 z[]$
  []
 
 
-Overfull \hbox (30.00693pt too wide) in paragraph at lines 129--134
+Overfull \hbox (30.00693pt too wide) in paragraph at lines 146--151
 \OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (20.66086pt too wide) in paragraph at lines 129--134
+Overfull \hbox (20.66086pt too wide) in paragraph at lines 146--151
 [] \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (30.1911pt too wide) in paragraph at lines 129--134
+Overfull \hbox (30.1911pt too wide) in paragraph at lines 146--151
 \OML/cmm/m/it/10 e[]$ 
  []
 
 
-Overfull \hbox (7.22223pt too wide) in paragraph at lines 129--134
+Overfull \hbox (7.22223pt too wide) in paragraph at lines 146--151
 \OT1/cmr/m/n/10 ^^H$
  []
 
 
-Overfull \hbox (39.04861pt too wide) in paragraph at lines 129--134
+Overfull \hbox (39.04861pt too wide) in paragraph at lines 146--151
 \OT1/cmr/m/n/10 ^^H(\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 129--134
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 146--151
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (20.7153pt too wide) in paragraph at lines 129--134
+Overfull \hbox (20.7153pt too wide) in paragraph at lines 146--151
 \OT1/cmr/m/n/10 ^^H(\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$ 
  []
 
@@ -3167,7 +3483,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 A
+l.153 A
        blesen an Standard-Normalverteilung: $F(X) = \Phi \left(\dfrac{x-\mu}...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -3209,7 +3525,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
-l.136 ...rmalverteilung: $F(X) = \Phi \left(\dfrac
+l.153 ...rmalverteilung: $F(X) = \Phi \left(\dfrac
                                                   {x-\mu}{\sigma} \right)$, ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3219,7 +3535,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.136 ...c{x-\mu}{\sigma} \right)$, $f(x) = \dfrac
+l.153 ...c{x-\mu}{\sigma} \right)$, $f(x) = \dfrac
                                                   {\phi}{\sigma} \left(\dfra...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3228,7 +3544,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.136 ...$f(x) = \dfrac{\phi}{\sigma} \left(\dfrac
+l.153 ...$f(x) = \dfrac{\phi}{\sigma} \left(\dfrac
                                                   {x-\mu}{\sigma} \right)$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3237,32 +3553,32 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 136--137
+Overfull \hbox (20.0pt too wide) in paragraph at lines 153--154
 []
  []
 
 
-Overfull \hbox (35.2222pt too wide) in paragraph at lines 136--137
+Overfull \hbox (35.2222pt too wide) in paragraph at lines 153--154
 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (46.70245pt too wide) in paragraph at lines 136--137
+Overfull \hbox (46.70245pt too wide) in paragraph at lines 153--154
 \OT1/cmr/m/n/10 ^^H []$
  []
 
 
-Overfull \hbox (30.02084pt too wide) in paragraph at lines 136--137
+Overfull \hbox (30.02084pt too wide) in paragraph at lines 153--154
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (51.51147pt too wide) in paragraph at lines 136--137
+Overfull \hbox (51.51147pt too wide) in paragraph at lines 153--154
 \OML/cmm/m/it/10 ^^^^^[ []$ 
  []
 
 ! Undefined control sequence.
-l.138 \subsection
+l.155 \subsection
                  *{Zentraler Grenzwertsatz, schwache Konvergenz}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3277,7 +3593,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.138 \subsection*
+l.155 \subsection*
                   {Zentraler Grenzwertsatz, schwache Konvergenz}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3404,59 +3720,59 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no = in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 138--142
+Overfull \hbox (20.0pt too wide) in paragraph at lines 155--159
 []
  []
 
 
-Overfull \hbox (65.35603pt too wide) in paragraph at lines 138--142
+Overfull \hbox (65.35603pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 X[]mitE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 ) 
 =
  []
 
 
-Overfull \hbox (58.54803pt too wide) in paragraph at lines 138--142
+Overfull \hbox (58.54803pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 ^^V; Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 )
  =
  []
 
 
-Overfull \hbox (10.55904pt too wide) in paragraph at lines 138--142
+Overfull \hbox (10.55904pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 ^^[[]$ 
  []
 
 
-Overfull \hbox (20.54866pt too wide) in paragraph at lines 138--142
+Overfull \hbox (20.54866pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 X[] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (20.54866pt too wide) in paragraph at lines 138--142
+Overfull \hbox (20.54866pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 X[] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (19.44441pt too wide) in paragraph at lines 138--142
+Overfull \hbox (19.44441pt too wide) in paragraph at lines 155--159
 [] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (13.72806pt too wide) in paragraph at lines 138--142
+Overfull \hbox (13.72806pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 X[]$ 
  []
 
 
-Overfull \hbox (12.02783pt too wide) in paragraph at lines 138--142
+Overfull \hbox (12.02783pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 n^^V$
  []
 
 
-Overfull \hbox (16.56139pt too wide) in paragraph at lines 138--142
+Overfull \hbox (16.56139pt too wide) in paragraph at lines 155--159
 \OML/cmm/m/it/10 n^^[[]$ 
  []
 
 ! Undefined control sequence.
-l.146 \subsection
+l.163 \subsection
                  *{Chi-Quadrat (mit m Freiheitsgraden)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3471,7 +3787,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 \subsection*
+l.163 \subsection*
                   {Chi-Quadrat (mit m Freiheitsgraden)}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3510,7 +3826,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
-l.147 \gray
+l.164 \gray
            {$ \chi^2(m) = \Sigma_{i=0}^m X_i^2$ für $X_i$ standardnormalver...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3575,7 +3891,7 @@ Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.149 z.B. $\dfrac
+l.166 z.B. $\dfrac
                   {m s^2}{\sigma^2} = \Sigma_{i=1}^{m+1} \left(\dfrac{X_i - ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3584,7 +3900,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.149 ...igma^2} = \Sigma_{i=1}^{m+1} \left(\dfrac
+l.166 ...igma^2} = \Sigma_{i=1}^{m+1} \left(\dfrac
                                                   {X_i - \overline{X}}{\sigm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3654,7 +3970,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.151 $f_m(x) = \dfrac
+l.168 $f_m(x) = \dfrac
                       {x^{m/2-1}}{2^{m/2}\Gamma(m/2)}$ für x>0, sonst 0\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3683,7 +3999,7 @@ Missing character: There is no � in font nullfont!
 Missing character: There is no � in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.152 ... \Leftrightarrow$  x! für $x \in \mathbb
+l.169 ... \Leftrightarrow$  x! für $x \in \mathbb
                                                   {N}$ \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3694,7 +4010,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \Naeherung 
                            
-l.153 \Naeherung
+l.170 \Naeherung
                  durch Normalverteilung für m>30: $\chi^2_{m;p} = \sqrt{2m}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3733,7 +4049,7 @@ Missing character: There is no 3 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
-l.155 \subsection
+l.172 \subsection
                  *{t-Verteilung  mit m-Freiheitsgraden}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3775,7 +4091,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.156 \gray
+l.173 \gray
            {$t(m) = \dfrac{Z}{\sqrt{X/m}}$ ist t-Verteilt für Z standardnor...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3784,7 +4100,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.156 \gray{$t(m) = \dfrac
+l.173 \gray{$t(m) = \dfrac
                           {Z}{\sqrt{X/m}}$ ist t-Verteilt für Z standardnor...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3879,7 +4195,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.157 E(T) = 0 für m>1, Var(T) = $\dfrac
+l.174 E(T) = 0 für m>1, Var(T) = $\dfrac
                                          {m}{m-2}$ für m>2\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3901,7 +4217,7 @@ Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.158 z.B. $\dfrac
+l.175 z.B. $\dfrac
                   {\overline{X} -\mu }{S/\sqrt{n}}$ für Stichprobe mit Grö...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3971,7 +4287,7 @@ Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
 <recently read> \Naeherung 
                            
-l.159 \Naeherung
+l.176 \Naeherung
                  für m>30: $t_{m;p} = \approx \sqrt{\dfrac{m}{m-2}} \Phi(p)$\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3989,7 +4305,7 @@ Missing character: There is no 3 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
-l.159 ...ür m>30: $t_{m;p} = \approx \sqrt{\dfrac
+l.176 ...ür m>30: $t_{m;p} = \approx \sqrt{\dfrac
                                                   {m}{m-2}} \Phi(p)$\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3998,7 +4314,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.160 $f_m(x) = \dfrac
+l.177 $f_m(x) = \dfrac
                       {\Gamma\left(\dfrac{m+1}{2}\right)}{\sqrt{n\pi}\Gamma(...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4007,7 +4323,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.160 $f_m(x) = \dfrac{\Gamma\left(\dfrac
+l.177 $f_m(x) = \dfrac{\Gamma\left(\dfrac
                                          {m+1}{2}\right)}{\sqrt{n\pi}\Gamma(...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4016,7 +4332,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.160 ...{\sqrt{n\pi}\Gamma( m/2} \left( 1+ \dfrac
+l.177 ...{\sqrt{n\pi}\Gamma( m/2} \left( 1+ \dfrac
                                                   {x^2}{m}\right)^{-\dfrac{m...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4025,7 +4341,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.160 ... \left( 1+ \dfrac{x^2}{m}\right)^{-\dfrac
+l.177 ... \left( 1+ \dfrac{x^2}{m}\right)^{-\dfrac
                                                   {m+1}{2}}$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4034,142 +4350,142 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 146--161
+Overfull \hbox (20.0pt too wide) in paragraph at lines 163--178
 []
  []
 
 
-Overfull \hbox (37.85649pt too wide) in paragraph at lines 146--161
+Overfull \hbox (37.85649pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (34.23212pt too wide) in paragraph at lines 146--161
+Overfull \hbox (34.23212pt too wide) in paragraph at lines 163--178
 \OT1/cmr/m/n/10 ^^F[]\OML/cmm/m/it/10 X[]$
  []
 
 
-Overfull \hbox (11.61401pt too wide) in paragraph at lines 146--161
+Overfull \hbox (11.61401pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 X[]$
  []
 
 
-Overfull \hbox (14.63194pt too wide) in paragraph at lines 146--161
+Overfull \hbox (14.63194pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (14.63194pt too wide) in paragraph at lines 146--161
+Overfull \hbox (14.63194pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (39.06831pt too wide) in paragraph at lines 146--161
+Overfull \hbox (39.06831pt too wide) in paragraph at lines 163--178
 [][] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (79.24135pt too wide) in paragraph at lines 146--161
+Overfull \hbox (79.24135pt too wide) in paragraph at lines 163--178
 \OT1/cmr/m/n/10 ^^F[] [][]$
  []
 
 
-Overfull \hbox (11.61401pt too wide) in paragraph at lines 146--161
+Overfull \hbox (11.61401pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 X[]$
  []
 
 
-Overfull \hbox (10.74304pt too wide) in paragraph at lines 146--161
+Overfull \hbox (10.74304pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 ^^_[]$
  []
 
 
-Overfull \hbox (36.54056pt too wide) in paragraph at lines 146--161
+Overfull \hbox (36.54056pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (85.11836pt too wide) in paragraph at lines 146--161
+Overfull \hbox (85.11836pt too wide) in paragraph at lines 163--178
 [][]$
  []
 
 
-Overfull \hbox (30.2986pt too wide) in paragraph at lines 146--161
+Overfull \hbox (30.2986pt too wide) in paragraph at lines 163--178
 \OT1/cmr/m/n/10 ^^@(\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (72.67365pt too wide) in paragraph at lines 146--161
+Overfull \hbox (72.67365pt too wide) in paragraph at lines 163--178
 [][] \OML/cmm/m/it/10 t[]e[]dt \OMS/cmsy/m/n/10 ,$
  []
 
 
-Overfull \hbox (15.15967pt too wide) in paragraph at lines 146--161
+Overfull \hbox (15.15967pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (9.12497pt too wide) in paragraph at lines 146--161
+Overfull \hbox (9.12497pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 N$ 
  []
 
 
-Overfull \hbox (30.79478pt too wide) in paragraph at lines 146--161
+Overfull \hbox (30.79478pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 ^^_[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (39.16415pt too wide) in paragraph at lines 146--161
+Overfull \hbox (39.16415pt too wide) in paragraph at lines 163--178
 []\OML/cmm/m/it/10 z[] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (8.78014pt too wide) in paragraph at lines 146--161
+Overfull \hbox (8.78014pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 m$
  []
 
 
-Overfull \hbox (30.72456pt too wide) in paragraph at lines 146--161
+Overfull \hbox (30.72456pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 t\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (39.55792pt too wide) in paragraph at lines 146--161
+Overfull \hbox (39.55792pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 Z[]$
  []
 
 
-Overfull \hbox (34.78242pt too wide) in paragraph at lines 146--161
+Overfull \hbox (34.78242pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 m[]$
  []
 
 
-Overfull \hbox (52.80553pt too wide) in paragraph at lines 146--161
+Overfull \hbox (52.80553pt too wide) in paragraph at lines 163--178
 [][]$
  []
 
 
-Overfull \hbox (35.92679pt too wide) in paragraph at lines 146--161
+Overfull \hbox (35.92679pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 t[] \OT1/cmr/m/n/10 =\OMS/cmsy/m/n/10 ^^Y
  []
 
 
-Overfull \hbox (63.14706pt too wide) in paragraph at lines 146--161
+Overfull \hbox (63.14706pt too wide) in paragraph at lines 163--178
 []\OT1/cmr/m/n/10 ^^H(\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 )$ 
  []
 
 
-Overfull \hbox (36.54056pt too wide) in paragraph at lines 146--161
+Overfull \hbox (36.54056pt too wide) in paragraph at lines 163--178
 \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (171.00493pt too wide) in paragraph at lines 146--161
+Overfull \hbox (171.00493pt too wide) in paragraph at lines 163--178
 [][] [][]$ 
  []
 
 ! Undefined control sequence.
-l.162 \subsection
+l.179 \subsection
                  *{F-Verteilung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4184,7 +4500,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.162 \subsection*
+l.179 \subsection*
                   {F-Verteilung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4203,7 +4519,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.163 \gray
+l.180 \gray
            {$F(m_1;m_2) = \dfrac{\sqrt{X_1/m_1}}{\sqrt{X_2/m_2}}$ für $X_1 ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4212,7 +4528,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.163 \gray{$F(m_1;m_2) = \dfrac
+l.180 \gray{$F(m_1;m_2) = \dfrac
                                 {\sqrt{X_1/m_1}}{\sqrt{X_2/m_2}}$ für $X_1 ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4244,7 +4560,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.164 $E(F) = \dfrac
+l.181 $E(F) = \dfrac
                     {m_2}{m_2-2}$ für$ m_2 > 2$, $Var(X) = \dfrac{m_2^2(m_1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4258,7 +4574,7 @@ Missing character: There is no � in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.164 ...{m_2-2}$ für$ m_2 > 2$, $Var(X) = \dfrac
+l.181 ...{m_2-2}$ für$ m_2 > 2$, $Var(X) = \dfrac
                                                   {m_2^2(m_1+m_2-2)}{m_1(m_2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4271,63 +4587,63 @@ Missing character: There is no � in font nullfont!
 Missing character: There is no � in font nullfont!
 Missing character: There is no r in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 162--165
+Overfull \hbox (20.0pt too wide) in paragraph at lines 179--182
 []
  []
 
 
-Overfull \hbox (57.12971pt too wide) in paragraph at lines 162--165
+Overfull \hbox (57.12971pt too wide) in paragraph at lines 179--182
 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]\OT1/cmr/m/n/10 ; \OML/c
 mm/m/it/10 m[]\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (82.07431pt too wide) in paragraph at lines 162--165
+Overfull \hbox (82.07431pt too wide) in paragraph at lines 179--182
 [][]$
  []
 
 
-Overfull \hbox (42.47351pt too wide) in paragraph at lines 162--165
+Overfull \hbox (42.47351pt too wide) in paragraph at lines 179--182
 \OML/cmm/m/it/10 X[]undX[]$
  []
 
 
-Overfull \hbox (34.11108pt too wide) in paragraph at lines 162--165
+Overfull \hbox (34.11108pt too wide) in paragraph at lines 179--182
 \OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (43.75468pt too wide) in paragraph at lines 162--165
+Overfull \hbox (43.75468pt too wide) in paragraph at lines 179--182
 [][]$
  []
 
 
-Overfull \hbox (23.82178pt too wide) in paragraph at lines 162--165
+Overfull \hbox (23.82178pt too wide) in paragraph at lines 179--182
 \OML/cmm/m/it/10 m[] >
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 179--182
 \OT1/cmr/m/n/10 2$
  []
 
 
-Overfull \hbox (45.53355pt too wide) in paragraph at lines 162--165
+Overfull \hbox (45.53355pt too wide) in paragraph at lines 179--182
 \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (195.1275pt too wide) in paragraph at lines 162--165
+Overfull \hbox (195.1275pt too wide) in paragraph at lines 179--182
 [][]$$\OML/cmm/m/it/10 m[] >
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 179--182
 \OT1/cmr/m/n/10 4$ 
  []
 
 ! Undefined control sequence.
-l.166 \section
+l.183 \section
               *{Zufallsstichproben}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4342,7 +4658,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 \section*
+l.183 \section*
                {Zufallsstichproben}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4367,7 +4683,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.167 \gray
+l.184 \gray
            {n gewählte Elemente, die Werte sind zufällig verteilt; wenn au...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4496,12 +4812,12 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 166--168
+Overfull \hbox (20.0pt too wide) in paragraph at lines 183--185
 []
  []
 
 ! Undefined control sequence.
-l.169 \subsection
+l.186 \subsection
                  *{Punktschätzer}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4516,7 +4832,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.169 \subsection*
+l.186 \subsection*
                   {Punktschätzer}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4537,7 +4853,7 @@ Missing character: There is no z in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.170 \gray
+l.187 \gray
            {Test einer Verteilung mit zu schätzendem Parameter $\theta$\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4851,12 +5167,12 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--181
+Underfull \hbox (badness 10000) in paragraph at lines 195--198
 
  []
 
 ! Undefined control sequence.
-l.184 \subsubsection
+l.201 \subsubsection
                     *{Maximum-Likelihood}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4884,7 +5200,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.185 \gray
+l.202 \gray
            {asymptotisch erwartungstreu, asymptotisch normalverteilt mit $\m...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4964,27 +5280,27 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 169--186
+Overfull \hbox (20.0pt too wide) in paragraph at lines 186--203
 []
  []
 
 
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 169--186
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 186--203
 \OML/cmm/m/it/10 ^^R$ 
  []
 
 
-Overfull \hbox (4095.99998pt too wide) in paragraph at lines 169--186
+Overfull \hbox (4095.99998pt too wide) in paragraph at lines 186--203
 []$
  []
 
 
-Overfull \hbox (16.581pt too wide) in paragraph at lines 169--186
+Overfull \hbox (16.581pt too wide) in paragraph at lines 186--203
 \OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 169--186
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 186--203
 \OML/cmm/m/it/10 ^^R$
  []
 
@@ -4995,7 +5311,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.187 \begin{minipage}{0.25\textwidth}
+l.204 \begin{minipage}{0.25\textwidth}
                                       
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5051,7 +5367,7 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no x in font nullfont!
 Missing character: There is no ) in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
@@ -5089,7 +5405,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no L in font nullfont!
 ! Undefined control sequence.
-l.196 \textcolor
+l.213 \textcolor
                 {gray}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5111,7 +5427,7 @@ Missing character: There is no x in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no = in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
@@ -5125,12 +5441,12 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (2067.99998pt too wide) in paragraph at lines 187--205
+Overfull \hbox (2067.99998pt too wide) in paragraph at lines 204--222
 []$[]$
  []
 
 
-Overfull \hbox (2047.99998pt too wide) in paragraph at lines 187--205
+Overfull \hbox (2047.99998pt too wide) in paragraph at lines 204--222
 []$ 
  []
 
@@ -5141,7 +5457,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.209 L
+l.226 L
        ogarithmen:
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5159,14 +5475,14 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 209--210
+Overfull \hbox (20.0pt too wide) in paragraph at lines 226--227
 [] 
  []
 
 ! Undefined control sequence.
 \red #1->\textcolor 
                     {red}{#1}
-l.211 \item $log(\red{xy}
+l.228 \item $log(\red{xy}
                          ) = log(\red{x}) + log(\red{y})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5177,7 +5493,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \red #1->\textcolor 
                     {red}{#1}
-l.211 \item $log(\red{xy}) = log(\red{x}
+l.228 \item $log(\red{xy}) = log(\red{x}
                                         ) + log(\red{y})$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5188,7 +5504,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \red #1->\textcolor 
                     {red}{#1}
-l.211 ...og(\red{xy}) = log(\red{x}) + log(\red{y}
+l.228 ...og(\red{xy}) = log(\red{x}) + log(\red{y}
                                                   )$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5197,24 +5513,24 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (57.11694pt too wide) in paragraph at lines 211--212
+Overfull \hbox (57.11694pt too wide) in paragraph at lines 228--229
 \OML/cmm/m/it/10 log\OT1/cmr/m/n/10 ([][]) =
  []
 
 
-Overfull \hbox (49.07764pt too wide) in paragraph at lines 211--212
+Overfull \hbox (49.07764pt too wide) in paragraph at lines 228--229
 \OML/cmm/m/it/10 log\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) +
  []
 
 
-Overfull \hbox (40.84616pt too wide) in paragraph at lines 211--212
+Overfull \hbox (40.84616pt too wide) in paragraph at lines 228--229
 \OML/cmm/m/it/10 log\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )$ 
  []
 
 ! Undefined control sequence.
 \bc ->\textcolor 
                  {orange}{c}
-l.212 \item $log(x^{\bc
+l.229 \item $log(x^{\bc
                        }) = \bc log(x)$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5225,7 +5541,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \bc ->\textcolor 
                  {orange}{c}
-l.212 \item $log(x^{\bc}) = \bc
+l.229 \item $log(x^{\bc}) = \bc
                                 log(x)$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5234,27 +5550,27 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (66.3816pt too wide) in paragraph at lines 212--213
+Overfull \hbox (66.3816pt too wide) in paragraph at lines 229--230
 \OML/cmm/m/it/10 log\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (61.68646pt too wide) in paragraph at lines 212--213
+Overfull \hbox (61.68646pt too wide) in paragraph at lines 229--230
 []\OML/cmm/m/it/10 clog\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$ 
  []
 
 
-Overfull \hbox (37.16566pt too wide) in paragraph at lines 213--214
+Overfull \hbox (37.16566pt too wide) in paragraph at lines 230--231
 \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 213--214
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 230--231
 \OML/cmm/m/it/10 x$ 
  []
 
 ! Undefined control sequence.
-l.216 \subsubsection
+l.233 \subsubsection
                     *{Least Squares/Regressionsrechnung (Gauß):}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5385,18 +5701,18 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 216--219
+Overfull \hbox (20.0pt too wide) in paragraph at lines 233--236
 []
  []
 
 
-Overfull \hbox (80.53938pt too wide) in paragraph at lines 216--219
+Overfull \hbox (80.53938pt too wide) in paragraph at lines 233--236
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 ) [] (\OML/cmm/m/it/1
 0 x[]; y[]\OT1/cmr/m/n/10 )$ 
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 220--220
+Overfull \hbox (20.0pt too wide) in paragraph at lines 237--237
 [] 
  []
 
@@ -5407,17 +5723,17 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (21.66666pt too wide) in paragraph at lines 221--222
+Overfull \hbox (21.66666pt too wide) in paragraph at lines 238--239
 \OT1/cmr/m/n/10 ^^A :=
  []
 
 
-Overfull \hbox (43.90872pt too wide) in paragraph at lines 221--222
+Overfull \hbox (43.90872pt too wide) in paragraph at lines 238--239
 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (31.16965pt too wide) in paragraph at lines 221--222
+Overfull \hbox (31.16965pt too wide) in paragraph at lines 238--239
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ))[]$ 
  []
 
@@ -5504,32 +5820,32 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 225--226
+Overfull \hbox (20.0pt too wide) in paragraph at lines 242--243
 []
  []
 
 
-Overfull \hbox (19.33565pt too wide) in paragraph at lines 225--226
+Overfull \hbox (19.33565pt too wide) in paragraph at lines 242--243
 \OML/cmm/m/it/10 m \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (46.27962pt too wide) in paragraph at lines 225--226
-\OML/cmm/m/it/10 r[]y[]; d \OT1/cmr/m/n/10 =
+Overfull \hbox (45.32477pt too wide) in paragraph at lines 242--243
+\OML/cmm/m/it/10 r[][]; d \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (13.0394pt too wide) in paragraph at lines 225--226
+Overfull \hbox (13.0394pt too wide) in paragraph at lines 242--243
 [] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (11.23611pt too wide) in paragraph at lines 225--226
+Overfull \hbox (11.23611pt too wide) in paragraph at lines 242--243
 \OML/cmm/m/it/10 k[]$ 
  []
 
 ! Undefined control sequence.
-l.227 \subsection
+l.244 \subsection
                  *{Intervallschätzung / Konfidenzinterval}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5618,22 +5934,22 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 227--230
+Overfull \hbox (20.0pt too wide) in paragraph at lines 244--247
 []
  []
 
 
-Overfull \hbox (6.43404pt too wide) in paragraph at lines 227--230
+Overfull \hbox (6.43404pt too wide) in paragraph at lines 244--247
 \OML/cmm/m/it/10 $
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 227--230
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 244--247
 \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (6.43404pt too wide) in paragraph at lines 227--230
+Overfull \hbox (6.43404pt too wide) in paragraph at lines 244--247
 \OML/cmm/m/it/10 $ 
  []
 
@@ -5731,27 +6047,27 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 231--233
+Overfull \hbox (20.0pt too wide) in paragraph at lines 248--250
 []
  []
 
 
-Overfull \hbox (13.49307pt too wide) in paragraph at lines 231--233
+Overfull \hbox (13.49307pt too wide) in paragraph at lines 248--250
 [] \OMS/cmsy/m/n/10 ^^F
  []
 
 
-Overfull \hbox (54.26585pt too wide) in paragraph at lines 231--233
+Overfull \hbox (54.26585pt too wide) in paragraph at lines 248--250
 \OML/cmm/m/it/10 Abweichung$
  []
 
 
-Overfull \hbox (38.49309pt too wide) in paragraph at lines 231--233
+Overfull \hbox (38.49309pt too wide) in paragraph at lines 248--250
 \OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 ^^@1\OT1/cmr/m/n/10 ; [] +
  []
 
 
-Overfull \hbox (57.04364pt too wide) in paragraph at lines 231--233
+Overfull \hbox (57.04364pt too wide) in paragraph at lines 248--250
 \OML/cmm/m/it/10 Abweichung\OT1/cmr/m/n/10 ]$ 
  []
 
@@ -5781,7 +6097,7 @@ Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.235 Abweichung(zweiseitig): $\dfrac
+l.252 Abweichung(zweiseitig): $\dfrac
                                      {s}{\sqrt{n}} \cdot t_{n-1;~ 1-\alpha/2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5814,7 +6130,7 @@ Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.236 Abweichung(einseitig): $\dfrac
+l.253 Abweichung(einseitig): $\dfrac
                                     {s}{\sqrt{n}} \cdot t_{n-1;~ 1-\alpha}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5823,42 +6139,42 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (46.03459pt too wide) in paragraph at lines 234--237
+Overfull \hbox (46.03459pt too wide) in paragraph at lines 251--254
 []\OT1/cmr/bx/n/10 wenn
  []
 
 
-Overfull \hbox (6.0729pt too wide) in paragraph at lines 234--237
+Overfull \hbox (6.0729pt too wide) in paragraph at lines 251--254
 \OML/cmm/m/it/10 ^^[$
  []
 
 
-Overfull \hbox (24.91653pt too wide) in paragraph at lines 234--237
+Overfull \hbox (24.91653pt too wide) in paragraph at lines 251--254
 \OT1/cmr/bx/n/10 nicht
  []
 
 
-Overfull \hbox (40.40953pt too wide) in paragraph at lines 234--237
+Overfull \hbox (40.40953pt too wide) in paragraph at lines 251--254
 \OT1/cmr/bx/n/10 gegeben 
  []
 
 
-Overfull \hbox (21.801pt too wide) in paragraph at lines 234--237
+Overfull \hbox (21.801pt too wide) in paragraph at lines 251--254
 \OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (45.07275pt too wide) in paragraph at lines 234--237
+Overfull \hbox (45.07275pt too wide) in paragraph at lines 251--254
 \OML/cmm/m/it/10 t[]$ 
  []
 
 
-Overfull \hbox (21.801pt too wide) in paragraph at lines 234--237
+Overfull \hbox (21.801pt too wide) in paragraph at lines 251--254
 \OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (36.9894pt too wide) in paragraph at lines 234--237
+Overfull \hbox (36.9894pt too wide) in paragraph at lines 251--254
 \OML/cmm/m/it/10 t[]$ 
  []
 
@@ -5888,7 +6204,7 @@ Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.239 Abweichung(zweiseitig): $\dfrac
+l.256 Abweichung(zweiseitig): $\dfrac
                                      {\sigma}{\sqrt{n}}\cdot  z_{1-\alpha/2}$\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5921,7 +6237,7 @@ Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
 <recently read> \dfrac 
                        
-l.240 Abweichung(einseitig): $\dfrac
+l.257 Abweichung(einseitig): $\dfrac
                                     {\sigma}{\sqrt{n}} \cdot z_{1-\alpha}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5930,42 +6246,42 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (46.03459pt too wide) in paragraph at lines 238--241
+Overfull \hbox (46.03459pt too wide) in paragraph at lines 255--258
 []\OT1/cmr/bx/n/10 wenn
  []
 
 
-Overfull \hbox (6.0729pt too wide) in paragraph at lines 238--241
+Overfull \hbox (6.0729pt too wide) in paragraph at lines 255--258
 \OML/cmm/m/it/10 ^^[$
  []
 
 
-Overfull \hbox (40.40953pt too wide) in paragraph at lines 238--241
+Overfull \hbox (40.40953pt too wide) in paragraph at lines 255--258
 \OT1/cmr/bx/n/10 gegeben 
  []
 
 
-Overfull \hbox (23.1864pt too wide) in paragraph at lines 238--241
+Overfull \hbox (23.1864pt too wide) in paragraph at lines 255--258
 \OML/cmm/m/it/10 ^^[[] \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (28.66876pt too wide) in paragraph at lines 238--241
+Overfull \hbox (28.66876pt too wide) in paragraph at lines 255--258
 \OML/cmm/m/it/10 z[]$ 
  []
 
 
-Overfull \hbox (23.1864pt too wide) in paragraph at lines 238--241
+Overfull \hbox (23.1864pt too wide) in paragraph at lines 255--258
 \OML/cmm/m/it/10 ^^[[] \OMS/cmsy/m/n/10 ^^A
  []
 
 
-Overfull \hbox (20.5854pt too wide) in paragraph at lines 238--241
+Overfull \hbox (20.5854pt too wide) in paragraph at lines 255--258
 \OML/cmm/m/it/10 z[]$ 
  []
 
 ! Undefined control sequence.
-l.243 \section
+l.260 \section
               *{t-Test}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6024,7 +6340,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
-l.245 Prüfwert: $z= \dfrac
+l.262 Prüfwert: $z= \dfrac
                            {\overline{x} - \mu_0}{s/\sqrt{n}}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6033,42 +6349,42 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 243--246
+Overfull \hbox (20.0pt too wide) in paragraph at lines 260--263
 []
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 243--246
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 260--263
 []$
  []
 
 
-Overfull \hbox (18.35413pt too wide) in paragraph at lines 243--246
+Overfull \hbox (18.35413pt too wide) in paragraph at lines 260--263
 \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (16.581pt too wide) in paragraph at lines 243--246
+Overfull \hbox (16.581pt too wide) in paragraph at lines 260--263
 \OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (10.51161pt too wide) in paragraph at lines 243--246
+Overfull \hbox (10.51161pt too wide) in paragraph at lines 260--263
 \OML/cmm/m/it/10 ^^V[]$ 
  []
 
 
-Overfull \hbox (15.64581pt too wide) in paragraph at lines 243--246
+Overfull \hbox (15.64581pt too wide) in paragraph at lines 260--263
 \OML/cmm/m/it/10 z \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (52.47224pt too wide) in paragraph at lines 243--246
+Overfull \hbox (52.47224pt too wide) in paragraph at lines 260--263
 [][]$ 
  []
 
 ! Undefined control sequence.
-l.247 \subsection
+l.264 \subsection
                  *{zweiseitig}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6125,7 +6441,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.249 \subsection
+l.266 \subsection
                  *{einseitig}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6181,42 +6497,42 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 247--251
+Overfull \hbox (20.0pt too wide) in paragraph at lines 264--268
 []
  []
 
 
-Overfull \hbox (21.20139pt too wide) in paragraph at lines 247--251
+Overfull \hbox (21.20139pt too wide) in paragraph at lines 264--268
 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 z\OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 >
  []
 
 
-Overfull \hbox (63.40607pt too wide) in paragraph at lines 247--251
+Overfull \hbox (63.40607pt too wide) in paragraph at lines 264--268
 \OML/cmm/m/it/10 t[] \OT1/cmr/m/n/10 =\OML/cmm/m/it/10 >
  []
 
 
-Overfull \hbox (12.79863pt too wide) in paragraph at lines 247--251
+Overfull \hbox (12.79863pt too wide) in paragraph at lines 264--268
 \OML/cmm/m/it/10 H[]$
  []
 
 
-Overfull \hbox (21.20139pt too wide) in paragraph at lines 247--251
+Overfull \hbox (21.20139pt too wide) in paragraph at lines 264--268
 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 z\OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 >
  []
 
 
-Overfull \hbox (55.32271pt too wide) in paragraph at lines 247--251
+Overfull \hbox (55.32271pt too wide) in paragraph at lines 264--268
 \OML/cmm/m/it/10 t[] \OT1/cmr/m/n/10 =\OML/cmm/m/it/10 >
  []
 
 
-Overfull \hbox (12.79863pt too wide) in paragraph at lines 247--251
+Overfull \hbox (12.79863pt too wide) in paragraph at lines 264--268
 \OML/cmm/m/it/10 H[]$
  []
 
 ! Undefined control sequence.
-l.253 \section
+l.270 \section
               *{Chi-Quadrat-Anpassungstest}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6332,22 +6648,22 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 253--256
+Overfull \hbox (20.0pt too wide) in paragraph at lines 270--273
 []
  []
 
 
-Overfull \hbox (24.9184pt too wide) in paragraph at lines 253--256
+Overfull \hbox (24.9184pt too wide) in paragraph at lines 270--273
 \OML/cmm/m/it/10 np[] \OMS/cmsy/m/n/10 ^^U
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 253--256
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 270--273
 \OT1/cmr/m/n/10 5$
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 257--257
+Overfull \hbox (20.0pt too wide) in paragraph at lines 274--274
 [] 
  []
 
@@ -6378,7 +6694,7 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no ; in font nullfont!
 ! Undefined control sequence.
-l.258 ...eile Werte in Intervalle $I_i$ auf; \gray
+l.275 ...eile Werte in Intervalle $I_i$ auf; \gray
                                                   {// Aus angabe entnehmen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6407,7 +6723,7 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (7.72513pt too wide) in paragraph at lines 258--259
+Overfull \hbox (7.72513pt too wide) in paragraph at lines 275--276
 \OML/cmm/m/it/10 I[]$
  []
 
@@ -6428,7 +6744,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.259 \item $h_i:$ Anzahl der Werte in $I_i$ \gray
+l.276 \item $h_i:$ Anzahl der Werte in $I_i$ \gray
                                                   {// Aus angabe entnehmen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6457,12 +6773,12 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (14.64636pt too wide) in paragraph at lines 259--260
+Overfull \hbox (14.64636pt too wide) in paragraph at lines 276--277
 \OML/cmm/m/it/10 h[] \OT1/cmr/m/n/10 :$
  []
 
 
-Overfull \hbox (7.72513pt too wide) in paragraph at lines 259--260
+Overfull \hbox (7.72513pt too wide) in paragraph at lines 276--277
 \OML/cmm/m/it/10 I[]$
  []
 
@@ -6515,7 +6831,7 @@ Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
 <recently read> \gray 
                       
-l.261 \gray
+l.278 \gray
            {// Berechne aus Verteilungsfunktion \textcolor{lightgray}{obere ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6556,7 +6872,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.261 ...rechne aus Verteilungsfunktion \textcolor
+l.278 ...rechne aus Verteilungsfunktion \textcolor
                                                   {lightgray}{obere Grenze -...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6598,17 +6914,17 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no z in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (8.36053pt too wide) in paragraph at lines 260--262
+Overfull \hbox (8.36053pt too wide) in paragraph at lines 277--279
 \OML/cmm/m/it/10 p[]$
  []
 
 
-Overfull \hbox (7.72513pt too wide) in paragraph at lines 260--262
+Overfull \hbox (7.72513pt too wide) in paragraph at lines 277--279
 \OML/cmm/m/it/10 I[]$
  []
 
 ! Undefined control sequence.
-l.263 \item $y = \gray
+l.280 \item $y = \gray
                       { \sum_{i=1}^k \dfrac{(h_i -np_i)^2}{n p_i} }= 1/n \le...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6617,7 +6933,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.263 \item $y = \gray{ \sum_{i=1}^k \dfrac
+l.280 \item $y = \gray{ \sum_{i=1}^k \dfrac
                                            {(h_i -np_i)^2}{n p_i} }= 1/n \le...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6626,7 +6942,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.263 ...{n p_i} }= 1/n \left( \sum_{i_1}^k \dfrac
+l.280 ...{n p_i} }= 1/n \left( \sum_{i_1}^k \dfrac
                                                   {h_i^2}{p_i} \right) -n $
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6635,7 +6951,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.264 \gray
+l.281 \gray
            {ist asymptotisch  $\chi^2 (k-1)$ verteilt }\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6667,32 +6983,32 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (15.81711pt too wide) in paragraph at lines 263--265
+Overfull \hbox (15.81711pt too wide) in paragraph at lines 280--282
 \OML/cmm/m/it/10 y \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (98.53476pt too wide) in paragraph at lines 263--265
+Overfull \hbox (98.53476pt too wide) in paragraph at lines 280--282
 [] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (75.45384pt too wide) in paragraph at lines 263--265
+Overfull \hbox (75.45384pt too wide) in paragraph at lines 280--282
 \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n [] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 263--265
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 280--282
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (27.93059pt too wide) in paragraph at lines 263--265
+Overfull \hbox (27.93059pt too wide) in paragraph at lines 280--282
 \OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (8.88892pt too wide) in paragraph at lines 263--265
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 280--282
 \OT1/cmr/m/n/10 1)$
  []
 
@@ -6739,7 +7055,7 @@ Missing character: There is no : in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no > in font nullfont!
 
-Overfull \hbox (39.11203pt too wide) in paragraph at lines 266--267
+Overfull \hbox (39.11203pt too wide) in paragraph at lines 283--284
 \OML/cmm/m/it/10 ^^_[]$ 
  []
 
@@ -6786,7 +7102,7 @@ Missing character: There is no : in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no > in font nullfont!
 
-Overfull \hbox (49.5145pt too wide) in paragraph at lines 268--269
+Overfull \hbox (49.5145pt too wide) in paragraph at lines 285--286
 \OML/cmm/m/it/10 ^^_[]$ 
  []
 
@@ -6798,11 +7114,11 @@ Overfull \hbox (49.5145pt too wide) in paragraph at lines 268--269
 
  
 Here is how much of TeX's memory you used:
- 21 strings out of 493029
- 251 string characters out of 6136235
- 69035 words of memory out of 5000000
- 3655 multiletter control sequences out of 15000+600000
+ 22 strings out of 493029
+ 259 string characters out of 6136235
+ 72035 words of memory out of 5000000
+ 3656 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 18i,9n,12p,211b,171s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,9n,12p,211b,175s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
