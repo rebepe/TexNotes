@@ -1,6 +1,3 @@
-%
-
-
 \minpurp{Graphen}
 \textbf{k = Anzahl Knoten, e = Anzahl Kanten}
 
@@ -70,7 +67,7 @@ Ermittlung des Abstands von der Wurzel des erzeugten Baums
 Besuche den 1.Nachbarn des Startknotens, dann den 1.Nachbarn des 1.Nachbarn usw.\\
 $\Leftrightarrow$ durchlaufe einen Pfad nach dem Anderen
 
-Visit: durchlaufe die Adjazenzliste, für jeden nicht besuchten nachbarn rufe Visit auf\\
+Visit: durchlaufe die Adjazenzliste, für jeden nicht besuchten Nachbarn rufe Visit auf\\
 Laufzeit: \textbf{O(e+k)}
 
 
@@ -85,7 +82,7 @@ bei Visit Start/Ende: A vorgänger von B wenn $[Start_B,End_B] \subset  [Start_A
 
 \halfpage{
 \begin{enumerate}
-\item Nummeriere in Terminierunsreihenfolge
+\item Nummeriere in Terminierungsreihenfolge
 \item Drehe alle Kanten um ( Konstruiere den reversen Graph)  
 \item Tiefensuche von höchster Terminierungsnummer aus, alle Erreichbaren sind starke Zusammenhangskomp. 
 \item(wiederhole letzten Schritt bei bedarf)

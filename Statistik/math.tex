@@ -190,7 +190,7 @@ bzw. wenn asymptotisch erwartungstreu und Var(X)$\rightarrow$ 0 \\
 \begin{enumerate}
 \item Berechne f(x) wenn nicht gegeben \\(Ableiten von F(x) nach x)
 \item $L = \prod_{i=1}^n f(x_i,\theta)$
-\item berechne log(L) 
+\item berechne ln(L) 
 \item berechne maximum von L \\\textbf{(ABLEITEN nach $\lambda$, = 0 } 
 \end{enumerate}
 \end{minipage}
@@ -199,7 +199,7 @@ bzw. wenn asymptotisch erwartungstreu und Var(X)$\rightarrow$ 0 \\
 \begin{enumerate}
 \item Bsp: f(x) = $\lambda e^ {-\lambda x_i}$\\
 \item $ L = \prod_{i=1}^n \lambda e^ {-\lambda x_i}$
-\item $	z.B. log(L) = n ln(\lambda) -\lambda \sum_{i=1}^n x_i $
+\item $	z.B. ln(L) = n ln(\lambda) -\lambda \sum_{i=1}^n x_i $
 \item $n/\lambda - \sum_{i=1}^n x_i \dots$ \textbf{=0}\\
 auflösen $\lambda = n/ \sum_{i=1}^n x_i$
 \end{enumerate}}
@@ -212,7 +212,7 @@ Logarithmen:
 \begin{itemize}
 \item $log(\red{xy}) = log(\red{x}) + log(\red{y})$
 \item $log(x^{\bc}) = \bc log(x)$
-\item $e^{log(x)} = x$
+\item $e^{ln(x)} = x$
 \end{itemize}
 
 \newpage
@@ -226,7 +226,7 @@ Stichprobe mit Wertepaaren: $(x_1,y_1)\dots (x_n,y_n)$
 \item Leite nach jedem Parameter ab, setze gleich Null, bestimme Parameter
 \end{enumerate}
 
-Alternative für Geraden: $m= r_{xy}\frac{s_y}{s_x}, d = \overline{y}-k\overline{x}$
+Alternative für Geraden: $m= r_{xy}\frac{s_y}{s_x}, t = \overline{y}-m\overline{x}$
 
 \subsection*{Intervallschätzung / Konfidenzinterval}
 Irrtumswahrscheinlichkeit: $\alpha$ 
@@ -245,6 +245,7 @@ Abweichung(einseitig): $\dfrac{\sigma}{\sqrt{n}} \cdot z_{1-\alpha}$
 
 
 \section*{t-Test}
+Test auf Erwartungswert = vermuteter Wert \\
 Stichprobe mit Mittelwert $\overline{x}$; Hypothese $H_0: \mu = \mu_0$\\
 Prüfwert: $z= \dfrac{\overline{x} - \mu_0}{s/\sqrt{n}}$
 
