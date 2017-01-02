@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  17 DEC 2016 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  30 DEC 2016 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1572,13 +1572,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ) [2]
 (./sort.tex
-Underfull \hbox (badness 1142) in paragraph at lines 30--52
+Underfull \hbox (badness 1142) in paragraph at lines 33--55
 [][]\T1/ptm/m/it/10.95 probabilistisch:\T1/ptm/m/n/10.95 : [] start: wäh-le zu-
 fäl-li-ges Ele-ment als Pi-vot und tau-sche ans en-de
  []
 
 
-Overfull \hbox (7.0805pt too wide) in paragraph at lines 30--52
+Overfull \hbox (7.0805pt too wide) in paragraph at lines 33--55
 []$ $[]$ 
  []
 
@@ -1631,7 +1631,7 @@ ist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on alg.pdf (4 pages, 119812 bytes).
+Output written on alg.pdf (4 pages, 120066 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
