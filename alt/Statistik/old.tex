@@ -1,0 +1,19 @@
+\subsection*{Chi-Quadrat (mit m Freiheitsgraden)}
+\gray{$ \chi^2(m) = \Sigma_{i=0}^m X_i^2$ für $X_i$ standardnormalverteilt, unabhängig \\
+E($\chi^2)$ = m, Var($\chi^2)$ = 2m\\
+z.B. $\dfrac{m s^2}{\sigma^2} = \Sigma_{i=1}^{m+1} \left(\dfrac{X_i - \overline{X}}{\sigma}\right)^2$
+mit $X_i$ Stichproben aus normalverteilt ist $\chi^2$ verteilt mit m Freiheitsgraden\\
+$f_m(x) = \dfrac{x^{m/2-1}}{2^{m/2}\Gamma(m/2)}$ für x>0, sonst 0\\
+$\Gamma (x) = \int_0 ^\infty t^{x-1} e^{-1}dt \Leftrightarrow$  x! für $x \in \mathbb{N}$ \\
+\Naeherung durch Normalverteilung für m>30: $\chi^2_{m;p} = \sqrt{2m}z_p +m$
+}
+\subsection*{t-Verteilung  mit m-Freiheitsgraden}
+\gray{$t(m) = \dfrac{Z}{\sqrt{X/m}}$ ist t-Verteilt für Z standardnormalverteilt und X Chi-Quadratverteilt\\
+E(T) = 0 für m>1, Var(T) = $\dfrac{m}{m-2}$ für m>2\\
+z.B. $\dfrac{\overline{X} -\mu }{S/\sqrt{n}}$ für Stichprobe mit Größe n aus Normalverteilter Grundgesamtheit\\
+\Naeherung für m>30: $t_{m;p} = \approx \sqrt{\dfrac{m}{m-2}} \Phi(p)$\\
+$f_m(x) = \dfrac{\Gamma\left(\dfrac{m+1}{2}\right)}{\sqrt{n\pi}\Gamma( m/2} \left( 1+ \dfrac{x^2}{m}\right)^{-\dfrac{m+1}{2}}$}
+
+\subsection*{F-Verteilung}
+\gray{$F(m_1;m_2) = \dfrac{\sqrt{X_1/m_1}}{\sqrt{X_2/m_2}}$ für $X_1 und X_2$ Chi-Quadrat verteilt\\
+$E(F) = \dfrac{m_2}{m_2-2}$ für$ m_2 > 2$, $Var(X) = \dfrac{m_2^2(m_1+m_2-2)}{m_1(m_2-4)(m_2-2)^2} $für$ m_2 >4$}

@@ -1,0 +1,25 @@
+//PHP:
+
+
+//verzweigung:
+if($_REQUEST == null) {
+    echo json_encode($a->getAllExercises());
+}else {
+    if(($_GET["id"] != null) || ($_POST["id"] != null)){
+        $a->getExerciseById($_GET["id"]);
+    )}
+}
+//DB abfrage:
+$sql = "Select * from Tabelle";
+ $s = $this->pdo->query($sql);
+$s= $this->pdo->fetchall();
+return $s;
+
+
+//JS:
+
+//Eventlistener an element div1 an event onclick anbringen mit der funktion displayDate
+document.getElementById("zb. div1").addEventListener("click", displayDate);
+
+//funktion im eventlistener an einem bestimmten element
+e.addEventListener("MouseEnter", function(){This.color = red});

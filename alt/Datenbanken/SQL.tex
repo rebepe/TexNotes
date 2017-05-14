@@ -1,0 +1,139 @@
+\newcommand{\com}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\bspbox}[1]{\fbox{\halfpage{#1}}}
+\newcommand{\myspace}{\rule{2em}{0em}}
+
+\section{SQL}
+\subsection{Typen}
+Ganzzahlen: INT \textcolor{lightgray}{, SMALLINT, BIGINT}
+
+Gleitkomma: FlOAT, DOUBLE  //nicht exakt
+
+Festkomma: DECIMAL, NUMERIC // exakt
+
+Zeichenketten: VARCHAR(n), TEXT
+
+Zeit: DATE, TIME, DATETIME
+
+\subsection{Data Dictionary}
+Metadaten über den Aufbau der Datenbank;
+
+z.B. 	SELECT * FROM information\_ schema.tables;
+
+\subsection{Tabellen}
+CREATE TABLE <tabelle>  \\
+(\! \myspace  <spalte> <typ> \com{PRIMARY KEY|NOT NULL| UNIQUE]},    \\
+\myspace ... \\
+\myspace <tabellenconstraints>  \com{ // z.B. PRIMARY KEY ( Name, Ort) \\
+)}
+
+\bspbox{
+\textbf{Bsp:} CREATE TABLE student  \\
+( \myspace id INT PRIMARY KEY,\\
+\myspace name VARCHAR(10) NOT NULL,\\
+\myspace  lehrer INT,\\
+\myspace  CONSTRAINT fk\_klassleiter FOREIGN KEY (lehrer) REFERENCES angestellte(pid) on delete cascade\\
+)}
+
+
+ALTER TABLE <tabelle> <änderung>
+\begin{itemize}
+\item ALTER COLUMN <spalte> <typ>
+\item ADD COLUMN <spalte> <typ> 
+\item ADD CONSTRAINT <constraint> // z.B UNIQUE, FOREIGN KEY ...
+\end{itemize}
+
+DROP TABLE <tabelle>;
+
+\subsection{Fremdschlüssel}
+CONSTRAINT <name> FOREIGN KEY (<spalte>) REFERENCES <tabelle>(<spalte>)\\
+ON UPDATE/DELETE    CASCADE/SET NULL
+
+
+
+\subsection{Anfrage}
+SELECT [DISTINCT] <spalte/Aggregation>      
+
+FROM <tabelle> JOIN <tabelle> ON <bedingung> 
+\com{Varianten NATURAL, LEFT, RIGHT}
+
+WHERE <bedingung>
+
+GROUP BY <spalten>   \textcolor{orange}{ Alle spalten im SELECT auch im GROUP BY}
+
+HAVING <bedingung>
+
+ORDER BY <spalten> ASC/DESC
+
+\bspbox{
+\textbf{Bsp:}
+SELECT \textcolor{orange}{sg.Name, sg.Fak}, SUM(s.Bafoeg), COUNT(DISTINCT s.Ort)\\
+FROM Studenten s JOIN Studiengang sg ON s.SgNr = sg.SgNr\\
+GROUP BY \textcolor{orange}{sg.Name, sg.Fak}\\
+HAVING COUNT(*) >= 2
+}
+
+
+
+
+
+\subsection{Funktionen}
+COALESCE(<spalte>,<ersetzung>): Null-behandlung z.B. COALESCE(preis,0)
+
+Aggregationen: SUM, AVG, COUNT, MIN, MAX ...
+\subsection{Bedingungen}
+WHERE <spalte> BETWEEN <a> AND <b>    //Intervall [a,b]
+
+WHERE <spalte> IN $(x_1, x_2,\dots , x_n)$
+
+WHERE <spalte> LIKE <pattern>   // \_ beliebiges zeichen \% beliebige kette
+ 
+WHERE <spalte> IS NULL;
+
+\subsection{Subquery}
+FROM <subquery> 
+...
+
+WHERE <spalte> [NOT] IN (<subquery>)
+
+WHERE EXISTS (<subquery>)\\
+
+\bspbox{
+z.B. SELECT * FROM Studiengang sg\\
+WHERE EXISTS (\\
+\myspace SELECT * FROM Studenten s \\
+\myspace WHERE s.SgNr = sg.SgNr\\
+)
+}
+
+\subsection{Einfügen}
+INSERT INTO <tabelle> (<spalte1>, <spalte2> ...) VALUES (<wert1>, <wert2>,...)
+
+Es können auch mehrere Datensätze eingefügt werden
+
+\subsection{Verändern}
+UPDATE <tabelle> SET Ort = 'Berlin', Bafoeg = 0 
+
+WHERE <bedingung>
+
+\subsection{Löschen}
+DELETE FROM <tabelle> 
+
+WHERE <bedingung>
+
+\subsection{Mengenoperationen}
+Spalten müssen gleiche Typen haben
+ 
+Vereinigung: <abfrage1> UNION <abfrage2>  
+
+Schnitt: <abfrage1> INTERSECT <abfrage2> 
+
+Differenz: <abfrage1> EXCEPT <abfrage2>
+
+\subsection{Transaktionen}
+BEGIN, COMMIT, ROLLBACK;
+
+SQL-Isolationssteuerung: \\
+SET TRANSACTION ISOLATION LEVEL \{ READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE \}
+
+\subsection{Index anlegen}
+CREATE INDEX <name> ON 	<tabelle>(<spalte(n)>); DROP INDEX <name>

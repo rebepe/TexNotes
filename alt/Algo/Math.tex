@@ -1,0 +1,104 @@
+\newcommand{\graysum}[1]{\sum\textcolor{lightgray}{#1}}
+
+%\newcommand{\IN}{\sum_{i=1}^n}
+\newcommand{\IN}{\graysum{_{i=1}^n}}
+\newcommand{\geo}{\graysum{_{i=0}^n}}
+\newcommand{\INzwei}{\sum_{i=2}^n}
+\newcommand{\mathitem}[1]{\item$ #1 $}
+
+\newcommand{\gn}{\textcolor{blue}{g(n)}}
+\newcommand{\fn}{\textcolor{magenta}{f(n)}}
+
+
+
+\minpurp{O-Notation}
+$\gn = O(\fn) \Leftrightarrow \left(\gn\frac{1}{\fn}\right)$ ist beschraenkt (z.B. Konvergent)\\
+Fester Wert => g =O(f(n)) UND f = O(g(n);
+
+\minmeth{Logarithmen}
+\begin{minipage}[t]{0.25\textwidth}
+\begin{itemize}
+\item $log(xy) = log(x) + log(y)$
+\item $log(x^c) = clog(x)$
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+\begin{itemize}
+\item $e^{ln(x)} = x$
+\item ${ln(e^x)} = x$
+\end{itemize}
+\end{minipage}
+
+
+\minpurp{Differenzengleichungen}
+\halfpage{\begin{enumerate}
+\item Aus Angabe lesen:\\   \textcolor{blue}{b}: Für Eingabe=1,  ~~~~~
+$ x_n = \textcolor{green}{a_n}x_{n-1} +\textcolor{red}{b_n}  $
+
+\item \begin{minipage}[t]{0.49\textwidth}$\pi_n = \prod_{i=2}^n\textcolor{green}{a_i}$
+\textcolor{gray}{\\Hinweis: $\prod_{i=2}^n3 = 3^{n-1}$
+\\\textcolor{white}{Hinweis: }$\prod_{i=2}^ni = n!$}
+\mathitem{ x_n =\pi_n\left(\textcolor{blue}{b}+ \sum_{i=2}^n\dfrac{\textcolor{red}{b_{\textbf{i}}} }{\pi_{\textbf{i}}} \right)          }
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+Einfache Sonderfalle:          
+\begin{itemize}
+\mathitem{x_n= a_n x_{n-1} =~~~ b \prod_{i=2}^n a_i          }
+\mathitem{x_n= x_{n-1} + b_n  = ~~ b + \sum_{i=2}^n b_i     }
+\end{itemize}
+\end{minipage}
+\end{enumerate}
+}
+
+\minmeth{Nützliche Zahlen}\\
+\halfpage{
+\begin{itemize}
+\mathitem{ \IN \frac{1}{i} = H_n~~~~\textcolor{lightgray}{Abschatzung: ln(n+1) \leq H_n \leq ln(n)+1         } \\
+\IN H_i = (n+1) H_n -n          }
+
+
+\mathitem{ x_n = \textcolor{red}{\sum_{i=1}^{n-1} x_i} + sth_n \textcolor{lightgray}{\Rightarrow x_{n-1} = \sum_{i=1}^{n-2} x_i + sth_{n-1} \Rightarrow \sum_{i=1}^{n-2} x_i = x_{n-1} - sth_{n-1}} \\ \Rightarrow x_n = 2x_{n-1} +sth_n - sth_{n-1} } 
+
+\item  $\IN c= nc $ \\
+\quarterpage{ $\IN i = \frac{n(n+1)}{2}          \\
+\IN (2i -1) = n^2$          }
+\quarterpage{$ \IN i^2 = \frac{n(n+1)(n+2)}{6}          \\
+\IN i^3 = \left( \frac{n(n+1)}{2} \right) ^2          $}
+
+\mathitem{\IN \lfloor log_2(i) \rfloor  = (n+1) \lfloor log_2(n) \rfloor - 2\left( 2^{\lfloor log_2(n) \rfloor} -1 \right)        }
+
+\mathitem{
+
+\geo c^i = \frac{c^{n+1}-1}{c-1}\\
+\geo i c^{i-1} = \frac{(n+1)c^n(c-1)-(c^{n+1}-1)}{(c-1)^2}
+\sum_{i=2}^n \left( \dfrac{1}{2^{i-1}} \right)  = \sum_i={2^n} \left( \dfrac{1}{2}^{i-1} \right)
+}
+\end{itemize}
+}
+
+\minmeth{rationale Summen}\\
+\halfpage{
+\begin{enumerate}
+\mathitem{\IN \frac{sth}{polynom}}
+\mathitem{Partialbruchzerlegung: \frac{x_i}{polynom} = \frac{a}{1.NST} + \frac{b}{2.NST} \dots \\ }
+Bei Mehrfachen NST $(k.NST)^{Vielfachheit}$ statt k. NST 
+\item Koeffizientenvergleich;
+\end{enumerate}}
+
+
+
+
+\newcommand{\tab}{\textcolor{white}{xxx}}
+\minmeth{Indexverschiebung}
+$\sum_{i=1}^ni-1 = \sum_{i=0}^{n-1} i$\\
+\tab \tab \tab \tab \tab \tab $\sum_{i=2}^n i = \sum_{i=0}^{n}(i) -1 -0$
+
+
+\minmeth{Gleichung erstellen}\\
+\tab \halfpage{
+for i=1 to n-1 \textbf{\{}\\
+\tab DoRec(i)  $\Rightarrow \sum_{i=1}^{n-1}x_i$  // siehe Nützliche Zahlen (rot) \\
+\tab DoRec(n-1)  $\Rightarrow  \textcolor{lightgray}{\sum_{i=1}^{n-1}x_{n-1}} = (n-1) x_{n-1}$\\
+\tab print("hallo") $\Rightarrow \sum_{i=1}^{n-1}1 = n-1$  
+\textbf{\}}
+}

@@ -1,0 +1,43 @@
+
+\section{BigData: 3+1Vs : }
+\halfpage{\begin{itemize}
+\item Volume: große Datenmengen
+\item Velocity: hohe Erzeugungsgeschwindigkeit
+\item Variety: strukturierte, semistrukturierte, unstrukturierte Daten
+\item Veracity: geringe Qualität/Glaubwürdigkeit
+\end{itemize}}
+
+\section{NoSQL}
+Vorteile: kompakt, änderungen betreffen nur eine Tabelle
+
+Nachteile: Konsistenzsicherung, eingeschränkte Abfragemöglichkeiten
+\subsection{key-value stores}
+reine zuordung von key-value-paaren => einfaches Datenmodell, keine Integritätsbedingungen/Joins, schnell, gut aufteilbar, Abfragen ohne Key schwierig
+
+\subsection{Document stores}
+abspeichern von JSON/XML zu keys; => flexibles Datenmodell, ähnlich Key-Value
+
+
+\subsection{Column Family}
+Feste Column Familys (z.B. meta, posts,$\dots$) \\
+Row Key -> Column Familys -> liste von Key-Values
+
+gute Kompression, flexibles Schema, schnelles Schreiben
+
+\subsection{Graph DB}
+Knoten und Kanten, beide mit Eingenschaften
+
+Vorteil: Graphalgorithmen (Tiefen/Weitensuche) anwendbar
+
+\section{Verteilte Architekturen}
+\halfpage{\begin{itemize}
+\item shared Memory: Multicore-System
+\item shared Disk: mehrere Server nutzen zentrale Platten => Synchronisation aufwendig
+\item shared nothing: kein gemeinsamer speicher
+\end{itemize}}
+
+\textbf{Sharding}: aufteilung der Datensätze; \\
+Typisch: Kombination aus Replikation/Sharding\\
+z.B. Tabelle(A,B,C,D) -> Server1(A,B), Server2(B,C), Server3(C,D), Server4(D,A)
+
+\textbf{Replikation}: synchron (warten auf bestätigung) vs asynchron(zwischenzeitlich inkonsistent)
