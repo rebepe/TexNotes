@@ -1,17 +1,96 @@
 \minpurp{Speicherverwaltung}
+\submeth{Zugriff} Symboltabelle (von Funktion/Struct) speichert offset
+\minmeth{Lebensdauer}
+\submeth{Global} unbegrenzt\\
+\submeth{Stack} allokation/freigabe mit funktionsaufruf/rückgabe\\
+\submeth{Heap} explizite reservierung/freigabe (Bei fehlern: Memory Leak/dangling reference)
 
+\minmeth{Stack}
+Aufbau Stackframe(x64 Windows): geregelt im ABI (Application Binary Interface):
+
+Aufruf erzeugt neuen Stackframe (groß genung für alle parameter) und lädt parameter. Aufbau:
+
+\fbox{
+\quarterpage{
+\newcommand{\shadowspace}{\hline
+Shadowspace\\
+(8 Byte)\\}
+\begin{tabular}{|c|}
+\multicolumn{1}{l}{(16bit aligned):}\\
+\shadowspace
+\shadowspace
+\shadowspace
+\shadowspace
+\hline
+$\cdots$\\
+Variablen (aligned)\\
+ggf. Leerräume\\
+$\cdots$ \\
+\hline
+Return Adress \\
+(8 Byte)\\
+\hline
+\multicolumn{1}{l}{Nächster Frame,} \\
+\multicolumn{1}{l}{\textbf{Achtung x16 Alignment}}
+\end{tabular}
+}}
+\quarterpage{
+Parameterübergaberegister: 
+
+RCX, RDX, R8, R9\\
+
+Rückgaberegister: RAX \\
+
+Caller saved: 
+
+RAX, RCX, RDX, R8, R9, R10, R11 \\
+(Unterprogramm kann überschreiben)\\
+
+Callee preserved:
+
+ RBX, RBP, RDI, RSI, RSP, R12...R15 \\
+(Unterprogram  muss sichern(Prolog) \\und restaurieren (Epilog))
+}
  
-\minmeth{Alignment: }
-primitive Typen: Adresse muss durch Größe teilbar sein (z.B. Pointer nur an x8-Adressen)\\
-Zusammengesetzte Typen (Struct): richtet sich nach größtem Element (z.B. {int, bool} => x4)
+\minmeth{Alignment}
+\submeth{primitive Typen} Adresse muss durch Größe teilbar sein (z.B. Pointer: x8-Adressen)\\
+\submeth{Zusammengesetzte Typen (Struct)} Alignment vom größten Element; \\padding auf nächste Alignte größe, auch am ende \\
+(z.B. {int, bool} => x4) 
 
 Struct/Class: Reihenfolge wird nicht verändert.
 
-Frame: durch umordnen optimiert
+Frame: ggf. durch umordnen optimiert
+
+\minmeth{Größen in Byte}
+\begin{tabular}{|r|l|l|l|l|l|l|}
+\hline
+Sprache & bool & char & int & float & double & Pointer(x64) \\ 
+\hline
+C++ & 1&1 & 4 &4&8&8\\
+\hline
+C\# & 1&2 & 4 &4&8&8\\
+\hline
+Javascript & 1 &&&&8&8\\
+\hline
+\end{tabular}
 
 
-\minmeth{Zugriff}
-Symboltabelle (von Funktion/Struct) speichert offset
+\minmeth{Heap}
+Blöcke mit längenangaben, verkettet, werden nach ausreichend speicher durchsucht
+
+\minmeth{Umgebung bei lokalen Funktionen}
+\submeth{Statische Kette:} nichtlokale Variablen in darunterliegenden Stackframes, verfolgen von entsprechenden Pointern
+
+\submeth{Closure:} wird bei übergabe/speichern von Funktion gebildet.\\ Besteht aus Funktionszeiger und zeiger auf Heap-Objekt mit den gefangenen Variablen\\
+Löst upward Funarg problem(Verweis auf nicht mehr existierende stackframes)\\
+Bilden auch statische kette
+
+
+
+
+
+
+
 
 \minmeth{RTTI}
 Dynamischer Typ (u.a. Vererbung) => Zeiger auf Typobjekt im Deskriptor (eindeutige Kennung)
@@ -19,26 +98,24 @@ Dynamischer Typ (u.a. Vererbung) => Zeiger auf Typobjekt im Deskriptor (eindeuti
 Typobjekt enthält virtual Table (adressen der methoden)
 
 
-\minpurp{Heapspeicherverwaltung (löschen)}
-Probleme: Memory Leak, Dangling References, Garbage
+\minpurp{Heapspeicherverwaltung (löschen von Objekten)}
+\submeth{Probleme} Memory Leak, Dangling References, Garbage
+
 \minmeth{manuell}
 freigabe durch programmierer (C++: delete)
 
 \minmeth{Reference Counting}
-Zähler für daraufzeigenden Pointer, löschen wenn =0
+Zähler für daraufzeigende Pointer, löschen wenn zähler=0
 
 Probleme: Zyklen sind selbsterhaltend 
 
-=> schwache pointer: Beeinflussen Counter nicht
+=> schwache pointer: Beeinflussen Counter nicht -> existenzprüfung!
 
-Varianten: 
+\submeth{manuell} Programmierer muss zähler selbst erhöhen/reduzieren (Bsp: COM)
 
-manuell: Programmierer muss erhöhen/reduzieren (Bsp: COM)
+\submeth{automatisch} Smartpointer (shared\_ptr / weak\_ptr, unabhängig davon unique\_ptr)
 
-automatisch: Smartpointer (shared\_ptr / weak\_ptr, unabhängig davon unique\_ptr)
-
-Implementierung: 
-Handle mit Zeiger, \#ptr und \#wptr
+\submeth{Implementierung (C++)} Handle mit Zeiger, \#ptr und \#wptr
 
 \minmeth{Garbage Collection}
 Wurzeln: direkt verwendbare Objekte: Register,Stack,globale Variablen
@@ -49,25 +126,23 @@ Vorraussetzung: Zeiger müssen durch Metadaten gefunden werden (Funktionen werde
 
 \submeth{Copy GC /Scavenge/ Stop\& Copy}
 Halbierung Speicher in from-space (genutzt) und to-space (ungenutzt)
-
-Ablauf: 
+Tausch der Rollen nach jedem Vorgang
 
 1. Alle direkt von Wurzeln erreichbaren Objekte => in den to-space kopieren; Eintragen der neuen Adresse an alter Speicherstelle (wird in allen Zeigern darauf eingetragen; 
 
-2. Dasselbe mit allen von den Objekten im to-space erreichbaren Objekte. (Breitensuche); tausch der Rollen beim nächsten Vorgang
+2. Dasselbe mit allen von den Objekten im to-space erreichbaren Objekte. (Breitensuche)
 
 Vorteil: Laufzeit linear zu anzahl gültiger Objekte; kompaktifiziert
 
 Nachteil: hälfte des Speichers nicht nutzbar
 
 \submeth{Mark-Sweep-Compact}
-Ablauf: 
 
-1. Tiefensuche lebendiger Objekte (von der Wurzel aus); Markierung im Mark-Word oder Tabelle; Forward-zeiger auf zukünftige Speicherstelle;
+1. Tiefensuche lebendiger Objekte (von der Wurzel aus); Markierung im Mark-Word des Objekts oder globaler Tabelle; Forward-zeiger auf zukünftige Speicherstelle;
 
-2. Korrigieren aller Zeiger
+2. Korrigieren aller Zeiger (durch Forward-Zeiger)
 
-3. Verschieben auf den Forward-Zeiger, zurücksetzen Mark-Word 
+3. Verschieben des Objekts auf den Forward-Zeiger, zurücksetzen Mark-Word 
 
 Aufwand: Mark-Phase linear zu anzahl lebendiger Objekte, Sweep-Compact linear zu Heap-Größe;
 
@@ -77,3 +152,4 @@ Analog zu Mark-Sweep Compact ohne 3. Schritt;
 Vorteil: keine Zeigerkorrekturen nötig
 
 Nachteil: Fragmentierung des Speichers
+

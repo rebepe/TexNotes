@@ -1,30 +1,27 @@
 \minpurp{Kompilierzeitpunkt}
-\minmeth{Früh}:Vorteil: Leistungsfähigere Geräte, 1x Übersetzen spart Ressourcen\\
+\minmeth{Früh}Vorteil: Leistungsfähigere Geräte, 1x Übersetzen spart Ressourcen\\
 aber: Information über Zielplattform nötig
-\minmeth{Spät}:Vorteil: geht immer, einfacherer Compiler/Interpreter, besserer Code möglich da vollständige Information über Hardware, OS, Bibliotheken etc.
 
-\begin{itemize}
-\item AOT (Ahead-of-Time): Entwicklung, Server/Store, Installation\\
-\item JIT (Just-in-Time): Direkt vor/während Ablauf\\
+\submeth{AOT (Ahead-of-Time)} Entwicklung, Server/Store, Installation
+
+\minmeth{Spät}Vorteil: geht immer, einfacherer Compiler/Interpreter, besserer Code möglich da vollständige Information über Hardware, OS, Bibliotheken etc.
+
+\submeth{JIT (Just-in-Time)} Direkt vor/während Ablauf\\
 Ablauf: AOT in Zwischencode für hypothetische Maschine (Aufwändige Schritte wie Syntaxanalyse, Typprüfung)\\
 JIT von Zwischencode in optimierten Maschinencode => Performanter als Interpreter, Leichtere Validierung, i.d.R. verzögerter Start
-\end{itemize}
 
-\rule{0cm}{2cm}
-\newcommand{\process}[1]{\rule{1cm}{0cm} $\rightarrow$ \textcolor{orange}{\textit{#1}}$\rightarrow$\\}
-\newcommand{\optprocess}[1]{\rule{1cm}{0cm} $\rightarrow$ \textcolor{lightgray}{\textit{#1}}$\rightarrow$\\}
-\newcommand{\object}[1]{\textcolor{darkblue}{\textit{#1}~}\\}
-\newcommand{\optobject}[1]{ \textcolor{lightgray}{\textit{#1}}\\}
+\newcommand{\process}[1]{$\rightarrow$ \textcolor{orange}{\textit{#1}}$\rightarrow$\\}
+\newcommand{\optprocess}[1]{$\rightarrow$ \textcolor{lightgray}{\textit{#1}}$\rightarrow$\\}
+\newcommand{\object}[1]{\textcolor{darkblue}{\textit{#1}~}}
+\newcommand{\optobject}[1]{ \textcolor{lightgray}{\textit{#1}}}
 
 \minpurp{Kompiliervorgang}
 \object{Zeichenstrom}
 \process{Scanner (Lexikalische Analyse} 
 \object{Token-Strom}
-\process{Parser}
-	
-	
+\process{Parser}	
 $\left. 
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}{0.39\textwidth}
   \optobject{Ableitungsbaum}
   \process{AST Generierung \& Semantische Analyse}
   \object{Abstract Syntax Tree (AST)}
@@ -32,19 +29,16 @@ $\left.
   \optobject{Zwischencode}
   \process{Maschinencodegenerierung}
   \object{Maschinencode}
-  \optprocess{Maschinencodeoptimierung}
-  \end{minipage}
-\right\rbrace$
-{arbeiten mit Symboltabelle}
+  $\leftrightarrow$ \textcolor{lightgray}{\textit{Maschinencodeoptimierung}}
+  \end{minipage} \right\rbrace$
+{Symboltabelle}
 
 \minmeth{Scanner}
 Erkennt Token für Parser (Schlüsselwörter, Bezeichner, Zahlen,$\dots$) \\
-Zeilenumbrüche, Whitespaces, Kommentare, Präprozessoranweisungen,.. beeinflussen Tokenerkennung
+Whitespaces, Kommentare, Präprozessoranweisungen,.. beeinflussen Tokenerkennung
 
 Implementierung: Angepasster DFA (Neustart nach Token, erkennt längstes Mögliches Token, Schlüsselworttabelle, Fehler wenn weder passende Kante noch Endzustand)
-\includegraphics[angle=90,width=0.4\textwidth]{scanner}
-
-
+\includegraphics[angle=90,width=0.35\textwidth]{scanner}
 \newcommand{\K}{ \textcolor{red}{k} }
 \minmeth{Parser}
 Rekonstruiert Ableitungsbaum (bzw. den reduzierten AST) gemäß der Grammatik der Programmiersprache.
@@ -73,8 +67,7 @@ Rekonstruiert Ableitungsbaum (bzw. den reduzierten AST) gemäß der Grammatik de
 
 
 \minmeth{Semantische Analyse}
-$\Rightarrow$ statische Bindungen (Bezeichner-Objekt, Typ-Objekt)\\
-$\Rightarrow$ erzeugt Symboltabelle und AST
+Statische Bindungen (Bezeichner-Objekt $\rightarrow$ Typ-Objekt)$\Rightarrow$ Symboltabelle und AST
 
 \submeth{Symboltabelle} Sammelt Definitionen/Deklarationen von Objekten und damit auch:
 
@@ -112,9 +105,9 @@ Ableitungsbaum - Transpiler (Source-to-Source)
 
 AST - "Lowering": Neue Konstrukte durch alte darstellen (z.B. Iteratoren)
 
-Zwischencode - Maschinenunabhängige Optimierung z.B. Function Inlining, Simple constant propagation, loop-unroll, ...
+Maschinenunabhängige Optimierung z.B. Function Inlining, Simple constant propagation, loop-unroll, ...
 
-Maschinencode - Maschinenabhängige Optimierung
+
 
 \minmeth{Maschinencode}
 Symboltabelle um Adressen erweitern (auch Stackpointer relative)
@@ -145,3 +138,4 @@ Ersatz von Fehlercode-Rückgabewerten durch Exceptions;
 Implementierung: Tabellen im globalen datensegment ordnen Programmzählerbereiche entsprechenden Handlern zu; 
 
 Stack unwinding: nach werfen der Exception wird stack nach unten durchlaufen bis fehler behandelt
+
