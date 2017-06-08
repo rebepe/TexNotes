@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  14 MAY 2017 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  31 MAY 2017 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,19 +1013,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (./SoftA.aux)
 \openout1 = `SoftA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -1139,33 +1139,138 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-) (./CCode.tex) [1
+) (./OO.tex
+Underfull \hbox (badness 5681) in paragraph at lines 9--10
+[][]\T1/ptm/m/it/10.95 Subtyping\T1/ptm/m/n/10.95 : [] Ver-er-bung von ähn-li-c
+hem Ver-hal-ten (Si-gna-tu-ren) => Ge-ne-ra-li-sie-
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 24
+.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 24
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 24
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 24
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
+
+Overfull \hbox (12.82909pt too wide) in paragraph at lines 24--33
+[][] 
+ []
+
+[1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./CCode.tex)
+(./Pattern.tex
+Overfull \hbox (10.21901pt too wide) in paragraph at lines 20--21
+[]\T1/ptm/m/n/10.95 Bei Im-ple-men-tie-rung als Ob-ser-ver Pat-tern: Observable
+->Model, Observer->View,Controller 
+ []
 
-]
-(./SoftA.aux) ) 
+<strategy.png, id=10, 258.0039pt x 93.951pt>
+File: strategy.png Graphic file (type png)
+ <use strategy.png>
+Package pdftex.def Info: strategy.png used on input line 26.
+(pdftex.def)             Requested size: 157.62585pt x 57.39891pt.
+Package epstopdf Info: Source file: <observer.eps>
+(epstopdf)                    date: 2014-07-12 10:18:07
+(epstopdf)                    size: 246880 bytes
+(epstopdf)             Output file: <observer-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-31 18:23:27
+(epstopdf)                    size: 71889 bytes
+(epstopdf)             Command: <repstopdf --outfile=observer-eps-converted-to.
+pdf observer.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+
+<observer-eps-converted-to.pdf, id=12, 400.49625pt x 223.83624pt>
+File: observer-eps-converted-to.pdf Graphic file (type pdf)
+
+<use observer-eps-converted-to.pdf>
+Package pdftex.def Info: observer-eps-converted-to.pdf used on input line 29.
+(pdftex.def)             Requested size: 189.15825pt x 105.7222pt.
+Package epstopdf Info: Source file: <iterator.eps>
+(epstopdf)                    date: 2013-06-19 14:05:12
+(epstopdf)                    size: 115633 bytes
+(epstopdf)             Output file: <iterator-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-31 18:23:28
+(epstopdf)                    size: 27980 bytes
+(epstopdf)             Command: <repstopdf --outfile=iterator-eps-converted-to.
+pdf iterator.eps>
+(epstopdf)             \includegraphics on input line 35.
+Package epstopdf Info: Output file is already uptodate.
+
+<iterator-eps-converted-to.pdf, id=13, 275.0275pt x 170.6375pt>
+File: iterator-eps-converted-to.pdf Graphic file (type pdf)
+
+<use iterator-eps-converted-to.pdf>
+Package pdftex.def Info: iterator-eps-converted-to.pdf used on input line 35.
+(pdftex.def)             Requested size: 236.44481pt x 146.70372pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<Composite.png, id=14, 231.9867pt x 127.9179pt>
+File: Composite.png Graphic file (type png)
+ <use Composite.png>
+Package pdftex.def Info: Composite.png used on input line 38.
+(pdftex.def)             Requested size: 118.21638pt x 65.18456pt.
+
+<mixinjava.png, id=15, 243.5499pt x 197.2971pt>
+File: mixinjava.png Graphic file (type png)
+ <use mixinjava.png>
+Package pdftex.def Info: mixinjava.png used on input line 45.
+(pdftex.def)             Requested size: 189.15825pt x 153.23482pt.
+) [2 <./strategy.png> <./observer-eps-converted-to.pdf> <./iterator-eps-convert
+ed-to.pdf> <./Composite.png> <./mixinjava.png>] (./SoftA.aux) ) 
 Here is how much of TeX's memory you used:
- 14676 strings out of 493029
- 254975 string characters out of 6136235
- 369043 words of memory out of 5000000
- 18078 multiletter control sequences out of 15000+600000
- 10491 words of font info for 21 fonts, out of 8000000 for 9000
+ 14836 strings out of 493029
+ 257578 string characters out of 6136235
+ 374151 words of memory out of 5000000
+ 18188 multiletter control sequences out of 15000+600000
+ 23188 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,7n,66p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on SoftA.pdf (1 page, 33470 bytes).
+ 47i,8n,66p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texl
+ive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SoftA.pdf (2 pages, 213062 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+ 41 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

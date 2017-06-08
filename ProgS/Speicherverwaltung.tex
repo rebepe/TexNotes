@@ -1,0 +1,79 @@
+\minpurp{Speicherverwaltung}
+
+ 
+\minmeth{Alignment: }
+primitive Typen: Adresse muss durch Größe teilbar sein (z.B. Pointer nur an x8-Adressen)\\
+Zusammengesetzte Typen (Struct): richtet sich nach größtem Element (z.B. {int, bool} => x4)
+
+Struct/Class: Reihenfolge wird nicht verändert.
+
+Frame: durch umordnen optimiert
+
+
+\minmeth{Zugriff}
+Symboltabelle (von Funktion/Struct) speichert offset
+
+\minmeth{RTTI}
+Dynamischer Typ (u.a. Vererbung) => Zeiger auf Typobjekt im Deskriptor (eindeutige Kennung)
+
+Typobjekt enthält virtual Table (adressen der methoden)
+
+
+\minpurp{Heapspeicherverwaltung (löschen)}
+Probleme: Memory Leak, Dangling References, Garbage
+\minmeth{manuell}
+freigabe durch programmierer (C++: delete)
+
+\minmeth{Reference Counting}
+Zähler für daraufzeigenden Pointer, löschen wenn =0
+
+Probleme: Zyklen sind selbsterhaltend 
+
+=> schwache pointer: Beeinflussen Counter nicht
+
+Varianten: 
+
+manuell: Programmierer muss erhöhen/reduzieren (Bsp: COM)
+
+automatisch: Smartpointer (shared\_ptr / weak\_ptr, unabhängig davon unique\_ptr)
+
+Implementierung: 
+Handle mit Zeiger, \#ptr und \#wptr
+
+\minmeth{Garbage Collection}
+Wurzeln: direkt verwendbare Objekte: Register,Stack,globale Variablen
+
+Lebendige Objekte sind direkt oder indirekt von Wurzeln erreichbar, ansonsten Garbage
+
+Vorraussetzung: Zeiger müssen durch Metadaten gefunden werden (Funktionen werden anhand von Rücksprungadresse identifiziert, Objekte mit RTTI)
+
+\submeth{Copy GC /Scavenge/ Stop\& Copy}
+Halbierung Speicher in from-space (genutzt) und to-space (ungenutzt)
+
+Ablauf: 
+
+1. Alle direkt von Wurzeln erreichbaren Objekte => in den to-space kopieren; Eintragen der neuen Adresse an alter Speicherstelle (wird in allen Zeigern darauf eingetragen; 
+
+2. Dasselbe mit allen von den Objekten im to-space erreichbaren Objekte. (Breitensuche); tausch der Rollen beim nächsten Vorgang
+
+Vorteil: Laufzeit linear zu anzahl gültiger Objekte; kompaktifiziert
+
+Nachteil: hälfte des Speichers nicht nutzbar
+
+\submeth{Mark-Sweep-Compact}
+Ablauf: 
+
+1. Tiefensuche lebendiger Objekte (von der Wurzel aus); Markierung im Mark-Word oder Tabelle; Forward-zeiger auf zukünftige Speicherstelle;
+
+2. Korrigieren aller Zeiger
+
+3. Verschieben auf den Forward-Zeiger, zurücksetzen Mark-Word 
+
+Aufwand: Mark-Phase linear zu anzahl lebendiger Objekte, Sweep-Compact linear zu Heap-Größe;
+
+\submeth{Mark-Sweep}
+Analog zu Mark-Sweep Compact ohne 3. Schritt; 
+
+Vorteil: keine Zeigerkorrekturen nötig
+
+Nachteil: Fragmentierung des Speichers

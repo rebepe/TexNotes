@@ -1,0 +1,48 @@
+\minpurp{Objektorientierung}
+\minmeth{Prinzipien eines wiederverwendbaren OO Designs}
+\begin{itemize}
+\item Program to an Interface, not an Implementation
+\item Favor delegation over class inheritance
+\end{itemize}
+\minmeth{Vererbung}
+
+\submeth{Subtyping} Vererbung von ähnlichem Verhalten (Signaturen) => Generalisierung/Spezialisierung und Realisierung
+
+\submeth{Subclassing} Vererbung von Implementierungen => nur Generalisierung/Spezialisierung
+
+\minmeth{Liskovsches Substitutionsprinzip}
+
+S1: Subtypen haben gleiche Operationen mit kompatibler Signatur (Compilergeprüft)
+
+S2: Subtypen zeigen das gleiche Verhalten (Programmierergeprüft)
+
+=> Design-By-Contract: Subtypen dürfen Precondition (Anfang der Methode/Parameter) schwächen (OR verknüpfung), und/oder Postconditions (Ende der Methode/Rückgaben) stärken (AND Verknüpfung) => Obermenge der gültigen Eingaben, Teilmenge der gültigen Ausgaben.
+
+\minmeth{Ko- Kontravariant}
+Szenario: Unterklasse überschreibt Methode in Oberklasse mit anderen Typen in Ein- Ausgabewerten.
+
+\begin{tabular}{|c|c|c|c|}
+\hline	
+& Parametertyp in Unterklasse & Parametertyp & Rückgabetyp \\
+\hline
+kovariant & ist \textcolor{red}{Subtyp} des Parameters in Oberklasse & unsicher & sicher\\
+\hline
+kontravariant & ist \textcolor{red}{Obertyp} des Parameters in Oberklasse & sicher & unsicher \\
+\hline
+\end{tabular}
+
+
+\minmeth{Delegation}
+siehe Design Pattern Strategy
+
+\minmeth{Law of Demeter/Feature Envy}
+Empfehlung: Klassen sollten nur mit direkt gekoppelten Klassen arbeiten, nicht mit indirekt verknüpften
+
+A $\rightarrow$ B $\rightarrow$ C => A ruft methoden von B auf, nicht von C
+
+\minmeth{high Fan-In, lowFan-Out}
+Fan-in: Anzahl der Module, die das Modul verwenden (tolerabel)
+Fan-out: Anzahl der verwendeten Module (möglichst klein)
+
+\minmeth{Open-Close Prinzip}
+Offen für Erweiterung, geschlossen für Veränderungen

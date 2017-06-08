@@ -1,21 +1,48 @@
 \minpurp{Prinzipien}
 \begin{itemize}
-\item abstraktion (modellbildung)
-\item dekomposition (zerteilung eines problems)
-\item hierarchisierung (einteilen in ebenen)
-\item Wiederverwendung (technische,organisatorische Vorraussetzungen erfüllt)
-\item Standardisierung
+\item abstraktion (modellbildung, vernachlässigung von details); 3 Merkmale:
+	\begin{itemize}
+		 \item Abbildungsmerkmal: Bildet reelles/fiktives ab => Realitätsbezug
+		 \item Verkürzungsmerkmal: hebt Wesentliches hervor, lässt Unwesentliches weg
+		 \item Pragmatisches Merkmal: Kann unter bestimmten Bedingungen original ersetzen
+	\end{itemize}
+\item Strukturierung: komplex => reduzierte Darstellung mit gleichem character und spezifischen Merkmalen
+\item Dekomposition (Stepwise Refinement, Zerteilung eines problems)
+\item Hierarchisierung (Erstellen einer Rangordnung => Hierarchieebenen; Spezialfall Strukturierung)
+\item Wiederverwendung (technische,organisatorische Vorraussetzungen; \~60\% Mehraufwand)
+\item Standardisierung (Festlegung/Einhaltung von Richtlinien, Normen)
+\item Verbalisierung (Ideen geeignet in Worten ausdrücken, z.B. Namen)
+\item Modularisierung (Zusammenbau des Systems aus Bausteinen s.U.)
 \end{itemize}
 
 \minpurp{Modularität}
 \begin{itemize}
-\item hohe Kohäsion (bindung im Modul)
-\item lose Kopplung (bindung zwischen modulen)
+\item hohe Kohäsion (Abhängigkeiten im Modul,eine Verantwortung)
+\item lose Kopplung (Abhängigkeiten zwischen modulen)
 \item Information Hiding (Geheimnisprinzip)
 \item Schnittstellenspezifikation
-\item Kontextunabhängigkeit
-\item Lokalitätsprinzip
+\item Kontextunabhängigkeit (Analog zu lose Kopplung zur Umgebung
+\item Lokalitätsprinzip (Alle Bestandteile zu Problemlösung an einer Stelle)
 \end{itemize}
+=> Änderungsfreundlichkeit, Wartbarkeit, Standardisierung, Arbeits- Organisation und Planung, Überprüfbarkeit
+
+\minmeth{Modulare Operatoren}
+\begin{itemize}
+\item Splitting: Aufteilen eines Moduls
+\item Substituting: Austausch von Modul durch Modul gleicher Funktion
+\item Augmenting: Hinzufügen von Modul für Funktionserweiterung (leicht)
+\item Excluding: Entfernen von Modul für Funktionsverringerung (schwer)
+\item Inverting: Herausziehen von redundanter Funktionalität aus Modulen in höheres Modul
+\item Porting: Verwenden eines Translators für ein Modul in nicht vorhergesehenem Kontext
+\end{itemize}
+
+\submeth{Architectural Erosion}
+Verletzungen der Architektur. Änderungen => inkonsistenter Code (entfernen tragender Säulen).
+
+\submeth{Architectural Drift}
+Erweiterung ohne Beachtung der bestehenden Architektur (Anbauten).
+
+\submeth{Gegenmaßnahmen} Dokumentation, Open-Closed-Prinzip, Kapselung, Modularisierung
 
 \minpurp{Strukturparadigmen}
 Orhogonal zu Programmierparadigmen
