@@ -18,37 +18,36 @@ Prüfung zur Laufzeit, ggf. Exception &ohne Prüfung\\
 \hline
 \end{tabular}
 
-\minmeth{Enum vs Symbol}
-Enum: statische Typen;
-
-Symbole: dynamische Typen: werden nicht deklariert, bilden 1 Typ z.B. Symbol.for("Monday") in JS6
+%\minmeth{Enum vs Symbol}
+%Enum: statische Typen;
+%
+%Symbole: dynamische Typen: werden nicht deklariert, bilden 1 Typ z.B. Symbol.for("Monday") in JS6
 
 
 \minmeth{Arrays}
-Adressrechnung: a mit größe n1,n2,n3 \\
+\submeth{Adressrechnung} a mit größe n1,n2,n3 \\
 a[i1,i2,i3] =>  a[0] + (i1 * n2* n3 + i2* n3 + i3) * sizeof(type);
 
-Prüfen Adressgrenzen: 
-C\#: neben RTTI wird Deskriptor mit Längenangaben für jede Dimension angelegt
+\submeth{Prüfen Adressgrenzen}
+C\#: Deskriptor mit Längenangaben für jede Dimension
 
 \minmeth{Iteratoren}
 \submeth{Äußere Iteration}Foreach schleife: von außen über die Collection
 
-\submeth{Innere Iteration}Map/Reduce Funktionen: Collection wendet Closure auf alle Elemente an
+\submeth{Innere Iteration} Collectionfunktion: Übergabe von Closure, ausführen für alle Elemente
 
 \submeth{Generatoren}
 Erzeugung von Iteratoren mit yield => nächster Einsprung erfolgt hinter dem letzten yield, kontext bleibt erhalten
 
-\submeth{Schleife vs Rekursion}
-Tail-recursion: wenn rekursion letzter schritt, dann goto statt funktionsaufruf\\
+\submeth{Tail-recursion} wenn rekursion letzter schritt, dann goto statt funktionsaufruf\\
 Allgemein: Tail Call Optimization: funktionsaufruf als letzter schritt => kein neuer Stackframe sondern nur den eigenen anpassen.
 
 
 
 \minmeth{Konstanten}
-Compilezeitkonstanten: feste Adressen / immediate Werte
+\submeth{Compilezeitkonstanten} feste Adressen / immediate Werte
 
-Laufzeitkonstanten: (readonly,final)
+\submeth{Laufzeitkonstanten} (readonly,final)
 
-Immutable Typen: bieten keine setter an, variablen können umverzeigert werden.
+\submeth{Immutable Typen} bieten keine setter an, variablen können umverzeigert werden.
 

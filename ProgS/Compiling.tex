@@ -1,23 +1,25 @@
-\minpurp{Kompilierzeitpunkt}
-\minmeth{Früh}Vorteil: Leistungsfähigere Geräte, 1x Übersetzen spart Ressourcen\\
-aber: Information über Zielplattform nötig
-
-\submeth{AOT (Ahead-of-Time)} Entwicklung, Server/Store, Installation
-
-\minmeth{Spät}Vorteil: geht immer, einfacherer Compiler/Interpreter, besserer Code möglich da vollständige Information über Hardware, OS, Bibliotheken etc.
-
-\submeth{JIT (Just-in-Time)} Direkt vor/während Ablauf\\
-Ablauf: AOT in Zwischencode für hypothetische Maschine (Aufwändige Schritte wie Syntaxanalyse, Typprüfung)\\
-JIT von Zwischencode in optimierten Maschinencode => Performanter als Interpreter, Leichtere Validierung, i.d.R. verzögerter Start
-
+%\minpurp{Kompilierzeitpunkt}
+%\minmeth{Früh}Vorteil: Leistungsfähigere Geräte, 1x Übersetzen spart Ressourcen\\
+%aber: Information über Zielplattform nötig
+%
+%\submeth{AOT (Ahead-of-Time)} Entwicklung, Server/Store, Installation
+%
+%\minmeth{Spät}Vorteil: geht immer, einfacherer Compiler/Interpreter, besserer Code möglich da vollständige Information über Hardware, OS, Bibliotheken etc.
+%
+%\submeth{JIT (Just-in-Time)} Direkt vor/während Ablauf\\
+%Ablauf: AOT in Zwischencode für hypothetische Maschine (Aufwändige Schritte wie Syntaxanalyse, Typprüfung)\\
+%JIT von Zwischencode in optimierten Maschinencode => Performanter als Interpreter, Leichtere Validierung, i.d.R. verzögerter Start
+%
 \newcommand{\process}[1]{$\rightarrow$ \textcolor{orange}{\textit{#1}}$\rightarrow$\\}
 \newcommand{\optprocess}[1]{$\rightarrow$ \textcolor{lightgray}{\textit{#1}}$\rightarrow$\\}
 \newcommand{\object}[1]{\textcolor{darkblue}{\textit{#1}~}}
 \newcommand{\optobject}[1]{ \textcolor{lightgray}{\textit{#1}}}
 
-\minpurp{Kompiliervorgang}
+\minpurp{Kompiliervorgang} 
+\fbox{Legende: \optobject{optional} \object{Artefakt} \process{Verarbeitung} }
+
 \object{Zeichenstrom}
-\process{Scanner (Lexikalische Analyse} 
+\process{Scanner (Lexikalische Analyse)} 
 \object{Token-Strom}
 \process{Parser}	
 $\left. 
@@ -40,6 +42,8 @@ Whitespaces, Kommentare, Präprozessoranweisungen,.. beeinflussen Tokenerkennung
 Implementierung: Angepasster DFA (Neustart nach Token, erkennt längstes Mögliches Token, Schlüsselworttabelle, Fehler wenn weder passende Kante noch Endzustand)
 \includegraphics[angle=90,width=0.35\textwidth]{scanner}
 \newcommand{\K}{ \textcolor{red}{k} }
+
+
 \minmeth{Parser}
 Rekonstruiert Ableitungsbaum (bzw. den reduzierten AST) gemäß der Grammatik der Programmiersprache.
 \begin{itemize}
@@ -122,10 +126,9 @@ Cache Coherence
 Keyhole-Optimierung: Folgen von Befehlen durch schnellere ersetzen (z.B. *4 durch shift-left 2)
 
 \minmeth{Linken}
-statisch: Bibliotheken u. Laufzeitsystem nach Kompilieren => werden in die Binary gepack
+statisch: Bibliotheken u. Laufzeitsystem => nach Kompilieren in die Binary gepackt
 
-dynamisch: Bibliotheken/Laufzeitsystem sind seperat und werden vor ausführung vom Linking Loader im RAM gebunden
-
+dynamisch: separate Bibliotheken; Linking Loader bindet vor Ausführung im RAM (dll)
 
 \minmeth{Laufzeitsystem}
 Zur Ausführung nötiger Code (der Sprache) z.B. für:
@@ -135,7 +138,7 @@ Code-Verifikation, JIT, Exceptions, Garbage-Collector, Linken zur Laufzeit
 \minpurp{Exceptions}
 Ersatz von Fehlercode-Rückgabewerten durch Exceptions;
 
-Implementierung: Tabellen im globalen datensegment ordnen Programmzählerbereiche entsprechenden Handlern zu; 
+Globale Tabellen ordnen Programmzählerbereiche entsprechenden Handlern zu; 
 
-Stack unwinding: nach werfen der Exception wird stack nach unten durchlaufen bis fehler behandelt
+\submeth{Stack unwinding} Werfen einer Exception => Stack nach unten durchlaufen bis gehandelt
 

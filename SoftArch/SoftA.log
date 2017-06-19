@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  31 MAY 2017 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  18 JUN 2017 20:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1244,33 +1244,65 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Composite.png, id=14, 231.9867pt x 127.9179pt>
 File: Composite.png Graphic file (type png)
  <use Composite.png>
-Package pdftex.def Info: Composite.png used on input line 38.
-(pdftex.def)             Requested size: 118.21638pt x 65.18456pt.
+Package pdftex.def Info: Composite.png used on input line 39.
+(pdftex.def)             Requested size: 157.62585pt x 86.91469pt.
 
-<mixinjava.png, id=15, 243.5499pt x 197.2971pt>
+<factory.png, id=15, 204.5241pt x 63.5976pt>
+File: factory.png Graphic file (type png)
+ <use factory.png>
+Package pdftex.def Info: factory.png used on input line 46.
+(pdftex.def)             Requested size: 236.44481pt x 73.52579pt.
+
+Underfull \hbox (badness 7203) in paragraph at lines 45--47
+[]\T1/ptm/m/n/10.95 Factory Me-thod: Hook für Sub-klas-se, um Ver-hal-ten in de
+r Ba-sis-klas-se zu
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 45--47
+\T1/ptm/m/n/10.95 kon-fi-gu-rie-ren. Pro-duct und Crea-tor bil-den häu-fig ^^Rp
+ar-al-le-le^^P Klas-sen-hier-ar-chi-en.
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./strategy.png> <./observer-eps-converted-to.pdf> <./iterator-eps-converte
+d-to.pdf> <./Composite.png> <./factory.png>]
+<abstractfactory-eps-converted-to.pdf, id=26, 432.61626pt x 224.84pt>
+File: abstractfactory-eps-converted-to.pdf Graphic file (type pdf)
+
+<use abstractfactory-eps-converted-to.pdf>
+Package pdftex.def Info: abstractfactory-eps-converted-to.pdf used on input lin
+e 63.
+(pdftex.def)             Requested size: 236.44481pt x 122.88702pt.
+
+<mixinjava.png, id=27, 243.5499pt x 197.2971pt>
 File: mixinjava.png Graphic file (type png)
  <use mixinjava.png>
-Package pdftex.def Info: mixinjava.png used on input line 45.
+Package pdftex.def Info: mixinjava.png used on input line 70.
 (pdftex.def)             Requested size: 189.15825pt x 153.23482pt.
-) [2 <./strategy.png> <./observer-eps-converted-to.pdf> <./iterator-eps-convert
-ed-to.pdf> <./Composite.png> <./mixinjava.png>] (./SoftA.aux) ) 
+) [3
+
+ <./abstractfactory-eps-converted-to.pdf> <./mixinjava.png>] (./SoftA.aux) ) 
 Here is how much of TeX's memory you used:
- 14836 strings out of 493029
- 257578 string characters out of 6136235
+ 14846 strings out of 493029
+ 257851 string characters out of 6136235
  374151 words of memory out of 5000000
- 18188 multiletter control sequences out of 15000+600000
+ 18196 multiletter control sequences out of 15000+600000
  23188 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,8n,66p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texl
-ive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SoftA.pdf (2 pages, 213062 bytes).
+{/u
+sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on SoftA.pdf (3 pages, 275938 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  8 JUN 2017 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  19 JUN 2017 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1471,121 +1471,111 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros (./Grundlagen.tex) (./Compiling.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 20
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 19
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 20
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 19
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 20
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 19
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 20
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 19
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 20.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
 
 <scanner.png, id=4, 357.7365pt x 522.5121pt>
 File: scanner.png Graphic file (type png)
  <use scanner.png>
-Package pdftex.def Info: scanner.png used on input line 41.
+Package pdftex.def Info: scanner.png used on input line 43.
 (pdftex.def)             Requested size: 357.73561pt x 522.51082pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 46.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./scanner.png>]) (./Bindun
 g.tex)
 (./Speicherverwaltung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 
  []
 
 
-Overfull \hbox (16.61798pt too wide) in paragraph at lines 36--54
+Overfull \hbox (16.61798pt too wide) in paragraph at lines 61--79
 [][] $[]$ 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
+ [2])
 (./Kontrollfluss_Typen.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-Underfull \hbox (badness 2401) in paragraph at lines 24--25
-[]\T1/ptm/m/n/10.95 Symbole: dy-na-mi-sche Ty-pen: wer-den nicht de-kla-riert, 
-bil-den 1 Typ z.B. Sym-
- []
-
-) [4
-
-] (./ProgS.aux) ) 
+) [3]
+(./ProgS.aux) ) 
 Here is how much of TeX's memory you used:
- 26680 strings out of 493029
- 534112 string characters out of 6136235
- 644431 words of memory out of 5000000
- 29788 multiletter control sequences out of 15000+600000
+ 26679 strings out of 493029
+ 534097 string characters out of 6136235
+ 643431 words of memory out of 5000000
+ 29787 multiletter control sequences out of 15000+600000
  24694 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,11n,67p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ProgS.pdf (4 pages, 133906 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ProgS.pdf (3 pages, 132508 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

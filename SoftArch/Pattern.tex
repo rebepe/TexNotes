@@ -38,6 +38,30 @@ Push: Zustandsänderung wird mitgeschickt
 Lösung: Schnittstelle mit Operationen für Hierarchieverwaltung und Elementfunktionen => Keine Unterschiede für Client
 \includegraphics[width=0.2\textwidth]{Composite}
 
+\minmeth{Factory Method}
+
+Problem: Objekt erzeugen. Nur Schnittstelle nicht konkrete Klasse bekannt. 
+
+Factory Method: Hook für Subklasse, um Verhalten in der Basisklasse zu konfigurieren. Product und Creator bilden häufig „parallele“ Klassenhierarchien.
+\includegraphics[width=0.3\textwidth]{factory}
+
+\minmeth{Abstract Factory}
+
+entkopplung Objekterzeugung/-verwendung. Factory Method legt Klasse der Objekte fest. 
+
+Delegieren Objekterzeugung.
+
+Factory Instanzen implementieren Factory Methoden für Objekte einer Klassenfamilie
+
+Schnittstelle AbstractFactory sieht eine Factory Methode je
+Produkt vor. Definiere pro Produktfamilie eine ConcreteFactory Klasse
+
+=> System arbeitet unabhängig von Objekterzeugung. Austausch
+von Produktfamilien ist einfach. Schwierig, neue Produkte einzuführen, da alle
+Factoryklassen um eine Methode ergänzt werden müssen.
+
+\includegraphics[width=0.3\textwidth]{abstractfactory-eps-converted-to}
+
 \minpurp{Programmieridiome}
 Vorraussetzung: Konkrete Sprache
 

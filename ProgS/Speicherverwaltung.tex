@@ -1,9 +1,34 @@
 \minpurp{Speicherverwaltung}
 \submeth{Zugriff} Symboltabelle (von Funktion/Struct) speichert offset
+
 \minmeth{Lebensdauer}
 \submeth{Global} unbegrenzt\\
 \submeth{Stack} allokation/freigabe mit funktionsaufruf/rückgabe\\
 \submeth{Heap} explizite reservierung/freigabe (Bei fehlern: Memory Leak/dangling reference)
+
+
+\minmeth{Alignment}
+\submeth{primitive Typen} Adresse muss durch Größe teilbar sein (z.B. Pointer: x8-Adressen)\\
+\submeth{Zusammengesetzte Typen (Struct)} Alignment vom größten Element; \\padding auf nächste Alignte größe, auch am ende \\
+(z.B. {int, bool} => x4) 
+
+Struct/Class: Reihenfolge wird nicht verändert.
+
+Frame: ggf. durch umordnen optimiert
+
+\minmeth{Größen in Byte}
+\begin{tabular}{|r|l|l|l|l|l|l|}
+\hline
+Sprache & bool & char & int & float & double & Pointer(x64) \\ 
+\hline
+C++ & 1&1 & 4 &4&8&8\\
+\hline
+C\# & 1&2 & 4 &4&8&8\\
+\hline
+Javascript & 1 &&&&8&8\\
+\hline
+\end{tabular}
+
 
 \minmeth{Stack}
 Aufbau Stackframe(x64 Windows): geregelt im ABI (Application Binary Interface):
@@ -52,40 +77,28 @@ Callee preserved:
 (Unterprogram  muss sichern(Prolog) \\und restaurieren (Epilog))
 }
  
-\minmeth{Alignment}
-\submeth{primitive Typen} Adresse muss durch Größe teilbar sein (z.B. Pointer: x8-Adressen)\\
-\submeth{Zusammengesetzte Typen (Struct)} Alignment vom größten Element; \\padding auf nächste Alignte größe, auch am ende \\
-(z.B. {int, bool} => x4) 
-
-Struct/Class: Reihenfolge wird nicht verändert.
-
-Frame: ggf. durch umordnen optimiert
-
-\minmeth{Größen in Byte}
-\begin{tabular}{|r|l|l|l|l|l|l|}
-\hline
-Sprache & bool & char & int & float & double & Pointer(x64) \\ 
-\hline
-C++ & 1&1 & 4 &4&8&8\\
-\hline
-C\# & 1&2 & 4 &4&8&8\\
-\hline
-Javascript & 1 &&&&8&8\\
-\hline
-\end{tabular}
 
 
-\minmeth{Heap}
-Blöcke mit längenangaben, verkettet, werden nach ausreichend speicher durchsucht
 
-\minmeth{Umgebung bei lokalen Funktionen}
-\submeth{Statische Kette:} nichtlokale Variablen in darunterliegenden Stackframes, verfolgen von entsprechenden Pointern
+\minmeth{Funktionen}
+\submeth{Statische Kette} nichtlokale Variablen in darunterliegenden Stackframes, implementierung durch Pointer
 
-\submeth{Closure:} wird bei übergabe/speichern von Funktion gebildet.\\ Besteht aus Funktionszeiger und zeiger auf Heap-Objekt mit den gefangenen Variablen\\
+\submeth{Closure} wird bei übergabe/speichern von Funktion gebildet. (Lambda)\\ Besteht aus Funktionszeiger und zeiger auf Heap-Objekt mit den gefangenen Variablen\\
 Löst upward Funarg problem(Verweis auf nicht mehr existierende stackframes)\\
-Bilden auch statische kette
+Ggf. teil der statische kette
 
 
+
+\submeth{Parameterübergabe}
+Call by Value: Wert wird kopiert
+
+"Call by Sharing": Call by Value einer Pointervariable ( => Swap nicht möglich)
+
+Call by Reference: Zeiger auf übergebene Variable
+
+Call by const Reference (c++): analog Call by reference, verbot schreibzugriff
+
+Call by name: unausgewertete Übergabe durch implizite(explizite) Closures
 
 
 
@@ -93,12 +106,15 @@ Bilden auch statische kette
 
 
 \minmeth{RTTI}
-Dynamischer Typ (u.a. Vererbung) => Zeiger auf Typobjekt im Deskriptor (eindeutige Kennung)
+Dynamischer Typ (u.a. Vererbung) => Zeiger auf Typobjekt im Deskriptor
 
 Typobjekt enthält virtual Table (adressen der methoden)
 
 
-\minpurp{Heapspeicherverwaltung (löschen von Objekten)}
+\minpurp{Heapspeicherverwaltung}
+\submeth{Heap}
+Blöcke mit längenangaben, verkettet, werden nach speicher durchsucht
+
 \submeth{Probleme} Memory Leak, Dangling References, Garbage
 
 \minmeth{manuell}
@@ -115,24 +131,24 @@ Probleme: Zyklen sind selbsterhaltend
 
 \submeth{automatisch} Smartpointer (shared\_ptr / weak\_ptr, unabhängig davon unique\_ptr)
 
-\submeth{Implementierung (C++)} Handle mit Zeiger, \#ptr und \#wptr
+Implementierung (C++) Handle mit Zeiger, \#ptr und \#wptr
 
 \minmeth{Garbage Collection}
-Wurzeln: direkt verwendbare Objekte: Register,Stack,globale Variablen
+\submeth{Wurzeln} direkt verwendbare Objekte: Register,Stack,globale Variablen
 
-Lebendige Objekte sind direkt oder indirekt von Wurzeln erreichbar, ansonsten Garbage
+Lebendige Objekte sind direkt oder indirekt von Wurzeln erreichbar, Rest Garbage
 
 Vorraussetzung: Zeiger müssen durch Metadaten gefunden werden (Funktionen werden anhand von Rücksprungadresse identifiziert, Objekte mit RTTI)
 
 \submeth{Copy GC /Scavenge/ Stop\& Copy}
-Halbierung Speicher in from-space (genutzt) und to-space (ungenutzt)
+Halbierung Speicher in from-space (genutzt) und to-space (ungenutzt);
 Tausch der Rollen nach jedem Vorgang
 
-1. Alle direkt von Wurzeln erreichbaren Objekte => in den to-space kopieren; Eintragen der neuen Adresse an alter Speicherstelle (wird in allen Zeigern darauf eingetragen; 
+1. Alle direkt von Wurzeln erreichbaren Objekte => in den to-space kopieren; Eintragen der neuen Adresse an alter Speicherstelle (wird in allen Zeigern darauf eingetragen)
 
 2. Dasselbe mit allen von den Objekten im to-space erreichbaren Objekte. (Breitensuche)
 
-Vorteil: Laufzeit linear zu anzahl gültiger Objekte; kompaktifiziert
+Vorteil: Laufzeit linear zu Anzahl gültiger Objekte; kompaktifiziert
 
 Nachteil: hälfte des Speichers nicht nutzbar
 
@@ -152,4 +168,14 @@ Analog zu Mark-Sweep Compact ohne 3. Schritt;
 Vorteil: keine Zeigerkorrekturen nötig
 
 Nachteil: Fragmentierung des Speichers
+
+\submeth{Mehrgenerationen GC}
+kurzlebige temporäre Objekte, langlebige Geschäftsobjekte
+
+=> Aufteilen des Heaps in Generationen (0-$\dots$); Nach überleben mehrerer GCs verschieben in höhere Generation; GC höherer Generationen nur wenn GC unterer Generationen nicht ausreichend. Gen 0: Copy GC; darüber Mark-Sweep(-Compact)
+
+\textit{Schreibbarriere:} Protokollieren der Zeiger Gen 1 auf Gen 0 pro Card (8kB Block) in Card Table (1Byte pro Karte). => Traversieren nicht durch Generation 1 sondern nur in den markierten Cards. 
+
+=> Markierung und Zeigerkorrektur schneller, Zeigerupdates langsamer
+
 
