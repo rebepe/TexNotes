@@ -1,3 +1,6 @@
+\minpurp{Muster Allgemein}
+Lösungsschablone zur Lösung eines Problems, in der Praxis bewährt
+
 \minpurp{Architekturmuster}
 Vorraussetzung: Modularität
 
@@ -22,34 +25,57 @@ Bei Implementierung als Observer Pattern: Observable->Model, Observer->View,Cont
 \minpurp{Design Pattern}
 Vorraussetzung: Objektorientierung
 
-\minmeth{Strategy} Austauschbare Algorithmen\\
-\includegraphics[width=0.2\textwidth]{strategy}
+\quarterpage{
+\minmeth{Strategy} Austauschbare Algorithmen
 
-\minmeth{Observer} Informieren von Objekten über Zustandsänderungen eines Objektes\\
-\includegraphics[width=0.24\textwidth]{observer}
-Varianten:\\
+\includegraphics[width=0.9\textwidth]{strategy}
+}
+\quarterpage{
+\minmeth{Iterator} Sequentieller Zugriff auf Elemente eines Aggregats ohne interna preiszugeben. 
+
+\includegraphics[width=0.9\textwidth]{iterator}
+}
+
+\halfpage{
+\minmeth{Observer} Informieren von Objekten über Zustandsänderungen eines Objektes
+Varianten:
+
 Pull: keine information im notify
+
 Push: Zustandsänderung wird mitgeschickt
 
-\minmeth{Iterator} Sequentieller Zugriff auf Elemente eines Aggregats ohne interna preiszugeben. 
-\includegraphics[width=0.3\textwidth]{iterator}
+\includegraphics[width=0.6\textwidth]{observer}
+}
 
-\minmeth{Composite} Abbildung einer Hierarchie, Verwendung der Teile unabhängig von der Position (Knoten vs Blatt)\\
-Lösung: Schnittstelle mit Operationen für Hierarchieverwaltung und Elementfunktionen => Keine Unterschiede für Client
-\includegraphics[width=0.2\textwidth]{Composite}
+\halfpage{
+\divpage{
+\minmeth{Composite} Hierarchiestruktur, 
 
+Verwendung der Teile unabhängig von der Position (Knoten vs Blatt)
+
+Lösung: Schnittstelle mit Operationen für Hierarchieverwaltung und Elementfunktionen
+
+=> Keine Unterschiede für Client
+}\divpage{ ~~~~
+
+\includegraphics[width=0.9\textwidth]{Composite}
+}
+}
+
+\halfpage{
 \minmeth{Factory Method}
 
 Problem: Objekt erzeugen. Nur Schnittstelle nicht konkrete Klasse bekannt. 
 
 Factory Method: Hook für Subklasse, um Verhalten in der Basisklasse zu konfigurieren. Product und Creator bilden häufig „parallele“ Klassenhierarchien.
 \includegraphics[width=0.3\textwidth]{factory}
+}
 
+\halfpage{
 \minmeth{Abstract Factory}
 
 entkopplung Objekterzeugung/-verwendung. Factory Method legt Klasse der Objekte fest. 
-
-Delegieren Objekterzeugung.
+(Delegieren Objekterzeugung)
 
 Factory Instanzen implementieren Factory Methoden für Objekte einer Klassenfamilie
 
@@ -60,7 +86,86 @@ Produkt vor. Definiere pro Produktfamilie eine ConcreteFactory Klasse
 von Produktfamilien ist einfach. Schwierig, neue Produkte einzuführen, da alle
 Factoryklassen um eine Methode ergänzt werden müssen.
 
-\includegraphics[width=0.3\textwidth]{abstractfactory-eps-converted-to}
+\includegraphics[width=0.7\textwidth]{abstractfactory-eps-converted-to}
+}
+
+\halfpage{
+\minmeth{Adapter}
+Client erwartet andere Schnittstelle als Service bietet (z.B. Legacy)
+
+=> Adapter Zwischenobjekt
+
+Implementierungen: 
+
+\halfpage{
+class Adapter
+
+\includegraphics[width=0.9\textwidth]{adapterclass}
+}
+\halfpage{
+object Adapter
+
+\includegraphics[width=0.9\textwidth]{adapterdelegate}
+}
+
+\submeth{Vergleich}Schnittstelle, welche verschieden vom Service Objekt ist.
+
+Varianten: Two-Way-Adapter: Adapter bietet beide Schnittstellen an
+
+Adapt Interface: Klasse implementiert nicht alle methoden der Schnittstelle => adapter liefert default implementierung.
+
+}
+
+\halfpage{
+\begin{minipage}{0.6\textwidth}
+\minmeth{Proxy}
+Bei teurem Zugriff auf Service Objekt (z.B nur bei Bedarf erzeugen u. initialisieren)
+
+Entkopplung des Aufrufs durch Zwischenobjekt
+
+\submeth{Vergleich}Proxy Implement gleiche Schnittstelle wie Service Objekt.
+\end{minipage}
+\includegraphics[width=0.4\textwidth]{proxy}
+}
+
+\halfpage{
+\divpage{
+\minmeth{Dekorator}
+Funktionalität von Instanzen erweitern, ohne Klasse zu verändern
+
+=> Objekt in Dekorator kapseln 
+
+\submeth{Vergleich} Schnittstelle, welche die des Service Objekts erweitert.
+}
+\divpage{ ~
+
+\includegraphics[width=0.8\textwidth]{Dekorator}
+}
+}
+
+\halfpage{
+\minmeth{Facade}
+
+Client interagiert mit vielen Schnittstellen eines Subsystems => erhöhte Kompexität und Abhängigkeiten => Zusammenfassen in einem Objekt
+}
+
+\halfpage{
+\minmeth{Command}
+kapselung von Operation mit Kontext z.B. für Queueing, entkoppeln auswahl/ausführen (z.B. in anderem Thread), gruppieren von Operationen 
+
+\includegraphics[width=0.6\textwidth]{Command}
+
+}
+\halfpage{
+\divpage{\minmeth{Singleton}
+Nur eine Instanz der Klasse, globaler Zugriffsmechanismus 
+
+=> statische Fabrikmethode getInstance; private Konstruktoren; 
+}\divpage{~ 
+
+\includegraphics[width=0.5\textwidth]{Singleton}
+}
+}
 
 \minpurp{Programmieridiome}
 Vorraussetzung: Konkrete Sprache
@@ -68,3 +173,5 @@ Vorraussetzung: Konkrete Sprache
 \minmeth{Mixin} Erweitert bestehende Klasse ohne Vererbung zu verändern\\
 \textcolor{mehrblau}{ohne Mehrfachvererbung}, \textcolor{mehrred}{mit Mehrfachvererbung}\\
 \includegraphics[width=0.24\textwidth]{mixinjava}
+
+

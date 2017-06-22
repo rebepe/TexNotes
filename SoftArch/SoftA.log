@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  18 JUN 2017 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  21 JUN 2017 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,39 +1010,47 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (./SoftA.aux)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip59
+\enit@outerparindent=\dimen171
+\enit@toks=\toks27
+\enit@inbox=\box72
+\enitdp@description=\count145
+) (./SoftA.aux)
 \openout1 = `SoftA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
-\scratchdimen=\dimen171
-\scratchbox=\box72
-\nofMPsegments=\count146
-\nofMParguments=\count147
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count148
-\MPscratchDim=\dimen172
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count146
+\scratchdimen=\dimen172
+\scratchbox=\box73
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count149
+\MPscratchDim=\dimen173
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -1127,21 +1135,14 @@ Package caption Info: End \AtBeginDocument code.
 (./allgemein.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 3.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ) (./OO.tex
 Underfull \hbox (badness 5681) in paragraph at lines 9--10
@@ -1188,21 +1189,32 @@ Overfull \hbox (12.82909pt too wide) in paragraph at lines 24--33
 [][] 
  []
 
-[1
+) (./CCode.tex) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./CCode.tex)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (./Pattern.tex
-Overfull \hbox (10.21901pt too wide) in paragraph at lines 20--21
+Overfull \hbox (10.21901pt too wide) in paragraph at lines 23--24
 []\T1/ptm/m/n/10.95 Bei Im-ple-men-tie-rung als Ob-ser-ver Pat-tern: Observable
 ->Model, Observer->View,Controller 
  []
 
-<strategy.png, id=10, 258.0039pt x 93.951pt>
+<strategy.png, id=10, 258.0039pt x 54.2025pt>
 File: strategy.png Graphic file (type png)
  <use strategy.png>
-Package pdftex.def Info: strategy.png used on input line 26.
-(pdftex.def)             Requested size: 157.62585pt x 57.39891pt.
+Package pdftex.def Info: strategy.png used on input line 32.
+(pdftex.def)             Requested size: 170.24126pt x 35.76465pt.
+
+<iterator.png, id=12, 272.89153pt x 95.25186pt>
+File: iterator.png Graphic file (type png)
+ <use iterator.png>
+Package pdftex.def Info: iterator.png used on input line 37.
+(pdftex.def)             Requested size: 170.24126pt x 59.4218pt.
+
+Overfull \hbox (4.9263pt too wide) in paragraph at lines 32--38
+[][] [] 
+ []
+
 Package epstopdf Info: Source file: <observer.eps>
 (epstopdf)                    date: 2014-07-12 10:18:07
 (epstopdf)                    size: 246880 bytes
@@ -1211,98 +1223,182 @@ Package epstopdf Info: Source file: <observer.eps>
 (epstopdf)                    size: 71889 bytes
 (epstopdf)             Command: <repstopdf --outfile=observer-eps-converted-to.
 pdf observer.eps>
-(epstopdf)             \includegraphics on input line 29.
+(epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
-
-<observer-eps-converted-to.pdf, id=12, 400.49625pt x 223.83624pt>
+<observer-eps-converted-to.pdf, id=13, 400.49625pt x 223.83624pt>
 File: observer-eps-converted-to.pdf Graphic file (type pdf)
 
 <use observer-eps-converted-to.pdf>
-Package pdftex.def Info: observer-eps-converted-to.pdf used on input line 29.
-(pdftex.def)             Requested size: 189.15825pt x 105.7222pt.
-Package epstopdf Info: Source file: <iterator.eps>
-(epstopdf)                    date: 2013-06-19 14:05:12
-(epstopdf)                    size: 115633 bytes
-(epstopdf)             Output file: <iterator-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-31 18:23:28
-(epstopdf)                    size: 27980 bytes
-(epstopdf)             Command: <repstopdf --outfile=iterator-eps-converted-to.
-pdf iterator.eps>
-(epstopdf)             \includegraphics on input line 35.
-Package epstopdf Info: Output file is already uptodate.
+Package pdftex.def Info: observer-eps-converted-to.pdf used on input line 48.
+(pdftex.def)             Requested size: 231.7185pt x 129.50746pt.
 
-<iterator-eps-converted-to.pdf, id=13, 275.0275pt x 170.6375pt>
-File: iterator-eps-converted-to.pdf Graphic file (type pdf)
-
-<use iterator-eps-converted-to.pdf>
-Package pdftex.def Info: iterator-eps-converted-to.pdf used on input line 35.
-(pdftex.def)             Requested size: 236.44481pt x 146.70372pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 48--49
+[][] 
+ []
 
 <Composite.png, id=14, 231.9867pt x 127.9179pt>
 File: Composite.png Graphic file (type png)
  <use Composite.png>
-Package pdftex.def Info: Composite.png used on input line 39.
-(pdftex.def)             Requested size: 157.62585pt x 86.91469pt.
+Package pdftex.def Info: Composite.png used on input line 63.
+(pdftex.def)             Requested size: 156.40627pt x 86.24324pt.
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 63--64
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 <factory.png, id=15, 204.5241pt x 63.5976pt>
 File: factory.png Graphic file (type png)
  <use factory.png>
-Package pdftex.def Info: factory.png used on input line 46.
-(pdftex.def)             Requested size: 236.44481pt x 73.52579pt.
+Package pdftex.def Info: factory.png used on input line 72.
+(pdftex.def)             Requested size: 115.85925pt x 36.02682pt.
 
-Underfull \hbox (badness 7203) in paragraph at lines 45--47
+Underfull \hbox (badness 6332) in paragraph at lines 72--72
 []\T1/ptm/m/n/10.95 Factory Me-thod: Hook für Sub-klas-se, um Ver-hal-ten in de
 r Ba-sis-klas-se zu
  []
 
 
-Underfull \hbox (badness 3088) in paragraph at lines 45--47
+Underfull \hbox (badness 2409) in paragraph at lines 72--72
 \T1/ptm/m/n/10.95 kon-fi-gu-rie-ren. Pro-duct und Crea-tor bil-den häu-fig ^^Rp
 ar-al-le-le^^P Klas-sen-hier-ar-chi-en.
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 72--73
+[][] 
+ []
 
- [2 <./strategy.png> <./observer-eps-converted-to.pdf> <./iterator-eps-converte
-d-to.pdf> <./Composite.png> <./factory.png>]
-<abstractfactory-eps-converted-to.pdf, id=26, 432.61626pt x 224.84pt>
+<abstractfactory-eps-converted-to.pdf, id=16, 432.61626pt x 224.84pt>
 File: abstractfactory-eps-converted-to.pdf Graphic file (type pdf)
 
 <use abstractfactory-eps-converted-to.pdf>
 Package pdftex.def Info: abstractfactory-eps-converted-to.pdf used on input lin
-e 63.
-(pdftex.def)             Requested size: 236.44481pt x 122.88702pt.
+e 90.
+(pdftex.def)             Requested size: 270.33432pt x 140.50406pt.
 
-<mixinjava.png, id=27, 243.5499pt x 197.2971pt>
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 90--91
+[][] 
+ []
+
+<adapterclass.pdf, id=17, 230.54129pt x 63.5976pt>
+File: adapterclass.pdf Graphic file (type pdf)
+ <use adapterclass.pdf>
+Package pdftex.def Info: adapterclass.pdf used on input line 117.
+(pdftex.def)             Requested size: 170.3121pt x 46.98384pt.
+
+<adapterdelegate.pdf, id=18, 230.54129pt x 63.5976pt>
+File: adapterdelegate.pdf Graphic file (type pdf)
+
+<use adapterdelegate.pdf>
+Package pdftex.def Info: adapterdelegate.pdf used on input line 117.
+(pdftex.def)             Requested size: 170.3121pt x 46.98384pt.
+
+Overfull \hbox (7.96083pt too wide) in paragraph at lines 117--117
+[][] [] 
+ []
+
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 117--118
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./strategy.png> <./iterator.png> <./observer-eps-converted-to.pdf> <./Comp
+osite.png> <./factory.png> <./abstractfactory-eps-converted-to.pdf>]
+<proxy.png, id=30, 384.4764pt x 101.9007pt>
+File: proxy.png Graphic file (type png)
+ <use proxy.png>
+Package pdftex.def Info: proxy.png used on input line 129.
+(pdftex.def)             Requested size: 154.47507pt x 40.94147pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 129--129
+[]$[]$ []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+
+ []
+
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 129--130
+[][] 
+ []
+
+<Dekorator.png, id=31, 218.83356pt x 160.72849pt>
+File: Dekorator.png Graphic file (type png)
+ <use Dekorator.png>
+Package pdftex.def Info: Dekorator.png used on input line 144.
+(pdftex.def)             Requested size: 139.02927pt x 102.11539pt.
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 144--145
+[][] 
+ []
+
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 150--151
+[][] 
+ []
+
+<Command.png, id=32, 276.0714pt x 106.2369pt>
+File: Command.png Graphic file (type png)
+ <use Command.png>
+Package pdftex.def Info: Command.png used on input line 158.
+(pdftex.def)             Requested size: 231.7185pt x 89.17027pt.
+
+<Singleton.png, id=33, 94.6737pt x 50.22765pt>
+File: Singleton.png Graphic file (type png)
+ <use Singleton.png>
+Package pdftex.def Info: Singleton.png used on input line 168.
+(pdftex.def)             Requested size: 86.89296pt x 46.10037pt.
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 158--169
+[][]
+ []
+
+
+Overfull \hbox (3.9229pt too wide) in paragraph at lines 158--169
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<mixinjava.png, id=34, 243.5499pt x 197.2971pt>
 File: mixinjava.png Graphic file (type png)
  <use mixinjava.png>
-Package pdftex.def Info: mixinjava.png used on input line 70.
+Package pdftex.def Info: mixinjava.png used on input line 175.
 (pdftex.def)             Requested size: 189.15825pt x 153.23482pt.
-) [3
+) [3 <./adapterclass.pdf> <./adapterdelegate.pdf
 
- <./abstractfactory-eps-converted-to.pdf> <./mixinjava.png>] (./SoftA.aux) ) 
+pdfTeX warning: pdflatex (file ./adapterdelegate.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+> <./proxy.png (PNG copy)> <./Dekorator.png> <./Command.png> <./Singleton.png> 
+<./mixinjava.png>] (./SoftA.aux) ) 
 Here is how much of TeX's memory you used:
- 14846 strings out of 493029
- 257851 string characters out of 6136235
- 374151 words of memory out of 5000000
- 18196 multiletter control sequences out of 15000+600000
+ 15159 strings out of 493029
+ 263079 string characters out of 6136235
+ 381344 words of memory out of 5000000
+ 18499 multiletter control sequences out of 15000+600000
  23188 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,8n,66p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/u
-sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8
-a.pfb>
-Output written on SoftA.pdf (3 pages, 275938 bytes).
+ 47i,10n,66p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SoftA.pdf (3 pages, 370552 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
