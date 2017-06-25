@@ -1,4 +1,8 @@
 \input{../MerkzettelPraeambel.tex}
+
+\geometry{a4paper, top=7mm, left=10mm, right=10mm, bottom=5mm, nofoot}
+
+
 \usepackage{amssymb}
 
 \usepackage{enumitem}
@@ -18,11 +22,12 @@
 \renewcommand{\halfpage}[1]{\fbox{\begin{minipage}[b]{0.49\textwidth} #1 \end{minipage}}}
 
 \newcommand{\divpage}[1]{\begin{minipage}[t]{0.45\textwidth} #1 \end{minipage}}
+
 \begin{document}
 
 \input{allgemein.tex}
 \input{OO.tex}
-\input{CCode.tex}
+
 
 \newpage
 \input{Pattern.tex}

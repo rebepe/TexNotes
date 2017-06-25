@@ -6,9 +6,17 @@
 \end{itemize}
 \minmeth{Vererbung}
 
-\submeth{Subtyping} Vererbung von ähnlichem Verhalten (Signaturen) => Generalisierung/Spezialisierung und Realisierung
+\textbf{Arten:}
 
-\submeth{Subclassing} Vererbung von Implementierungen => nur Generalisierung/Spezialisierung
+Realisierung: Interfacevererbung => nur Subtyping
+
+Generalisierung/Spezialisierung: Classenvererbung => Subtyping und Subclassing
+
+\textbf{Facetten:}
+
+\submeth{Subtyping} Vererbung von ähnlichem Verhalten/Contractfragmenten (Signaturen) 
+
+\submeth{Subclassing} Vererbung von Implementierungen 
 
 \minmeth{Liskovsches Substitutionsprinzip}
 
@@ -16,7 +24,7 @@ S1: Subtypen haben gleiche Operationen mit kompatibler Signatur (Compilergeprüf
 
 S2: Subtypen zeigen das gleiche Verhalten (Programmierergeprüft)
 
-=> Design-By-Contract: Subtypen dürfen Precondition (Anfang der Methode/Parameter) schwächen (OR verknüpfung), und/oder Postconditions (Ende der Methode/Rückgaben) stärken (AND Verknüpfung) => Obermenge der gültigen Eingaben, Teilmenge der gültigen Ausgaben.
+=> Design-By-Contract: Subtypen dürfen Precondition (Anfang der Methode/Parameter) schwächen (AND-Terme weglassen), und/oder Postconditions (Ende der Methode/Rückgaben) stärken (AND Verknüpfung) => Obermenge der gültigen Eingaben, Teilmenge der gültigen Ausgaben.
 
 \minmeth{Ko- Kontravariant}
 Szenario: Unterklasse überschreibt Methode in Oberklasse mit anderen Typen in Ein- Ausgabewerten.

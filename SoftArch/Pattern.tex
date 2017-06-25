@@ -20,7 +20,11 @@ View: Darstellung der vom Model abgefragten Daten
 
 Controller: Auswertung Benutzereingaben => Aufruf von Model bzw. Viewfunktionen
 
-Bei Implementierung als Observer Pattern: Observable->Model, Observer->View,Controller
+Bei Implementierung: 
+
+Observer Pattern: Observable->Model, Observer->View,Controller
+
+Command Pattern: Aufrufer->View, Befehl->Controller (Interface) Konkreter Befehl->ControllerImpl.
 
 \minpurp{Design Pattern}
 Vorraussetzung: Objektorientierung
@@ -68,7 +72,7 @@ Lösung: Schnittstelle mit Operationen für Hierarchieverwaltung und Elementfunk
 Problem: Objekt erzeugen. Nur Schnittstelle nicht konkrete Klasse bekannt. 
 
 Factory Method: Hook für Subklasse, um Verhalten in der Basisklasse zu konfigurieren. Product und Creator bilden häufig „parallele“ Klassenhierarchien.
-\includegraphics[width=0.3\textwidth]{factory}
+\includegraphics[width=0.6\textwidth]{factory}
 }
 
 \halfpage{
