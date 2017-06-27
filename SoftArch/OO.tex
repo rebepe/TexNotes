@@ -2,15 +2,29 @@
 \minmeth{Prinzipien eines wiederverwendbaren OO Designs}
 \begin{itemize}
 \item Program to an Interface, not an Implementation
-\item Favor delegation over class inheritance
+\item Favor delegation over class inheritance. \\(Delegation: aufruf der methode in anderer Klasse z.B Strategy)
 \end{itemize}
+
+\minmeth{Law of Demeter/Feature Envy}
+Empfehlung: Klassen sollten nur mit direkt gekoppelten Klassen arbeiten, nicht mit indirekt verknüpften
+
+A $\rightarrow$ B $\rightarrow$ C => A ruft methoden von B auf, nicht von C
+
+\minmeth{high Fan-In, lowFan-Out}
+Fan-in: Anzahl der Module, die das Modul verwenden (tolerabel)
+Fan-out: Anzahl der verwendeten Module (möglichst klein)
+
+\minmeth{Open-Close Prinzip}
+Offen für Erweiterung, geschlossen für Veränderungen
+
+
 \minmeth{Vererbung}
 
 \textbf{Arten:}
 
 Realisierung: Interfacevererbung => nur Subtyping
 
-Generalisierung/Spezialisierung: Classenvererbung => Subtyping und Subclassing
+Generalisierung/Spezialisierung: Klassenvererbung => Subtyping und Subclassing
 
 \textbf{Facetten:}
 
@@ -38,19 +52,3 @@ kovariant & ist \textcolor{red}{Subtyp} des Parameters in Oberklasse & unsicher 
 kontravariant & ist \textcolor{red}{Obertyp} des Parameters in Oberklasse & sicher & unsicher \\
 \hline
 \end{tabular}
-
-
-\minmeth{Delegation}
-siehe Design Pattern Strategy
-
-\minmeth{Law of Demeter/Feature Envy}
-Empfehlung: Klassen sollten nur mit direkt gekoppelten Klassen arbeiten, nicht mit indirekt verknüpften
-
-A $\rightarrow$ B $\rightarrow$ C => A ruft methoden von B auf, nicht von C
-
-\minmeth{high Fan-In, lowFan-Out}
-Fan-in: Anzahl der Module, die das Modul verwenden (tolerabel)
-Fan-out: Anzahl der verwendeten Module (möglichst klein)
-
-\minmeth{Open-Close Prinzip}
-Offen für Erweiterung, geschlossen für Veränderungen

@@ -22,26 +22,36 @@ Controller: Auswertung Benutzereingaben => Aufruf von Model bzw. Viewfunktionen
 
 Bei Implementierung: 
 
-Observer Pattern: Observable->Model, Observer->View,Controller
+\submeth{Observer Pattern} Observable->Model, Observer->View,Controller
 
-Command Pattern: Aufrufer->View, Befehl->Controller (Interface) Konkreter Befehl->ControllerImpl.
+\submeth{Command Pattern} Aufrufer->View, Befehl->Controller (Interface) \\Konkreter Befehl->ControllerImpl.
 
 \minpurp{Design Pattern}
 Vorraussetzung: Objektorientierung
 
-\quarterpage{
-\minmeth{Strategy} Austauschbare Algorithmen
-
-\includegraphics[width=0.9\textwidth]{strategy}
+\halfpage{
+\begin{minipage}{0.5\textwidth}
+\minmeth{Strategy} 
+Austauschbare Algorithmen \\
+Nachteil: viele Objekte
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\textwidth]{strategy}
+\end{minipage}
 }
-\quarterpage{
+\halfpage{
+\begin{minipage}{0.5\textwidth}
 \minmeth{Iterator} Sequentieller Zugriff auf Elemente eines Aggregats ohne interna preiszugeben. 
-
-\includegraphics[width=0.9\textwidth]{iterator}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\textwidth]{iterator}
+\end{minipage}
 }
 
 \halfpage{
 \minmeth{Observer} Informieren von Objekten über Zustandsänderungen eines Objektes
+
+
 Varianten:
 
 Pull: keine information im notify
@@ -129,28 +139,35 @@ Entkopplung des Aufrufs durch Zwischenobjekt
 
 \submeth{Vergleich}Proxy Implement gleiche Schnittstelle wie Service Objekt.
 \end{minipage}
-\includegraphics[width=0.4\textwidth]{proxy}
+\begin{minipage}{0.4\textwidth}
+\includegraphics[width=\textwidth]{proxy}
+\end{minipage}
 }
 
 \halfpage{
-\divpage{
+\begin{minipage}{0.5\textwidth}
 \minmeth{Dekorator}
-Funktionalität von Instanzen erweitern, ohne Klasse zu verändern
+Funktionalität von \textbf{Instanzen} erweitern, ohne Klasse zu verändern
 
 => Objekt in Dekorator kapseln 
 
 \submeth{Vergleich} Schnittstelle, welche die des Service Objekts erweitert.
-}
-\divpage{ ~
-
-\includegraphics[width=0.8\textwidth]{Dekorator}
-}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{Dekorator}
+\end{minipage}
 }
 
 \halfpage{
 \minmeth{Facade}
 
-Client interagiert mit vielen Schnittstellen eines Subsystems => erhöhte Kompexität und Abhängigkeiten => Zusammenfassen in einem Objekt
+Client interagiert mit vielen Schnittstellen eines Subsystems => erhöhte Kompexität und Abhängigkeiten
+
+=> Zusammenfassen verwendeter Operationen in einem Objekt mit dem Clients interagieren
+
+=> vereinfachte Subsystemschnittstelle
+
+\includegraphics[width=0.9\textwidth]{Facade}
 }
 
 \halfpage{
@@ -179,3 +196,7 @@ Vorraussetzung: Konkrete Sprache
 \includegraphics[width=0.24\textwidth]{mixinjava}
 
 
+\minpurp{UML Hinweise}
+\includegraphics[width=0.24\textwidth]{abstoint}
+
+Vererbung:  Interface zu Klasse: gestrichelt, sonst durchgezogen.
