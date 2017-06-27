@@ -15,7 +15,9 @@
 \newcommand{\object}[1]{\textcolor{darkblue}{\textit{#1}~}}
 \newcommand{\optobject}[1]{ \textcolor{lightgray}{\textit{#1}}}
 
-\minpurp{Kompiliervorgang} 
+
+\textbf{\textcolor{purple}{ Kompiliervorgang}}
+\rule{2cm}{0cm}
 \fbox{Legende: \optobject{optional} \object{Artefakt} \process{Verarbeitung} }
 
 \object{Zeichenstrom}
@@ -69,7 +71,7 @@ Rekonstruiert Ableitungsbaum (bzw. den reduzierten AST) gemäß der Grammatik de
 
 \end{itemize}
 
-
+\newpage
 \minmeth{Semantische Analyse}
 Statische Bindungen (Bezeichner-Objekt $\rightarrow$ Typ-Objekt)$\Rightarrow$ Symboltabelle und AST
 
@@ -134,11 +136,4 @@ dynamisch: separate Bibliotheken; Linking Loader bindet vor Ausführung im RAM (
 Zur Ausführung nötiger Code (der Sprache) z.B. für:
 
 Code-Verifikation, JIT, Exceptions, Garbage-Collector, Linken zur Laufzeit
-
-\minpurp{Exceptions}
-Ersatz von Fehlercode-Rückgabewerten durch Exceptions;
-
-Globale Tabellen ordnen Programmzählerbereiche entsprechenden Handlern zu; 
-
-\submeth{Stack unwinding} Werfen einer Exception => Stack nach unten durchlaufen bis gehandelt
 

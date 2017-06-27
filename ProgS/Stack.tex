@@ -1,0 +1,39 @@
+
+\minpurp{Stack}
+Aufbau Stackframe(x64 Windows): geregelt im ABI (Application Binary Interface):
+
+Aufruf erzeugt neuen Stackframe (groß genung für alle parameter) und lädt parameter. Aufbau:
+
+\fbox{
+\quarterpage{
+\begin{tabular}{|c|}
+\multicolumn{1}{l}{Unterfunktionsframe,} \\
+\multicolumn{1}{l}{\textbf{Achtung x16 Alignment}}\\
+\hline
+Shadowspace (wenn Funktionsaufruf)\\
+\textbf{4} x 8 Byte\\
+\hline
+$\cdots$\\
+Variablen (aligned)\\
+ggf. Padding\\
+$\cdots$ \\
+\hline
+Return Adress \\
+(8 Byte)\\
+\hline
+\multicolumn{1}{l}{Aufruferframe,} \\
+\multicolumn{1}{l}{\textbf{Achtung x16 Alignment}}
+\end{tabular}
+}
+}
+\quarterpage{
+\minmeth{Parameterübergaberegister }
+RCX, RDX, R8, R9\\
+\minmeth{Rückgaberegister} RAX \\
+\minmeth{Caller saved}
+RAX, RCX, RDX, R8, R9, R10, R11 \\
+(Unterprogramm kann überschreiben)\\
+\minmeth{Callee preserved}
+ RBX, RBP, RDI, RSI, RSP, R12...R15 \\
+(Unterprogram  muss sichern(Prolog) \\und restaurieren (Epilog))
+}

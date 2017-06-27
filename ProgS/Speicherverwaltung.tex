@@ -1,16 +1,15 @@
 \minpurp{Speicherverwaltung}
-\submeth{Zugriff} Symboltabelle (von Funktion/Struct) speichert offset
-
 \minmeth{Lebensdauer}
 \submeth{Global} unbegrenzt\\
 \submeth{Stack} allokation/freigabe mit funktionsaufruf/rückgabe\\
-\submeth{Heap} explizite reservierung/freigabe (Bei fehlern: Memory Leak/dangling reference)
+\submeth{Heap} Anlegen: Blöcke mit längenangaben, verkettet, werden nach speicher durchsucht\\
+=> explizite reservierung/freigabe (Bei fehlern: Memory Leak/dangling reference)
 
+\minmeth{Zugriff} Symboltabelle (von Funktion/Struct) speichert offset
 
 \minmeth{Alignment}
 \submeth{primitive Typen} Adresse muss durch Größe teilbar sein (z.B. Pointer: x8-Adressen)\\
-\submeth{Zusammengesetzte Typen (Struct)} Alignment vom größten Element; \\padding auf nächste Alignte größe, auch am ende \\
-(z.B. {int, bool} => x4) 
+\submeth{Zusammengesetzte Typen (Struct)} Alignment vom größten Element; \\padding auf nächste Alignte größe, auch am ende (z.B. {int, bool} => x4) 
 
 Struct/Class: Reihenfolge wird nicht verändert.
 
@@ -30,75 +29,10 @@ Javascript & 1 &&&&8&8\\
 \end{tabular}
 
 
-\minmeth{Stack}
-Aufbau Stackframe(x64 Windows): geregelt im ABI (Application Binary Interface):
-
-Aufruf erzeugt neuen Stackframe (groß genung für alle parameter) und lädt parameter. Aufbau:
-
-\fbox{
-\quarterpage{
-\newcommand{\shadowspace}{\hline
-Shadowspace\\
-(8 Byte)\\}
-\begin{tabular}{|c|}
-\multicolumn{1}{l}{(16bit aligned):}\\
-\shadowspace
-\shadowspace
-\shadowspace
-\shadowspace
-\hline
-$\cdots$\\
-Variablen (aligned)\\
-ggf. Leerräume\\
-$\cdots$ \\
-\hline
-Return Adress \\
-(8 Byte)\\
-\hline
-\multicolumn{1}{l}{Nächster Frame,} \\
-\multicolumn{1}{l}{\textbf{Achtung x16 Alignment}}
-\end{tabular}
-}}
-\quarterpage{
-Parameterübergaberegister: 
-
-RCX, RDX, R8, R9\\
-
-Rückgaberegister: RAX \\
-
-Caller saved: 
-
-RAX, RCX, RDX, R8, R9, R10, R11 \\
-(Unterprogramm kann überschreiben)\\
-
-Callee preserved:
-
- RBX, RBP, RDI, RSI, RSP, R12...R15 \\
-(Unterprogram  muss sichern(Prolog) \\und restaurieren (Epilog))
-}
  
 
 
 
-\minmeth{Funktionen}
-\submeth{Statische Kette} nichtlokale Variablen in darunterliegenden Stackframes, implementierung durch Pointer
-
-\submeth{Closure} wird bei übergabe/speichern von Funktion gebildet. (Lambda)\\ Besteht aus Funktionszeiger und zeiger auf Heap-Objekt mit den gefangenen Variablen\\
-Löst upward Funarg problem(Verweis auf nicht mehr existierende stackframes)\\
-Ggf. teil der statische kette
-
-
-
-\submeth{Parameterübergabe}
-Call by Value: Wert wird kopiert
-
-"Call by Sharing": Call by Value einer Pointervariable ( => Swap nicht möglich)
-
-Call by Reference: Zeiger auf übergebene Variable
-
-Call by const Reference (c++): analog Call by reference, verbot schreibzugriff
-
-Call by name: unausgewertete Übergabe durch implizite(explizite) Closures
 
 
 
@@ -111,73 +45,3 @@ Dynamischer Typ (u.a. Vererbung) => Zeiger auf Typobjekt im Deskriptor
 Typobjekt: Virtual Table (Adressen der \textbf{virtuellen} Methoden)
 
 In C\#/Java: zus.: Verweis auf Obertyp und andere Metadaten
-
-
-\minpurp{Heapspeicherverwaltung}
-\submeth{Heap}
-Blöcke mit längenangaben, verkettet, werden nach speicher durchsucht
-
-\submeth{Probleme} Memory Leak, Dangling References, Garbage
-
-\minmeth{manuell}
-freigabe durch programmierer (C++: delete)
-
-\minmeth{Reference Counting}
-Zähler für daraufzeigende Pointer, löschen wenn zähler=0
-
-Probleme: Zyklen sind selbsterhaltend 
-
-=> schwache pointer: Beeinflussen Counter nicht -> existenzprüfung!
-
-\submeth{manuell} Programmierer muss zähler selbst erhöhen/reduzieren (Bsp: COM)
-
-\submeth{automatisch} Smartpointer (shared\_ptr / weak\_ptr, unabhängig davon unique\_ptr)
-
-Implementierung (C++) Handle mit Zeiger, \#ptr und \#wptr
-
-\minmeth{Garbage Collection}
-\submeth{Wurzeln} direkt verwendbare Objekte: Register,Stack,globale Variablen
-
-Lebendige Objekte sind direkt oder indirekt von Wurzeln erreichbar, Rest Garbage
-
-Vorraussetzung: Zeiger müssen durch Metadaten gefunden werden (Funktionen werden anhand von Rücksprungadresse identifiziert, Objekte mit RTTI)
-
-\submeth{Copy GC /Scavenge/ Stop\& Copy}
-Halbierung Speicher in from-space (genutzt) und to-space (ungenutzt);
-Tausch der Rollen nach jedem Vorgang
-
-1. Alle direkt von Wurzeln erreichbaren Objekte => in den to-space kopieren; Eintragen der neuen Adresse an alter Speicherstelle (wird in allen Zeigern darauf eingetragen)
-
-2. Dasselbe mit allen von den Objekten im to-space erreichbaren Objekte. (Breitensuche)
-
-Vorteil: Laufzeit linear zu Anzahl gültiger Objekte; kompaktifiziert
-
-Nachteil: hälfte des Speichers nicht nutzbar
-
-\submeth{Mark-Sweep-Compact}
-
-1. Tiefensuche lebendiger Objekte (von der Wurzel aus); Markierung im Mark-Word des Objekts oder globaler Tabelle; Forward-zeiger auf zukünftige Speicherstelle;
-
-2. Korrigieren aller Zeiger (durch Forward-Zeiger)
-
-3. Verschieben des Objekts auf den Forward-Zeiger, zurücksetzen Mark-Word 
-
-Aufwand: Mark-Phase linear zu anzahl lebendiger Objekte, Sweep-Compact linear zu Heap-Größe;
-
-\submeth{Mark-Sweep}
-Analog zu Mark-Sweep Compact ohne 3. Schritt; 
-
-Vorteil: keine Zeigerkorrekturen nötig
-
-Nachteil: Fragmentierung des Speichers
-
-\submeth{Mehrgenerationen GC}
-kurzlebige temporäre Objekte, langlebige Geschäftsobjekte
-
-=> Aufteilen des Heaps in Generationen (0-$\dots$); Nach überleben mehrerer GCs verschieben in höhere Generation; GC höherer Generationen nur wenn GC unterer Generationen nicht ausreichend. Gen 0: Copy GC; darüber Mark-Sweep(-Compact)
-
-\textit{Schreibbarriere:} Protokollieren der Zeiger Gen 1 auf Gen 0 pro Card (8kB Block) in Card Table (1Byte pro Karte). => Traversieren nicht durch Generation 1 sondern nur in den markierten Cards. 
-
-=> Markierung und Zeigerkorrektur schneller, Zeigerupdates langsamer
-
-

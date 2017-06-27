@@ -1,0 +1,62 @@
+\minpurp{Speicherfreigabe/Garbage Collection}
+\minmeth{manuell}
+freigabe durch programmierer (C++: delete)
+
+\minmeth{Reference Counting}
+Zähler für daraufzeigende Pointer, löschen wenn zähler=0
+
+Probleme: Zyklen sind selbsterhaltend 
+
+=> schwache pointer: Beeinflussen Counter nicht -> existenzprüfung!
+
+\submeth{manuell} Programmierer muss zähler selbst erhöhen/reduzieren (Bsp: COM)
+
+\submeth{automatisch} Smartpointer (shared\_ptr / weak\_ptr, unabhängig davon unique\_ptr)
+
+Implementierung (C++) Handle mit Zeiger, \#ptr und \#wptr
+
+\minmeth{Garbage Collection}
+\submeth{Wurzeln} direkt verwendbare Objekte: Register,Stack,globale Variablen
+
+Lebendige Objekte sind direkt oder indirekt von Wurzeln erreichbar, Rest Garbage
+
+Vorraussetzung: Zeiger müssen durch Metadaten gefunden werden (Funktionen werden anhand von Rücksprungadresse identifiziert, Objekte mit RTTI)
+
+\submeth{Copy GC /Scavenge/ Stop\& Copy}
+Halbierung Speicher in from-space (genutzt) und to-space (ungenutzt);
+Tausch der Rollen nach jedem Vorgang
+
+1. Alle direkt von Wurzeln erreichbaren Objekte => in den to-space kopieren; Eintragen der neuen Adresse an alter Speicherstelle (wird in allen Zeigern darauf eingetragen)
+
+2. Dasselbe mit allen von den Objekten im to-space erreichbaren Objekte. (Breitensuche)
+
+Vorteil: Laufzeit linear zu Anzahl gültiger Objekte; kompaktifiziert
+
+Nachteil: hälfte des Speichers nicht nutzbar
+
+\submeth{Mark-Sweep-Compact}
+
+1. Tiefensuche lebendiger Objekte (von der Wurzel aus); Markierung im Mark-Word des Objekts oder globaler Tabelle; Forward-zeiger auf zukünftige Speicherstelle;
+
+2. Korrigieren aller Zeiger (durch Forward-Zeiger)
+
+3. Verschieben des Objekts auf den Forward-Zeiger, zurücksetzen Mark-Word 
+
+Aufwand: Mark-Phase linear zu anzahl lebendiger Objekte, Sweep-Compact linear zu Heap-Größe;
+
+\submeth{Mark-Sweep}
+Analog zu Mark-Sweep Compact ohne 3. Schritt; 
+
+Vorteil: keine Zeigerkorrekturen nötig
+
+Nachteil: Fragmentierung des Speichers
+
+\submeth{Mehrgenerationen GC}
+kurzlebige temporäre Objekte, langlebige Geschäftsobjekte
+
+=> Aufteilen des Heaps in Generationen (0-$\dots$); Nach überleben mehrerer GCs verschieben in höhere Generation; GC höherer Generationen nur wenn GC unterer Generationen nicht ausreichend. Gen 0: Copy GC; darüber Mark-Sweep(-Compact)
+
+\textit{Schreibbarriere:} Protokollieren der Zeiger Gen 1 auf Gen 0 pro Card (8kB Block) in Card Table (1Byte pro Karte). => Traversieren nicht durch Generation 1 sondern nur in den markierten Cards. 
+
+=> Markierung und Zeigerkorrektur schneller, Zeigerupdates langsamer
+

@@ -5,6 +5,13 @@
 \usetikzlibrary{trees}
 \usetikzlibrary{arrows}
 
+
+\geometry{a4paper, top=7mm, left=10mm, right=10mm, bottom=5mm, nofoot}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+
 \definecolor{darkgreen}{rgb}{0.1,0.65,0.1}
 \definecolor{darkblue}{rgb}{0.1,0.1,0.8}
 
@@ -17,8 +24,17 @@
 %\renewcommand{\halfpage}[1]{\begin{minipage}[t]{0.49\textwidth} #1 \end{minipage}}
 \begin{document}
 \input{Grundlagen.tex}
+
+
 \input{Compiling.tex}
-\input{Bindung.tex}
+
+\newpage
+
 \input{Speicherverwaltung.tex}
+\input{Stack} \newpage
+\input{Heap.tex}
+
+\newpage
 \input{Kontrollfluss_Typen.tex}
+\input{Bindung.tex}
 \end{document}

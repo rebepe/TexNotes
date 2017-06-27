@@ -1,5 +1,41 @@
-\minpurp{Typen}
-\minmeth{Konversionen}
+\minpurp{Funktionen}
+\submeth{Statische Kette} nichtlokale Variablen in darunterliegenden Stackframes, implementierung durch Pointer
+
+\submeth{Closure} wird bei übergabe/speichern von Funktion gebildet. (Lambda)\\ 
+Besteht aus Funktionszeiger und zeiger auf Heap-Objekt mit den gefangenen Variablen\\
+Löst upward Funarg problem(Verweis auf nicht mehr existierende stackframes)\\
+Ggf. teil der statische kette
+
+C\#: Func <T1,$\dots$, Result>, Action<T>, Predicate<T>, Lambda
+
+C++: 2 Varianten: 
+
+
+capture-by-copy: gefangene Variablen werden kopiert: [\textbf{=}](int a) \{return a+4;\}
+
+capture-by-reference: Closure erhält pointer auf variablen: [\textbf{\&}](int a) \{return a+4;\}
+
+\submeth{Parameterübergabe}
+Call by Value: Wert wird kopiert
+
+"Call by Sharing": Call by Value einer Pointervariable ( => Swap nicht möglich)
+
+Call by Reference: Zeiger auf übergebene Variable
+
+Call by const Reference (c++): analog Call by reference, verbot schreibzugriff
+
+Call by name: unausgewertete Übergabe durch implizite(explizite) Closures
+
+\submeth{Methoden}
+statische Methoden werden zu normalen Funktionen aufgelöst, 
+
+nicht-virtuelle Methoden zu Funktionen mit this-Pointer als 1. Parameter, 
+
+virtuelle Methoden werden zur Laufzeit über die virtual Table im Typobjekt ausgewählt.
+
+
+
+\minpurp{Konversionen}
 \begin{tabular}{|l|l|}
 \hline
 \multicolumn{2}{|c|}{$\Leftrightarrow$}\\
@@ -18,20 +54,20 @@ Prüfung zur Laufzeit, ggf. Exception &ohne Prüfung\\
 \hline
 \end{tabular}
 
-%\minmeth{Enum vs Symbol}
+%\minpurp{Enum vs Symbol}
 %Enum: statische Typen;
 %
 %Symbole: dynamische Typen: werden nicht deklariert, bilden 1 Typ z.B. Symbol.for("Monday") in JS6
 
 
-\minmeth{Arrays}
+\minpurp{Arrays}
 \submeth{Adressrechnung} a mit größe n1,n2,n3 \\
 a[i1,i2,i3] =>  a[0] + (i1 * n2* n3 + i2* n3 + i3) * sizeof(type);
 
 \submeth{Prüfen Adressgrenzen}
 C\#: Deskriptor mit Längenangaben für jede Dimension
 
-\minmeth{Iteratoren}
+\minpurp{Iteration}
 \submeth{Äußere Iteration}Foreach schleife: von außen über die Collection
 
 \submeth{Innere Iteration} Collectionfunktion: Übergabe von Closure, ausführen für alle Elemente
@@ -44,10 +80,18 @@ Allgemein: Tail Call Optimization: funktionsaufruf als letzter schritt => kein n
 
 
 
-\minmeth{Konstanten}
+\minpurp{Konstanten}
 \submeth{Compilezeitkonstanten} feste Adressen / immediate Werte
 
 \submeth{Laufzeitkonstanten} (readonly,final)
 
 \submeth{Immutable Typen} bieten keine setter an, variablen können umverzeigert werden.
+
+\minpurp{Exceptions}
+Ersatz von Fehlercode-Rückgabewerten durch Exceptions;
+
+Globale Tabellen ordnen Programmzählerbereiche entsprechenden Handlern zu; 
+
+\submeth{Stack unwinding} Werfen einer Exception => Stack nach unten durchlaufen bis gehandelt
+
 
