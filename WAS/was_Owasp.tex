@@ -11,13 +11,12 @@ Unterarten von Injection
 	\item XML
 	\item shell
 	\end{itemize}
-
+Kann mit Escapen/ prepared Statements bekämpft werden
 \subsection*{\textcolor{darkgreen}{A2 Fehler in Authentifizierungs und Session-Management}}
 
 	\begin{itemize}
 	\item Session-Management und ID sind falsch implementiert,
 	\item Session hijacking,
-	\item Session klau, 
 	\item ID berechenbar,
 	\item Passwörter nicht gehasht,
 	\item SessionID läuft nicht ab,
@@ -27,7 +26,7 @@ Unterarten von Injection
 \subsection*{\textcolor{darkgreen}{A3 Cross-Site Scripting}}
 
 Die vom User in den Browser eingegebenen Daten werde nicht validiert bzw. die Daten die an den Server
-Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.)
+Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.) und indirekte Objektreferenz: z.B. Index auf Liste der Konten des Kunden
 
 \subsection*{\textcolor{darkgreen}{A4 Unsichere direkte Objektreferenzen}}
 
@@ -49,7 +48,7 @@ Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( man
 	\end{itemize}
 
 \subsection*{\textcolor{darkgreen}{A6 Verlust der Vertraulichkeit sensibler Daten}}
-
+Data in Motion( Daten im Arbeitsspeicher), Data at Rest ( im Backup) 
 	\begin{itemize}
 	\item Daten werden in Klartext gespeichert
 	\item Daten in Klartext übertragen
