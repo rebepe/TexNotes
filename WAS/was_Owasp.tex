@@ -1,6 +1,6 @@
 \textbf{\textcolor{darkblue}{ OWASP Top 10}}~
 
-\textcolor{darkgreen}{\subsection*{A1 Injection}}
+\subsection*{\textcolor{darkgreen}{A1 Injection}}
 
 Hier geht es um einschleusen von Code über Eingabefelder. Meist wird ein zusätzliches Kommando
 dazu genutzt, um Daten vom Server zu lesen, schreiben oder zu verändern ohne das dies von
@@ -12,7 +12,7 @@ Unterarten von Injection
 	\item shell
 	\end{itemize}
 
-\subsection*{A2 Fehler in Authentifizierungs und Session-Management}
+\subsection*{\textcolor{darkgreen}{A2 Fehler in Authentifizierungs und Session-Management}}
 
 	\begin{itemize}
 	\item Session-Management und ID sind falsch implementiert,
@@ -24,12 +24,12 @@ Unterarten von Injection
 	\item keine Transportverschlüsselung
 	\end{itemize}
 
-\subsection*{A3 Cross-Site Scripting}
+\subsection*{\textcolor{darkgreen}{A3 Cross-Site Scripting}}
 
 Die vom User in den Browser eingegebenen Daten werde nicht validiert bzw. die Daten die an den Server
 Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.)
 
-\subsection*{A4 Unsichere direkte Objektreferenzen}
+\subsection*{\textcolor{darkgreen}{A4 Unsichere direkte Objektreferenzen}}
 
 	\begin{itemize}
 	\item ID 1 im Browser = ID 1 in der DB => erratbar
@@ -38,7 +38,7 @@ Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( man
 
 
 
-\subsection*{A5 Sicherheitsrelevante Fehlkonfiguration}
+\subsection*{\textcolor{darkgreen}{A5 Sicherheitsrelevante Fehlkonfiguration}}
 
 	\begin{itemize}
 	\item veraltete Softwarekomponenten
@@ -48,7 +48,7 @@ Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( man
 	\item Framework Einstellung sind nicht sicher,
 	\end{itemize}
 
-\subsection*{A6 Verlust der Vertraulichkeit sensibler Daten}
+\subsection*{\textcolor{darkgreen}{A6 Verlust der Vertraulichkeit sensibler Daten}}
 
 	\begin{itemize}
 	\item Daten werden in Klartext gespeichert
@@ -58,25 +58,25 @@ Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( man
 	\item Sicherheitsdirektiven und Header werden nicht genutzt
 	\end{itemize}
 
-\subsection*{A7 Fehlerhafte Autorisierung auf Anwendungsebene}
+\subsection*{\textcolor{darkgreen}{A7 Fehlerhafte Autorisierung auf Anwendungsebene}}
 \begin{itemize}
 	\item Links zu Funktionen werden angezeigt obwohl die Rechte dazu fehlen
 	\item serverseitige Prüfung von Authentisierung und Autorisierung wird nicht durchgeführt
 	\item serverseitige Prüfung nur mit Daten vom Anwender
 \end{itemize}
 
-\subsection*{A8 Cross-Site Request Forgery}
+\subsection*{\textcolor{darkgreen}{A8 Cross-Site Request Forgery}}
 
 \begin{itemize}
 	\item geheimer Token bei jeder Anfrage/Link/Formular wird nicht mitgeschickt
 	\item Dem User wird meistens ein Request untergeschoben womit ohne Benutzereingabe was gemacht wird
 \end{itemize}
 
-\subsection*{A9 Nutzung von Komponenten mit bekannten Schwachstellen}
+\subsection*{\textcolor{darkgreen}{A9 Nutzung von Komponenten mit bekannten Schwachstellen}}
 
  Ein oder mehrere kleine Lücken ( auch hintereinander in unterschiedlichen Programmen) können ausgenutzt werden um an die Server/Daten zu kommen
  
-\subsection*{A 10 Ungeprüfte Um- und Weiterleitungen}
+\subsection*{\textcolor{darkgreen}{A 10 Ungeprüfte Um- und Weiterleitungen}}
 
 \begin{itemize}
 	\item Umleiten sollte vermieden werden
