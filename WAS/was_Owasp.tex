@@ -1,0 +1,85 @@
+\textbf{\textcolor{darkblue}{ OWASP Top 10}}~
+
+\textcolor{darkgreen}{\subsection*{A1 Injection}}
+
+Hier geht es um einschleusen von Code über Eingabefelder. Meist wird ein zusätzliches Kommando
+dazu genutzt, um Daten vom Server zu lesen, schreiben oder zu verändern ohne das dies von
+der Anwendung kontrolliert wird.
+Unterarten von Injection
+	\begin{itemize}
+	\item SQL
+	\item XML
+	\item shell
+	\end{itemize}
+
+\subsection*{A2 Fehler in Authentifizierungs und Session-Management}
+
+	\begin{itemize}
+	\item Session-Management und ID sind falsch implementiert,
+	\item Session hijacking,
+	\item Session klau, 
+	\item ID berechenbar,
+	\item Passwörter nicht gehasht,
+	\item SessionID läuft nicht ab,
+	\item keine Transportverschlüsselung
+	\end{itemize}
+
+\subsection*{A3 Cross-Site Scripting}
+
+Die vom User in den Browser eingegebenen Daten werde nicht validiert bzw. die Daten die an den Server
+Server geschickt werden. Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.)
+
+\subsection*{A4 Unsichere direkte Objektreferenzen}
+
+	\begin{itemize}
+	\item ID 1 im Browser = ID 1 in der DB => erratbar
+	\item Zugriff muss auch auf Ressourcen Ebene vom Server überprüft werden ( id 1 darf nur daten von id 1 sehen)
+	\end{itemize}
+
+
+
+\subsection*{A5 Sicherheitsrelevante Fehlkonfiguration}
+
+	\begin{itemize}
+	\item veraltete Softwarekomponenten
+	\item nicht benötigte Komponenten aktiv oder installiert
+	\item Standardkonten mit initial PW\'{ '}s aktiv 
+	\item Fehlermeldungen, Stack Traces geben zuviel Informationen über das System raus
+	\item Framework Einstellung sind nicht sicher,
+	\end{itemize}
+
+\subsection*{A6 Verlust der Vertraulichkeit sensibler Daten}
+
+	\begin{itemize}
+	\item Daten werden in Klartext gespeichert
+	\item Daten in Klartext übertragen
+	\item schwache/alte Krypto Verfahren
+	\item schwache Schlüssel oder falsches Verwalten der Schlüssel
+	\item Sicherheitsdirektiven und Header werden nicht genutzt
+	\end{itemize}
+
+\subsection*{A7 Fehlerhafte Autorisierung auf Anwendungsebene}
+\begin{itemize}
+	\item Links zu Funktionen werden angezeigt obwohl die Rechte dazu fehlen
+	\item serverseitige Prüfung von Authentisierung und Autorisierung wird nicht durchgeführt
+	\item serverseitige Prüfung nur mit Daten vom Anwender
+\end{itemize}
+
+\subsection*{A8 Cross-Site Request Forgery}
+
+\begin{itemize}
+	\item geheimer Token bei jeder Anfrage/Link/Formular wird nicht mitgeschickt
+	\item Dem User wird meistens ein Request untergeschoben womit ohne Benutzereingabe was gemacht wird
+\end{itemize}
+
+\subsection*{A9 Nutzung von Komponenten mit bekannten Schwachstellen}
+
+ Ein oder mehrere kleine Lücken ( auch hintereinander in unterschiedlichen Programmen) können ausgenutzt werden um an die Server/Daten zu kommen
+ 
+\subsection*{A 10 Ungeprüfte Um- und Weiterleitungen}
+
+\begin{itemize}
+	\item Umleiten sollte vermieden werden
+	\item Benutzer kann auf Angreiferwebseite weiter geleitet werden ( Phising)
+	\item Benutzer informieren wenn er umgeleitet wird
+\end{itemize}
