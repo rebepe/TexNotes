@@ -1,12 +1,15 @@
 \minpurp{Funktionen}
 \submeth{Statische Kette} nichtlokale Variablen in darunterliegenden Stackframes, implementierung durch Pointer
 
-\submeth{Closure} wird bei übergabe/speichern von Funktion gebildet. (Lambda)\\ 
+\minmeth{Closure} wird bei übergabe/speichern von Funktion gebildet. (Lambda)\\ 
 Besteht aus Funktionszeiger und zeiger auf Heap-Objekt mit den gefangenen Variablen\\
 Löst upward Funarg problem(Verweis auf nicht mehr existierende stackframes)\\
 Ggf. teil der statische kette
 
 C\#: Func <T1,$\dots$, Result>, Action<T>, Predicate<T>, Lambda
+
+Bsp:   Func<int,double> cast = i => 1.0 * i;
+
 
 C++: 2 Varianten: 
 
@@ -15,25 +18,38 @@ capture-by-copy: gefangene Variablen werden kopiert: [\textbf{=}](int a) \{retur
 
 capture-by-reference: Closure erhält pointer auf variablen: [\textbf{\&}](int a) \{return a+4;\}
 
-\submeth{Parameterübergabe}
-Call by Value: Wert wird kopiert
+\minmeth{Parameterübergabe}
+Call by Value: Wert wird kopiert  
+
+\rule{1cm}{0pt}
+\textit{methode (int)}
 
 "Call by Sharing": Call by Value einer Pointervariable ( => Swap nicht möglich)
 
+\rule{1cm}{0pt}\textit{methode (int*)}
+
 Call by Reference: Zeiger auf übergebene Variable
+
+\rule{1cm}{0pt}\textit{methode ( int \&)}
 
 Call by const Reference (c++): analog Call by reference, verbot schreibzugriff
 
+\rule{1cm}{0pt}\textit{methode (const int \&)}
+
 Call by name: unausgewertete Übergabe durch implizite(explizite) Closures
 
-\submeth{Methoden}
+\minmeth{Methoden}
+\submeth{methoden}
+
+C++/C\#:
+
 statische Methoden werden zu normalen Funktionen aufgelöst, 
 
-nicht-virtuelle Methoden zu Funktionen mit this-Pointer als 1. Parameter, 
+normale Methoden: Call-by-Reference von this als 1. Parameter
 
-virtuelle Methoden werden zur Laufzeit über die virtual Table im Typobjekt ausgewählt.
+Virtuelle Methoden: zur Laufzeit über vptr/RTTI in der virtual Table gesucht;
 
-
+Javascript: Suche der Methode in den Properties (Hashtable)
 
 \minpurp{Konversionen}
 \begin{tabular}{|l|l|}
@@ -60,6 +76,7 @@ Prüfung zur Laufzeit, ggf. Exception &ohne Prüfung\\
 %Symbole: dynamische Typen: werden nicht deklariert, bilden 1 Typ z.B. Symbol.for("Monday") in JS6
 
 
+\newpage
 \minpurp{Arrays}
 \submeth{Adressrechnung} a mit größe n1,n2,n3 \\
 a[i1,i2,i3] =>  a[0] + (i1 * n2* n3 + i2* n3 + i3) * sizeof(type);
@@ -94,4 +111,9 @@ Globale Tabellen ordnen Programmzählerbereiche entsprechenden Handlern zu;
 
 \submeth{Stack unwinding} Werfen einer Exception => Stack nach unten durchlaufen bis gehandelt
 
+
+\minpurp{Referenztyp}
+Typ der als Zeiger auf Heapobjekt implementiert ist.
+
+\submeth{Mit Wertsemantik} ist immutable => kein Unterschied zum Werttyp feststellbar (z.B. C\# String)
 

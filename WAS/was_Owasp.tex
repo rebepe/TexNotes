@@ -12,6 +12,18 @@ Unterarten von Injection
 	\item shell
 	\end{itemize}
 Kann mit Escapen/ prepared Statements bekämpft werden
+
+
+\begin{itemize}
+\item "Not so blind": Sprechend, d.h. mit Fehlermeldungen der DB
+\item Blind-Injectinon: Allgemeine, leicht unterschiedliche Fehlermeldungen
+\item Totally-Blind-Injection: Immer identische Meldung => Messung von Laufzeitunterschieden, erzwingen von Fehlern (division-by-zero)
+
+\item Advanced: alles komplexere, hier umgehung Boundary Filtering, z.B. durch encoding der Daten;
+\end{itemize}
+
+
+
 \subsection*{\textcolor{darkgreen}{A2 Fehler in Authentifizierungs und Session-Management}}
 
 	\begin{itemize}
@@ -80,6 +92,8 @@ Data in Motion( Daten im Arbeitsspeicher), Data at Rest ( im Backup)
 \subsection*{\textcolor{darkgreen}{A9 Nutzung von Komponenten mit bekannten Schwachstellen}}
 
  Ein oder mehrere kleine oder auch große Lücken ( auch hintereinander in unterschiedlichen Programmen) können ausgenutzt werden um an die Server/Daten zu kommen
+ 
+ Verzeichnisse: cve, nvd
  
 \subsection*{\textcolor{darkgreen}{A 10 Ungeprüfte Um- und Weiterleitungen}}
 
