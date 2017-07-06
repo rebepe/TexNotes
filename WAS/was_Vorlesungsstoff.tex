@@ -97,9 +97,68 @@
 	\item Zufall ( Absturz bei bestimmten Eingabedaten)
 \end{itemize}
 
-\subsubsection*{Überlauf und Sciherheit }
+\subsubsection*{Überlauf und Sicherheit }
 \begin{itemize}
 	\item Absturz ( System oder Programm)
 	\item Code mit erweiterten Rechten ( Priviligen im OS oder Server Anwendung)
 \end{itemize}
 
+\subsection*{Unvollständige Entkopplung}
+\begin{itemize}
+	\item Benutzereingaben nicht validiert ( 30.2, Auswahlmenüs, Format und Wertebereichsprüfung)
+\end{itemize}
+	=> Folgen
+	\begin{itemize}
+		\item Absturz ( Ausfall eines Handelsystems)
+		\item Manipulation an Systemen ( SQL oder Shell Injection )
+	\end{itemize}
+
+\subsection*{ Serialisierung}
+\subsubsection*{Analogon Auto Kauf}
+\begin{itemize}
+	\item 100 Euro Noten vor Verkäufer zählen
+	\item In Umschlag stecken
+	\item Verkäufer ablenken
+	\item Umschlag mit 1 Euro Noten überreichen
+\end{itemize}
+
+\subsubsection*{Serialisierung in E-Commerce }
+\begin{itemize}
+	\item Links auf Bereiche der Anwendung:
+	\item Beim Einloggen geprüft
+	\item Nacher nicht mehr
+	\item Versteckte Felder
+	\item Links mit vorbelegten Parametern
+	\item Fehlannahmen ( HTML-Seite nicht manipulierbar ( loool), Versteckte Felder unsichtbar ( firebug usw)
+\end{itemize}
+=> Folgen : 
+\begin{itemize}
+	\item Manipulation an Transaktionen ( Preis in Url)
+	\item Unerwünschter Zugriff auf beschränkte Funktionen/ Daten anderer Kunden 
+\end{itemize}
+
+
+
+\section*{Einschleusen von Kommandos}
+\subsection*{ SQL Injection}
+\begin{itemize}
+	\item Rain Forest Puppy 1998
+	\item Datenbank Abfragen manipulieren ( SQL Metazeichen)
+\end{itemize}
+\subsubsection*{Schwachstelle }
+
+
+\subsubsection*{ Gegenmaßnahmen - Daten säubern }
+\begin{itemize}
+	\item Anfürhungszeichen verbieten oder Anführungszeichen verdoppeln
+	\item PostgeSQL und MySQL: Backslash \
+	\item Zahlen durch Parser der Programmiersprache jagen, wieder in Text umwandeln
+	\item Nur Stored Procedures ( SP) erlauben, schützt nicht vor aufruf andere SPs
+\end{itemize}
+
+\subsubsection*{Gegenmaßnahmen - Prepared Statements }
+\begin{itemize}
+	\item  Anweisung ist bereits teilwese verarbeitet
+	\item Daten haben keine Metazeichen mehr
+	\item Typ-Prüfung durch Programmiersprache umwandeln
+\end{itemize}
