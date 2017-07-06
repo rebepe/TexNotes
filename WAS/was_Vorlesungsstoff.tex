@@ -1,0 +1,105 @@
+\textbf{\textcolor{darkblue}{ Vorlesungsstoff}}~
+
+	\section*{Internet Architektur und E-Commerce}
+	
+	\subsection*{Sicherheit nicht im Design des Internet}
+		\begin{itemize}
+		\item 	Fehlen der Theorie
+		\item  Geschlossenes Militärnetz
+		\item Schwerpunkt: Ausfallsicherheit
+		\end{itemize}
+	
+	\subsection*{Architektur}
+	\begin{itemize}
+		\item 	Austausch von Forschungsergebnissen
+		\item  Vernetzung von Wissen
+		\item Webserver liefert statische Dokumente, die vom Browser dargestellt werden
+	\end{itemize}
+
+\subsection*{Angriffspunkte}
+\begin{itemize}
+	\item 	Server hacken
+	\item  Nachrichten fälschen
+	\item Device vom User hackenn
+\end{itemize}
+
+\subsection*{Ziele der Security für E-Commerce}
+\begin{itemize}
+	\item 	Daten schützen
+	\item  Fehler vermeiden
+	\item Fehler erkennen und beseitigen
+	\item 	Daten schützen
+	\item  Fehler vermeiden
+	\item Auswirkung der Fehler begrenzen
+\end{itemize}
+
+\subsection*{Funktionen für E-Commerce}
+\begin{itemize}
+	\item 	Dynamische Inhalte
+	\item  Zustand ( mehere Anfragen pro kaufvorgang, suchen, auswählen, bezahlen)
+	\item Erweiterung des Web Servers (CGI)
+	\item nach Appliationserver ( Java Servlets, Java Server Pages, Active Server Pages)
+\end{itemize}
+
+
+	\section*{Programmierfehler}
+	
+	\subsection*{Software Qualität}
+	\begin{itemize}
+		\item Definition "Sicher"?
+		\item Hoher Zeitaufwand System zu brechen
+		\item Erfüllt die Sicherheitsspezifikation
+		\item Flaw ( Unerwartetes Verhalten), Vulnerability ( Klasse von Flaws, zb. Buffer Overflow)
+	\end{itemize}
+
+\subsection*{ Fehlerklassen}
+\begin{itemize}
+	\item Pufferüberlauf
+	\item Unvollständige Entkopplung ( 30.2 eingeben können)
+	\item Serialisierungsfehler ( time-of-check to time-of-use)
+\end{itemize}
+
+\subsection*{ Ort des Fehlers}
+\subsubsection*{Standardsoftware}
+\begin{itemize}
+	\item Gefundene Fehler publiziert
+	\item Anbieter bietet Lösung an
+	\item Aber evtl. auch Exploit verfügbar
+\end{itemize}
+\subsubsection*{Eigene Webanwendung}
+\begin{itemize}
+	\item Legitime Benutzer finden selten Fehler
+	\item Anzahl Hacker geringer
+	\item Exploits unwahrscheinlich
+\end{itemize}
+
+
+\subsection*{ Pufferüberlauf}
+\begin{itemize}
+	\item 2L Wasser in 1L-Eimer
+	\item Example in C : 	Char sample[3]; Sample[3] = 'a';
+	\item Nicht entscheidbar
+\end{itemize}
+\subsubsection*{Folgen des Überlaufs, Überschreiben von:}
+\begin{itemize}
+	\item Programmdaten
+	\item Betriebssytemdaten
+	\item Betriebssytemcode
+	\item Programmcode
+	\item Rechnen mit falschen Daten
+	\item Ausführen unerwünschter Instruktionen
+\end{itemize}
+
+\subsubsection*{Identifikation eines Überlaufs}
+\begin{itemize}
+	\item Vermutung der Existenz eines Puffers ( Konsistenzprüfung, Signaturen)
+	\item Vermutung über die Länge des Puffers ( Telefonnummer, Postleitzahl)
+	\item Zufall ( Absturz bei bestimmten Eingabedaten)
+\end{itemize}
+
+\subsubsection*{Überlauf und Sciherheit }
+\begin{itemize}
+	\item Absturz ( System oder Programm)
+	\item Code mit erweiterten Rechten ( Priviligen im OS oder Server Anwendung)
+\end{itemize}
+
