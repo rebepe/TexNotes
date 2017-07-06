@@ -145,12 +145,9 @@
 	\item Rain Forest Puppy 1998
 	\item Datenbank Abfragen manipulieren ( SQL Metazeichen)
 \end{itemize}
-\subsubsection*{Schwachstelle }
-
-
 \subsubsection*{ Gegenmaßnahmen - Daten säubern }
 \begin{itemize}
-	\item Anfürhungszeichen verbieten oder Anführungszeichen verdoppeln
+	\item Anführungszeichen verbieten oder Anführungszeichen verdoppeln
 	\item PostgeSQL und MySQL: Backslash \
 	\item Zahlen durch Parser der Programmiersprache jagen, wieder in Text umwandeln
 	\item Nur Stored Procedures ( SP) erlauben, schützt nicht vor aufruf andere SPs
@@ -161,4 +158,46 @@
 	\item  Anweisung ist bereits teilwese verarbeitet
 	\item Daten haben keine Metazeichen mehr
 	\item Typ-Prüfung durch Programmiersprache umwandeln
+\end{itemize}
+
+
+\subsection*{ Shell Injection}
+\begin{itemize}
+	\item Viele Metazeichen
+	\item Eingabe: test; rm -rf /
+\end{itemize}
+\subsubsection*{ Gegenmaßnahmen - Daten säubern }
+\begin{itemize}
+	\item Kommandos direkt ausführen
+	\item Perl(Exec, System)
+	\item C/C++ (Exec  meist nach fork, nicht system oder popen)
+	\item Benutzerdaten über Standardeingabe
+	\item Metazeichen und Eingabevalidierung
+	\item Aber Zielprogramm interpretiert Daten
+	\item Shell nicht verwenden
+	\item Externes Programm nicht verwenden( Wiederspricht re-use,)
+	\item Codefragmente wiederverwenden aber durchsehen und HInweise lesen
+\end{itemize}
+
+\subsection*{ interaktion mit c/c++ }
+\begin{itemize}
+\item Zeichenkette endet mit null-Zeichen (Terminiert Zeichenkette in c)
+\item Kunden laden Bilder auf Server ( Prüfe auf Endung .jpg) Eingabe : Crack.php0.jpg
+\end{itemize}
+
+\subsection*{ Evil Eval }
+\begin{itemize}
+	\item Werte den Inhalt einer Variable aus
+	\item Eval in den meisten Skript Sprachen
+	\item Java Reflection API
+	\item Enthält Variable Benutzereingaben ( Kommando Injection)
+\end{itemize}
+
+\subsection*{ Metazeichenbehandlung }
+\begin{itemize}
+	\item Identifiziere Subsysteme
+	\item Identifiziere Metazeichen der Subsysteme
+	\item Typen Prüfung
+	\item Injection zweiter Ordnung, O'Conner aus DB lesen, In neue SQL Abfrage eingebaut
+	\item Like Klausel in SQL ( Metazeichen \%\_)
 \end{itemize}
