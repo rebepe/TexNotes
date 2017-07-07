@@ -543,3 +543,69 @@ Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von ei
 	\item Getunnelt nicht immer aufgerufen
 	\item Internetsteuerbar nicht Manipulationssicher
 \end{itemize}
+
+
+
+\section*{Chipkarten und digitale Unterschriften}
+
+\subsection*{  Arten }
+\begin{itemize}
+	\item Speicherkarten
+	\item Mikroprozessorkarten
+	\item Kontaktlose Chipkarten (RF-ID)
+	\item Formate ( Scheckkartenformat, SIM-Karte, USB-Token)
+\end{itemize}
+
+\subsection*{  Kontaktbelegung }
+\begin{itemize}
+	\item Versorgung 
+	\item Reset
+	\item Takt für CPU
+	\item Masse
+	\item Prog-Spannung
+	\item Eine I/O Leitung ( halbduplex)
+	\item Zwei weitere Kontaktr reserviert 
+\end{itemize}
+
+\subsection*{  Kartenstandards }
+\begin{itemize}
+	\item ISO/iec 7816
+	\item ETSI ( Telekommunikation)
+	\item Europay, MasterCard, Visa
+	\item Ähnlich aber nicht identisch
+	\item => Interoperabilitätsschichten
+\end{itemize}
+
+
+\subsection*{  Sicherheit }
+\begin{itemize}
+	\item Gefährdung ( Herausgabe/Veränderung von Informationen) 
+	\item Schutz (Mechanisch ( Kartenkörper), Elektrisch ( Halbleiter), Logisch ( Betriebssystem))
+	\item Passive Hardware ( Alles auf einem Chip, Anordnung der Leitungen auf dem Chip)
+	\item Aktive Hardware ( Deaktivierung bei Beschädigung, Spannungsüberwachung, Untertaktung verhindern)
+\end{itemize}
+
+\subsection*{  Betriebssystem }
+\begin{itemize}
+	\item Kontrolle I/O
+	\item Verwirft falsche Protokollnachrichten
+	\item "Konstanter " Stromverbrauch
+	\item Zugriffskontrolle auf Daten ( File System)
+	\item Karte permanent deaktivierbar 
+\end{itemize}
+
+\subsection*{  Anwendung: Digitale Unterschrift }
+\begin{itemize}
+	\item Digitale Unterschrift: Hash des Dokumentes, Verschlüsselung mit PK
+	\item Karte enthält Private Key, führt Verschlüsselung aus, Hash auf dem PC, Schlüsselpaar auf Karte generieren
+	\item "Konstanter " Stromverbrauch
+	\item Zugriffskontrolle auf Daten ( File System)
+	\item Karte permanent deaktivierbar 
+\end{itemize}
+
+\subsection*{  Willenserklärung }
+\begin{itemize}
+	\item Kunde muss Dokument verstehen
+	\item Rechner soll Dokument verarbeiten
+	\item Kunde muss alles sehen können( Kleingedrucktes, Farben)
+\end{itemize}
