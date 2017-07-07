@@ -408,13 +408,138 @@
 	\item Fork Bombe
 \end{itemize}
 
+\subsubsection*{ Im Web }
+\begin{itemize}
+	\item Phising ( gefälschte Seite, vorbereitete Transaktion im Link, Formular automatisch Absenden)
+	\item Cross-Site-Request Forgery ( XSRF), Sitzung in anderem Fenster, Kommandos an andere Programme
+\end{itemize}
+
+\subsubsection*{ Lösung }
+\begin{itemize}
+	\item Ticket für Aktionen( Zufallszahlen, Unterscheidung durch ID, Hidden Fields)
+\end{itemize}
+
+\subsubsection*{ Grenzen }
+\begin{itemize}
+	\item GET, Cross-Side-Scripting
+\end{itemize}
+
+\subsubsection*{ Weitere Fortschritte }
+\begin{itemize}
+	\item Web Service
+	\item AJAX
+	\item Web Sockets
+\end{itemize}
 
 
+\section*{Public Key Infrastructure (PKI)}
+\subsection*{ Ziel}
+Ziel 			=> sichere Verteilung der Public Keys
+Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von einem der das beglaubigt!
+
+\subsection*{Allgemeines zu PKI}
+\begin{itemize}
+\item Es gibt unterscheidliche Vertrauensmodelle, alle haben Ihre Stärken und Schwächen
+\item Grundsatzfrage : wer vertraut wem und wie vertrauenswürdig ist derjenige dem ich vertraue?
+\item Zertifikate sind Bestätigungen wer wer ist
+\item Verfallsdatum von Zertifikaten sinnvoll
+\item Ziel ist es, eine stabile, kaum angreifbare Vertrauenskette zu erschaffen!
+\end{itemize}
+
+\section*{Firewalls}
+
+\subsection*{ Definition }
+\begin{itemize}
+	\item Internes, geschütztes Netz
+	\item Externes, weniger vertrauenswürdiges Netz
+	\item Firewall(FW) filtert Kommunikation zwischen internem und externen Netz
+	\item Ziele : Schutz internen Netzes vor externen Angriffen und Kontrolle Kommunikation zu externem Netz
+\end{itemize}
+
+\subsection*{ Kernidee }
+\begin{itemize}
+	\item Referenzmonitor
+	\item Immer aufgerufen ( einzige Verbindung zu externe via FWs)
+	\item Manipulationssicher
+	\item Klein und einfach genug für Verifikation
+\end{itemize}
+
+\subsection*{ Arten }
+\begin{itemize}
+	\item Paketfilter
+	\item Stateful inspection FWs
+	\item Applikation Proxies
+	\item Guards
+	\item Personal FW
+\end{itemize}
+
+\subsubsection*{ Paketfilter }
+\begin{itemize}
+	\item Filtert Quell und Zieladresse ( auch auf Port)
+	\item Filtert manipuliert interne Adresse
+	\item Einfache Regeln
+	\item Aufwand für komplexe Policies ( Viele Regeln, SSH für Admins)
+\end{itemize}
+
+\subsubsection*{ Stateful inspection }
+\begin{itemize}
+	\item Betrachte Vorgeschichte zu Paket
+	\item Merke Zustand ( State, context)
+	\item Erkennt fragmentierte Angriffe ( TCP Paketreihenfolge)
+\end{itemize}
+
+\subsubsection*{ Applikation Proxies }
+\begin{itemize}
+	\item Bastion Host
+	\item Simuliert Anwendung
+	\item Filtert auch auf Paketinhalt ( zb nur Http POST / GET)
+	\item Schutz für Standard Anwendungen
+	\item für Web Anwendungen begrenzt geeignet
+\end{itemize}
+
+\subsubsection*{ Guards }
+\begin{itemize}
+	\item Application Proxy
+	\item Und Anfragen ändern
+	\item Regeln beliebig flexibel
+	\item Virenscan auf eingehenden Dateien
+	\item Web Application Firewall
+\end{itemize}
+
+\subsubsection*{ Applications-Firewall }
+\begin{itemize}
+	\item Selbstlernend (Parsing HTML-Seiten, Identifkation möglicher Antworten, Filter unmöglicher Antworten)
+	\item Implementation: Reverse Proxy 
+	\item Grenzen: Valierung der Benutzereingabe, Performance
+\end{itemize}
+
+\subsubsection*{ Personal Firewalls }
+\begin{itemize}
+	\item Schutz einzelner Rechner
+	\item Programm auf dem PC
+	\item Definition der Policy ( Anwender?)
+	\item Angreifer umgeht PFW
+	\item U-turn Attack bei mobilen Benutzer
+\end{itemize}
+
+\subsection*{ Möglichkeiten und Grenzen }
+\begin{itemize}
+	\item FW als einziger Netzübergang 
+	\item Kein Schutz nach Verlassen der FW
+	\item FW als Ziel der Angreifer
+	\item FW Konfiguration periodisch prüfen
+	\item Geringe Kontrolle über Inhalte
+	\item Firewalls alleine machen eine Infrastruktur nicht sicher!
+\end{itemize}
 
 
-
-
-
-
-
-
+\subsection*{  Fortschritte }
+\begin{itemize}
+	\item VPN, IDS etc. auf der FW
+	\item Firewall-Tunneling ( HTTP, SSH,…) , SOAP, Websocktes
+	\item Webservices
+	\item Moderne Firewalls != Refernezmonitor
+	\item Komplex nicht einfach
+	\item Getunnelt nicht immer aufgerufen
+	\item Internetsteuerbar nicht Manipulationssicher
+\end{itemize}
