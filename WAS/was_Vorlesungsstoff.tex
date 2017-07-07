@@ -330,3 +330,91 @@
 
 
 
+
+\section*{Viren, Würmer und Trojanische Pferde}
+	\subsection*{ Virus (Definition)}
+	\begin{itemize}
+		\item Programm (-Stück)
+		\item "Infiziert" Programm
+		\item Verbreitung über infizierte Programme
+		\item Makroviren betreffen auch "Daten" 
+		\item Meist Schadensfunktion ( Dateien löschen, Platten formatieren/verschlüsseln, Konfiguration manipulieren)
+	\end{itemize}
+	\subsubsection*{ Infektionsmechanismen}
+	\begin{itemize}
+		\item Wirtsprogramm ( Virus hängt/umfasst oder integriert sich an/in das Programm)
+		\item Andere Infektionsorte ( Boot-Sector, Speicher ( RAM), Programm Bibliotheken)
+	\end{itemize}
+	
+	\subsubsection*{Brain Virus}
+	\begin{itemize}
+		\item  Sitzt im Boot-Sektor und weiteren
+		\item Versteckt sich im "Upper Memory"
+		\item Fängt Disk-Leseoperation ab
+		\item "Schaden": Ändert Disk-Label auf "Brain"
+	\end{itemize}
+	
+	\subsubsection*{ Viren Scanner}
+	\begin{itemize}
+		\item Allgemeines Virenproblem unentscheidbar
+		\item Erkennen anhand von Mustern
+		\item Wirkt nur gegen bekannte Viren
+		\item Ständige Aktualisierung ( mehrmals täglich, automatisiert)
+	\end{itemize}
+	
+	\subsection*{ Würmer (Definition)}
+	\begin{itemize}
+		\item Verbreitung über Netze (Internet)
+		\item Ziel: alle Rechner im Netz infizieren
+		\item Meist Schadensfunktion
+	\end{itemize}
+
+\subsubsection*{ Wurm Schadensfunktion}
+\begin{itemize}
+	\item Wie bei Viren
+	\item Zombies für DDOS
+	\item ugang zu Rechnern öffnen und offen halten
+	\item Nutzt Schwachstellen in Diensten ( Programmierfehler, Fehlkonfiguration)
+\end{itemize}
+
+\subsubsection*{ Code Red und Varianten}
+\begin{itemize}
+	\item Programmierfehler in Microsoft IIS ( Beliebiger Code ausführbar)
+	\item Rasche Verbreitung via HTTP
+	\item Schäden( Startseite ersetzt(Defacement), Hohe Netzlast, DDOS gegen whitehouse, Nimda ( Hintertür mit Admin-Rechte)
+\end{itemize}
+
+\subsubsection*{ Schutz }
+\begin{itemize}
+	\item Schwachstelle beseitigt (Patch) ( schwierig auf Produktivsystemen)
+	\item Konfiguration regelmäßig prüfen
+	\item Nur Notwendige Dienste aktiv
+	\item Firewall als Unterstützung
+\end{itemize}
+
+
+	\subsection*{Trojanisches Pferd (Defenition)}
+\begin{itemize}
+	\item Programm mit zweiter Funktion ( versteckt)
+	\item Benutzer verwendet Programm freiwillig
+	\item Schäden ( gefälschter Login Dialog, Keylogger)
+\end{itemize}
+
+\subsubsection*{ Weitere Formen }
+\begin{itemize}
+	\item Logische Bombe( wird bei bestimmter Bedingung aktiviert)
+	\item Zeitbombe
+	\item Hintertür 
+	\item Fork Bombe
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
