@@ -201,3 +201,132 @@
 	\item Injection zweiter Ordnung, O'Conner aus DB lesen, In neue SQL Abfrage eingebaut
 	\item Like Klausel in SQL ( Metazeichen \%\_)
 \end{itemize}
+
+\subsection*{ Architektur }
+\begin{itemize}
+	\item soll beim Fehler vermeiden helfen
+	\item Kommunikation Kapseln (Metazeichen an einer Stelle behandeln)
+	\item Datenbanken persistents Schicht ( Hibernate, Java Beans)
+\end{itemize}
+
+\subsection*{ Gestaffelte Abwehr }
+\begin{itemize}
+	\item Defense in the Depth
+	\item Mehrere Sicherheitsmechanismen
+	\item Berechtigung im Subsystem ( DB)
+	\item Eingabe Validierung ( Format E-Mail, Zahlen, Telefonnummer, Postleitzahlen, Bereichsprüfung, Längenprüfung)
+	\item Unnötige Dienste in der Infrastruktur abschalten
+	\item Redundanz bei Sicherheit wichtig ( Validierung in jedem System)
+\end{itemize}
+
+\subsection*{ Arten von Eingaben }
+\begin{itemize}
+	\item URL-Parameter
+	\item Benutzer erzeugte Eingaben ( Textfelder/ Textarea)
+	\item Server erzeugte Eingaben ( Auswahlfeldern, Checkboxen,  Radiobutton, Verborgene Felder)
+\end{itemize}
+
+\subsection*{ Parameter Manipulation}
+\begin{itemize}
+	\item Speichern, editieren und senden
+	\item URL selbst erzeugen (Get vs Post)
+	\item Web Proxy
+	\item Browser Plugin ( Firebug)
+	\item Http Header Felder ( Cookies)
+	\item Dateisystem ( Weboberfläche NAS)
+	\item zusätzliche Parameter
+	\item Server Variablen überschreiben
+	\item bei Benutzer erzeugten ungültigen Eingaben ( Tippfehler ) => höflicher Hinweis, neuer Versuch
+	\item bei Server erzeugten ungültigen Eingaben ( absichtlich manipuliert) => Vorgang abbrechen, Protokollierung
+\end{itemize}
+
+\subsection*{ Filtern}
+\begin{itemize}
+	\item Gut
+	\item Schlecht
+	\item unbekannt
+	\item Blacklisting ( Filtere schlechte Eingaben)
+	\item Whitelisting ( Filtere gute Eingaben)
+\end{itemize}
+
+
+
+\section*{User Authentication
+\subsection*{ Anforderungen}
+\begin{itemize}
+	\item Benutzer eindeutig identifizieren
+	\item Überall verfügbar 
+	\item Einfach anwendbar
+\end{itemize}
+\subsection*{ Passwort}
+\begin{itemize}
+	\item Benutzer besitzt Passwort (PIN), entweder selbst gewählt oder vom Anbieter zugeteilt
+	\item Authentisierung : Benutzer gibt seine ID und Passwort ein , Server vergleicht mit Datenbank
+\end{itemize}
+
+\subsection*{Loose-Lipped System}
+\begin{itemize}
+	\item  Authentication mit ID und Passwort, erst ID abfragen und ungültige ID abweisen => Angreifer erhält Informationen über gültige ID
+	\item daher immer (ID, Passwort) Paare prüfen => Angreifer weiß nicht ob Passwort oder ID falsch
+\end{itemize}
+
+\subsection*{ Angriffe gegen Passwort}
+\begin{itemize}
+	\item Probiere alle Passwörter
+	\item Probiere viele wahrscheinliche Passwörter
+	\item Probiere Passwörter, die für den Benutzer wahrscheinlich sind
+	\item Suche die Liste der Passwörter
+	\item Frage den Benutzer
+	\end{itemize}
+
+\subsection*{ Gleiche Passwörter}
+\begin{itemize}
+	\item Passwörter werden wiederverwendet
+	\item Passwort Muster ... ( OHM-geheim. Mail-geheim ist doof => Verrät Passwort für andere ID´s / Seiten)
+\end{itemize}
+
+\subsection*{ Einmal-Passwort}
+\begin{itemize}
+	\item Benutzer besitzt Passwortliste
+	\item Streicht verwendete PW
+	\item Streichen vergessen
+	\item  Frage nach Passwort oder neues PW nach Login
+\end{itemize}
+
+\subsection*{ Chipkarte}
+\begin{itemize}
+	\item Karte speichert (Symmetrischen Schlüssel,Privaten Schlüssel )
+	\item Karte führt Verschlüsselung durch
+	\item Nachteil: Verfügbarkeit in Standard Client nicht gegeben
+\end{itemize}
+
+\subsection*{ Biometrische Verfahren}
+\begin{itemize}
+	\item Messe ein Körpermerkmal
+	\item Gelten als sehr sicher
+	\item False acceptance rate, False rejection rate
+	\item Sensor täuschen, umgehen
+	\item Im Internet?
+\end{itemize}
+
+\subsection*{ Klassifikation}
+\begin{itemize}
+	\item Was man weiß: Passwort
+	\item Was man hat: Passwortliste, Chipkarte
+	\item Was man ist: Fingerabdruck, Ohr, Retina
+\end{itemize}
+
+\subsection*{ Kombinationen der Klassen}
+\begin{itemize}
+	\item Wissen und Haben ( Online Banking) => Passwort und Tan Oder Passwort und SecurID
+	\item Haben und Sein => Chipkarte und Fingerabdruck
+\end{itemize}
+
+\subsection*{ Authentication in HTTP}
+\begin{itemize}
+	\item Basic Authentication ( Passwort im Klartext, Ok wenn über TLS)
+	\item Digest Authentication ( Passwort plus Challenge mit Hash)a
+\end{itemize}
+
+
+
