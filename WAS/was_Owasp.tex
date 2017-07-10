@@ -1,5 +1,5 @@
 \textbf{\textcolor{darkblue}{ OWASP Top 10}}~
-
+OWASP: Open Web Application Security Project
 \subsection*{\textcolor{darkgreen}{A1 Injection}}
 
 Hier geht es um einschleusen von Code über Eingabefelder. Meist wird ein zusätzliches Kommando
@@ -36,11 +36,10 @@ Kann mit Escapen/ prepared Statements bekämpft werden
 	\end{itemize}
 
 \subsection*{\textcolor{darkgreen}{A3 Cross-Site Scripting}}
-
+	Cookie stehlen: document.cookie
 	\begin{itemize}
 	\item JavaScript Injection: von Benutzer/Angreifer eingegebener JS-Code wird unescaped an Browser weitergeleitet
-	\item Die vom User in den Browser eingegebenen Daten werde nicht validiert bzw. die Daten die an den Server
-	Server geschickt werden. 
+	\item Die vom User in den Browser eingegebenen Daten werde nicht validiert bzw. die Daten die an den Server geschickt werden. 
 	\item Reflection( ist nur einmalig, bleibt nicht in der DB) 
 	\item Persistent ( wird gespeichert und jeder der die Seite aufruft wird injected)
 \item Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.) und indirekte Objektreferenz: z.B. Index auf Liste der Konten des Kunden
