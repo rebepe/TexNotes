@@ -1,21 +1,6 @@
 \textbf{\textcolor{darkblue}{ Vorlesungsstoff}}~
 
-	\section*{Internet Architektur und E-Commerce}
-	
-	\subsection*{Sicherheit nicht im Design des Internet}
-		\begin{itemize}
-		\item 	Fehlen der Theorie
-		\item  Geschlossenes Militärnetz
-		\item Schwerpunkt: Ausfallsicherheit
-		\end{itemize}
-	
-	\subsection*{Architektur}
-	\begin{itemize}
-		\item 	Austausch von Forschungsergebnissen
-		\item  Vernetzung von Wissen
-		\item Webserver liefert statische Dokumente, die vom Browser dargestellt werden
-	\end{itemize}
-
+\section*{Internet Architektur und E-Commerce}
 \subsection*{Angriffspunkte}
 \begin{itemize}
 	\item 	Server hacken
@@ -25,11 +10,9 @@
 
 \subsection*{Ziele der Security für E-Commerce}
 \begin{itemize}
-	\item 	Daten schützen
-	\item  Fehler vermeiden
 	\item Fehler erkennen und beseitigen
-	\item 	Daten schützen
-	\item  Fehler vermeiden
+	\item Daten schützen
+	\item Fehler vermeiden
 	\item Auswirkung der Fehler begrenzen
 \end{itemize}
 
@@ -37,8 +20,6 @@
 \begin{itemize}
 	\item 	Dynamische Inhalte
 	\item  Zustand ( mehere Anfragen pro kaufvorgang, suchen, auswählen, bezahlen)
-	\item Erweiterung des Web Servers (CGI)
-	\item nach Appliationserver ( Java Servlets, Java Server Pages, Active Server Pages)
 \end{itemize}
 
 
@@ -46,18 +27,11 @@
 	
 	\subsection*{Software Qualität}
 	\begin{itemize}
-		\item Definition "Sicher"?
+		\item Definition Sicher?
 		\item Hoher Zeitaufwand System zu brechen
 		\item Erfüllt die Sicherheitsspezifikation
 		\item Flaw ( Unerwartetes Verhalten), Vulnerability ( Klasse von Flaws, zb. Buffer Overflow)
 	\end{itemize}
-
-\subsection*{ Fehlerklassen}
-\begin{itemize}
-	\item Pufferüberlauf
-	\item Unvollständige Entkopplung ( 30.2 eingeben können)
-	\item Serialisierungsfehler ( time-of-check to time-of-use)
-\end{itemize}
 
 \subsection*{ Ort des Fehlers}
 \subsubsection*{Standardsoftware}
@@ -114,14 +88,6 @@
 	\end{itemize}
 
 \subsection*{ Serialisierung}
-\subsubsection*{Analogon Auto Kauf}
-\begin{itemize}
-	\item 100 Euro Noten vor Verkäufer zählen
-	\item In Umschlag stecken
-	\item Verkäufer ablenken
-	\item Umschlag mit 1 Euro Noten überreichen
-\end{itemize}
-
 \subsubsection*{Serialisierung in E-Commerce }
 \begin{itemize}
 	\item Links auf Bereiche der Anwendung:
@@ -137,20 +103,14 @@
 	\item Unerwünschter Zugriff auf beschränkte Funktionen/ Daten anderer Kunden 
 \end{itemize}
 
-
-
 \section*{Einschleusen von Kommandos}
 \subsection*{ SQL Injection}
-\begin{itemize}
-	\item Rain Forest Puppy 1998
-	\item Datenbank Abfragen manipulieren ( SQL Metazeichen)
-\end{itemize}
 \subsubsection*{ Gegenmaßnahmen - Daten säubern }
 \begin{itemize}
 	\item Anführungszeichen verbieten oder Anführungszeichen verdoppeln
 	\item PostgeSQL und MySQL: Backslash \
-	\item Zahlen durch Parser der Programmiersprache jagen, wieder in Text umwandeln
-	\item Nur Stored Procedures ( SP) erlauben, schützt nicht vor aufruf andere SPs
+	\item Zahlen durch Parser der Programmiersprache jagen, danach als Zahl behandeln
+	\item  Stored Procedures helfen nicht !!
 \end{itemize}
 
 \subsubsection*{Gegenmaßnahmen - Prepared Statements }
@@ -160,7 +120,6 @@
 	\item Typ-Prüfung durch Programmiersprache umwandeln
 \end{itemize}
 
-
 \subsection*{ Shell Injection}
 \begin{itemize}
 	\item Viele Metazeichen
@@ -168,12 +127,11 @@
 \end{itemize}
 \subsubsection*{ Gegenmaßnahmen - Daten säubern }
 \begin{itemize}
-	\item Kommandos direkt ausführen
-	\item Perl(Exec, System)
+	\item Kommandos in Quellcode selbst verankern, keine Übergabe von Kommandos
 	\item C/C++ (Exec  meist nach fork, nicht system oder popen)
-	\item Benutzerdaten über Standardeingabe
+	\item Benutzerdaten über Standardeingabe, aber Zielprogramm interpretiert Daten
 	\item Metazeichen und Eingabevalidierung
-	\item Aber Zielprogramm interpretiert Daten
+	\item Escapen in shell schwierig
 	\item Shell nicht verwenden
 	\item Externes Programm nicht verwenden( Wiederspricht re-use,)
 	\item Codefragmente wiederverwenden aber durchsehen und HInweise lesen
@@ -182,7 +140,7 @@
 \subsection*{ interaktion mit c/c++ }
 \begin{itemize}
 \item Zeichenkette endet mit null-Zeichen (Terminiert Zeichenkette in c)
-\item Kunden laden Bilder auf Server ( Prüfe auf Endung .jpg) Eingabe : Crack.php0.jpg
+\item Kunden laden Bilder auf Server ( Prüfe auf Endung .jpg) Eingabe : Crack.phpNULL.jpg
 \end{itemize}
 
 \subsection*{ Evil Eval }
@@ -195,8 +153,7 @@
 
 \subsection*{ Metazeichenbehandlung }
 \begin{itemize}
-	\item Identifiziere Subsysteme
-	\item Identifiziere Metazeichen der Subsysteme
+	\item Identifiziere Metazeichen im System und allen Subsystemen
 	\item Typen Prüfung
 	\item Injection zweiter Ordnung, O'Conner aus DB lesen, In neue SQL Abfrage eingebaut
 	\item Like Klausel in SQL ( Metazeichen \%\_)
@@ -228,27 +185,21 @@
 
 \subsection*{ Parameter Manipulation}
 \begin{itemize}
-	\item Speichern, editieren und senden
 	\item URL selbst erzeugen (Get vs Post)
-	\item Web Proxy
-	\item Browser Plugin ( Firebug)
 	\item Http Header Felder ( Cookies)
 	\item Dateisystem ( Weboberfläche NAS)
 	\item zusätzliche Parameter
 	\item Server Variablen überschreiben
-	\item bei Benutzer erzeugten ungültigen Eingaben ( Tippfehler ) => höflicher Hinweis, neuer Versuch
-	\item bei Server erzeugten ungültigen Eingaben ( absichtlich manipuliert) => Vorgang abbrechen, Protokollierung
 \end{itemize}
-
+Folgen: 
+Bei Benutzer erzeugten ungültigen Eingaben ( Tippfehler ) => höflicher Hinweis, neuer Versuch.
+Bei Server erzeugten ungültigen Eingaben ( absichtlich manipuliert) => Vorgang abbrechen, Protokollierung.
 \subsection*{ Filtern}
 \begin{itemize}
-	\item Gut
-	\item Schlecht
-	\item unbekannt
+	\item Gut, Schlecht oder unbekannt
 	\item Blacklisting ( Filtere schlechte Eingaben)
 	\item Whitelisting ( Filtere gute Eingaben)
 \end{itemize}
-
 
 
 \section*{User Authentication}
@@ -272,18 +223,14 @@
 
 \subsection*{ Angriffe gegen Passwort}
 \begin{itemize}
-	\item Probiere alle Passwörter
-	\item Probiere viele wahrscheinliche Passwörter
+	\item Probiere alle Passwörter (Brute-Force)
+	\item Probiere viele wahrscheinliche Passwörter ( Dictionarys)
 	\item Probiere Passwörter, die für den Benutzer wahrscheinlich sind
 	\item Suche die Liste der Passwörter
 	\item Frage den Benutzer
-	\end{itemize}
-
-\subsection*{ Gleiche Passwörter}
-\begin{itemize}
 	\item Passwörter werden wiederverwendet
 	\item Passwort Muster ... ( OHM-geheim. Mail-geheim ist doof => Verrät Passwort für andere ID's / Seiten)
-\end{itemize}
+	\end{itemize}
 
 \subsection*{ Einmal-Passwort}
 \begin{itemize}
@@ -306,7 +253,7 @@
 	\item Gelten als sehr sicher
 	\item False acceptance rate, False rejection rate
 	\item Sensor täuschen, umgehen
-	\item Im Internet?
+	\item Im Internet ungeeignet weil Scanner bei Client
 \end{itemize}
 
 \subsection*{ Klassifikation}
@@ -335,7 +282,7 @@
 	\subsection*{ Virus (Definition)}
 	\begin{itemize}
 		\item Programm (-Stück)
-		\item "Infiziert" Programm
+		\item \"Infiziert\" Programm
 		\item Verbreitung über infizierte Programme
 		\item Makroviren betreffen auch "Daten" 
 		\item Meist Schadensfunktion ( Dateien löschen, Platten formatieren/verschlüsseln, Konfiguration manipulieren)
@@ -344,14 +291,6 @@
 	\begin{itemize}
 		\item Wirtsprogramm ( Virus hängt/umfasst oder integriert sich an/in das Programm)
 		\item Andere Infektionsorte ( Boot-Sector, Speicher ( RAM), Programm Bibliotheken)
-	\end{itemize}
-	
-	\subsubsection*{Brain Virus}
-	\begin{itemize}
-		\item  Sitzt im Boot-Sektor und weiteren
-		\item Versteckt sich im "Upper Memory"
-		\item Fängt Disk-Leseoperation ab
-		\item "Schaden": Ändert Disk-Label auf "Brain"
 	\end{itemize}
 	
 	\subsubsection*{ Viren Scanner}
@@ -373,7 +312,7 @@
 \begin{itemize}
 	\item Wie bei Viren
 	\item Zombies für DDOS
-	\item ugang zu Rechnern öffnen und offen halten
+	\item Zugang zu Rechnern öffnen und offen halten
 	\item Nutzt Schwachstellen in Diensten ( Programmierfehler, Fehlkonfiguration)
 \end{itemize}
 
@@ -381,7 +320,7 @@
 \begin{itemize}
 	\item Programmierfehler in Microsoft IIS ( Beliebiger Code ausführbar)
 	\item Rasche Verbreitung via HTTP
-	\item Schäden( Startseite ersetzt(Defacement), Hohe Netzlast, DDOS gegen whitehouse, Nimda ( Hintertür mit Admin-Rechte)
+	\item Schäden( Startseite ersetzt(Defacement), Hohe Netzlast, DDOS gegen Whitehouse, Nimda ( Hintertür mit Admin-Rechte)
 \end{itemize}
 
 \subsubsection*{ Schutz }
@@ -434,8 +373,7 @@
 
 \section*{Public Key Infrastructure (PKI)}
 \subsection*{ Ziel}
-Ziel 			=> sichere Verteilung der Public Keys
-Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von einem der das beglaubigt!
+Ziel 			=> sichere Verteilung der Public Keys mit Zertifikaten
 
 \subsection*{Allgemeines zu PKI}
 \begin{itemize}
@@ -445,6 +383,18 @@ Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von ei
 \item Verfallsdatum von Zertifikaten sinnvoll
 \item Ziel ist es, eine stabile, kaum angreifbare Vertrauenskette zu erschaffen!
 \end{itemize}
+
+\subsection*{Vertrauensmodelle}
+\begin{itemize}
+	\item Monopol ( Vorteil : Theoretisch einfach, Nachteil: Wem vertrauen alle, Schlüssel verlust)
+	\item Registrierungsstellen ( Vorteil: Zertifizierungstelle muss nicht Identität prüfen , Nachteil: Ist sicherheitskritisch ) VS. Delegation ( Vorteil: Unterschreiben die Untergeordneten Stellen, unter Zertifikate, Nachteil: Sicherheitskritisch)
+	\item Oligarchie ( Vorteil: mehrere CAs , Nachteil: eine CA kompromittiert dann sind alle Komprimittiert ( meltdown))
+	\item Anarchie ( Vorteil: Dezentrale Lösung , Nachteil: transitivität des Vertrauens )
+	\item Name Constraints ( Vorteil: Zertifikate zweckgebunden, Nachteil: keine bekannt)
+	\item Top-Down (  wie Monopol )
+	\item Button-Up ( Vorteil: , Nachteil: )
+\end{itemize}
+
 
 \section*{Firewalls}
 
@@ -457,26 +407,18 @@ Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von ei
 \end{itemize}
 
 \subsection*{ Kernidee }
+Referenzmonitor:
 \begin{itemize}
-	\item Referenzmonitor
+	\item 
 	\item Immer aufgerufen ( einzige Verbindung zu externe via FWs)
 	\item Manipulationssicher
 	\item Klein und einfach genug für Verifikation
 \end{itemize}
 
-\subsection*{ Arten }
-\begin{itemize}
-	\item Paketfilter
-	\item Stateful inspection FWs
-	\item Applikation Proxies
-	\item Guards
-	\item Personal FW
-\end{itemize}
-
 \subsubsection*{ Paketfilter }
 \begin{itemize}
 	\item Filtert Quell und Zieladresse ( auch auf Port)
-	\item Filtert manipuliert interne Adresse
+	\item Filtert manipulierte interne Adresse
 	\item Einfache Regeln
 	\item Aufwand für komplexe Policies ( Viele Regeln, SSH für Admins)
 \end{itemize}
@@ -538,7 +480,7 @@ Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von ei
 	\item VPN, IDS etc. auf der FW
 	\item Firewall-Tunneling ( HTTP, SSH,…) , SOAP, Websocktes
 	\item Webservices
-	\item Moderne Firewalls != Refernezmonitor
+	\item Moderne Firewalls != Referenzmonitor
 	\item Komplex nicht einfach
 	\item Getunnelt nicht immer aufgerufen
 	\item Internetsteuerbar nicht Manipulationssicher
@@ -556,40 +498,27 @@ Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von ei
 	\item Formate ( Scheckkartenformat, SIM-Karte, USB-Token)
 \end{itemize}
 
-\subsection*{  Kontaktbelegung }
-\begin{itemize}
-	\item Versorgung 
-	\item Reset
-	\item Takt für CPU
-	\item Masse
-	\item Prog-Spannung
-	\item Eine I/O Leitung ( halbduplex)
-	\item Zwei weitere Kontaktr reserviert 
-\end{itemize}
-
-\subsection*{  Kartenstandards }
-\begin{itemize}
-	\item ISO/iec 7816
-	\item ETSI ( Telekommunikation)
-	\item Europay, MasterCard, Visa
-	\item Ähnlich aber nicht identisch
-	\item => Interoperabilitätsschichten
-\end{itemize}
-
-
 \subsection*{  Sicherheit }
-\begin{itemize}
-	\item Gefährdung ( Herausgabe/Veränderung von Informationen) 
-	\item Schutz (Mechanisch ( Kartenkörper), Elektrisch ( Halbleiter), Logisch ( Betriebssystem))
-	\item Passive Hardware ( Alles auf einem Chip, Anordnung der Leitungen auf dem Chip)
-	\item Aktive Hardware ( Deaktivierung bei Beschädigung, Spannungsüberwachung, Untertaktung verhindern)
+Gefährdung: ( Herausgabe/Veränderung von Informationen) 
+Schutz :
+	\begin{itemize}
+	\item Mechanisch ( Kartenkörper)
+	\item  Elektrisch ( Halbleiter), 
+	\item Logisch ( Betriebssystem)
+\end{itemize}
+	Passive Hardware => Alles auf einem Chip, Anordnung der Leitungen auf dem Chip
+	Aktive Hardware:
+	\begin{itemize}
+	\item Deaktivierung bei Beschädigung
+	\item Spannungsüberwachung
+	\item Untertaktung verhindern
 \end{itemize}
 
 \subsection*{  Betriebssystem }
 \begin{itemize}
 	\item Kontrolle I/O
 	\item Verwirft falsche Protokollnachrichten
-	\item "Konstanter " Stromverbrauch
+	\item \"Konstanter \" Stromverbrauch
 	\item Zugriffskontrolle auf Daten ( File System)
 	\item Karte permanent deaktivierbar 
 \end{itemize}
@@ -609,3 +538,68 @@ Zertifikat	 =>Identifiziere für eine Person, Schlüssel und Unterschrift von ei
 	\item Rechner soll Dokument verarbeiten
 	\item Kunde muss alles sehen können( Kleingedrucktes, Farben)
 \end{itemize}
+
+
+\section*{Terminal - Einfache, wirtschaftlich sichere Unterschriften}
+Motivation: PC ist kompromittiert
+
+Stand der Technik:
+TruPoSign: zeigt Komplexe Datenformate
+
+ZTIC: USB-Stick mit SSL/Proxy, Bankspezifisch
+
+Secoder: Class 3 Terminal
+
+Wirtschaftlich sicher: Angreifer gewinnorientiert, nicht Vandale
+
+Schutz finanziell relevanter Daten: extrahieren, Kunde verifiziert PlainText
+
+Erweitertes FinTS: User Defined Signature: String + Signatur
+
+Verifikation: Signatur vs Text, Text vs Transaktion
+
+=> Keine Versionsupdates, string kann aus Umgebung kommen, wird verifiziert
+=> Vereinfachte Signaturumgebung: string lesen, anzeigen, bestätigen und auf Karte signieren, zurückgeben
+
+Nürnberger Sicherheitstrichter: Angriffsoberfläche verringern
+
+
+
+\section*{Defence in Depth}
+Feingranulare Zugriffskontrolle in der Datenbank anhand Projekt
+
+Zugriffskontrolle anhand Kategorien (Teilnehmer, Pflegedienst, etc)
+
+Problem: Kontrolle über ganze Anwendung verteilt.
+=> schwierig(Vollständig, Korrekt, Verständnis)
+=> von anderem Code abhängig
+
+\subsection*{Ansatz} trennen von Code
+
+Anforderungen: Zentrale Datenbank, keine Zusatzprogramme(WAF), geringe Änderungen im Programm
+
+Zugriffsmodell anhand: eigener Daten, vergangene Aktionen, Regeln
+
+Spalten u. Zeilen beschränken
+
+Vom Datenbankinhalt abhängig
+
+
+
+\subsection*{Befehlsaufbau}
+Anchor TabA.TabAId = Ext
+
+TabA -> TabB VIA TabB.TabAID 
+
+TabB: Keyword (readonly ...)
+
+
+\subsection*{Implementierung}
+
+Parametrized Views => Abhängig von z.B. SessionID
+
+(User Defined Functions, Query Rewriting, Oracle Virtual Private Database)
+
+=> API um Session Parameter erweitern => Applikation ändern
+
+=> Alternative: vor und nach der Appl. Nachrichten abfangen, zusammenhang herstellen => Query Rewriting
