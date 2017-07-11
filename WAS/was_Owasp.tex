@@ -42,13 +42,14 @@ Kann mit Escapen/ prepared Statements bekämpft werden
 	\item Die vom User in den Browser eingegebenen Daten werde nicht validiert bzw. die Daten die an den Server geschickt werden. 
 	\item Reflection( ist nur einmalig, bleibt nicht in der DB) 
 	\item Persistent ( wird gespeichert und jeder der die Seite aufruft wird injected)
-\item Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.) und indirekte Objektreferenz: z.B. Index auf Liste der Konten des Kunden
+	\item Hier hilft meist escapen und testen der Anwendung ( manuelle pentest, reviews usw.) 
 	\end{itemize}
 \subsection*{\textcolor{darkgreen}{A4 Unsichere direkte Objektreferenzen}}
 
 	\begin{itemize}
 	\item ID 1 im Browser = ID 1 in der DB => erratbar
 	\item Zugriff muss auch auf Ressourcen Ebene vom Server überprüft werden ( id 1 darf nur daten von id 1 sehen)
+	\item Hier hilft indirekte Objektreferenz: z.B. Index auf Liste der Konten des Kunden
 	\end{itemize}
 
 
