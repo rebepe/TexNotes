@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  8 JUL 2017 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.5)  11 JUL 2017 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1546,10 +1546,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--34
 (./Heap.tex) [2] (./Kontrollfluss_Typen.tex) (./Bindung.tex) (./Code.tex)
 [3] (./ProgS.aux) ) 
 Here is how much of TeX's memory you used:
- 26981 strings out of 493029
- 539109 string characters out of 6136235
+ 26982 strings out of 493029
+ 539125 string characters out of 6136235
  649662 words of memory out of 5000000
- 30076 multiletter control sequences out of 15000+600000
+ 30077 multiletter control sequences out of 15000+600000
  24694 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,11n,67p,10436b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1561,7 +1561,7 @@ exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on ProgS.pdf (3 pages, 132762 bytes).
+Output written on ProgS.pdf (3 pages, 133149 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream

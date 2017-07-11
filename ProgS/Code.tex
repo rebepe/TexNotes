@@ -1,3 +1,7 @@
+
+\minmeth{misc}
+"\ use strict": Wechsel zu ECMA-Script 5: let, const => variable erst nach definition gültig
+
 \minpurp{Codesamples Closure}
 \submeth{C\#} static Func<int, int> buildAdd(int n) \{ return x => x + n; \}
 
@@ -7,4 +11,17 @@ function buildAdd(n) \{
 \rule{1cm}{0cm}return function(x) \{ return x + n \} 
 
 \}
+
+\minpurp{Codesample C++ Smartpointer}
+\submeth{Löschen} p6.reset(); 
+
+\submeth{Kopieren (nicht unique):}
+std::weak\_ptr<int> wp9 = p9;
+
+\submeth{Verschieben unique} std::unique\_ptr<int> p4 = std::move(p2); 
+
+\submeth{Test weakpointer}
+std::shared\_ptr<int> p11 = wp9.lock(); 
+
+
 
