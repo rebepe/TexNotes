@@ -6,20 +6,19 @@ Nennen Sie die Hauptbestandteile des Datenmodells von Cassandra. Wie kann man au
 \subsection*{Antwort}
 Hauptbestandsteile sind: Keyspaces (vergleichbar mit der Datenbank in RDBMS), 
 Columns Families (Tables in CQL), 
-Rows und Columns,
-Zugriff auf einen Wert der Zelle erfolgt über row_id, Columns Family Name und Column Name
+Rows und Columns, Zugriff auf einen Wert der Zelle erfolgt über row\_id, Columns Family Name und Column Name.
 \subsection*{Frage 2}
 Wozu wird ein Clustering Key verwendet?
 \subsection*{Antwort}
 Clustering Key wird für die Vorgruppierung und Sortierung der Daten verwendet, um diese effektiv mit einer Abfrage zu ermitteln
 \subsection*{Frage 3}
-Wie kann die Konsistenz im Cassandra Cluster gesteuert werden und welche grundsätzlichen Level gibt es?
+Wie kann die Konsistenz im Cassandra Cluster gesteuert werden und welche grundsätzlichen Level gibt es?
 \subsection*{Antwort}
 Konsistenz in einem Cassandra Cluster wird durch das „Consistency Level“ gesteuert. Dies gibt an wie viele Knoten einen Lese- bzw. Schreibzugriff bestätigen müssen, damit dieser als erfolgreich gilt;
 Die gängigsten Level sind: ANY, ONE, TWO, THREE, QUORUM, ALL
 
 \subsection*{Frage 4}
-Was versteht man unter Consistent-Hashing und was wird dadurch ermöglicht?
+Was versteht man unter Consistent-Hashing und was wird dadurch ermöglicht?
 \subsection*{Antwort}
 Unter Consistent-Hashing versteht man die Organisation der Daten in einem Cluster durch einen TokenRing. Jeder Knoten ist für einen bestimmten Zahlenraum zuständig. Zur Zuordnung der Daten werden die PrimaryKeys durch einen Hashfunktion in einen eindeutigen Token umgewandelt. Anhand dieses INT-Wertes erfolgt die Zuordnung der Daten zu den jeweiligen Knoten im Cluster. 
 Consistent-Hashing ermöglicht die Verteilung von Daten über mehrere Knoten hinweg und minimiert die Re-Organisation von Daten bei hinzukommenden oder wegfallenden Knoten.
@@ -36,6 +35,6 @@ Welche verschiedenen Collections gibt es in CQL und wie unterscheiden sie sich?
 	\item Map, {key1:value1, key2:value2}, Key-Value-Paare, nach Key alphabetisch sortiert
 \end{itemize}
 \subsection*{Frage 7}
-Wie kann man erreichen, dass ein Datensatz nach einer bestimmten Zeit automatisch gelöscht wird?
+Wie kann man erreichen, dass ein Datensatz nach einer bestimmten Zeit automatisch gelöscht wird?
 \subsection*{Antwort}
 INSERT INTO tabelle(id, name) VALUES (1, ‚Bla’) USING TTL 120;

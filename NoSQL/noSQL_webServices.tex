@@ -2,7 +2,7 @@
 
 \section*{Web-Services}
 \subsection*{Frage 1}
-Was ist die Motivation für Service-orientierte Architekturen?
+Was ist die Motivation für Service-orientierte Architekturen?
 \subsection*{Antwort}
 \begin{itemize}
 	\item Wiederverwendung
@@ -14,11 +14,13 @@ Was ist die Motivation für Service-orientierte Architekturen?
 \subsection*{Frage 2}
 Was sind die Komponenten einer service-orientierten Architektur? Wie ist der theoretische Ablauf eines Dienstaufrufs?
 \subsection*{Antwort}
+\begin{itemize}
 	\item Dienstverzeichnis (UDDI), Dienstanbieter, Dienstnutzer
 	\item Dienstanbieter veröffentlicht seinen Service im UDDI
 	\item Dienstnutzer durchsucht UDDI nach passenden Service
 	\item Dienstverzeichnis gibt dem Dienstnutzer einen Verweis auf den Dienst (WSDL)
 	\item Interaktion zwischen Dienstanbieter und Dienstnutzer über SOAP-Nachrichten
+\end{itemize}
 \subsection*{Frage 3}
 Welche Herausforderungen gibt es in Bezug auf service-orientierte Architekturen?
 \subsection*{Antwort}
@@ -31,7 +33,7 @@ Welche Herausforderungen gibt es in Bezug auf service-orientierte Architekturen?
 	\item Konkurrierende Spezifikationen
 \end{itemize}
 \subsection*{Frage 4}
-Welche Vor- und Nachteil hat REST gegenüber SOAP?
+Welche Vor- und Nachteil hat REST gegenüber SOAP?
 \subsection*{Antwort}
 Vorteile
 \begin{itemize}
@@ -61,19 +63,23 @@ Was ist der Grundgedanke eines MicroService?
 Abgeschlossene Fachliche Einheit mit GUI, Logik und Datehaltung. Anwendung setzt sich aus Sammlung von MicroServices zusammen.
 
 \subsection*{Frage 7}
-Nennen Sie die Vorteile von MicroSerivces gegenüber monolithischen Architekturen.
+Nennen Sie die Vorteile von MicroSerivces gegenüber monolithischen Architekturen.
 \subsection*{Antwort}
+\begin{itemize}
 \item Kommunikation und Koordination vereinfacht
 \item Test einer fachlichen Einheit einfacher
 \item Laufzeitumgebung an Voraussetzungen angepasst
 \item Langfristige Wartbarkeit
 \item Vorteile in der Skalierbarkeit
+\end{itemize}
 \subsection*{Frage 8}
 In welchen Punkten unterscheidet sich SOA von MicroServices?
 \subsection*{Antwort}
+\begin{itemize}
 \item Anwendung als Sammlung von MicroServices - Orchestrierung
 \item Neue Anwendungsfälle durch neue MicroServices – Neue Anwendungen durch Komposition
 \item MicroServices haben eigene UI, Businesslogik und Datenhaltung – Mehrere Dienste können an einer UI und Datenhaltung beteiligt sein.
 \item MicroServices beeinflussen ein Team – SOA beeinflusst mehrere Teams
 \item MicroServices sind unabhängig – SOAs haben einen single point of failure: Enterprise Service Bus
 \item MicroServices bilden eine angeschlossene fachliche Einheit – SOA liegt eine Abstraktionsebene über MicroServices
+\end{itemize}
