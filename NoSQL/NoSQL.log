@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  13 JUL 2017 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  13 JUL 2017 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1187,7 +1187,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.33 Erlä
+l.34 Erlä
            utern Sie die Unterschiede zwischen Shared Memory, Shared Disk un...
 
 Your command was ignored.
@@ -1205,7 +1205,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.47 Was fü
+l.44 Was fü
              r Arten von NoSQL-DBS gibt es? Charakterisieren Sie diese kurz ...
 
 Your command was ignored.
@@ -1220,7 +1220,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.47 ...kurz und nennen Sie jeweils Beispiele fü
+l.44 ...kurz und nennen Sie jeweils Beispiele fü
                                                   r konkrete Systeme!
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1234,13 +1234,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 Was versteht man unter Big Data? Wofü
+l.57 Was versteht man unter Big Data? Wofü
                                             r stehen die 3 bzw. 4 V's? Welch...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+) [2] (./noSQL_Java.tex
 
 ! Package inputenc Error: Unicode char ̈ (U+308)
 (inputenc)                not set up for use with LaTeX.
@@ -1249,28 +1250,13 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.74 ... von 2- bzw. 3-Tier-Architekturen? Wo kö
-                                                  nnen Skalierungsprobleme a...
-
+l.17 Erlä
+           utern Sie das MVC-Muster!
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...eme auftreten und wie lassen sie sich lö
-                                                  sen?
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-) [2] (./noSQL_Java.tex) [3] (./NoSQL.aux) ) 
+) [3] (./NoSQL.aux) ) 
 Here is how much of TeX's memory you used:
  16159 strings out of 492990
  293762 string characters out of 6132636
@@ -1279,15 +1265,14 @@ Here is how much of TeX's memory you used:
  540214 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,7n,66p,10444b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist
-/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvip
-s/cm-super/cm-super-t1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/cm-super/sfsx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-cm-super/sfsx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times
-/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pf
-b>
-Output written on NoSQL.pdf (3 pages, 65696 bytes).
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8
+r.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.
+enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on NoSQL.pdf (3 pages, 68961 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

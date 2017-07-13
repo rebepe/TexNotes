@@ -1,0 +1,28 @@
+\textbf{\textcolor{darkblue}{ Neo4j}}~
+
+\section*{Neo4j}
+\subsection*{Frage 1}
+Was versteht man unter einem Labeled Property Graphen?
+\subsection*{Antwort}
+Hierbei handelt es sich um einen Graphen, in dem sowohl die Knoten als auch die Beziehungen zwischen den Knoten typisiert (labeled) und den Knoten und Beziehungen Eigenschaften (Properties) zugewiesen werden können. 
+\subsection*{Frage 2}
+Wodurch entstehen bei wachsendem Datenbestand Performanceverluste in einem RDBS im Vergleich zur Graph-DB und wodurch wird der Performanceverlust bei Graphdatenbanken verhindert?
+\subsection*{Antwort}
+Durch die viele Anzahl an Joins, durch welche Beziehungen abgebildet werden. In GDB sind Beziehungen first-class-citizens und Anfragen müssen nur auf einen Teilgraphen angewandt werden => Ausführungszeit ist nur von Teilgraph abhängig
+\subsection*{Frage 3}
+Wie unterscheiden sich RDBMS und Graph-Datenbanken bezüglich der Modellierung von Beziehungen?
+\subsection*{Antwort}
+Bei RDMS benötigt man Zwischentabellen (Join-Table), um die Beziehungen zu 1-n-Beziehungen herunter zu stufen und darstellen zu können.
+Graphen haben dieses Problem nicht, da sie auf keinem Schema beruhen
+\subsection*{Frage 4}
+Welche Problemstellungen können mit Graph-Datenbanken besser abgebildet werden als mit RDBMS und warum?
+\subsection*{Antwort}
+Durch Graphendatenbanken lassen sich stark vernetzte Probleme besser Darstellen als mit RDBMS. Vor allem Probleme bei denen Beziehungen zwischen den Daten eine große Rolle spielen, da diese in Graphdatenbanken "first-class-citizens" sind und im gegensatz zu RDBMS nicht umständlich abgebildet werden müssen.
+\subsection*{Frage 5}
+Weshalb ist es bei Graphen sinnvoller mehr Verbindungen zu erstellen, anstatt Knoten weitere Eigenschaften zuzuweisen?
+\subsection*{Antwort}
+Es ist „günstiger“ Verbindungen zu durchlaufen, anstatt Properties auszulesen. Dennoch kann dies auch zur Unübersichtlichkeit führen.
+\subsection*{Frage 6}
+Was sind typische Anwendungsbeispiele für Graphdatenbanken im Vergleich zu anderen NoSQL und relationalen Datenbanken?
+\subsection*{Antwort}
+Soziale Netzwerke, Master Data Management, Empfehlungen (zB in Online Shops), Network and Data Center Management, Authorisierung und Zugriffskontrolle, Fraud Detection }

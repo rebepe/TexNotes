@@ -1,0 +1,102 @@
+\textbf{\textcolor{darkblue}{ MongoDB}}~
+
+\section*{MongoDB}
+\subsection*{Frage 1}
+Was sind die wesentlichen Vor- und Nachteile dokumentenorientierter zur relationalen Datenbanken?
+\subsection*{Antwort}
+Vorteile
+\begin{itemize}
+	\item Zugriffe und Abfragen direkt auf Dokumente Möglich
+	\item keine Schemarestriktion
+	\item hohe Flexibilität mit großen Datenmengen
+	\item Geschwindigkeitsvorteil gegenüber RDBMS
+	\item bessere horizontale Skalierung
+\end{itemize}
+Nachteile
+\begin{itemize}
+	\item geringe Verbreitung
+ 	\item damit auch geringe Unterstützung von Schnittstellen und Tools
+ 	\item keine Dokumentenübergreifenden Operationen 
+ 	\item darstellen komplexer Beziehungen eher schwierig
+ 	\item durch Schemafreiheit müssen eventuelle Wertprüfungen nicht von DB  
+ 	  übernommen müssen selbst programmiert werden
+\end{itemize}
+\subsection*{Frage 2}
+Für welche Anwendungsbereiche bietet sich die Nutzung von MongoDB an?
+\subsection*{Antwort}
+\begin{itemize}
+	\item Anwendungen ohne festes Datenbankschema
+	\item Anwendungen in denen Daten in nicht tabellarischer Form gespeichert werden
+	\item Webanwendungen, da JSON auch zur Serialisierung verwendet wird
+	\item Anwendungen mit sehr großen Datenmengen
+	\item Anwendungen bei denen viele Nutzer versch. Daten erzeugen und diese schnell gespeichert / verarbeitet werden müssen
+\end{itemize}
+
+\subsection*{Frage 3}
+Erläutern Sie den grundlegenden Aufbau von MongoDB?
+\subsection*{Antwort}
+MongoDb speichert als Grundeinheit JSON Objekte und besteht aus den folgenden Bestandteilen:
+
+Datenbanken
+\begin{itemize}
+	\item MongoDB-Prozess kann mehrere Datenbanken verwalten
+	\item Datenbank besteht aus beliebig vielen Collections
+	\item DatenbankName.CollectionName stellt Namespace dar
+\end{itemize}
+
+Collections
+\begin{itemize}
+	\item speichert Dokumente
+	\item Datenbank besteht aus beliebig vielen Collections
+	\item vergleichbar mit Tabelle einer relationalen DB
+	\item Dokumente können völlig verschieden sein (Schemalos)
+\end{itemize}
+
+Capped Collections
+\begin{itemize}
+	\item größenbeschränkte Dokumentensammlung
+	\item Größe und Anzahl an Dokumenten kann beim Anlegen festgelegt werden
+	\item Verhält sich wie digitaler Ringspeicher nach Erreichen der Größe
+	\item kann tailable Cursors verwenden
+\end{itemize}
+
+System Collections
+\begin{itemize}
+	\item automatisch von MongoDb erzeugt
+	\item Verwalten Indizes, Namespaces, JavaScript und Benutzer
+\end{itemize}
+
+\subsection*{Frage 4}
+Wie kommuniziert eine Anwendung mit Shards im Sharding Cluster und warum findet die Kommunikation so statt?
+\subsection*{Antwort}
+Eine Anwendung kommuniziert über Router (Schnittstellen) mit den Shards. Dabei werden in sogenannten Config Servers Metadaten und Konfigurationseinstellungen gespeichert. 
+Die Kommunikation soll/muss so stattfinden, da die Anwendung sonst nicht weiß, wie Datenbankoperationen ausgeführt werden. Zum Beispiel: Wie interpretiere ich Datenbankoperationen? Auf welchem Shard befindet sich welcher Datensatz? (s. Folie 41/42 für Veranschaulichung)
+\subsection*{Frage 5}
+Wie funktioniert Replikation in MongoDB? Welches Konsistenzmodell kommt dabei zum Einsatz?
+\subsection*{Antwort}
+MongoDB implementiert eine Master-Slave Replikation. Es gibt nur einen Master (Primary) und nur auf dem Master können Write-Operationen ausgeführt werden. Auf den Slaves (Secondaries) kann nur gelesen werden. Bei einem Write im Master werden die Daten asynchron auf die Slaves aktualisiert. (s. Folie 36 für Veranschaulichung)
+
+\subsection*{Frage 6}
+Wann wird bei Replica-Sets ein neuer Primary Server gewählt?
+\subsection*{Antwort}
+Ein Primary Server wird dann neu gewählt,  wenn…
+\begin{itemize}
+	\item der Primary Server ausfällt.
+	\item ein neues Replica-Set (Secondary) zum System hinzufügt wird.
+	\item ein Replica-Set die Verbindung zum Primary verliert.
+	\item ein Primary zurücktritt und zu einem Replica-Set wird.
+\end{itemize}
+Eine Wahl beginnt, indem sich ein Replica-Set als neuen Primary vorschlägt. Jedes andere Replica-Set hat dann genau eine Stimme, um dafür oder dagegen zu stimmen.
+Die Wichtigsten Kriterien damit ein Replica-Set zum Primary gewählt wird sind folgende:
+\begin{itemize}
+	\item Antwortzeit von anderen Replica-Sets, nach dem man sie angepingt hat (Replica-Set mit der schnellsten Antwortzeit bekommt die Stimme)
+	\item Priorität (muss manuell festgelegt werden, Replica-Set mit der höchsten Priorität leitet als erstes eine Wahl für sich selbst ein)
+	\item Aktuellster Stand (letzte Datenbankoperation ist ausgeführt worden)
+	\item Aufrechte Verbindung zu mindestens der Hälfte aller Replica-Sets
+\end{itemize}
+
+\subsection*{Frage 7}
+Wie funktioniert prinzipiell das Map-Reduce-Verfahren?
+\subsection*{Antwort}
+Mit Hilfe von Map-Reduce soll erreicht werden, dass die Gesamtlast auf verschiedene Rechner verteilt wird, um so die Performance zu stärken. Vergleichbar mit einer großen Pizza: Je mehr Leute von der Pizza essen, desto schneller ist diese vertilgt. 
+
