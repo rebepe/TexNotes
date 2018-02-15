@@ -1,0 +1,44 @@
+\textbf{\textcolor{darkblue}{Test}}~
+\paragraph{Whitebox Tests (WBT)}
+Testet eher Struktur als Funktion, Entwicklertest
+
+\subparagraph{Vorteile}
+\begin{itemize}
+	\item Testen von Teilkomponenten und der internen Funktionsweise
+	\item Geringerer organisatorischer Aufwand
+	\item Automatisierung durch gute Tool-Unterstützung
+\end{itemize}
+
+\subparagraph{Nachteile}
+\begin{itemize}
+	\item Erfüllung der Spezifikation nicht überprüft
+	\item Eventuelles Testen "um Fehler herum"
+\end{itemize}
+
+\paragraph{Black-Box-Test (BBT)}
+ Entwicklung ohne Kenntnis des Codes, Orientierung an Spezifikation bzw. Anforderungsdefinition,
+ funktionsorientiert, kein Entwicklertest
+ 
+\subparagraph{Vorteile}
+\begin{itemize}
+	\item bessere Verifikation des Gesamtsystems
+	\item Testen von semantischen Eigenschaften bei geeigneter Spezifikation
+	\item Portabilität von systematisch erstellten Testsequenzen auf plattformunabhängige Implementierungen
+\end{itemize}
+
+\subparagraph{Nachteile}
+\begin{itemize}
+	\item größerer organisatorischer Aufwand
+	\item zusätzlich eingefügte Funktionen bei der Implementierung werden nur durch Zufall getestet
+	\item Testsequenzen einer unzureichenden Spezifikation sind Unbrauchbar
+\end{itemize}
+
+\paragraph{Grey-Box-Text (GBT)}
+\begin{itemize}
+	\item Vereint die Vorteile aus WBT und BBT
+	\item Unterstützt eine „testgetriebene Entwicklung“
+	\item Ohne Kenntnis der Implementierung entwickelt
+\end{itemize}
+
+\paragraph{Fazit Unittests}
+Anzahl der Testabdeckung sagt nur aus das die Codezeilen durch laufen wurden, nicht wie gut die Test sind!
