@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.19)  16 FEB 2018 10:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.19)  16 FEB 2018 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1512,228 +1512,11 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 3.
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ))
 (./GrundlegendeKonzepteDesOOD.tex
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 5.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 4.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27 	\item Maß fü
-                     r die Zusammengehörigkeit der Bestandteile einer Kompo...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 	\item Hohe Kohä
-                       sion einer Komponente erleichtert Verständnis, Wart...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 ...sion einer Komponente erleichtert Verstä
-                                                  ndnis, Wartung und Anpassung
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 	\item Maß fü
-                     r die Abhängigkeiten zwischen Komponenten
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 	\item Maß für die Abhä
-                                 ngigkeiten zwischen Komponenten
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-) (./test.tex
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 ... Automatisierung durch gute Tool-Unterstü
-                                                  tzung
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 	\item Erfü
-                  llung der Spezifikation nicht überprüft
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 ...em Erfüllung der Spezifikation nicht ü
-                                                  berprüft
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 ...�llung der Spezifikation nicht überprü
-                                                  ft
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 	\item Portabilitä
-                         t von systematisch erstellten Testsequenzen auf pla...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 ...ellten Testsequenzen auf plattformunabhä
-                                                  ngige Implementierungen
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 	\item grö
-                 ßerer organisatorischer Aufwand
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 	\item zusä
-                  tzlich eingefügte Funktionen bei der Implementierung wer...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 	\item zusätzlich eingefü
-                                  gte Funktionen bei der Implementierung wer...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char ̈ (U+308)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.39 	\item Unterstü
-                      tzt eine „testgetriebene Entwicklung“
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
+)) (./test.tex)
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 38.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1774,10 +1557,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22692 strings out of 494437
- 395166 string characters out of 6166645
+ 22691 strings out of 494437
+ 395161 string characters out of 6166645
  573097 words of memory out of 5000000
- 25804 multiletter control sequences out of 15000+600000
+ 25803 multiletter control sequences out of 15000+600000
  538728 words of font info for 31 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  44i,7n,66p,10440b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1785,7 +1568,7 @@ Here is how much of TeX's memory you used:
 c/ecsx1095.600pk>{/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base/
 8r.enc}</usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/times/utmb8a.pf
 b></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on CleanCode.pdf (2 pages, 45612 bytes).
+Output written on CleanCode.pdf (2 pages, 45686 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
